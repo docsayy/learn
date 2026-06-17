@@ -1,5 +1,12 @@
 [
   {
+    "title": "",
+    "date": "2026-06-17",
+    "category": "",
+    "summary": "",
+    "file": "posts/2026-06-17-acute-coronary-syndrome-complete-resident-guide.html"
+  },
+  {
     "title": "Atrial Fibrillation: The Complete Resident Guide",
     "date": "2026-06-17",
     "category": "Cardiology",
@@ -12,12 +19,5 @@
     "category": "Critical Care",
     "summary": "High-yield review of mechanical ventilation, ventilator modes, ARDS, ventilator settings, weaning, extubation, and ICU management.",
     "file": "posts/2026-06-17-mechanical-ventilation-icu.html"
-  },
-  {
-    "title": "",
-    "date": "2026-06-17",
-    "category": "",
-    "summary": "",
-    "file": "posts/acute-coronary-syndrome-complete-resident-guide.html"
   }
 ]
