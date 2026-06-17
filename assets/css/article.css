@@ -26,31 +26,29 @@ line-height:1.7;
 font-size:15px;
 }
 
-/* Top Home Button */
-
-.home-btn{
-position:fixed;
-top:20px;
-left:20px;
-z-index:1000;
-background:white;
-color:var(--accent);
-text-decoration:none;
-padding:10px 14px;
-border-radius:10px;
-border:1px solid var(--border);
-font-weight:600;
-box-shadow:0 2px 8px rgba(0,0,0,.06);
-}
-
-.home-btn:hover
-
 /* Main Container */
 
 .container{
 max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:30px 20px 50px;
+}
+
+/* Home Link */
+
+.home-btn{
+display:inline-flex;
+align-items:center;
+gap:6px;
+text-decoration:none;
+color:var(--accent);
+font-weight:600;
+margin-bottom:20px;
+font-size:14px;
+}
+
+.home-btn:hover{
+text-decoration:underline;
 }
 
 /* Article Header */
@@ -59,19 +57,31 @@ padding:40px 20px;
 background:white;
 border:1px solid var(--border);
 border-radius:16px;
-padding:32px;
+padding:30px;
 margin-bottom:24px;
 }
 
+.article-breadcrumb{
+color:var(--muted);
+font-size:13px;
+margin-bottom:12px;
+}
+
 .article-header h1{
-font-size:2.2rem;
-margin-bottom:10px;
+font-size:2rem;
 line-height:1.2;
+margin-bottom:10px;
 }
 
 .article-meta{
 color:var(--muted);
 font-size:13px;
+margin-bottom:15px;
+}
+
+.article-summary{
+color:#334155;
+max-width:850px;
 }
 
 /* Layout */
@@ -161,14 +171,15 @@ background:#f0fdfa;
 font-weight:600;
 }
 
-th,td{
+th,
+td{
 border:1px solid var(--border);
 padding:10px;
 text-align:left;
 font-size:14px;
 }
 
-/* Highlight Boxes */
+/* Notes */
 
 .note{
 background:#f0fdfa;
@@ -205,61 +216,61 @@ border-radius:12px;
 margin:20px 0;
 }
 
-/* Bottom Home Button */
+/* Back Home Link */
 
 .back-home{
-display:inline-block;
-margin-top:30px;
+display:inline-flex;
+align-items:center;
+gap:6px;
 text-decoration:none;
-color:white;
-background:var(--accent);
-padding:10px 16px;
-border-radius:10px;
+color:var(--accent);
 font-weight:600;
+margin-top:30px;
 }
 
 .back-home:hover{
-opacity:.9;
+text-decoration:underline;
 }
 
 /* Footer */
 
 .footer{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid var(--border);
 text-align:center;
 color:var(--muted);
 font-size:13px;
-margin-top:40px;
 }
 
 /* Mobile */
 
 @media(max-width:900px){
 
+```
 .layout{
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 }
 
 .toc{
-position:relative;
+    position:relative;
+    top:auto;
 }
 
 .content{
-padding:24px;
+    padding:24px;
 }
 
 .article-header{
-padding:24px;
+    padding:24px;
 }
 
 .article-header h1{
-font-size:1.8rem;
+    font-size:1.75rem;
 }
 
-.home-btn{
-top:10px;
-left:10px;
-padding:8px 12px;
-font-size:14px;
+.container{
+    padding:20px 15px 40px;
 }
 
 }
