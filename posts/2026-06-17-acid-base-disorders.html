@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="Acid-Base Disorders: ABG, VBG, Anion Gap, Compensation, and Delta-Delta Guide">
+<meta name="date" content="2026-06-17">
+<meta name="category" content="Nephrology / Pulmonary / Critical Care">
+<meta name="tags" content="acid-base,abg,vbg,anion gap,metabolic acidosis,respiratory acidosis,delta delta,winter formula,osmolar gap,nagma,hagma">
+<meta name="summary" content="Resident-level guide to acid-base disorders including ABG/VBG interpretation, primary disorder identification, anion gap calculation, albumin correction, NAGMA vs HAGMA, osmolar gap, Winter's formula, delta-delta gap, and respiratory compensation.">
+<meta name="featured" content="true">
+
+<title>Acid-Base Disorders: The Complete Resident Guide | Learn Medicine</title>
+
+<link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+    <div class="article-breadcrumb">Learn Medicine › Nephrology / Pulmonary / Critical Care</div>
+    <h1>Acid-Base Disorders: The Complete Resident Guide</h1>
+    <div class="article-meta">Added June 17, 2026 • Nephrology / Pulmonary / Critical Care • ~15 min read</div>
+    <p class="article-summary">
+        A practical, resident-focused guide to acid-base interpretation: ABG vs VBG, identifying the primary disorder,
+        calculating and correcting the anion gap, distinguishing NAGMA from HAGMA, using Winter’s formula,
+        checking the delta-delta gap, and recognizing acute versus chronic respiratory disorders.
+    </p>
+</header>
+
+<div class="layout">
+
+<nav class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#overview">Overview</a>
+    <a href="#normal-ph">Normal pH and Initial Approach</a>
+    <a href="#vbg-abg">VBG vs ABG</a>
+    <a href="#primary-disorder">Determine the Primary Disorder</a>
+    <a href="#anion-gap">Anion Gap Metabolic Acidosis</a>
+    <a href="#albumin-correction">Albumin Correction</a>
+    <a href="#nagma">Non-Anion Gap Metabolic Acidosis</a>
+    <a href="#urine-anion-gap">Urine Anion Gap</a>
+    <a href="#hagma-causes">HAGMA Causes: MUDPILES and GOLDMARK</a>
+    <a href="#osmolar-gap">Osmolar Gap</a>
+    <a href="#winters-formula">Winter’s Formula</a>
+    <a href="#delta-delta">Delta-Delta Gap</a>
+    <a href="#resp-acidosis">Respiratory Acidosis</a>
+    <a href="#metabolic-alkalosis">Metabolic Alkalosis</a>
+    <a href="#resp-alkalosis">Respiratory Alkalosis</a>
+    <a href="#summary">Final Summary</a>
+</nav>
+
+<main class="content">
+
+<section id="overview">
+<h2>Overview</h2>
+<p>
+Acid-base disorders are common in hospitalized patients, especially in emergency medicine, intensive care, nephrology,
+and pulmonary medicine. The goal is to identify the primary disorder, determine whether compensation is appropriate,
+and then look for additional mixed disorders.
+</p>
+
+<div class="note">
+<strong>Core idea:</strong> Do not stop after naming the first abnormality. After identifying the primary disorder, always ask:
+Is the patient compensating appropriately? Is there another acid-base disorder present?
+</div>
+</section>
+
+<section id="normal-ph">
+<h2>Normal pH and the Initial Approach</h2>
+<p>
+Normal blood pH is approximately <strong>7.35–7.45</strong>. A pH below 7.35 indicates acidemia, while a pH above 7.45 indicates alkalemia.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>pH</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 7.35</td>
+<td>Acidemia</td>
+</tr>
+<tr>
+<td>7.35–7.45</td>
+<td>Normal range</td>
+</tr>
+<tr>
+<td>&gt; 7.45</td>
+<td>Alkalemia</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Once you know whether the patient is acidemic or alkalemic, look at the <strong>PCO₂</strong> and <strong>bicarbonate</strong> to determine whether the primary process is respiratory or metabolic.
+</p>
+</section>
+
+<section id="vbg-abg">
+<h2>VBG vs ABG</h2>
+<p>
+Acid-base status is usually assessed with a venous blood gas (VBG) or arterial blood gas (ABG). A VBG tends to be slightly more acidemic than an ABG.
+</p>
+
+<div class="note">
+<strong>Practical correction:</strong> A VBG pH is often about <strong>0.05 lower</strong> than the corresponding ABG pH. For example, a VBG pH of 7.20 roughly corresponds to an ABG pH around 7.25.
+</div>
+
+<p>
+For PCO₂, use the value from the ABG or VBG. For bicarbonate, it is often best to use the bicarbonate or CO₂ value from the basic metabolic panel because it is directly measured or more reliable clinically than the calculated bicarbonate on a gas.
+</p>
+</section>
+
+<section id="primary-disorder">
+<h2>Determine the Primary Acid-Base Disorder</h2>
+<p>
+The primary disorder is determined by matching the direction of the pH with the direction of PCO₂ and bicarbonate.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Primary Disorder</th>
+<th>pH</th>
+<th>PCO₂</th>
+<th>HCO₃⁻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metabolic Acidosis</td>
+<td>Low</td>
+<td>Low compensation</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Respiratory Acidosis</td>
+<td>Low</td>
+<td>High</td>
+<td>High compensation if chronic</td>
+</tr>
+<tr>
+<td>Metabolic Alkalosis</td>
+<td>High</td>
+<td>High compensation</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Respiratory Alkalosis</td>
+<td>High</td>
+<td>Low</td>
+<td>Low compensation if chronic</td>
+</tr>
+</tbody>
+</table>
+
+<div class="warning">
+<strong>Common pitfall:</strong> A normal pH does not exclude an acid-base disorder. Mixed disorders can push the pH toward normal.
+</div>
+</section>
+
+<section id="anion-gap">
+<h2>Anion Gap Metabolic Acidosis</h2>
+<p>
+When metabolic acidosis is present, the next step is to determine whether it is an anion gap metabolic acidosis or a non-anion gap metabolic acidosis.
+</p>
+
+<div class="formula">
+Anion Gap = Na⁺ − Cl⁻ − HCO₃⁻
+</div>
+
+<p>
+Example:
+</p>
+
+<div class="formula">
+Na 140 − Cl 100 − HCO₃ 20 = Anion Gap 20
+</div>
+
+<p>
+An anion gap greater than about <strong>12</strong> is generally considered elevated, although the exact normal range varies slightly by lab.
+</p>
+</section>
+
+<section id="albumin-correction">
+<h2>Correcting the Anion Gap for Hypoalbuminemia</h2>
+<p>
+Albumin is an important unmeasured anion. When albumin is low, the measured anion gap can appear falsely normal. Correcting the gap can uncover an anion gap metabolic acidosis that would otherwise be missed.
+</p>
+
+<div class="formula">
+Corrected AG = Measured AG + 2.5 × (4 − Albumin)
+</div>
+
+<p>
+Example:
+</p>
+
+<div class="formula">
+Na 135 − Cl 105 − HCO₃ 20 = AG 10<br>
+Albumin = 2<br>
+Correction = 2.5 × (4 − 2) = 5<br>
+Corrected AG = 10 + 5 = 15
+</div>
+
+<div class="note">
+<strong>Clinical meaning:</strong> A patient with a measured anion gap of 10 and albumin of 2 may actually have a corrected anion gap of 15, consistent with an anion gap metabolic acidosis.
+</div>
+</section>
+
+<section id="nagma">
+<h2>Non-Anion Gap Metabolic Acidosis</h2>
+<p>
+The two most common causes of non-anion gap metabolic acidosis are gastrointestinal bicarbonate loss and renal tubular acidosis.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Typical Clue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diarrhea / GI bicarbonate loss</td>
+<td>GI history, negative urine anion gap</td>
+</tr>
+<tr>
+<td>Renal tubular acidosis</td>
+<td>Renal acidification problem, positive urine anion gap</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="urine-anion-gap">
+<h2>Urine Anion Gap</h2>
+<p>
+The urine anion gap helps distinguish diarrhea from renal tubular acidosis in non-anion gap metabolic acidosis.
+</p>
+
+<div class="formula">
+Urine Anion Gap = Urine Na⁺ + Urine K⁺ − Urine Cl⁻
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Urine Anion Gap</th>
+<th>Suggests</th>
+<th>Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Negative</td>
+<td>Diarrhea / GI bicarbonate loss</td>
+<td>Kidney is appropriately excreting ammonium with chloride</td>
+</tr>
+<tr>
+<td>Positive</td>
+<td>Renal tubular acidosis</td>
+<td>Impaired ammonium excretion; urine chloride is relatively low</td>
+</tr>
+</tbody>
+</table>
+
+<div class="note">
+<strong>High-yield concept:</strong> Urine chloride acts as a surrogate for ammonium excretion. If ammonium excretion is appropriate, urine chloride rises and the urine anion gap becomes negative.
+</div>
+</section>
+
+<section id="hagma-causes">
+<h2>Causes of Anion Gap Metabolic Acidosis: MUDPILES and GOLDMARK</h2>
+<p>
+Anion gap metabolic acidosis is caused by accumulation of unmeasured acids. Two common mnemonics are MUDPILES and GOLDMARK.
+</p>
+
+<h3>MUDPILES</h3>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>M</td><td>Methanol</td></tr>
+<tr><td>U</td><td>Uremia</td></tr>
+<tr><td>D</td><td>DKA</td></tr>
+<tr><td>P</td><td>Propylene glycol</td></tr>
+<tr><td>I</td><td>Iron or isoniazid</td></tr>
+<tr><td>L</td><td>Lactic acidosis</td></tr>
+<tr><td>E</td><td>Ethylene glycol</td></tr>
+<tr><td>S</td><td>Salicylates</td></tr>
+</tbody>
+</table>
+
+<h3>GOLDMARK</h3>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>G</td><td>Glycols</td></tr>
+<tr><td>O</td><td>Oxoproline, often associated with acetaminophen use</td></tr>
+<tr><td>L</td><td>L-lactate</td></tr>
+<tr><td>D</td><td>D-lactate</td></tr>
+<tr><td>M</td><td>Methanol</td></tr>
+<tr><td>A</td><td>Aspirin / salicylates</td></tr>
+<tr><td>R</td><td>Renal failure</td></tr>
+<tr><td>K</td><td>Ketoacidosis, including diabetic, alcoholic, and starvation ketoacidosis</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<strong>Resident pearl:</strong> GOLDMARK is often more modern because it includes causes such as D-lactic acidosis, oxoproline, and broader ketoacidosis categories.
+</div>
+</section>
+
+<section id="osmolar-gap">
+<h2>Osmolar Gap</h2>
+<p>
+When an anion gap metabolic acidosis has no obvious explanation, calculate the osmolar gap. This is especially useful when toxic alcohol ingestion or glycol exposure is possible.
+</p>
+
+<div class="formula">
+Osmolar Gap = Measured Serum Osmolality − Calculated Serum Osmolality
+</div>
+
+<p>
+A gap greater than about <strong>10</strong> suggests unmeasured osmoles, such as toxic alcohols or glycols.
+</p>
+
+<div class="warning">
+<strong>When to think about it:</strong> Unexplained anion gap metabolic acidosis, altered mental status, suspected ingestion, renal failure after possible toxin exposure, or calcium oxalate crystals in urine.
+</div>
+</section>
+
+<section id="winters-formula">
+<h2>Winter’s Formula</h2>
+<p>
+Winter’s formula estimates the expected respiratory compensation in metabolic acidosis. Patients with metabolic acidosis should hyperventilate to lower PCO₂.
+</p>
+
+<div class="formula">
+Expected PCO₂ = 1.5 × HCO₃⁻ + 8 ± 2
+</div>
+
+<p>
+Example: if bicarbonate is 16:
+</p>
+
+<div class="formula">
+Expected PCO₂ = 1.5 × 16 + 8 ± 2<br>
+Expected PCO₂ = 24 + 8 ± 2<br>
+Expected PCO₂ = 30–34
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Measured PCO₂ Compared With Expected</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Within expected range</td>
+<td>Appropriate respiratory compensation</td>
+</tr>
+<tr>
+<td>Higher than expected</td>
+<td>Additional respiratory acidosis</td>
+</tr>
+<tr>
+<td>Lower than expected</td>
+<td>Additional respiratory alkalosis</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="delta-delta">
+<h2>Delta-Delta Gap</h2>
+<p>
+The delta-delta gap helps identify an additional metabolic disorder in a patient who already has an anion gap metabolic acidosis.
+</p>
+
+<div class="formula">
+Delta-Delta Ratio = (Measured AG − 12) / (24 − Measured HCO₃⁻)
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Delta-Delta Ratio</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.8</td>
+<td>Anion gap metabolic acidosis + non-anion gap metabolic acidosis</td>
+</tr>
+<tr>
+<td>0.8–2</td>
+<td>Pure anion gap metabolic acidosis</td>
+</tr>
+<tr>
+<td>&gt; 2</td>
+<td>Anion gap metabolic acidosis + metabolic alkalosis</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Example 1: Pure Anion Gap Metabolic Acidosis</h3>
+<div class="formula">
+AG = 16, HCO₃ = 20<br>
+(16 − 12) / (24 − 20) = 4 / 4 = 1.0<br>
+Interpretation: Pure anion gap metabolic acidosis
+</div>
+
+<h3>Example 2: Added Non-Anion Gap Metabolic Acidosis</h3>
+<div class="formula">
+Na 135, Cl 105, HCO₃ 10 → AG 20<br>
+(20 − 12) / (24 − 10) = 8 / 14 = 0.57<br>
+Interpretation: AG metabolic acidosis + non-anion gap metabolic acidosis
+</div>
+
+<h3>Example 3: Added Metabolic Alkalosis</h3>
+<div class="formula">
+Na 135, Cl 95, HCO₃ 20 → AG 20<br>
+(20 − 12) / (24 − 20) = 8 / 4 = 2.0<br>
+Interpretation: AG metabolic acidosis with concurrent metabolic alkalosis tendency
+</div>
+
+<div class="note">
+<strong>Simple memory:</strong> If bicarbonate fell more than expected, there is another acidosis. If bicarbonate did not fall enough, there is another alkalosis.
+</div>
+</section>
+
+<section id="resp-acidosis">
+<h2>Respiratory Acidosis</h2>
+<p>
+Respiratory acidosis occurs when ventilation is inadequate and CO₂ is retained. It is common in COPD exacerbation, severe asthma, sedative overdose, neuromuscular weakness, obesity hypoventilation, and other causes of hypoventilation.
+</p>
+
+<h3>Acute vs Chronic Respiratory Acidosis</h3>
+<p>
+The key question is whether the process is acute or chronic. Chronic respiratory acidosis allows the kidneys time to retain bicarbonate.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Acute Respiratory Acidosis</th>
+<th>Chronic Respiratory Acidosis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pH change</td>
+<td>pH decreases by ~0.08 for every 10 mmHg rise in PCO₂</td>
+<td>pH decreases by ~0.03 for every 10 mmHg rise in PCO₂</td>
+</tr>
+<tr>
+<td>HCO₃ change</td>
+<td>HCO₃ rises by ~1 for every 10 mmHg rise in PCO₂</td>
+<td>HCO₃ rises by ~3.5–4 for every 10 mmHg rise in PCO₂</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>pH 7.16, PCO₂ 70, HCO₃ ~27</td>
+<td>pH 7.31, PCO₂ 70, HCO₃ ~34–35</td>
+</tr>
+</tbody>
+</table>
+
+<div class="warning">
+<strong>Clinical warning:</strong> A patient with obstructive lung disease who is initially tachypneic and alkalotic can later fatigue and develop respiratory acidosis. Worsening CO₂ retention can be a sign of impending respiratory failure.
+</div>
+</section>
+
+<section id="metabolic-alkalosis">
+<h2>Metabolic Alkalosis</h2>
+<p>
+For metabolic alkalosis, the key bedside distinction is whether it is chloride responsive or chloride resistant. Urine chloride is the most useful test.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Urine Chloride</th>
+<th>Type</th>
+<th>Common Causes</th>
+<th>Response to Saline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 15</td>
+<td>Chloride responsive / saline responsive</td>
+<td>Vomiting, gastric losses, prior diuretic use, volume depletion</td>
+<td>Improves with normal saline</td>
+</tr>
+<tr>
+<td>&gt; 15</td>
+<td>Chloride resistant</td>
+<td>Hyperaldosteronism, Conn syndrome, mineralocorticoid excess</td>
+<td>Does not correct simply with saline</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="resp-alkalosis">
+<h2>Respiratory Alkalosis</h2>
+<p>
+Respiratory alkalosis occurs when the patient hyperventilates and blows off CO₂. Common causes include pain, anxiety, hypoxemia, sepsis, pregnancy, liver disease, pulmonary embolism, and early asthma exacerbation.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Expected Bicarbonate Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acute respiratory alkalosis</td>
+<td>HCO₃ decreases by ~2 for every 10 mmHg decrease in PCO₂</td>
+</tr>
+<tr>
+<td>Chronic respiratory alkalosis</td>
+<td>HCO₃ decreases by ~5 for every 10 mmHg decrease in PCO₂</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="summary">
+<h2>Final Summary</h2>
+<ol>
+<li>Check pH first: acidemia, alkalemia, or normal.</li>
+<li>Use PCO₂ and bicarbonate to identify the primary disorder.</li>
+<li>For metabolic acidosis, calculate the anion gap.</li>
+<li>Correct the anion gap for low albumin.</li>
+<li>If NAGMA, use urine anion gap to separate diarrhea from RTA.</li>
+<li>If HAGMA, consider GOLDMARK/MUDPILES and calculate osmolar gap when ingestion is possible.</li>
+<li>Use Winter’s formula to check respiratory compensation in metabolic acidosis.</li>
+<li>Use delta-delta ratio to look for additional metabolic disorders.</li>
+<li>For respiratory acidosis or alkalosis, decide whether the process is acute or chronic.</li>
+<li>For metabolic alkalosis, check urine chloride to determine chloride-responsive vs chloride-resistant disease.</li>
+</ol>
+
+<div class="note">
+<strong>High-yield workflow:</strong> pH → PCO₂/HCO₃ → primary disorder → compensation → anion gap if metabolic acidosis → delta-delta if anion gap is elevated → targeted differential.
+</div>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+</section>
+
+</main>
+
+</div>
+
+<footer class="footer">
+    Learn Medicine • Acid-Base Disorders
+</footer>
+
+</div>
+
+</body>
+</html>
