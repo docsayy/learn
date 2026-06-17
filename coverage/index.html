@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Antibiotic Coverage Reference</title>
+
+<style>
+:root{
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --border:#dbe3ea;
+    --text:#1e293b;
+    --muted:#64748b;
+
+    --yes:#dcfce7;
+    --yes-text:#166534;
+
+    --partial:#fef3c7;
+    --partial-text:#92400e;
+
+    --no:#fee2e2;
+    --no-text:#991b1b;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    font-size:12px;
+}
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:white;
+    border-bottom:1px solid var(--border);
+    padding:10px;
+}
+
+.title{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.search{
+    width:100%;
+    padding:8px;
+    border:1px solid var(--border);
+    border-radius:6px;
+}
+
+.controls{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
+.control-box{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:8px;
+    max-height:180px;
+    overflow:auto;
+    min-width:260px;
+}
+
+.control-box h4{
+    margin:0 0 6px;
+    font-size:12px;
+}
+
+.control-box label{
+    display:block;
+    margin-bottom:3px;
+    cursor:pointer;
+}
+
+.table-wrapper{
+    overflow:auto;
+    padding:10px;
+}
+
+table{
+    border-collapse:collapse;
+    background:white;
+    width:max-content;
+    min-width:100%;
+}
+
+th{
+    position:sticky;
+    top:0;
+    background:#f1f5f9;
+    z-index:10;
+}
+
+th,td{
+    border:1px solid var(--border);
+    padding:6px;
+    white-space:nowrap;
+    text-align:center;
+}
+
+td:first-child,
+th:first-child{
+    text-align:left;
+    position:sticky;
+    left:0;
+    background:white;
+    z-index:5;
+}
+
+th:first-child{
+    background:#f1f5f9;
+}
+
+.yes{
+    background:var(--yes);
+    color:var(--yes-text);
+    font-weight:bold;
+}
+
+.partial{
+    background:var(--partial);
+    color:var(--partial-text);
+    font-weight:bold;
+}
+
+.no{
+    background:var(--no);
+    color:var(--no-text);
+}
+
+.notes{
+    max-width:300px;
+    white-space:normal;
+    text-align:left;
+}
+
+.hidden{
+    display:none;
+}
+
+.back-home{
+    display:inline-block;
+    margin-bottom:8px;
+    font-size:12px;
+    color:#0f766e;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.back-home:hover{
+    text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <a href="../index.html" class="back-home">
+        ← Back to Home
+    </a>
+
+    <div class="title">
+        Antibiotic Coverage Reference
+    </div>
+
+    <input id="search">
+
+<div class="table-wrapper">
+    <table id="coverageTable">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+<div class="controls">
+
+    <div class="control-box">
+        <h4>Show / Hide Columns</h4>
+        <div id="columnControls"></div>
+    </div>
+
+    <div class="control-box">
+        <h4>Show / Hide Antibiotics</h4>
+        <div id="drugControls"></div>
+    </div>
+
+</div>
+
+    
+<script src="app.js"></script>
+</body>
+</html>
