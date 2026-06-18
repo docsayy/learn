@@ -1,5 +1,27 @@
 [
   {
+    "title": "High-Yield Internal Medicine Pearls from the Wards",
+    "date": "2026-06-18",
+    "category": "General Internal Medicine",
+    "tags": [
+      "internal medicine",
+      "wards",
+      "clinical pearls",
+      "anki",
+      "hepatology",
+      "endocrinology",
+      "infectious disease",
+      "rheumatology",
+      "neurology",
+      "hematology",
+      "critical care"
+    ],
+    "summary": "A high-yield collection of internal medicine pearls from the wards covering cryptococcal meningitis, Cushing syndrome, MAC, dyspnea, methemoglobinemia, lumbar puncture complications, liver disease, vasculitis, hypoglycemia, angioedema, neurostorming, and more.",
+    "featured": false,
+    "readingTime": 8,
+    "file": "posts/2026-06-18-IM-pearls.html"
+  },
+  {
     "title": "Respiratory Viral Panels (RVPs): When Should We Order Them?",
     "date": "2026-06-18",
     "category": "Infectious Disease",
