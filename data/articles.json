@@ -3,77 +3,211 @@
     "title": "Acid-Base Disorders: ABG, VBG, Anion Gap, Compensation, and Delta-Delta Guide",
     "date": "2026-06-17",
     "category": "Nephrology / Pulmonary / Critical Care",
-    "summary": "Resident-level guide to acid-base disorders including ABG/VBG interpretation, primary disorder identification, anion gap calculation, albumin correction, NAGMA vs HAGMA, osmolar gap, Winter's formula, delta-delta gap, and respiratory compensation.",
+    "tags": [
+      "acid-base",
+      "abg",
+      "vbg",
+      "anion gap",
+      "metabolic acidosis",
+      "respiratory acidosis",
+      "delta delta",
+      "winter formula",
+      "osmolar gap",
+      "nagma",
+      "hagma"
+    ],
+    "summary": "Resident-level guide to acid-base disorders including ABG/VBG interpretation, primary disorder identification, anion gap calculation, albumin correction, NAGMA vs HAGMA, osmolar gap, Winter",
+    "featured": true,
+    "readingTime": 9,
     "file": "posts/2026-06-17-acid-base-disorders.html"
   },
   {
     "title": "Acute Coronary Syndrome (ACS): STEMI, NSTEMI, Unstable Angina Guide",
     "date": "2026-06-17",
     "category": "Cardiology",
+    "tags": [
+      "acs",
+      "stemi",
+      "nstemi",
+      "unstable angina",
+      "cardiology",
+      "pci",
+      "cabg",
+      "troponin",
+      "timi",
+      "grace"
+    ],
     "summary": "Resident-level guide to Acute Coronary Syndrome including STEMI, NSTEMI, unstable angina, ECG interpretation, troponins, risk stratification, PCI vs CABG, and guideline-based management.",
+    "featured": true,
+    "readingTime": 30,
     "file": "posts/2026-06-17-acute-coronary-syndrome-complete-resident-guide.html"
   },
   {
     "title": "Atrial Fibrillation: The Complete Resident Guide",
     "date": "2026-06-17",
     "category": "Cardiology",
+    "tags": [
+      "afib",
+      "atrial fibrillation",
+      "rvr",
+      "cardioversion",
+      "anticoagulation",
+      "chadsvasc",
+      "hasbled",
+      "amiodarone"
+    ],
     "summary": "Comprehensive resident-level review of atrial fibrillation including ECG diagnosis, stroke prevention, anticoagulation, rate versus rhythm control, AF with RVR, antiarrhythmics, cardioversion, and board pearls.",
+    "featured": true,
+    "readingTime": 7,
     "file": "posts/2026-06-17-atrial-fibrillation-complete-guide.html"
   },
   {
     "title": "Hyponatremia: The Complete Resident Guide",
     "date": "2026-06-17",
     "category": "Nephrology",
+    "tags": [
+      "hyponatremia",
+      "sodium",
+      "serum osmolality",
+      "urine osmolality",
+      "urine sodium",
+      "SIADH",
+      "hypertonic saline",
+      "osmotic demyelination",
+      "nephrology"
+    ],
     "summary": "Resident-level guide to hyponatremia including serum osmolality, volume status, urine sodium, urine osmolality, SIADH, hypovolemic and hypervolemic causes, and safe correction strategies.",
+    "featured": true,
+    "readingTime": 8,
     "file": "posts/2026-06-17-hyponatremia.html"
   },
   {
     "title": "ICU Pressors, Sedation, Analgesia, and Paralysis: The Complete Resident Guide",
     "date": "2026-06-17",
     "category": "Critical Care",
+    "tags": [
+      "icu",
+      "pressors",
+      "vasopressors",
+      "sedation",
+      "analgesia",
+      "paralytics",
+      "norepinephrine",
+      "propofol",
+      "fentanyl",
+      "critical care"
+    ],
     "summary": "Resident-level ICU guide to vasopressors, inotropes, sedation, analgesia, RASS goals, and neuromuscular blockade with practical dosing, side effects, and bedside decision-making.",
+    "featured": true,
+    "readingTime": 9,
     "file": "posts/2026-06-17-icu-pressors-sedation-analgesia.html"
   },
   {
     "title": "Mechanical Ventilation in the ICU",
     "date": "2026-06-17",
     "category": "Critical Care",
+    "tags": [
+      "ventilator",
+      "ards",
+      "peep",
+      "intubation",
+      "icu",
+      "critical care"
+    ],
     "summary": "High-yield review of mechanical ventilation, ventilator modes, ARDS, ventilator settings, weaning, extubation, and ICU management.",
+    "featured": true,
+    "readingTime": 3,
     "file": "posts/2026-06-17-mechanical-ventilation-icu.html"
-  },
-  {
-    "title": "",
-    "date": "",
-    "category": "",
-    "summary": "",
-    "file": "posts/2026-06-17-pain-management.html"
   },
   {
     "title": "Pneumonia: A Practical Guide for Internal Medicine Residents",
     "date": "2026-06-17",
     "category": "Pulmonary",
+    "tags": [
+      "pneumonia",
+      "cap",
+      "hap",
+      "vap",
+      "community acquired pneumonia",
+      "hospital acquired pneumonia",
+      "ventilator associated pneumonia",
+      "antibiotics",
+      "ceftriaxone",
+      "cefepime",
+      "vancomycin",
+      "pseudomonas",
+      "mrsa",
+      "aspiration pneumonia",
+      "empyema"
+    ],
     "summary": "Resident-level guide to pneumonia including CAP, HAP, VAP, antibiotic selection, MRSA and Pseudomonas risk factors, aspiration pneumonia, diagnostic testing, treatment duration, vaccination, and common clinical pitfalls.",
+    "featured": true,
+    "readingTime": 9,
     "file": "posts/2026-06-17-pneumonia.html"
   },
   {
     "title": "Practice-Changing Updates in Internal Medicine (2025–2026)",
     "date": "2026-06-17",
     "category": "General Internal Medicine",
+    "tags": [
+      "internal medicine",
+      "guidelines",
+      "acute mi",
+      "transfusion",
+      "uti",
+      "pneumonia",
+      "ai",
+      "heart failure",
+      "lumbar puncture",
+      "ventilator",
+      "weaning",
+      "hyponatremia"
+    ],
     "summary": "Resident-focused review of recent guideline updates and high-impact studies affecting hospital medicine, including acute MI transfusion thresholds, complicated UTI duration, CAP updates, AI in medicine, hypertonic saline in heart failure, ultrasound-guided lumbar puncture, automated ventilator weaning, lithium and Alzheimer disease, SSRI-associated hyponatremia, and neuroimmunology.",
+    "featured": true,
+    "readingTime": 10,
     "file": "posts/2026-06-17-practice-changing-1.html"
   },
   {
     "title": "Running a Code Blue: A Practical Guide for Internal Medicine Residents",
     "date": "2026-06-17",
     "category": "Critical Care",
-    "summary": "Resident-focused guide to running a Code Blue, including ACLS fundamentals, CPR quality, shockable and non-shockable rhythms, medication timing, team roles, H's and T's, ROSC care, and practical code leadership tips.",
+    "tags": [
+      "code blue",
+      "acls",
+      "cardiac arrest",
+      "cpr",
+      "rosc",
+      "pea",
+      "vfib",
+      "vtach",
+      "critical care",
+      "emergency medicine"
+    ],
+    "summary": "Resident-focused guide to running a Code Blue, including ACLS fundamentals, CPR quality, shockable and non-shockable rhythms, medication timing, team roles, H",
+    "featured": true,
+    "readingTime": 8,
     "file": "posts/2026-06-17-run-code.html"
   },
   {
     "title": "Urinary Tract Infections: A Practical Guide for Internal Medicine Residents",
     "date": "2026-06-17",
     "category": "Infectious Disease",
+    "tags": [
+      "uti",
+      "cystitis",
+      "pyelonephritis",
+      "urinalysis",
+      "urine culture",
+      "antibiotics",
+      "ceftriaxone",
+      "nitrofurantoin",
+      "esbl",
+      "asymptomatic bacteriuria"
+    ],
     "summary": "A practical resident-level guide to urinary tract infections, including simple cystitis, complicated UTI, pyelonephritis, inpatient and outpatient antibiotics, urinalysis interpretation, asymptomatic bacteriuria, catheter-associated UTI, recurrent UTI, and resistant organisms.",
+    "featured": true,
+    "readingTime": 10,
     "file": "posts/2026-06-17-uti.html"
   }
 ]
