@@ -21,17 +21,17 @@
     "file": "posts/2026-06-17-atrial-fibrillation-complete-guide.html"
   },
   {
+    "title": "Hyponatremia: The Complete Resident Guide",
+    "date": "2026-06-17",
+    "category": "Nephrology",
+    "summary": "Resident-level guide to hyponatremia including serum osmolality, volume status, urine sodium, urine osmolality, SIADH, hypovolemic and hypervolemic causes, and safe correction strategies.",
+    "file": "posts/2026-06-17-hyponatremia.html"
+  },
+  {
     "title": "Mechanical Ventilation in the ICU",
     "date": "2026-06-17",
     "category": "Critical Care",
     "summary": "High-yield review of mechanical ventilation, ventilator modes, ARDS, ventilator settings, weaning, extubation, and ICU management.",
     "file": "posts/2026-06-17-mechanical-ventilation-icu.html"
-  },
-  {
-    "title": "Antibiotics coverage ",
-    "date": "2026-06-17",
-    "category": "Infectious disease",
-    "summary": "Antibiotics and its coverage. First line and resistence coverage",
-    "file": "coverage/index.html"
   }
 ]
