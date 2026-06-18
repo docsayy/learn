@@ -40,5 +40,12 @@
     "category": "Critical Care",
     "summary": "High-yield review of mechanical ventilation, ventilator modes, ARDS, ventilator settings, weaning, extubation, and ICU management.",
     "file": "posts/2026-06-17-mechanical-ventilation-icu.html"
+  },
+  {
+    "title": "Urinary Tract Infections: A Practical Guide for Internal Medicine Residents",
+    "date": "2026-06-17",
+    "category": "Infectious Disease",
+    "summary": "A practical resident-level guide to urinary tract infections, including simple cystitis, complicated UTI, pyelonephritis, inpatient and outpatient antibiotics, urinalysis interpretation, asymptomatic bacteriuria, catheter-associated UTI, recurrent UTI, and resistant organisms.",
+    "file": "posts/2026-06-17-uti.html"
   }
 ]
