@@ -26,5 +26,12 @@
     "category": "Critical Care",
     "summary": "High-yield review of mechanical ventilation, ventilator modes, ARDS, ventilator settings, weaning, extubation, and ICU management.",
     "file": "posts/2026-06-17-mechanical-ventilation-icu.html"
+  },
+  {
+    "title": "Antibiotics coverage ",
+    "date": "2026-06-17",
+    "category": "Infectious disease",
+    "summary": "Antibiotics and its coverage. First line and resistence coverage",
+    "file": "coverage/index.html"
   }
 ]
