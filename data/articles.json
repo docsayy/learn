@@ -65,6 +65,29 @@
     "file": "posts/2026-06-18-cardiomyopathy.html"
   },
   {
+    "title": "Heart Failure: A Practical Guide for Internal Medicine Residents",
+    "date": "2026-06-18",
+    "category": "Cardiology",
+    "tags": [
+      "heart failure",
+      "hfref",
+      "hfpef",
+      "gdmt",
+      "cardiology",
+      "diuresis",
+      "icd",
+      "crt",
+      "beta blockers",
+      "sglt2 inhibitors",
+      "spironolactone",
+      "entresto"
+    ],
+    "summary": "Resident-level guide to heart failure including signs and symptoms, HFrEF vs HFpEF, ejection fraction cutoffs, guideline-directed medical therapy, diuresis, ICD, CRT, iron replacement, and note documentation.",
+    "featured": false,
+    "readingTime": 9,
+    "file": "posts/2026-06-18-heart-failure.html"
+  },
+  {
     "title": "Respiratory Viral Panels (RVPs): When Should We Order Them?",
     "date": "2026-06-18",
     "category": "Infectious Disease",
