@@ -173,6 +173,25 @@
     "file": "posts/2026-06-18-shock.html"
   },
   {
+    "title": "Syncope: A Practical Guide for Internal Medicine Residents",
+    "date": "2026-06-18",
+    "category": "Cardiology",
+    "tags": [
+      "syncope",
+      "vasovagal syncope",
+      "orthostatic hypotension",
+      "cardiogenic syncope",
+      "telemetry",
+      "ekg",
+      "orthostatic vitals",
+      "arrhythmia"
+    ],
+    "summary": "Resident-level guide to syncope including vasovagal syncope, orthostatic hypotension, cardiogenic syncope, orthostatic vital signs, red flags, telemetry, EKG evaluation, and the San Francisco Syncope Rule.",
+    "featured": false,
+    "readingTime": 4,
+    "file": "posts/2026-06-18-syncope.html"
+  },
+  {
     "title": "Ventricular Tachycardia Management: A Practical Guide for Residents",
     "date": "2026-06-18",
     "category": "Cardiology",
