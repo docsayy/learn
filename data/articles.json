@@ -1,5 +1,23 @@
 [
   {
+    "title": "Bowel Regimen: Practical Inpatient Approach to Constipation",
+    "date": "2026-06-19",
+    "category": "Hospital Medicine",
+    "tags": [
+      "constipation",
+      "bowel regimen",
+      "miralax",
+      "senna",
+      "lactulose",
+      "enema",
+      "opioids"
+    ],
+    "summary": "A practical inpatient guide to constipation management including first-line bowel regimens, escalation strategies, opioid-induced constipation, and management of severe constipation.",
+    "featured": false,
+    "readingTime": 4,
+    "file": "posts/2026-06-19-bowel-regimen.html"
+  },
+  {
     "title": "Cellulitis: Cefazolin vs Vancomycin and IV vs Oral Antibiotics",
     "date": "2026-06-19",
     "category": "Infectious Disease",
