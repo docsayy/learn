@@ -1,5 +1,26 @@
 [
   {
+    "title": "SGLT2 Inhibitors and Euglycemic DKA: A Practical Guide for Internal Medicine Residents",
+    "date": "2026-06-19",
+    "category": "Endocrinology",
+    "tags": [
+      "sglt2 inhibitors",
+      "euglycemic dka",
+      "dka",
+      "diabetes",
+      "empagliflozin",
+      "dapagliflozin",
+      "canagliflozin",
+      "ketogenesis",
+      "anion gap",
+      "endocrinology"
+    ],
+    "summary": "Resident-level guide to why SGLT2 inhibitors cause euglycemic diabetic ketoacidosis, including glucosuria, insulin-glucagon physiology, lipolysis, ketogenesis, risk factors, diagnosis, and management.",
+    "featured": false,
+    "readingTime": 7,
+    "file": "posts/2026-06-19-euglycemic-DKA.html"
+  },
+  {
     "title": "High-Yield Internal Medicine Pearls from the Wards",
     "date": "2026-06-18",
     "category": "General Internal Medicine",
