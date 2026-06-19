@@ -21,6 +21,24 @@
     "file": "posts/2026-06-19-euglycemic-DKA.html"
   },
   {
+    "title": "Acute Pancreatitis: Diagnosis, Management, and Complications",
+    "date": "2026-06-19",
+    "category": "Gastroenterology",
+    "tags": [
+      "pancreatitis",
+      "gallstones",
+      "alcohol",
+      "lipase",
+      "fluid resuscitation",
+      "bisap",
+      "ranson"
+    ],
+    "summary": "Practical approach to acute pancreatitis including diagnosis, causes, fluid resuscitation, nutrition, severity assessment, and complications.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-19-pancreatitis.html"
+  },
+  {
     "title": "High-Yield Internal Medicine Pearls from the Wards",
     "date": "2026-06-18",
     "category": "General Internal Medicine",
