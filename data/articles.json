@@ -151,6 +151,28 @@
     "file": "posts/2026-06-18-rvp.html"
   },
   {
+    "title": "Shock: The Complete Resident Guide",
+    "date": "2026-06-18",
+    "category": "Critical Care",
+    "tags": [
+      "shock",
+      "septic shock",
+      "cardiogenic shock",
+      "hypovolemic shock",
+      "obstructive shock",
+      "icu",
+      "critical care",
+      "pressors",
+      "hemodynamics",
+      "svr",
+      "cardiac output"
+    ],
+    "summary": "Resident-level guide to shock including hypovolemic, distributive, cardiogenic, and obstructive shock, hemodynamic profiles, cardiac output, SVR, mixed venous oxygen saturation, wedge pressure, and treatment strategies.",
+    "featured": true,
+    "readingTime": 5,
+    "file": "posts/2026-06-18-shock.html"
+  },
+  {
     "title": "Ventricular Tachycardia Management: A Practical Guide for Residents",
     "date": "2026-06-18",
     "category": "Cardiology",
