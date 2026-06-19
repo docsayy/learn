@@ -87,6 +87,26 @@
     "file": "posts/2026-06-18-cardiomyopathy.html"
   },
   {
+    "title": "Cirrhosis: A Practical Guide for Internal Medicine Residents",
+    "date": "2026-06-18",
+    "category": "Gastroenterology / Hepatology",
+    "tags": [
+      "cirrhosis",
+      "ascites",
+      "sbp",
+      "hepatic encephalopathy",
+      "varices",
+      "tips",
+      "hepatorenal syndrome",
+      "hepatopulmonary syndrome",
+      "portal hypertension"
+    ],
+    "summary": "Resident-level guide to cirrhosis using the VIBES framework: volume, infection, bleeding, encephalopathy, screening, plus hepatorenal syndrome, hepatopulmonary syndrome, portopulmonary hypertension, and hepatic hydrothorax.",
+    "featured": false,
+    "readingTime": 8,
+    "file": "posts/2026-06-18-cirrhosis.html"
+  },
+  {
     "title": "DKA and HHS: A Practical Guide for Internal Medicine Residents",
     "date": "2026-06-18",
     "category": "Endocrinology",
