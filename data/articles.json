@@ -22,6 +22,25 @@
     "file": "posts/2026-06-18-IM-pearls.html"
   },
   {
+    "title": "Cardiomyopathy: A Practical Guide for Internal Medicine Residents",
+    "date": "2026-06-18",
+    "category": "Cardiology",
+    "tags": [
+      "cardiomyopathy",
+      "heart failure",
+      "dilated cardiomyopathy",
+      "hypertrophic cardiomyopathy",
+      "restrictive cardiomyopathy",
+      "takotsubo",
+      "myocarditis",
+      "cardiology"
+    ],
+    "summary": "Resident-level guide to cardiomyopathy including dilated, hypertrophic, restrictive, arrhythmogenic, stress-induced, ischemic, infiltrative, toxic, metabolic, and inflammatory causes.",
+    "featured": false,
+    "readingTime": 6,
+    "file": "posts/2026-06-18-cardiomyopathy.html"
+  },
+  {
     "title": "Respiratory Viral Panels (RVPs): When Should We Order Them?",
     "date": "2026-06-18",
     "category": "Infectious Disease",
