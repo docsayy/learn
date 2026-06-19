@@ -1,5 +1,23 @@
 [
   {
+    "title": "Electrolyte Repletion: Practical Guide to Potassium, Magnesium, Calcium, and Phosphate Replacement",
+    "date": "2026-06-19",
+    "category": "Hospital Medicine",
+    "tags": [
+      "electrolytes",
+      "potassium",
+      "magnesium",
+      "calcium",
+      "phosphate",
+      "repletion",
+      "hospital medicine"
+    ],
+    "summary": "Practical inpatient guide to potassium, magnesium, calcium, and phosphate replacement including dosing, indications, formulas, common pitfalls, and evidence behind electrolyte goals.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-19-electrolyte-repletion.html"
+  },
+  {
     "title": "SGLT2 Inhibitors and Euglycemic DKA: A Practical Guide for Internal Medicine Residents",
     "date": "2026-06-19",
     "category": "Endocrinology",
