@@ -1,5 +1,23 @@
 [
   {
+    "title": "Cellulitis: Cefazolin vs Vancomycin and IV vs Oral Antibiotics",
+    "date": "2026-06-19",
+    "category": "Infectious Disease",
+    "tags": [
+      "cellulitis",
+      "mrsa",
+      "cefazolin",
+      "vancomycin",
+      "skin and soft tissue infection",
+      "antibiotics",
+      "mssa"
+    ],
+    "summary": "Practical approach to cellulitis including MRSA assessment, cefazolin versus vancomycin, IV versus oral antibiotics, treatment duration, and common pitfalls.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-19-cellulitis.html"
+  },
+  {
     "title": "Electrolyte Repletion: Practical Guide to Potassium, Magnesium, Calcium, and Phosphate Replacement",
     "date": "2026-06-19",
     "category": "Hospital Medicine",
