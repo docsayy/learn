@@ -107,6 +107,27 @@
     "file": "posts/2026-06-18-rvp.html"
   },
   {
+    "title": "Ventricular Tachycardia Management: A Practical Guide for Residents",
+    "date": "2026-06-18",
+    "category": "Cardiology",
+    "tags": [
+      "ventricular tachycardia",
+      "vtach",
+      "wide complex tachycardia",
+      "arrhythmia",
+      "cardiology",
+      "amiodarone",
+      "lidocaine",
+      "procainamide",
+      "cardioversion",
+      "vt storm"
+    ],
+    "summary": "Resident-level guide to ventricular tachycardia management including non-sustained VT, sustained VT, stable vs unstable VT, antiarrhythmics, cardioversion, PVC burden, VT storm, and incessant VT.",
+    "featured": false,
+    "readingTime": 6,
+    "file": "posts/2026-06-18-vt.html"
+  },
+  {
     "title": "Acid-Base Disorders: ABG, VBG, Anion Gap, Compensation, and Delta-Delta Guide",
     "date": "2026-06-17",
     "category": "Nephrology / Pulmonary / Critical Care",
