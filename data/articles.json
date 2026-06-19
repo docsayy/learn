@@ -46,6 +46,28 @@
     "file": "posts/2026-06-18-IM-pearls2.html"
   },
   {
+    "title": "Acute Kidney Injury (AKI): A Practical Guide for Internal Medicine Residents",
+    "date": "2026-06-18",
+    "category": "Nephrology",
+    "tags": [
+      "aki",
+      "acute kidney injury",
+      "nephrology",
+      "atn",
+      "ain",
+      "glomerulonephritis",
+      "prerenal",
+      "intrinsic renal",
+      "postrenal",
+      "renal ultrasound",
+      "urine microscopy"
+    ],
+    "summary": "Resident-level guide to acute kidney injury including AKI definitions, prerenal, intrinsic, and postrenal causes, urine microscopy, FENa interpretation, ATN, AIN, glomerulonephritis, and practical inpatient evaluation.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-18-aki.html"
+  },
+  {
     "title": "Cardiomyopathy: A Practical Guide for Internal Medicine Residents",
     "date": "2026-06-18",
     "category": "Cardiology",
