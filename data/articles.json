@@ -116,6 +116,26 @@
     "file": "posts/2026-06-19-cough.html"
   },
   {
+    "title": "DVT and Pulmonary Embolism: Practical Guide for Internal Medicine Residents",
+    "date": "2026-06-19",
+    "category": "Hematology",
+    "tags": [
+      "dvt",
+      "pe",
+      "pulmonary embolism",
+      "venous thromboembolism",
+      "anticoagulation",
+      "wells score",
+      "perk score",
+      "apixaban",
+      "rivaroxaban"
+    ],
+    "summary": "Resident-level guide to DVT and pulmonary embolism including diagnosis, Wells score, PERC criteria, PE classification, anticoagulation, thrombolysis, and provoked versus unprovoked VTE.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-19-dvt-pe.html"
+  },
+  {
     "title": "Electrolyte Repletion: Practical Guide to Potassium, Magnesium, Calcium, and Phosphate Replacement",
     "date": "2026-06-19",
     "category": "Hospital Medicine",
