@@ -1,5 +1,25 @@
 [
   {
+    "title": "Chest X-Ray Interpretation: A Systematic Approach for Medical Students and Residents",
+    "date": "2026-06-20",
+    "category": "Pulmonary / Radiology",
+    "tags": [
+      "chest xray",
+      "cxr",
+      "radiology",
+      "RIPE",
+      "ABCDE",
+      "AP film",
+      "PA film",
+      "cardiomegaly",
+      "pleural effusion"
+    ],
+    "summary": "A practical approach to reading chest X-rays using AP vs PA film assessment, the RIPE quality checklist, and the ABCDE interpretation framework.",
+    "featured": false,
+    "readingTime": 7,
+    "file": "posts/2026-06-20-cxr.html"
+  },
+  {
     "title": "Diarrhea: Practical Approach to Acute and Chronic Diarrhea",
     "date": "2026-06-20",
     "category": "Gastroenterology / Hospital Medicine",
