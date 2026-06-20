@@ -101,6 +101,28 @@
     "file": "posts/2026-06-20-great-senior.html"
   },
   {
+    "title": "High-Yield Heme/Onc Review: Anemia, Coagulation, Leukemia, Lymphoma, and Hematology Pharmacology",
+    "date": "2026-06-20",
+    "category": "Hematology / Oncology",
+    "tags": [
+      "heme onc",
+      "anemia",
+      "thalassemia",
+      "iron deficiency",
+      "coagulation",
+      "platelets",
+      "leukemia",
+      "lymphoma",
+      "multiple myeloma",
+      "sickle cell",
+      "pharmacology"
+    ],
+    "summary": "A readable high-yield Heme/Onc review covering microcytic anemia, anemia of chronic disease, plasma cell disorders, platelet and coagulation disorders, hemolysis, leukemias, lymphomas, transfusion reactions, and hematology pharmacology.",
+    "featured": true,
+    "readingTime": 11,
+    "file": "posts/2026-06-20-high-yield-heme-onc.html"
+  },
+  {
     "title": "Iron Deficiency: Practical Approach to Diagnosis and Replacement",
     "date": "2026-06-20",
     "category": "Hematology / Hospital Medicine",
