@@ -1,11 +1,6 @@
 <figure class="article-image">
-  <a href="images/ekg-vtach.png" target="_blank">
-    <img
-      src="images/ekg-vtach.png"
-      alt="Monomorphic Ventricular Tachycardia ECG">
+  <a href="../assets/images/example.png" target="_blank">
+    <img src="../assets/images/example.png" alt="Image description">
   </a>
-
-  <figcaption>
-    Monomorphic ventricular tachycardia.
-  </figcaption>
+  <figcaption>Image caption here.</figcaption>
 </figure>
