@@ -1,5 +1,23 @@
 [
   {
+    "title": "Alcohol Withdrawal Syndrome: Recognition, Treatment, and Relapse Prevention",
+    "date": "2026-06-19",
+    "category": "Hospital Medicine",
+    "tags": [
+      "alcohol withdrawal",
+      "CIWA",
+      "delirium tremens",
+      "seizures",
+      "benzodiazepines",
+      "phenobarbital",
+      "naltrexone"
+    ],
+    "summary": "A practical guide to alcohol withdrawal syndrome including recognition, timing of symptoms, CIWA scoring, benzodiazepine therapy, phenobarbital, delirium tremens, and alcohol cessation medications.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-19-alcohol-withdrawal.html"
+  },
+  {
     "title": "Bowel Regimen: Practical Inpatient Approach to Constipation",
     "date": "2026-06-19",
     "category": "Hospital Medicine",
