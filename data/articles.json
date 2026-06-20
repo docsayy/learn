@@ -1,5 +1,25 @@
 [
   {
+    "title": "Diarrhea: Practical Approach to Acute and Chronic Diarrhea",
+    "date": "2026-06-20",
+    "category": "Gastroenterology / Hospital Medicine",
+    "tags": [
+      "diarrhea",
+      "acute diarrhea",
+      "chronic diarrhea",
+      "c diff",
+      "stool studies",
+      "IBS",
+      "osmotic diarrhea",
+      "secretory diarrhea",
+      "malabsorption"
+    ],
+    "summary": "A practical resident-level approach to acute and chronic diarrhea including who needs testing, stool studies, empiric antibiotics, antimotility agents, chronic diarrhea subtypes, and first-pass workup.",
+    "featured": false,
+    "readingTime": 8,
+    "file": "posts/2026-06-20-diarrhea.html"
+  },
+  {
     "title": "Lymphoma vs Leukemia: A Practical Resident Guide",
     "date": "2026-06-20",
     "category": "Hematology Oncology",
