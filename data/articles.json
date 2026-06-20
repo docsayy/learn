@@ -40,6 +40,27 @@
     "file": "posts/2026-06-20-diarrhea.html"
   },
   {
+    "title": "EKG Interpretation: A Systematic Approach for Medical Students and Residents",
+    "date": "2026-06-20",
+    "category": "Cardiology",
+    "tags": [
+      "EKG",
+      "ECG",
+      "rate",
+      "rhythm",
+      "axis",
+      "intervals",
+      "morphology",
+      "STEMI",
+      "atrial fibrillation",
+      "bundle branch block"
+    ],
+    "summary": "A practical systematic guide to EKG interpretation using rate, rhythm, axis, intervals, and morphology, including ischemia, hypertrophy, electrolyte abnormalities, arrhythmias, AV blocks, bundle branch blocks, and classic board findings.",
+    "featured": false,
+    "readingTime": 11,
+    "file": "posts/2026-06-20-ekg.html"
+  },
+  {
     "title": "Iron Deficiency: Practical Approach to Diagnosis and Replacement",
     "date": "2026-06-20",
     "category": "Hematology / Hospital Medicine",
