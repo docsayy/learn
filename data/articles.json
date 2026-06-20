@@ -885,7 +885,7 @@
   {
     "title": "Pneumonia: A Practical Guide for Internal Medicine Residents",
     "date": "2026-06-17",
-    "category": "Pulmonary",
+    "category": "Pulmonary, ID",
     "tags": [
       "pneumonia",
       "cap",
@@ -901,7 +901,9 @@
       "pseudomonas",
       "mrsa",
       "aspiration pneumonia",
-      "empyema"
+      "empyema",
+      "id",
+      "infectious disease"
     ],
     "summary": "Resident-level guide to pneumonia including CAP, HAP, VAP, antibiotic selection, MRSA and Pseudomonas risk factors, aspiration pneumonia, diagnostic testing, treatment duration, vaccination, and common clinical pitfalls.",
     "featured": true,
