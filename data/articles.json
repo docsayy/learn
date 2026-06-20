@@ -154,6 +154,27 @@
     "file": "posts/2026-06-19-headache-in-hospital.html"
   },
   {
+    "title": "Insulin Regimen: Practical Inpatient Approach",
+    "date": "2026-06-19",
+    "category": "Endocrinology / Hospital Medicine",
+    "tags": [
+      "insulin",
+      "inpatient diabetes",
+      "basal bolus",
+      "sliding scale",
+      "NICE-SUGAR",
+      "RABBIT-2",
+      "glargine",
+      "aspart",
+      "hypoglycemia",
+      "steroid hyperglycemia"
+    ],
+    "summary": "A practical inpatient guide to insulin regimens including glucose targets, basal-bolus dosing, correction insulin, titration, outpatient medication management, NPO adjustments, hypoglycemia safety, steroid hyperglycemia, and the rule of 1800.",
+    "featured": false,
+    "readingTime": 7,
+    "file": "posts/2026-06-19-insulin-regimen.html"
+  },
+  {
     "title": "Landmark Clinical Trials Every Internal Medicine Resident Should Know",
     "date": "2026-06-19",
     "category": "Evidence Based Medicine",
