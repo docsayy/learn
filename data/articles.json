@@ -1,5 +1,26 @@
 [
   {
+    "title": "Pathology Foundations: Cellular Injury, Inflammation, Immunodeficiency, Autoimmunity, and Wound Healing",
+    "date": "2026-06-20",
+    "category": "Pathology",
+    "tags": [
+      "pathoma",
+      "pathology",
+      "cell injury",
+      "inflammation",
+      "necrosis",
+      "apoptosis",
+      "amyloidosis",
+      "immunodeficiency",
+      "autoimmune",
+      "wound healing"
+    ],
+    "summary": "A readable high-yield pathology review of growth adaptations, cellular injury, necrosis, apoptosis, free radical injury, amyloidosis, acute and chronic inflammation, primary immunodeficiency, autoimmune disease, and wound healing.",
+    "featured": true,
+    "readingTime": 15,
+    "file": "posts/2026-06-20-cellular-injury.html"
+  },
+  {
     "title": "Chest X-Ray Interpretation: A Systematic Approach for Medical Students and Residents",
     "date": "2026-06-20",
     "category": "Pulmonary / Radiology",
