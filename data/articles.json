@@ -40,6 +40,27 @@
     "file": "posts/2026-06-19-alcohol-withdrawal.html"
   },
   {
+    "title": "Anticoagulation Basics: Practical Guide to DVT Prophylaxis and Therapeutic Anticoagulation",
+    "date": "2026-06-19",
+    "category": "Hematology / Hospital Medicine",
+    "tags": [
+      "anticoagulation",
+      "dvt",
+      "pe",
+      "afib",
+      "apixaban",
+      "rivaroxaban",
+      "lovenox",
+      "heparin",
+      "warfarin",
+      "doac"
+    ],
+    "summary": "Practical inpatient guide to anticoagulation including DVT prophylaxis, therapeutic anticoagulation, DOAC selection, heparin drips, LMWH dosing, obesity adjustments, and choosing between apixaban and rivaroxaban.",
+    "featured": false,
+    "readingTime": 4,
+    "file": "posts/2026-06-19-anticoagulation-basics.html"
+  },
+  {
     "title": "Bowel Regimen: Practical Inpatient Approach to Constipation",
     "date": "2026-06-19",
     "category": "Hospital Medicine",
