@@ -1,5 +1,25 @@
 [
   {
+    "title": "Antibiotic Coverage Reference",
+    "date": "2026-06-20",
+    "category": "Infectious Disease",
+    "tags": [
+      "antibiotics",
+      "coverage",
+      "mrsa",
+      "mssa",
+      "pseudomonas",
+      "anaerobes",
+      "esbl",
+      "cre",
+      "renal adjustment"
+    ],
+    "summary": "Interactive antibiotic coverage table using coverage.json with searchable columns, show/hide controls, organism coverage, renal adjustment notes, and clinical pearls.",
+    "featured": false,
+    "readingTime": 1,
+    "file": "posts/2026-06-20-antibiotics.html"
+  },
+  {
     "title": "Pathology Foundations: Cellular Injury, Inflammation, Immunodeficiency, Autoimmunity, and Wound Healing",
     "date": "2026-06-20",
     "category": "Pathology",
