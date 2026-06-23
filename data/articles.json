@@ -1,5 +1,24 @@
 [
   {
+    "title": "Chest Pain, Pancytopenia, and APML: A Case-Based Approach",
+    "date": "2026-06-23",
+    "category": "Hematology / Cardiology",
+    "tags": [
+      "chest pain",
+      "acute coronary syndrome",
+      "pancytopenia",
+      "APML",
+      "acute promyelocytic leukemia",
+      "DIC",
+      "EKG",
+      "reticulocyte index"
+    ],
+    "summary": "A case-based article covering chest pain evaluation, ACS likelihood ratios, EKG interpretation, STEMI criteria, pancytopenia workup, problem representation, APML diagnosis, and urgent treatment with ATRA.",
+    "featured": false,
+    "readingTime": 11,
+    "file": "posts/2026-06-23-chest-pain-pancytopenia.html"
+  },
+  {
     "title": "Antibiotic Coverage Reference",
     "date": "2026-06-20",
     "category": "Infectious Disease",
