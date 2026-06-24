@@ -1,5 +1,24 @@
 [
   {
+    "title": "Headache: Evaluation, Red Flags, Imaging, and Management",
+    "date": "2026-06-24",
+    "category": "Hospital Medicine",
+    "tags": [
+      "headache",
+      "migraine",
+      "tension headache",
+      "cluster headache",
+      "subarachnoid hemorrhage",
+      "giant cell arteritis",
+      "meningitis",
+      "neurology"
+    ],
+    "summary": "A practical framework for evaluating headache including red flags, indications for imaging, migraine, tension headache, cluster headache, giant cell arteritis, subarachnoid hemorrhage, and evidence-based treatment strategies.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-24-headache.html"
+  },
+  {
     "title": "Implantable Cardioverter-Defibrillators (ICDs): The Complete Resident Guide",
     "date": "2026-06-24",
     "category": "Cardiology",
