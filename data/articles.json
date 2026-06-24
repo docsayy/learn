@@ -258,6 +258,25 @@
     "file": "posts/2026-06-20-tube-feed.html"
   },
   {
+    "title": "Ventilator Waveforms: A Practical ICU Guide to Troubleshooting Mechanical Ventilation",
+    "date": "2026-06-20",
+    "category": "Critical Care",
+    "tags": [
+      "ventilator",
+      "waveforms",
+      "mechanical ventilation",
+      "air trapping",
+      "flow hunger",
+      "double triggering",
+      "critical care",
+      "icu"
+    ],
+    "summary": "A practical ICU guide to ventilator waveform interpretation including pressure, flow, and volume waveforms, air trapping, double triggering, air leaks, flow hunger, and ventilator loops.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-20-waveforms.html"
+  },
+  {
     "title": "Abdominal Pain: Practical Inpatient Approach to GERD, Gastritis, Gas, and Dyspepsia",
     "date": "2026-06-19",
     "category": "Hospital Medicine / Gastroenterology",
