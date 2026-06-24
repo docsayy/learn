@@ -121,6 +121,25 @@
     "file": "posts/2026-06-20-ekg.html"
   },
   {
+    "title": "Infective Endocarditis: Diagnosis, Duke Criteria, and Treatment Pearls",
+    "date": "2026-06-20",
+    "category": "Infectious Disease",
+    "tags": [
+      "endocarditis",
+      "bacteremia",
+      "duke criteria",
+      "mrsa",
+      "mssa",
+      "tee",
+      "tte",
+      "blood cultures"
+    ],
+    "summary": "A practical guide to infective endocarditis including classification, blood cultures, Duke criteria, echocardiography, antibiotic selection, treatment duration, surgical indications, and board-style pearls.",
+    "featured": false,
+    "readingTime": 5,
+    "file": "posts/2026-06-20-endocarditis.html"
+  },
+  {
     "title": "How to Be a Great Senior Resident: Practical Guide to Team Leadership",
     "date": "2026-06-20",
     "category": "Medical Education",
