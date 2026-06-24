@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,46 +7,64 @@
 
 <title>Ventilator Waveforms: A Practical ICU Guide to Troubleshooting Mechanical Ventilation</title>
 
+<meta name="title" content="Ventilator Waveforms: A Practical ICU Guide to Troubleshooting Mechanical Ventilation">
 <meta name="date" content="2026-06-20">
 <meta name="category" content="Critical Care">
 <meta name="tags" content="ventilator,waveforms,mechanical ventilation,air trapping,flow hunger,double triggering,critical care,icu">
 <meta name="summary" content="A practical ICU guide to ventilator waveform interpretation including pressure, flow, and volume waveforms, air trapping, double triggering, air leaks, flow hunger, and ventilator loops.">
 <meta name="featured" content="false">
+
+<link rel="stylesheet" href="../assets/css/article.css">
 </head>
 
 <body>
+
+<div class="reading-progress">
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+</div>
 
 <div class="container">
 
 <a href="../index.html" class="home-link">← Back Home</a>
 
 <header class="article-header">
-<h1>Ventilator Waveforms: A Practical ICU Guide to Troubleshooting Mechanical Ventilation</h1>
+    <div class="breadcrumb">Learn Medicine › Critical Care</div>
 
-<div class="article-meta">
-<span>June 20, 2026</span>
-<span>Critical Care</span>
-</div>
+    <h1>Ventilator Waveforms: A Practical ICU Guide to Troubleshooting Mechanical Ventilation</h1>
 
-<p class="article-summary">
-Ventilator waveform interpretation is one of the highest-yield ICU skills. Most ventilator problems can be identified by recognizing a few characteristic waveform abnormalities. This guide reviews pressure, flow, and volume waveforms along with common ventilator problems including air trapping, breath stacking, air leaks, flow hunger, airway obstruction, and abnormal ventilator loops. Adapted from the ventilator waveform review transcript. :contentReference[oaicite:0]{index=0}
-</p>
+    <div class="article-meta">
+        <span>Added June 20, 2026</span>
+        <span>Critical Care</span>
+        <span>~10 min read</span>
+    </div>
+
+    <p class="article-summary">
+        Ventilator waveform interpretation is one of the highest-yield ICU skills. Most ventilator problems can be
+        identified by recognizing a few characteristic waveform abnormalities. This guide reviews pressure, flow,
+        and volume waveforms along with common ventilator problems including air trapping, breath stacking, air leaks,
+        flow hunger, airway obstruction, and abnormal ventilator loops.
+    </p>
 </header>
 
+<div class="article-layout">
+
 <nav class="toc">
-<h2>Contents</h2>
-<ul>
-<li><a href="#overview">Ventilator Waveform Overview</a></li>
-<li><a href="#waveforms">The Three Core Waveforms</a></li>
-<li><a href="#air-trapping">Air Trapping (Auto-PEEP)</a></li>
-<li><a href="#double-triggering">Breath Stacking & Double Triggering</a></li>
-<li><a href="#air-leak">Air Leak Detection</a></li>
-<li><a href="#flow-hunger">Flow Hunger</a></li>
-<li><a href="#flow-volume">Flow-Volume Loops</a></li>
-<li><a href="#pressure-volume">Pressure-Volume Loops</a></li>
-<li><a href="#pearls">Clinical Pearls</a></li>
-</ul>
+    <h2>Contents</h2>
+    <ul>
+        <li><a href="#overview">Ventilator Waveform Overview</a></li>
+        <li><a href="#waveforms">The Three Core Waveforms</a></li>
+        <li><a href="#air-trapping">Air Trapping / Auto-PEEP</a></li>
+        <li><a href="#double-triggering">Breath Stacking & Double Triggering</a></li>
+        <li><a href="#air-leak">Air Leak Detection</a></li>
+        <li><a href="#flow-hunger">Flow Hunger</a></li>
+        <li><a href="#flow-volume">Flow-Volume Loops</a></li>
+        <li><a href="#pressure-volume">Pressure-Volume Loops</a></li>
+        <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#bottom-line">Bottom Line</a></li>
+    </ul>
 </nav>
+
+<main class="article-content">
 
 <section id="overview">
 <h2>Ventilator Waveform Overview</h2>
@@ -61,13 +80,13 @@ Whenever evaluating a mechanically ventilated patient, focus on three waveform d
 </ul>
 
 <p>
-Most ventilator problems can be identified by examining these waveforms before changing settings.
+Most ventilator problems can be identified by examining these waveforms before changing settings. The ventilator
+screen often gives you the diagnosis before labs, imaging, or alarms do.
 </p>
 
 <div class="key-point">
 Always evaluate the waveform before adjusting the ventilator. The waveform often tells you exactly what problem exists.
 </div>
-
 </section>
 
 <section id="waveforms">
@@ -104,18 +123,18 @@ The volume waveform displays tidal volume delivery over time.
 </p>
 
 <ul>
-<li>Volume rises during inspiration</li>
-<li>Returns to baseline during expiration</li>
-<li>Useful for detecting air leaks</li>
+<li>Volume rises during inspiration.</li>
+<li>Volume returns to baseline during expiration.</li>
+<li>Failure to return to baseline can suggest leak or air trapping.</li>
 </ul>
-
 </section>
 
 <section id="air-trapping">
-<h2>Air Trapping (Auto-PEEP)</h2>
+<h2>Air Trapping / Auto-PEEP</h2>
 
 <p>
-Air trapping occurs when the patient cannot fully exhale before the next breath begins.
+Air trapping occurs when the patient cannot fully exhale before the next breath begins. This is common in obstructive
+lung disease, especially COPD and asthma.
 </p>
 
 <h3>Waveform Finding</h3>
@@ -130,7 +149,9 @@ The expiratory flow curve does not return to baseline before the next breath sta
 <li>COPD</li>
 <li>Asthma</li>
 <li>Severe emphysema</li>
-<li>Other obstructive lung disease</li>
+<li>High respiratory rate</li>
+<li>Long inspiratory time</li>
+<li>Large tidal volume</li>
 </ul>
 
 <h3>Management</h3>
@@ -144,66 +165,67 @@ The expiratory flow curve does not return to baseline before the next breath sta
 </thead>
 <tbody>
 <tr>
-<td>Decrease inspiratory time</td>
-<td>Allows longer exhalation</td>
+<td>Decrease respiratory rate</td>
+<td>Allows more time for exhalation</td>
 </tr>
 <tr>
 <td>Increase inspiratory flow</td>
-<td>Shortens inspiratory phase</td>
+<td>Shortens inspiratory time</td>
 </tr>
 <tr>
-<td>Bronchodilators</td>
-<td>Reduce airway obstruction</td>
-</tr>
-<tr>
-<td>Reduce respiratory rate</td>
+<td>Decrease inspiratory time</td>
 <td>Increases expiratory time</td>
 </tr>
 <tr>
 <td>Reduce tidal volume</td>
-<td>Shortens inspiratory time</td>
+<td>Reduces breath size and shortens inspiration</td>
+</tr>
+<tr>
+<td>Give bronchodilators</td>
+<td>Improves obstructive physiology</td>
 </tr>
 </tbody>
 </table>
 
 <div class="note">
-Increasing expiratory time is the fundamental treatment for air trapping.
+The main treatment principle is simple: give the patient more time to exhale.
 </div>
-
 </section>
 
 <section id="double-triggering">
 <h2>Breath Stacking & Double Triggering</h2>
 
 <p>
-Double triggering occurs when the patient receives two breaths in rapid succession.
+Double triggering occurs when the patient receives two breaths in rapid succession. This usually means the ventilator
+breath ended before the patient’s inspiratory effort ended.
 </p>
 
 <h3>Waveform Finding</h3>
 
 <ul>
-<li>Two inspiratory cycles occur back-to-back</li>
-<li>Two tidal volume peaks appear close together</li>
+<li>Two inspiratory cycles occur back-to-back.</li>
+<li>Two tidal volume peaks appear close together.</li>
+<li>The patient may look uncomfortable or dyssynchronous.</li>
 </ul>
 
 <h3>Common Cause</h3>
 
 <p>
-The patient's inspiratory demand exceeds the delivered tidal volume.
+The patient’s inspiratory demand exceeds what the ventilator is delivering.
 </p>
 
 <h3>Management</h3>
 
 <ul>
-<li>Increase tidal volume when appropriate</li>
-<li>Optimize ventilator synchrony</li>
-<li>Assess patient comfort and sedation</li>
+<li>Increase tidal volume when appropriate.</li>
+<li>Increase inspiratory time if clinically appropriate.</li>
+<li>Optimize ventilator synchrony.</li>
+<li>Assess pain, anxiety, agitation, and sedation needs.</li>
 </ul>
 
 <div class="warning">
-Persistent breath stacking may increase the risk of volutrauma and barotrauma.
+Persistent breath stacking can increase the risk of volutrauma and barotrauma.
 </div>
-
 </section>
 
 <section id="air-leak">
@@ -224,51 +246,51 @@ The volume waveform fails to return completely to baseline.
 <ul>
 <li>Endotracheal cuff leak</li>
 <li>Circuit leak</li>
+<li>Loose tubing connection</li>
 <li>Pneumothorax</li>
-<li>Air trapping</li>
+<li>Air trapping mimicking a leak</li>
 </ul>
-
-<h3>Key Step</h3>
 
 <div class="key-point">
 Always examine the flow waveform. Air trapping can mimic an air leak on the volume waveform.
 </div>
 
 <p>
-If the flow waveform returns normally to baseline, a true leak is more likely.
+If the flow waveform returns normally to baseline but the volume waveform does not, a true leak is more likely.
 </p>
-
 </section>
 
 <section id="flow-hunger">
 <h2>Flow Hunger</h2>
 
 <p>
-Flow hunger occurs when inspiratory flow delivery is inadequate for patient demand.
+Flow hunger occurs when inspiratory flow delivery is inadequate for patient demand. The patient wants more flow than
+the ventilator is giving.
 </p>
 
 <h3>Waveform Finding</h3>
 
 <p>
-The pressure waveform develops a characteristic "camel hump" appearance.
+The pressure waveform develops a characteristic “camel hump” or scooped appearance during inspiration.
 </p>
 
 <h3>Clinical Clues</h3>
 
 <ul>
-<li>Patient appears uncomfortable</li>
-<li>Increased work of breathing</li>
-<li>Ventilator dyssynchrony</li>
+<li>Patient appears uncomfortable.</li>
+<li>Increased work of breathing.</li>
+<li>Accessory muscle use.</li>
+<li>Ventilator dyssynchrony.</li>
 </ul>
 
 <h3>Treatment</h3>
 
 <ul>
-<li>Increase inspiratory flow</li>
-<li>Optimize ventilator settings</li>
-<li>Address pain, anxiety, or agitation</li>
+<li>Increase inspiratory flow.</li>
+<li>Adjust inspiratory time if needed.</li>
+<li>Optimize ventilator mode and settings.</li>
+<li>Address pain, anxiety, agitation, or inadequate sedation.</li>
 </ul>
-
 </section>
 
 <section id="flow-volume">
@@ -277,7 +299,7 @@ The pressure waveform develops a characteristic "camel hump" appearance.
 <h3>Normal Appearance</h3>
 
 <p>
-A normal loop has a smooth inspiratory and expiratory limb.
+A normal flow-volume loop has a smooth inspiratory and expiratory limb.
 </p>
 
 <h3>Excessive Secretions</h3>
@@ -301,7 +323,6 @@ Severe obstruction creates a scooped expiratory limb.
 <div class="key-point">
 A scooped expiratory limb strongly suggests obstructive physiology such as COPD or asthma.
 </div>
-
 </section>
 
 <section id="pressure-volume">
@@ -341,7 +362,7 @@ The normal pressure-volume loop resembles a leaf-shaped pattern.
 <h3>Fish Tail Sign</h3>
 
 <p>
-A fishtail appearance near the start of the loop indicates:
+A fishtail appearance near the start of the loop can suggest:
 </p>
 
 <ul>
@@ -369,7 +390,6 @@ Potential causes include:
 <p>
 This finding should prompt reassessment of lung-protective ventilation settings.
 </p>
-
 </section>
 
 <section id="pearls">
@@ -379,29 +399,36 @@ This finding should prompt reassessment of lung-protective ventilation settings.
 <li>The flow waveform is often the most useful waveform for troubleshooting.</li>
 <li>Failure of expiratory flow to reach baseline indicates air trapping.</li>
 <li>COPD and asthma are common causes of auto-PEEP.</li>
-<li>Double triggering usually suggests inadequate delivered tidal volume.</li>
+<li>Double triggering usually suggests unmet inspiratory demand.</li>
 <li>Always distinguish true air leak from air trapping.</li>
 <li>Flow hunger produces a camel hump appearance on the pressure waveform.</li>
-<li>Sawtooth flow-volume loops suggest secretions.</li>
+<li>Sawtooth flow-volume loops suggest secretions or condensation.</li>
 <li>Scooped expiratory loops suggest airway obstruction.</li>
 <li>Bird beak appearance indicates alveolar overdistension.</li>
 <li>Ventilator waveform interpretation can often diagnose problems before the patient deteriorates.</li>
 </ul>
-
 </section>
 
+<section id="bottom-line">
 <div class="summary-box">
 <h2>Bottom Line</h2>
 
 <p>
-When troubleshooting a ventilated patient, first examine the pressure, flow, and volume waveforms. Failure of expiratory flow to return to baseline suggests air trapping, double triggering often indicates inadequate tidal volume, camel hump pressure waveforms suggest flow hunger, and bird beak pressure-volume loops indicate alveolar overdistension. Recognizing these classic waveform patterns allows rapid bedside diagnosis and ventilator optimization. :contentReference[oaicite:1]{index=1}
+When troubleshooting a ventilated patient, first examine the pressure, flow, and volume waveforms. Failure of
+expiratory flow to return to baseline suggests air trapping. Double triggering often reflects unmet inspiratory
+demand. Camel hump pressure waveforms suggest flow hunger. Bird beak pressure-volume loops indicate alveolar
+overdistension. Recognizing these classic patterns allows rapid bedside diagnosis and safer ventilator optimization.
 </p>
 </div>
+</section>
 
 <a href="../index.html" class="home-link">← Back Home</a>
 
+</main>
+</div>
 </div>
 
 <script src="../assets/js/article-progress.js"></script>
 </body>
 </html>
+```
