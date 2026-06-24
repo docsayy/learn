@@ -1,5 +1,26 @@
 [
   {
+    "title": "Implantable Cardioverter-Defibrillators (ICDs): The Complete Resident Guide",
+    "date": "2026-06-24",
+    "category": "Cardiology",
+    "tags": [
+      "ICD",
+      "AICD",
+      "defibrillator",
+      "ventricular tachycardia",
+      "ventricular fibrillation",
+      "sudden cardiac death",
+      "CRT-D",
+      "subcutaneous ICD",
+      "wearable defibrillator",
+      "cardiology"
+    ],
+    "summary": "A complete resident guide to implantable cardioverter-defibrillators including device types, indications, programming, complications, S-ICD, wearable defibrillators, follow-up, end-of-life care, and landmark trials.",
+    "featured": false,
+    "readingTime": 9,
+    "file": "posts/2026-06-24-icd.html"
+  },
+  {
     "title": "Chest Pain, Pancytopenia, and APML: A Case-Based Approach",
     "date": "2026-06-23",
     "category": "Hematology / Cardiology",
