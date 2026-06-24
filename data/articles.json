@@ -199,7 +199,7 @@
     "file": "posts/2026-06-20-great-senior.html"
   },
   {
-    "title": "High-Yield Heme/Onc Review: Anemia, Coagulation, Leukemia, Lymphoma, and Hematology Pharmacology",
+    "title": "High-Yield Heme/Onc Review: Anemia, Coagulation, Leukemia, Lymphoma, and Pharmacology",
     "date": "2026-06-20",
     "category": "Hematology / Oncology",
     "tags": [
@@ -215,9 +215,9 @@
       "sickle cell",
       "pharmacology"
     ],
-    "summary": "A readable high-yield Heme/Onc review covering microcytic anemia, anemia of chronic disease, plasma cell disorders, platelet and coagulation disorders, hemolysis, leukemias, lymphomas, transfusion reactions, and hematology pharmacology.",
+    "summary": "A readable high-yield Heme/Onc review covering microcytic anemia, macrocytosis, hemolysis, sickle cell disease, plasma cell disorders, platelet and coagulation disorders, leukemias, lymphomas, transfusion reactions, and hematology pharmacology.",
     "featured": true,
-    "readingTime": 11,
+    "readingTime": 13,
     "file": "posts/2026-06-20-high-yield-heme-onc.html"
   },
   {
