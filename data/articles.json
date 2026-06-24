@@ -40,6 +40,26 @@
     "file": "posts/2026-06-24-icd.html"
   },
   {
+    "title": "Cardiac Pacemakers: The Complete Resident Guide",
+    "date": "2026-06-24",
+    "category": "Cardiology",
+    "tags": [
+      "pacemaker",
+      "bradycardia",
+      "av block",
+      "crt",
+      "ddd",
+      "vvi",
+      "icd",
+      "electrophysiology",
+      "cardiology"
+    ],
+    "summary": "A practical resident guide to cardiac pacemakers including indications, pacemaker modes, ECG interpretation, CRT, leadless pacing, complications, troubleshooting, and board-style pearls.",
+    "featured": false,
+    "readingTime": 6,
+    "file": "posts/2026-06-24-pacemaker.html"
+  },
+  {
     "title": "Chest Pain, Pancytopenia, and APML: A Case-Based Approach",
     "date": "2026-06-23",
     "category": "Hematology / Cardiology",
