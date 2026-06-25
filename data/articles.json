@@ -1,5 +1,26 @@
 [
   {
+    "title": "Persistent Tachycardia After COVID: A Clinical Reasoning Case",
+    "date": "2026-06-25",
+    "category": "Hospital Medicine",
+    "tags": [
+      "tachycardia",
+      "covid",
+      "pulmonary embolism",
+      "myocarditis",
+      "anemia",
+      "microcytic anemia",
+      "iron deficiency",
+      "thalassemia",
+      "clinical reasoning",
+      "ekg"
+    ],
+    "summary": "A practical clinical reasoning article using a case of persistent tachycardia after COVID to review sinus tachycardia, PE, myocarditis, thyroiditis, anemia, microcytosis, dynamic ECG changes, and problem representation.",
+    "featured": false,
+    "readingTime": 10,
+    "file": "posts/2026-06-25-persistent-tachycardia.html"
+  },
+  {
     "title": "Headache: Evaluation, Red Flags, Imaging, and Management",
     "date": "2026-06-24",
     "category": "Hospital Medicine",
