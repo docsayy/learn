@@ -60,6 +60,27 @@
     "file": "posts/2026-06-24-pacemaker.html"
   },
   {
+    "title": "Heart Failure with Preserved Ejection Fraction (HFpEF): The Complete Resident Guide",
+    "date": "2026-06-24",
+    "category": "Cardiology",
+    "tags": [
+      "HFpEF",
+      "heart failure",
+      "preserved ejection fraction",
+      "diastolic dysfunction",
+      "SGLT2 inhibitors",
+      "BNP",
+      "echocardiography",
+      "H2FPEF",
+      "HFA-PEFF",
+      "cardiology"
+    ],
+    "summary": "A complete resident guide to HFpEF including definition, pathophysiology, risk factors, diagnosis, H2FPEF and HFA-PEFF scores, mimics, testing, treatment, acute decompensation, phenotypes, and landmark trials.",
+    "featured": false,
+    "readingTime": 10,
+    "file": "posts/2026-06-25-heart-failure.html"
+  },
+  {
     "title": "Chest Pain, Pancytopenia, and APML: A Case-Based Approach",
     "date": "2026-06-23",
     "category": "Hematology / Cardiology",
