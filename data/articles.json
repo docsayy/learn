@@ -1,5 +1,26 @@
 [
   {
+    "title": "Atrial Fibrillation: The Complete Advanced Resident Guide",
+    "date": "2026-06-25",
+    "category": "Cardiology",
+    "tags": [
+      "atrial fibrillation",
+      "AFib",
+      "AF with RVR",
+      "rate control",
+      "rhythm control",
+      "cardioversion",
+      "anticoagulation",
+      "CHA2DS2-VASc",
+      "DOAC",
+      "cardiology"
+    ],
+    "summary": "A complete advanced resident guide to atrial fibrillation including classification, triggers, acute management, rate control, rhythm control, cardioversion, anticoagulation, antiarrhythmics, ablation, special populations, and landmark trials.",
+    "featured": false,
+    "readingTime": 13,
+    "file": "posts/2026-06-25-afib2.html"
+  },
+  {
     "title": "Tuberculous Meningitis: A Clinical Reasoning Case",
     "date": "2026-06-25",
     "category": "Infectious Disease",
