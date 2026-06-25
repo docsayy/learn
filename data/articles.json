@@ -1,5 +1,26 @@
 [
   {
+    "title": "Tuberculous Meningitis: A Clinical Reasoning Case",
+    "date": "2026-06-25",
+    "category": "Infectious Disease",
+    "tags": [
+      "tuberculous meningitis",
+      "TB meningitis",
+      "meningitis",
+      "fever",
+      "headache",
+      "miliary nodules",
+      "lumbar puncture",
+      "CSF",
+      "disseminated TB",
+      "clinical reasoning"
+    ],
+    "summary": "A practical clinical reasoning case on tuberculous meningitis, including fever and headache evaluation, SNOOP red flags, CSF interpretation, miliary pulmonary nodules, antibiotic failure, disseminated TB, and CNS tuberculosis treatment pearls.",
+    "featured": false,
+    "readingTime": 12,
+    "file": "posts/2026-06-25-meningitis.html"
+  },
+  {
     "title": "Persistent Tachycardia After COVID: A Clinical Reasoning Case",
     "date": "2026-06-25",
     "category": "Hospital Medicine",
