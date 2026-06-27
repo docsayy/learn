@@ -63,6 +63,27 @@
     "file": "posts/2026-06-25-persistent-tachycardia.html"
   },
   {
+    "title": "Defibrillation and Cardioversion: The Complete Resident Guide",
+    "date": "2026-06-25",
+    "category": "Cardiology",
+    "tags": [
+      "defibrillation",
+      "cardioversion",
+      "VF",
+      "pulseless VT",
+      "atrial fibrillation",
+      "atrial flutter",
+      "SVT",
+      "electrical storm",
+      "ACLS",
+      "cardiology"
+    ],
+    "summary": "A complete resident guide to defibrillation and cardioversion including synchronized versus unsynchronized shocks, indications, energy selection, pad placement, sedation, electrical storm, special populations, complications, and practical checklists.",
+    "featured": false,
+    "readingTime": 9,
+    "file": "posts/2026-06-26-defibrillation-cardioversion.html"
+  },
+  {
     "title": "Headache: Evaluation, Red Flags, Imaging, and Management",
     "date": "2026-06-24",
     "category": "Hospital Medicine",
