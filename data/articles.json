@@ -1,5 +1,28 @@
 [
   {
+    "title": "ACLS: The Complete Resident Guide to Running a Code",
+    "date": "2026-06-28",
+    "category": "Critical Care",
+    "tags": [
+      "ACLS",
+      "cardiac arrest",
+      "CPR",
+      "VF",
+      "pulseless VT",
+      "PEA",
+      "asystole",
+      "epinephrine",
+      "defibrillation",
+      "ROSC",
+      "code blue",
+      "critical care"
+    ],
+    "summary": "A complete resident guide to ACLS and running a code, including 2-minute cycles, high-quality CPR, shockable and non-shockable rhythms, medications, Hs and Ts, airway management, ETCO2, post-ROSC care, and termination of resuscitation.",
+    "featured": false,
+    "readingTime": 12,
+    "file": "posts/2026-06-28-acls.html"
+  },
+  {
     "title": "Atrial Fibrillation: The Complete Advanced Resident Guide",
     "date": "2026-06-25",
     "category": "Cardiology",
