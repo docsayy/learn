@@ -23,6 +23,29 @@
     "file": "posts/2026-06-28-acls.html"
   },
   {
+    "title": "Bradycardia and Conduction System Disease: The Complete Resident Guide",
+    "date": "2026-06-28",
+    "category": "Cardiology",
+    "tags": [
+      "bradycardia",
+      "AV block",
+      "heart block",
+      "Mobitz I",
+      "Mobitz II",
+      "complete heart block",
+      "atropine",
+      "transcutaneous pacing",
+      "transvenous pacing",
+      "pacemaker",
+      "ACLS",
+      "cardiology"
+    ],
+    "summary": "A complete resident guide to bradycardia and conduction system disease including ACLS management, atropine, dopamine, epinephrine, transcutaneous pacing, transvenous pacing, sinus bradycardia, AV blocks, post-MI bradycardia, permanent pacemaker indications, and high-yield clinical pearls.",
+    "featured": false,
+    "readingTime": 14,
+    "file": "posts/2026-06-28-bradycardia.html"
+  },
+  {
     "title": "Atrial Fibrillation: The Complete Advanced Resident Guide",
     "date": "2026-06-25",
     "category": "Cardiology",
