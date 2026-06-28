@@ -63,26 +63,6 @@
     "file": "posts/2026-06-25-persistent-tachycardia.html"
   },
   {
-    "title": "Seizures and Epilepsy: The Complete Resident Guide",
-    "date": "2026-06-25",
-    "category": "Neurology",
-    "tags": [
-      "seizure",
-      "epilepsy",
-      "status epilepticus",
-      "NCSE",
-      "PNES",
-      "antiepileptic drugs",
-      "AED",
-      "EEG",
-      "neurology"
-    ],
-    "summary": "A complete resident guide to seizures and epilepsy including definitions, ILAE classification, status epilepticus, non-convulsive status, PNES, seizure mimics, diagnostic workup, AED selection, special populations, and clinical pearls.",
-    "featured": false,
-    "readingTime": 13,
-    "file": "posts/2026-06-25-seizure.html"
-  },
-  {
     "title": "Defibrillation and Cardioversion: The Complete Resident Guide",
     "date": "2026-06-25",
     "category": "Cardiology",
@@ -102,6 +82,26 @@
     "featured": false,
     "readingTime": 9,
     "file": "posts/2026-06-26-defibrillation-cardioversion.html"
+  },
+  {
+    "title": "Seizures and Epilepsy: The Complete Resident Guide",
+    "date": "2026-06-25",
+    "category": "Neurology",
+    "tags": [
+      "seizure",
+      "epilepsy",
+      "status epilepticus",
+      "NCSE",
+      "PNES",
+      "antiepileptic drugs",
+      "AED",
+      "EEG",
+      "neurology"
+    ],
+    "summary": "A complete resident guide to seizures and epilepsy including definitions, ILAE classification, status epilepticus, non-convulsive status, PNES, seizure mimics, diagnostic workup, AED selection, special populations, and clinical pearls.",
+    "featured": false,
+    "readingTime": 13,
+    "file": "posts/2026-06-26-seizure.html"
   },
   {
     "title": "Headache: Evaluation, Red Flags, Imaging, and Management",
