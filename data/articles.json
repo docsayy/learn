@@ -1,5 +1,29 @@
 [
   {
+    "title": "Staphylococcus aureus Bacteremia and Endocarditis: The Complete Resident Guide",
+    "date": "2026-07-01",
+    "category": "Infectious Disease",
+    "tags": [
+      "staphylococcus aureus bacteremia",
+      "MSSA",
+      "MRSA",
+      "endocarditis",
+      "TEE",
+      "TTE",
+      "VIRSTA",
+      "DENOVA",
+      "cefazolin",
+      "nafcillin",
+      "vancomycin",
+      "daptomycin",
+      "infectious disease"
+    ],
+    "summary": "A practical resident guide to Staphylococcus aureus bacteremia and endocarditis including persistent bacteremia, TTE vs TEE, VIRSTA score, complicated vs uncomplicated bacteremia, MSSA and MRSA treatment, synergistic gentamicin, PET scan role, Duke criteria, and surgical indications.",
+    "featured": false,
+    "readingTime": 16,
+    "file": "posts/2026-07-01-mssa-mrsa-endocarditis.html"
+  },
+  {
     "title": "Steroids in Critical Care: Practical ICU Guide",
     "date": "2026-07-01",
     "category": "Critical Care",
