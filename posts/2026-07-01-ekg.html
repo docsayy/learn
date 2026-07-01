@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="ECG Stepwise Guide">
+<meta name="date" content="2026-07-01">
+<meta name="category" content="Cardiology">
+<meta name="tags" content="ECG,EKG,cardiology,rhythm,rate,axis,PR interval,QRS,STEMI,QT interval,electrolytes">
+<meta name="summary" content="A structured stepwise ECG interpretation guide covering rhythm, rate, P waves, PR interval, axis, QRS duration, hypertrophy, infarction patterns, ST-T changes, QT interval, and electrolyte abnormalities.">
+<meta name="featured" content="false">
+
+<title>ECG Stepwise Guide | Learn Medicine</title>
+
+<link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+.ecg-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+  margin:24px 0;
+}
+
+@media(min-width:900px){
+  .ecg-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+.ecg-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 8px 22px rgba(15,23,42,0.06);
+}
+
+.ecg-card h2,
+.ecg-card h3{
+  margin-top:0;
+}
+
+.step-heading{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.step-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:30px;
+  height:30px;
+  border-radius:999px;
+  background:var(--accent);
+  color:white;
+  font-weight:800;
+  font-size:0.9rem;
+}
+
+.inline-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+
+.ecg-tag{
+  font-size:0.78rem;
+  padding:5px 9px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--soft);
+  color:var(--accent);
+  font-weight:600;
+}
+
+.ecg-tag.ok{
+  background:#ecfdf5;
+  color:#166534;
+}
+
+.ecg-tag.danger{
+  background:#fef2f2;
+  color:#991b1b;
+}
+
+.ecg-tag.neutral{
+  background:#eff6ff;
+  color:#1d4ed8;
+}
+
+.mini-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+
+.mini-card{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+}
+
+.mini-card h4{
+  margin:0 0 6px;
+  color:var(--text);
+}
+
+.mini-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.article-image{
+  margin:16px auto 10px;
+  max-width:560px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:white;
+  padding:10px;
+}
+
+.article-image img{
+  width:100%;
+  max-height:260px;
+  object-fit:contain;
+  height:auto;
+  border-radius:10px;
+  display:block;
+  cursor:zoom-in;
+}
+
+.article-image img:hover{
+  outline:2px solid rgba(15,118,110,0.25);
+}
+
+.article-image figcaption{
+  margin-top:8px;
+  font-size:0.82rem;
+  color:var(--muted);
+  text-align:center;
+  line-height:1.4;
+}
+
+.tool-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.tool-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:white;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:700;
+  font-size:0.9rem;
+}
+
+.tool-link.primary{
+  background:var(--accent);
+  color:white;
+  border-color:var(--accent);
+}
+
+#imageModal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.86);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  padding:18px;
+}
+
+#imageModal img{
+  max-width:92vw;
+  max-height:92vh;
+  border-radius:12px;
+  box-shadow:0 14px 34px rgba(0,0,0,0.4);
+  background:white;
+}
+
+#modalClose{
+  position:fixed;
+  top:14px;
+  right:20px;
+  font-size:38px;
+  color:white;
+  cursor:pointer;
+  font-weight:800;
+  user-select:none;
+  line-height:1;
+}
+
+#modalHint{
+  position:fixed;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:12px;
+  color:rgba(255,255,255,0.9);
+  background:rgba(0,0,0,0.38);
+  padding:8px 12px;
+  border-radius:999px;
+  user-select:none;
+}
+
+kbd{
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25);
+  border-bottom-width:2px;
+  padding:2px 6px;
+  border-radius:6px;
+  font-size:12px;
+  color:rgba(255,255,255,0.95);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+
+<div class="article-breadcrumb">
+Learn Medicine › Cardiology
+</div>
+
+<h1>ECG Stepwise Guide</h1>
+
+<div class="article-meta">
+Added July 1, 2026 • Cardiology • ECG
+</div>
+
+<p class="article-summary">
+A structured cookbook approach to ECG interpretation: rhythm → rate → P waves → PR interval → axis → QRS duration → precordial transition → voltage and hypertrophy → infarction patterns → ST-T changes → QT interval and electrolytes. Use the same sequence every time to avoid missing rhythm abnormalities, conduction disease, dangerous intervals, or ischemic patterns.
+</p>
+
+<div class="tool-links">
+<a href="../index.html" class="tool-link">🏠 Home</a>
+<a href="../cardiology.html" class="tool-link">⬅ Back to Cardiology</a>
+<a href="ekg_interpreter.html" class="tool-link primary">🧮 Open ECG Interpreter Tool</a>
+</div>
+
+</header>
+
+<main class="content">
+
+<section>
+<h2>Overview</h2>
+
+<div class="summary-box">
+<p>
+Use the same sequence every time you look at a tracing. That keeps you from jumping straight to “STEMI or not?” and missing rhythm, blocks, axis deviation, hypertrophy, QT prolongation, or electrolyte patterns.
+</p>
+</div>
+
+<ul>
+<li>Steps 1–2: rhythm and rate</li>
+<li>Steps 3–5: P waves, PR interval, and axis</li>
+<li>Steps 6–8: QRS width, rotation, voltage, and hypertrophy</li>
+<li>Steps 9–10: Q waves, infarct localization, ST segment, and T waves</li>
+<li>Step 11: QT interval, U waves, and electrolyte patterns</li>
+</ul>
+
+<div class="inline-list">
+<span class="ecg-tag ok">Green = normal</span>
+<span class="ecg-tag danger">Red = do not miss</span>
+<span class="ecg-tag neutral">Blue = pattern recognition</span>
+</div>
+</section>
+
+<section class="ecg-grid">
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">1</span> Rhythm and Sinus Check</h2>
+
+<p>
+Start by deciding whether the rhythm is sinus.
+</p>
+
+<ul>
+<li>Is there a P wave before each QRS?</li>
+<li>Are P waves upright in leads I and II?</li>
+<li>Are PR and RR intervals reasonably regular?</li>
+</ul>
+
+<p>
+If yes, this is likely sinus rhythm. If not, consider atrial fibrillation, atrial flutter, junctional rhythm, ventricular rhythm, or paced rhythm.
+</p>
+
+<div class="inline-list">
+<span class="ecg-tag ok">Sinus: P → QRS → T</span>
+<span class="ecg-tag danger">Irregularly irregular: think AF</span>
+</div>
+
+<figure class="article-image">
+<a href="ekg_images/basic_waves_p_qrs_t.png" target="_blank">
+<img src="ekg_images/basic_waves_p_qrs_t.png" alt="P-QRS-T labeled ECG example" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Basic P-QRS-T identification.</figcaption>
+</figure>
+</article>
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">2</span> Heart Rate</h2>
+
+<p>
+For a regular rhythm, use the big-box method.
+</p>
+
+<ul>
+<li>Heart rate ≈ 300 divided by the number of large boxes between QRS peaks.</li>
+<li>1 large box ≈ 300 bpm</li>
+<li>2 large boxes ≈ 150 bpm</li>
+<li>3 large boxes ≈ 100 bpm</li>
+<li>4 large boxes ≈ 75 bpm</li>
+<li>5 large boxes ≈ 60 bpm</li>
+<li>6 large boxes ≈ 50 bpm</li>
+</ul>
+
+<p>
+For irregular rhythms, count QRS complexes in 10 seconds and multiply by 6.
+</p>
+
+<figure class="article-image">
+<a href="ekg_images/rate_300_rule.png" target="_blank">
+<img src="ekg_images/rate_300_rule.png" alt="300 rule example strip" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>300-rule example for rate calculation.</figcaption>
+</figure>
+</article>
+
+</section>
+
+<section>
+<h2>Steps 3–5: P Waves, PR Interval, and Axis</h2>
+</section>
+
+<section class="ecg-grid">
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">3</span> P Waves and Atrial Size</h2>
+
+<p>
+Look carefully at leads II, III, aVF, and V1.
+</p>
+
+<ul>
+<li><strong>Right atrial enlargement:</strong> tall, peaked P wave greater than 2.5 mm in II, III, or aVF. This is sometimes called P pulmonale.</li>
+<li><strong>Left atrial enlargement:</strong> broad, notched P wave in lead II, sometimes called P mitrale.</li>
+<li>In V1, left atrial enlargement may show a biphasic P wave with a deep or wide terminal negative component.</li>
+</ul>
+
+<figure class="article-image">
+<a href="ekg_images/p_mitrale_p_pulmonale.jpg" target="_blank">
+<img src="ekg_images/p_mitrale_p_pulmonale.jpg" alt="P mitrale and P pulmonale examples" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>P pulmonale and P mitrale examples.</figcaption>
+</figure>
+</article>
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">4</span> PR Interval</h2>
+
+<p>
+Measure from the beginning of the P wave to the beginning of the QRS complex.
+</p>
+
+<ul>
+<li>Normal PR interval is approximately 0.12–0.20 seconds, or 3–5 small boxes.</li>
+<li>PR greater than 0.20 seconds with every P followed by QRS suggests first-degree AV block.</li>
+<li>Very short PR less than 0.12 seconds suggests pre-excitation.</li>
+<li>Short PR plus delta wave suggests Wolff-Parkinson-White pattern.</li>
+</ul>
+
+<figure class="article-image">
+<a href="ekg_images/short_pr_delta_wpw.jpeg" target="_blank">
+<img src="ekg_images/short_pr_delta_wpw.jpeg" alt="Short PR with delta wave suggesting Wolff-Parkinson-White pattern" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Short PR interval with delta wave suggesting WPW pattern.</figcaption>
+</figure>
+</article>
+
+</section>
+
+<section class="ecg-grid">
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">5</span> QRS Axis</h2>
+
+<p>
+Use a quick frontal-plane axis method.
+</p>
+
+<ul>
+<li>Lead I positive and lead II positive → normal axis.</li>
+<li>Lead I positive and lead II negative → left axis deviation.</li>
+<li>Lead I negative and aVF positive → right axis deviation.</li>
+<li>Lead I negative and aVF negative → northwest axis.</li>
+</ul>
+
+<p>
+Always interpret axis together with the rest of the tracing. For example, RBBB plus left axis deviation suggests bifascicular block.
+</p>
+
+<figure class="article-image">
+<a href="ekg_images/axis_circle_cabrera.webp" target="_blank">
+<img src="ekg_images/axis_circle_cabrera.webp" alt="Axis circle and Cabrera circle for ECG axis interpretation" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Axis circle / Cabrera circle for frontal-plane QRS axis.</figcaption>
+</figure>
+</article>
+
+<article class="ecg-card">
+<h3>Axis Categories</h3>
+
+<div class="mini-grid">
+<div class="mini-card">
+<h4>Normal Axis</h4>
+<p>Approximately −30° to +90°.</p>
+</div>
+
+<div class="mini-card">
+<h4>Left Axis Deviation</h4>
+<p>Seen with LVH, left anterior fascicular block, and inferior MI.</p>
+</div>
+
+<div class="mini-card">
+<h4>Right Axis Deviation</h4>
+<p>Seen with RVH, pulmonary hypertension, and left posterior fascicular block.</p>
+</div>
+
+<div class="mini-card">
+<h4>Northwest Axis</h4>
+<p>Think ventricular rhythm, severe conduction disease, or toxicity.</p>
+</div>
+</div>
+</article>
+
+</section>
+
+<section>
+<h2>Steps 6–8: QRS Duration, Rotation, Voltage, and Hypertrophy</h2>
+</section>
+
+<section class="ecg-grid">
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">6</span> QRS Duration and Bundle Branch Blocks</h2>
+
+<ul>
+<li>Narrow QRS: less than 0.10 seconds.</li>
+<li>Borderline QRS: 0.10–0.12 seconds, possible incomplete bundle branch block.</li>
+<li>Wide QRS: at least 0.12 seconds.</li>
+<li>RBBB: rSR′ pattern in V1 and wide terminal S wave in I and V6.</li>
+<li>LBBB: broad or notched R wave in I, V5, or V6, with deep S wave in V1.</li>
+</ul>
+
+<div class="key-point">
+A wide QRS changes how you interpret ST-T abnormalities because bundle branch blocks create secondary repolarization changes.
+</div>
+</article>
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">7</span> Precordial Transition and Rotation</h2>
+
+<ul>
+<li>Normal R/S transition occurs around V3–V4.</li>
+<li>Late transition at V5 or later suggests clockwise rotation or poor R-wave progression.</li>
+<li>Early transition at V2 or earlier suggests counterclockwise rotation.</li>
+</ul>
+
+<figure class="article-image">
+<a href="ekg_images/precordial_normal_v1_v6.png" target="_blank">
+<img src="ekg_images/precordial_normal_v1_v6.png" alt="Normal V1 through V6 R wave progression" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Normal precordial R-wave progression from V1 to V6.</figcaption>
+</figure>
+</article>
+
+</section>
+
+<section class="ecg-grid">
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">8</span> Voltage and Ventricular Hypertrophy</h2>
+
+<ul>
+<li><strong>LVH:</strong> high voltage criteria with or without strain pattern.</li>
+<li><strong>RVH:</strong> tall R wave in V1, R/S ratio greater than 1 in V1, deep S waves in V5–V6, and right axis deviation.</li>
+<li><strong>Low voltage:</strong> QRS amplitude less than 0.5 mV in limb leads. Consider pericardial effusion, COPD, obesity, or infiltrative disease.</li>
+</ul>
+
+<figure class="article-image">
+<a href="ekg_images/lvh_voltage_example.jpeg" target="_blank">
+<img src="ekg_images/lvh_voltage_example.jpeg" alt="ECG example showing left ventricular hypertrophy voltage criteria" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>LVH voltage example.</figcaption>
+</figure>
+
+<figure class="article-image">
+<a href="ekg_images/rvh_r_in_v1.jpeg" target="_blank">
+<img src="ekg_images/rvh_r_in_v1.jpeg" alt="ECG example showing right ventricular hypertrophy with tall R wave in V1" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>RVH example with tall R wave in V1.</figcaption>
+</figure>
+</article>
+
+<article class="ecg-card">
+<h3>When Voltage Matters</h3>
+
+<ul>
+<li>LVH with strain suggests chronic pressure load such as hypertension or aortic stenosis.</li>
+<li>RVH with right axis deviation suggests pulmonary hypertension, chronic lung disease, or right-sided pressure overload.</li>
+<li>Low voltage plus tachycardia should raise concern for pericardial effusion or tamponade, especially if the clinical picture fits.</li>
+</ul>
+</article>
+
+</section>
+
+<section>
+<h2>Steps 9–10: Q Waves, Infarction, ST Segment, and T Waves</h2>
+</section>
+
+<section class="ecg-grid">
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">9</span> Infarction Signs and Localization</h2>
+
+<ul>
+<li>Look for pathologic Q waves, poor R-wave progression, or QS complexes.</li>
+<li>Inferior territory: II, III, aVF.</li>
+<li>Anterior territory: V1–V4.</li>
+<li>Lateral territory: I, aVL, V5–V6.</li>
+<li>Posterior MI: ST depression in V1–V3 with tall R waves, representing a mirror image pattern.</li>
+</ul>
+
+<figure class="article-image">
+<a href="ekg_images/stemi_inferior_example.png" target="_blank">
+<img src="ekg_images/stemi_inferior_example.png" alt="ECG example of inferior STEMI" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Inferior STEMI example.</figcaption>
+</figure>
+
+<figure class="article-image">
+<a href="ekg_images/stemi_anterior_example.png" target="_blank">
+<img src="ekg_images/stemi_anterior_example.png" alt="ECG example of anterior STEMI" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Anterior STEMI example.</figcaption>
+</figure>
+</article>
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">10</span> ST Segment and T Waves</h2>
+
+<ul>
+<li>Localized convex ST elevation in a coronary territory suggests STEMI.</li>
+<li>ST depression and T-wave inversion suggest subendocardial ischemia, unstable angina, or NSTEMI depending on clinical context and biomarkers.</li>
+<li>Diffuse concave ST elevation with PR depression suggests pericarditis.</li>
+<li>LVH and bundle branch blocks can create secondary repolarization changes that make ischemia interpretation harder.</li>
+</ul>
+
+<figure class="article-image">
+<a href="ekg_images/st_patterns_panel.png" target="_blank">
+<img src="ekg_images/st_patterns_panel.png" alt="Panel comparing ST segment and T wave patterns" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>ST segment and T-wave pattern panel.</figcaption>
+</figure>
+</article>
+
+</section>
+
+<section>
+<h2>Step 11: QT Interval, U Waves, and Electrolytes</h2>
+</section>
+
+<section class="ecg-grid">
+
+<article class="ecg-card">
+<h2 class="step-heading"><span class="step-badge">11</span> QT Interval and U Waves</h2>
+
+<ul>
+<li>Visual trick: if the T wave ends before half of the RR interval, QT is probably acceptable.</li>
+<li>If the T wave extends beyond half the RR interval, verify the QTc and review medications and electrolytes.</li>
+<li>Hyperkalemia: tall peaked T waves, loss of P waves, QRS widening, and possible sine-wave pattern.</li>
+<li>Hypokalemia: flattened T waves, ST depression, and prominent U waves.</li>
+<li>Hypocalcemia prolongs QT.</li>
+<li>Hypercalcemia shortens QT.</li>
+</ul>
+
+<figure class="article-image">
+<a href="ekg_images/hyperkalemia_tall_t.png" target="_blank">
+<img src="ekg_images/hyperkalemia_tall_t.png" alt="ECG example of hyperkalemia with tall peaked T waves" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Hyperkalemia example with tall peaked T waves.</figcaption>
+</figure>
+
+<figure class="article-image">
+<a href="ekg_images/hypokalemia_u_wave.png" target="_blank">
+<img src="ekg_images/hypokalemia_u_wave.png" alt="ECG example of hypokalemia with prominent U wave" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Hypokalemia example with prominent U wave.</figcaption>
+</figure>
+
+<figure class="article-image">
+<a href="ekg_images/qt_long_short_examples.png" target="_blank">
+<img src="ekg_images/qt_long_short_examples.png" alt="ECG examples comparing long QT and short QT intervals" data-zoom tabindex="0" role="button">
+</a>
+<figcaption>Long QT and short QT examples.</figcaption>
+</figure>
+</article>
+
+<article class="ecg-card">
+<h3>Putting It Together</h3>
+
+<p>
+At the end of your ECG review, you should be able to produce two clean lines.
+</p>
+
+<div class="summary-box">
+<p>
+<strong>Rhythm line:</strong> “Sinus rhythm at 82 bpm with normal axis and normal intervals.”
+</p>
+<p>
+<strong>Summary line:</strong> “LVH with lateral strain; no definite acute ischemic changes.”
+</p>
+</div>
+
+<p>
+The ECG Interpreter Tool helps generate a copy-friendly version of this interpretation.
+</p>
+
+<div class="tool-links">
+<a href="ekg_interpreter.html" class="tool-link primary">🧮 Open ECG Interpreter Tool</a>
+</div>
+</article>
+
+</section>
+
+<section>
+<h2>Clinical Pearls</h2>
+
+<ul>
+<li>Use the same ECG sequence every time.</li>
+<li>Start with rhythm before looking for ischemia.</li>
+<li>Irregularly irregular rhythm should immediately raise concern for atrial fibrillation.</li>
+<li>Short PR plus delta wave suggests WPW pattern.</li>
+<li>RBBB plus left axis deviation suggests bifascicular block.</li>
+<li>LBBB and LVH can make ST-T interpretation difficult.</li>
+<li>Posterior MI can present as ST depression in V1–V3 with tall R waves.</li>
+<li>Hyperkalemia progresses from peaked T waves to loss of P waves to QRS widening.</li>
+<li>Hypokalemia can cause prominent U waves.</li>
+<li>Always interpret the ECG in clinical context.</li>
+</ul>
+</section>
+
+<section>
+<h2>Bottom Line</h2>
+
+<div class="summary-box">
+<p>
+A safe ECG interpretation follows a consistent order: rhythm, rate, P waves, PR interval, axis, QRS width, precordial transition, voltage, infarction patterns, ST-T changes, QT interval, and electrolyte clues. This prevents premature closure and helps you identify rhythm disorders, conduction disease, hypertrophy, ischemia, infarction, and dangerous electrolyte abnormalities.
+</p>
+</div>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+</section>
+
+</main>
+
+<footer class="footer">
+Learn Medicine • ECG Stepwise Guide
+</footer>
+
+</div>
+
+<div id="imageModal" aria-hidden="true">
+<span id="modalClose" title="Close">&times;</span>
+<img id="modalImg" alt="Expanded ECG image">
+<div id="modalHint">Click outside to close · <kbd>Esc</kbd></div>
+</div>
+
+<script>
+(function(){
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.getElementById("modalClose");
+
+  function openModal(src, alt){
+    modalImg.src = src;
+    modalImg.alt = alt || "Expanded ECG image";
+    modal.style.display = "flex";
+    modal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeModal(){
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    modalImg.src = "";
+  }
+
+  document.querySelectorAll("img[data-zoom]").forEach(function(img){
+    img.addEventListener("click", function(){
+      openModal(img.getAttribute("src"), img.getAttribute("alt"));
+    });
+
+    img.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        openModal(img.getAttribute("src"), img.getAttribute("alt"));
+      }
+    });
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", function(e){
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && modal.style.display === "flex"){
+      closeModal();
+    }
+  });
+})();
+</script>
+
+<script src="../assets/js/article-progress.js"></script>
+
+</body>
+</html>
