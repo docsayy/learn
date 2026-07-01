@@ -82,7 +82,7 @@
     ],
     "summary": "A structured stepwise ECG interpretation guide covering rhythm, rate, P waves, PR interval, axis, QRS duration, hypertrophy, infarction patterns, ST-T changes, QT interval, and electrolyte abnormalities.",
     "featured": false,
-    "readingTime": 7,
+    "readingTime": 6,
     "file": "posts/2026-07-01-ekg.html"
   },
   {
