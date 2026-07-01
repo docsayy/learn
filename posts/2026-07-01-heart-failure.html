@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="Heart Failure Calculators: NYHA Class and HFrEF GDMT Helper">
+<meta name="date" content="2026-07-01">
+<meta name="category" content="Calculators">
+<meta name="tags" content="heart failure,HFrEF,GDMT,NYHA,cardiology calculator,ARNI,beta blocker,MRA,SGLT2 inhibitor">
+<meta name="summary" content="Two practical cardiology calculators for heart failure: NYHA functional class helper and HFrEF guideline-directed medical therapy helper.">
+<meta name="featured" content="false">
+
+<title>Heart Failure Calculators: NYHA Class and HFrEF GDMT Helper | Learn Medicine</title>
+
+<link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+.calculator-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  margin-top:24px;
+}
+
+.calculator-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(15,23,42,0.06);
+}
+
+.calculator-card h2{
+  margin-top:0;
+}
+
+.calculator-subtitle{
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+.calc-form{
+  display:grid;
+  gap:14px;
+}
+
+.calc-field,
+.calc-question{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+}
+
+.calc-field label,
+.calc-question label{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  font-weight:600;
+}
+
+.calc-field input,
+.calc-field select,
+.calc-question select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--text);
+  font:inherit;
+}
+
+.checkbox-group{
+  display:grid;
+  gap:8px;
+  margin-top:8px;
+}
+
+.checkbox-group label{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:8px;
+  font-weight:500;
+  color:var(--text);
+}
+
+.button-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:6px;
+}
+
+.calc-btn{
+  border:none;
+  border-radius:999px;
+  padding:10px 18px;
+  background:var(--accent);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.calc-btn.secondary{
+  background:white;
+  color:var(--accent);
+  border:1px solid var(--accent);
+}
+
+.calc-result{
+  display:grid;
+  gap:12px;
+  margin-top:14px;
+}
+
+.calc-block{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+}
+
+.calc-block-title{
+  font-weight:800;
+  margin-bottom:6px;
+  color:var(--accent);
+}
+
+.pill-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:10px;
+}
+
+.pill{
+  font-size:0.78rem;
+  padding:5px 8px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:white;
+  color:var(--muted);
+}
+
+.calculator-note{
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-top:18px;
+}
+
+@media(min-width:900px){
+  .gdmt-layout{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:18px;
+    align-items:start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+
+<div class="article-breadcrumb">
+Learn Medicine › Calculators
+</div>
+
+<h1>Heart Failure Calculators: NYHA Class and HFrEF GDMT Helper</h1>
+
+<div class="article-meta">
+Added July 1, 2026 • Calculators • Cardiology
+</div>
+
+<p class="article-summary">
+A combined calculator page for heart failure bedside use. The NYHA Class Helper estimates functional class based on symptoms and activity limitation. The HFrEF GDMT Helper provides practical guidance for ARNI/ACEI/ARB, beta-blocker, MRA, SGLT2 inhibitor, and diuretic decisions based on EF, vitals, kidney function, potassium, volume status, and clinical flags.
+</p>
+
+</header>
+
+<main class="content">
+
+<section class="calculator-grid">
+
+<!-- NYHA CALCULATOR -->
+<article class="calculator-card">
+
+<h2>NYHA Class Helper</h2>
+
+<p class="calculator-subtitle">
+Determines NYHA class I–IV based on symptoms and activity limitation.
+</p>
+
+<form id="nyha-form" class="calc-form">
+
+<div class="calc-question">
+<label>
+Symptoms at rest?
+<select id="nyha-rest">
+<option value="no" selected>No</option>
+<option value="yes">Yes — dyspnea/fatigue at rest</option>
+</select>
+</label>
+</div>
+
+<div class="calc-question">
+<label>
+Symptoms with minimal activity? Examples: dressing, bathing, ADLs
+<select id="nyha-minimal">
+<option value="no" selected>No</option>
+<option value="yes">Yes — symptoms with mild exertion</option>
+</select>
+</label>
+</div>
+
+<div class="calc-question">
+<label>
+Symptoms with ordinary activity? Examples: walking around home
+<select id="nyha-ordinary">
+<option value="no" selected>No</option>
+<option value="yes">Yes — symptoms with ordinary activity</option>
+</select>
+</label>
+</div>
+
+<div class="calc-question">
+<label>
+Symptoms only with more-than-ordinary activity? Examples: stairs, fast walking
+<select id="nyha-more">
+<option value="no" selected>No</option>
+<option value="yes">Yes — symptoms only with heavier exertion</option>
+</select>
+</label>
+</div>
+
+<div class="calc-question">
+<label>
+Completely asymptomatic?
+<select id="nyha-asx">
+<option value="no" selected>No</option>
+<option value="yes">Yes — no limitation</option>
+</select>
+</label>
+</div>
+
+<div class="button-row">
+<button type="submit" class="calc-btn">Determine NYHA Class</button>
+<button type="button" class="calc-btn secondary" id="nyha-reset">Reset</button>
+</div>
+
+</form>
+
+<div id="nyha-result" class="calc-result">
+<div class="calc-block">
+<div class="calc-block-title">Awaiting input…</div>
+<div>Fill symptoms above and click “Determine NYHA Class”.</div>
+</div>
+</div>
+
+</article>
+
+<!-- HFrEF GDMT CALCULATOR -->
+<article class="calculator-card">
+
+<h2>HFrEF GDMT Helper</h2>
+
+<p class="calculator-subtitle">
+Guides ARNI/ACEI/ARB, beta-blocker, MRA, SGLT2 inhibitor, and diuretic decisions based on key bedside variables.
+</p>
+
+<div class="gdmt-layout">
+
+<form id="hf-form" class="calc-form">
+
+<div class="calc-field">
+<label for="ef">Ejection Fraction (%)</label>
+<input id="ef" type="number" min="5" max="70" placeholder="e.g. 25">
+</div>
+
+<div class="calc-field">
+<label for="nyha">NYHA class</label>
+<select id="nyha">
+<option value="1">I</option>
+<option value="2" selected>II</option>
+<option value="3">III</option>
+<option value="4">IV</option>
+</select>
+</div>
+
+<div class="calc-field">
+<label for="sbp">Systolic BP (mmHg)</label>
+<input id="sbp" type="number" min="60" max="200" placeholder="e.g. 102">
+</div>
+
+<div class="calc-field">
+<label for="hr">Heart rate (bpm)</label>
+<input id="hr" type="number" min="30" max="160" placeholder="e.g. 78">
+</div>
+
+<div class="calc-field">
+<label for="cr">Creatinine (mg/dL)</label>
+<input id="cr" type="number" step="0.1" min="0.3" max="10" placeholder="e.g. 1.2">
+</div>
+
+<div class="calc-field">
+<label for="egfr">eGFR (mL/min)</label>
+<input id="egfr" type="number" min="5" max="150" placeholder="e.g. 55">
+</div>
+
+<div class="calc-field">
+<label for="k">Potassium (K+)</label>
+<input id="k" type="number" min="2" max="7" step="0.1" placeholder="e.g. 4.7">
+</div>
+
+<div class="calc-field">
+<label for="volume">Volume status</label>
+<select id="volume">
+<option value="eu">Euvolemic</option>
+<option value="hyper">Congested / fluid overload</option>
+<option value="hypo">Dry / suspected hypovolemia</option>
+</select>
+</div>
+
+<div class="calc-field">
+<label>Comorbidities / flags</label>
+<div class="checkbox-group">
+<label><input type="checkbox" id="af"> Atrial fibrillation</label>
+<label><input type="checkbox" id="asthma"> Asthma/COPD — avoid carvedilol if severe</label>
+<label><input type="checkbox" id="acecough"> ACEI cough history</label>
+<label><input type="checkbox" id="hyperkalemia"> History of recurrent hyperkalemia</label>
+<label><input type="checkbox" id="ckddialysis"> CKD stage 4–5 / dialysis</label>
+<label><input type="checkbox" id="symhypo"> Symptomatic hypotension</label>
+</div>
+</div>
+
+<div class="button-row">
+<button type="submit" class="calc-btn">Generate GDMT Plan</button>
+<button type="button" class="calc-btn secondary" id="hf-reset">Reset</button>
+</div>
+
+</form>
+
+<div>
+<h3>GDMT Recommendations</h3>
+<div id="hf-result" class="calc-result">
+<div class="calc-block">
+<div class="calc-block-title">Enter patient data to view GDMT recommendations.</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</article>
+
+</section>
+
+<div class="calculator-note">
+Educational support only. Confirm with clinical judgment, ACC/AHA/HFSA heart failure guidance, renal function, blood pressure tolerance, local protocols, and specialist input when appropriate.
+</div>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+
+</main>
+
+<footer class="footer">
+Learn Medicine • Heart Failure Calculators
+</footer>
+
+</div>
+
+<script>
+/* -------------------------
+   NYHA CLASS HELPER
+-------------------------- */
+document.getElementById("nyha-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const rest = document.getElementById("nyha-rest").value;
+  const minimal = document.getElementById("nyha-minimal").value;
+  const ordinary = document.getElementById("nyha-ordinary").value;
+  const more = document.getElementById("nyha-more").value;
+  const asx = document.getElementById("nyha-asx").value;
+
+  let resultHTML = "";
+
+  if (rest === "yes") {
+    resultHTML = `
+      <div class="calc-block">
+        <div class="calc-block-title">NYHA Class IV</div>
+        <div>Symptoms at rest. Marked limitation. Unable to carry out any physical activity without symptoms.</div>
+      </div>`;
+  }
+  else if (minimal === "yes") {
+    resultHTML = `
+      <div class="calc-block">
+        <div class="calc-block-title">NYHA Class III</div>
+        <div>Symptoms with minimal exertion. Marked limitation of activity but comfortable at rest.</div>
+      </div>`;
+  }
+  else if (ordinary === "yes") {
+    resultHTML = `
+      <div class="calc-block">
+        <div class="calc-block-title">NYHA Class II</div>
+        <div>Symptoms with ordinary activity. Slight limitation of physical activity.</div>
+      </div>`;
+  }
+  else if (more === "yes") {
+    resultHTML = `
+      <div class="calc-block">
+        <div class="calc-block-title">NYHA Class I–II Borderline</div>
+        <div>No symptoms with ordinary activity but symptoms with more strenuous exertion. Often classified as low-end Class II.</div>
+      </div>`;
+  }
+  else if (asx === "yes") {
+    resultHTML = `
+      <div class="calc-block">
+        <div class="calc-block-title">NYHA Class I</div>
+        <div>No limitation of physical activity. Ordinary activity does not cause symptoms.</div>
+      </div>`;
+  }
+  else {
+    resultHTML = `
+      <div class="calc-block">
+        <div class="calc-block-title">Unable to classify</div>
+        <div>Please refine symptoms. NYHA class depends on the exertion threshold that produces symptoms.</div>
+      </div>`;
+  }
+
+  document.getElementById("nyha-result").innerHTML = resultHTML;
+});
+
+document.getElementById("nyha-reset").addEventListener("click", function(){
+  document.getElementById("nyha-form").reset();
+  document.getElementById("nyha-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Awaiting input…</div>
+      <div>Fill symptoms above and click “Determine NYHA Class”.</div>
+    </div>`;
+});
+
+
+/* -------------------------
+   HFrEF GDMT HELPER
+-------------------------- */
+document.getElementById("hf-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const EF = Number(document.getElementById("ef").value || NaN);
+  const NYHA = Number(document.getElementById("nyha").value);
+  const SBP = Number(document.getElementById("sbp").value || NaN);
+  const HR = Number(document.getElementById("hr").value || NaN);
+  const Cr = Number(document.getElementById("cr").value || NaN);
+  const eGFR = Number(document.getElementById("egfr").value || NaN);
+  const K = Number(document.getElementById("k").value || NaN);
+  const vol = document.getElementById("volume").value;
+
+  const AF = document.getElementById("af").checked;
+  const COPD = document.getElementById("asthma").checked;
+  const ACEcough = document.getElementById("acecough").checked;
+  const hyperK = document.getElementById("hyperkalemia").checked;
+  const dialysis = document.getElementById("ckddialysis").checked;
+  const hypo = document.getElementById("symhypo").checked;
+
+  let output = "";
+
+  if (!Number.isNaN(EF) && EF > 40) {
+    output += `
+    <div class="calc-block">
+      <div class="calc-block-title">EF Check</div>
+      <div>EF is above the classic HFrEF range. This tool is designed mainly for HFrEF. Consider HFmrEF/HFpEF-specific recommendations if clinically appropriate.</div>
+    </div>`;
+  }
+
+  let arniBlock = `
+    <div class="calc-block">
+      <div class="calc-block-title">1. ARNI / ACEI / ARB</div>
+  `;
+
+  if (!Number.isNaN(SBP) && (SBP < 95 || hypo)) {
+    arniBlock += `
+      <div>• Low SBP or symptomatic hypotension → <strong>delay or start at very low dose</strong>.</div>
+      <div>• Prefer ACEI/ARB over ARNI initially if unstable.</div>
+    `;
+  } else if (hypo) {
+    arniBlock += `
+      <div>• Symptomatic hypotension → <strong>delay or start at very low dose</strong>.</div>
+      <div>• Reassess volume status and other BP-lowering medications.</div>
+    `;
+  } else if (ACEcough) {
+    arniBlock += `
+      <div>• ACEI cough → consider <strong>ARB</strong> or <strong>ARNI</strong> if BP allows.</div>
+    `;
+  } else {
+    arniBlock += `
+      <div>• If BP stable → <strong>start ARNI</strong> if possible.</div>
+      <div>• If not available or not tolerated → ACEI or ARB.</div>
+    `;
+  }
+
+  arniBlock += `
+      <div class="pill-row">
+        <span class="pill">Sacubitril/valsartan start: 24/26 mg BID</span>
+        <span class="pill">Target: 97/103 mg BID</span>
+        <span class="pill">Enalapril start: 2.5 mg BID</span>
+        <span class="pill">Losartan start: 25–50 mg daily</span>
+      </div>
+    </div>`;
+  output += arniBlock;
+
+
+  let bbBlock = `
+    <div class="calc-block">
+      <div class="calc-block-title">2. Beta-Blocker</div>
+  `;
+
+  if (!Number.isNaN(HR) && HR < 55) {
+    bbBlock += `<div>• HR &lt;55 → use caution, start minimal dose, or delay if symptomatic.</div>`;
+  }
+
+  if (COPD) {
+    bbBlock += `<div>• Asthma/COPD → prefer <strong>metoprolol succinate</strong> or <strong>bisoprolol</strong> over carvedilol if bronchospasm is a concern.</div>`;
+  }
+
+  if (vol === "hyper") {
+    bbBlock += `<div>• Congested patient → avoid aggressive beta-blocker up-titration until closer to euvolemia.</div>`;
+  }
+
+  bbBlock += `
+      <div>• Evidence-based options: <strong>metoprolol succinate, carvedilol, bisoprolol</strong>.</div>
+      <div class="pill-row">
+        <span class="pill">Carvedilol 3.125 mg BID → 25 mg BID</span>
+        <span class="pill">Metoprolol succinate 12.5–25 mg daily → 200 mg daily</span>
+        <span class="pill">Bisoprolol 1.25 mg daily → 10 mg daily</span>
+      </div>
+    </div>`;
+  output += bbBlock;
+
+
+  let mraBlock = `
+    <div class="calc-block">
+      <div class="calc-block-title">3. Mineralocorticoid Receptor Antagonist</div>
+  `;
+
+  if (!Number.isNaN(K) && K > 5.0) {
+    mraBlock += `<div>• K &gt;5.0 → <strong>avoid or delay MRA</strong> until potassium is safer.</div>`;
+  } else if (hyperK) {
+    mraBlock += `<div>• Recurrent hyperkalemia history → avoid or monitor extremely closely.</div>`;
+  } else if (!Number.isNaN(eGFR) && eGFR < 30) {
+    mraBlock += `<div>• eGFR &lt;30 → MRA generally <strong>not recommended</strong>.</div>`;
+  } else if (dialysis) {
+    mraBlock += `<div>• CKD stage 4–5 / dialysis → MRA generally <strong>not recommended</strong> without specialist guidance.</div>`;
+  } else {
+    mraBlock += `<div>• Good candidate for MRA if potassium and renal function remain acceptable.</div>`;
+  }
+
+  mraBlock += `
+      <div class="pill-row">
+        <span class="pill">Spironolactone 12.5–25 mg daily</span>
+        <span class="pill">Eplerenone 25 mg daily</span>
+      </div>
+    </div>`;
+  output += mraBlock;
+
+
+  let sglt2Block = `
+    <div class="calc-block">
+      <div class="calc-block-title">4. SGLT2 Inhibitor</div>
+  `;
+
+  if (!Number.isNaN(eGFR) && eGFR < 20) {
+    sglt2Block += `<div>• eGFR &lt;20 → limited data; consider specialist input and local formulary guidance.</div>`;
+  } else {
+    sglt2Block += `<div>• Can start <strong>dapagliflozin 10 mg</strong> or <strong>empagliflozin 10 mg</strong> daily regardless of diabetes if no contraindication.</div>`;
+  }
+
+  sglt2Block += `
+      <div class="pill-row">
+        <span class="pill">Dapagliflozin 10 mg daily</span>
+        <span class="pill">Empagliflozin 10 mg daily</span>
+      </div>
+    </div>`;
+  output += sglt2Block;
+
+
+  let diBlock = `
+    <div class="calc-block">
+      <div class="calc-block-title">5. Diuretics</div>
+  `;
+
+  if (vol === "hyper") {
+    diBlock += `<div>• Volume overload → use IV loop diuretic or increase loop dose.</div>`;
+  } else if (vol === "hypo") {
+    diBlock += `<div>• Suspected hypovolemia → reduce or hold diuretic and reassess volume status.</div>`;
+  } else {
+    diBlock += `<div>• Euvolemic → continue home loop dose or use lowest dose needed to maintain euvolemia.</div>`;
+  }
+
+  diBlock += `
+      <div class="pill-row">
+        <span class="pill">Furosemide 20–40 mg</span>
+        <span class="pill">Torsemide 10–20 mg</span>
+      </div>
+    </div>`;
+  output += diBlock;
+
+
+  if (AF) {
+    output += `
+    <div class="calc-block">
+      <div class="calc-block-title">Atrial Fibrillation Considerations</div>
+      <div>• Optimize rate control; beta-blocker is often preferred in HFrEF if tolerated.</div>
+      <div>• Consider rhythm control if symptoms persist or AF appears to worsen HF.</div>
+      <div>• Anticoagulation should be based on CHA₂DS₂-VASc and bleeding risk.</div>
+    </div>`;
+  }
+
+  document.getElementById("hf-result").innerHTML = output;
+});
+
+document.getElementById("hf-reset").addEventListener("click", function(){
+  document.getElementById("hf-form").reset();
+  document.getElementById("hf-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Enter patient data to view GDMT recommendations.</div>
+    </div>`;
+});
+</script>
+
+</body>
+</html>
