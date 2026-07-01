@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="ACS and Chest Pain Calculators">
+<meta name="date" content="2026-07-01">
+<meta name="category" content="Calculators">
+<meta name="tags" content="ACS,chest pain,HEART score,TIMI score,GRACE,STEMI,troponin,NSTEMI,cardiology calculators">
+<meta name="summary" content="Combined ACS and chest pain calculator page including Troponin I trend assistant, HEART score, TIMI UA/NSTEMI score, GRACE-style ACS risk helper, and STEMI reperfusion helper.">
+<meta name="featured" content="false">
+
+<title>ACS and Chest Pain Calculators | Learn Medicine</title>
+
+<link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+.calculator-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  margin-top:24px;
+}
+
+@media(min-width:950px){
+  .calculator-grid.two{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+.calculator-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(15,23,42,0.06);
+}
+
+.calculator-card h2{
+  margin-top:0;
+}
+
+.calculator-subtitle{
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+.calc-form{
+  display:grid;
+  gap:14px;
+}
+
+.calc-field,
+.calc-question{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+}
+
+.calc-field label,
+.calc-question label{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  font-weight:600;
+}
+
+.calc-field input,
+.calc-field select,
+.calc-question select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--text);
+  font:inherit;
+}
+
+.calc-field input[type="checkbox"]{
+  width:auto;
+}
+
+.checkbox-list{
+  display:grid;
+  gap:9px;
+}
+
+.checkbox-list label{
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  gap:8px;
+  font-weight:500;
+  line-height:1.35;
+}
+
+.inline-fields{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+
+@media(min-width:720px){
+  .inline-fields{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .inline-fields.three{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+.button-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:6px;
+}
+
+.calc-btn{
+  border:none;
+  border-radius:999px;
+  padding:10px 18px;
+  background:var(--accent);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.calc-btn.secondary{
+  background:white;
+  color:var(--accent);
+  border:1px solid var(--accent);
+}
+
+.calc-result{
+  display:grid;
+  gap:12px;
+  margin-top:14px;
+}
+
+.calc-block{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+}
+
+.calc-block-title{
+  font-weight:800;
+  margin-bottom:6px;
+  color:var(--accent);
+}
+
+.helper{
+  font-size:0.85rem;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.pill-row,
+.chip-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:10px;
+}
+
+.pill,
+.chip{
+  font-size:0.78rem;
+  padding:5px 8px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:white;
+  color:var(--muted);
+}
+
+.risk-low{
+  color:#166534;
+  font-weight:800;
+}
+
+.risk-int{
+  color:#92400e;
+  font-weight:800;
+}
+
+.risk-high{
+  color:#991b1b;
+  font-weight:800;
+}
+
+.calculator-note{
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-top:18px;
+}
+
+.quick-list{
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+
+<div class="article-breadcrumb">
+Learn Medicine › Calculators
+</div>
+
+<h1>ACS and Chest Pain Calculators</h1>
+
+<div class="article-meta">
+Added July 1, 2026 • Calculators • Cardiology
+</div>
+
+<p class="article-summary">
+A combined cardiology calculator page for chest pain and ACS bedside use. Includes Troponin I trend interpretation, HEART score, TIMI UA/NSTEMI score, GRACE-style ACS risk helper, and STEMI reperfusion strategy helper.
+</p>
+
+</header>
+
+<main class="content">
+
+<section class="calculator-grid">
+
+<!-- TROPOIN I TREND -->
+<article class="calculator-card">
+<h2>Troponin I Trend Assistant</h2>
+
+<p class="calculator-subtitle">
+Uses URL 0.034 ng/mL, NSTEMI range &gt;0.12 ng/mL, and significant delta ≥20%.
+</p>
+
+<form id="troponin-form" class="calc-form">
+
+<div class="inline-fields">
+<div class="calc-field">
+<label for="trop-prev">Previous Troponin I (ng/mL)</label>
+<input id="trop-prev" type="number" step="0.001" placeholder="e.g. 0.05">
+</div>
+
+<div class="calc-field">
+<label for="trop-curr">Current Troponin I (ng/mL)</label>
+<input id="trop-curr" type="number" step="0.001" placeholder="e.g. 0.07">
+</div>
+</div>
+
+<div class="button-row">
+<button type="submit" class="calc-btn">Analyze Troponin</button>
+<button type="button" class="calc-btn secondary" id="troponin-reset">Reset</button>
+</div>
+
+</form>
+
+<div id="troponin-result" class="calc-result">
+<div class="calc-block">
+<div class="calc-block-title">Awaiting input…</div>
+<div>Enter two values and click “Analyze Troponin”.</div>
+</div>
+</div>
+</article>
+
+</section>
+
+<section class="calculator-grid two">
+
+<!-- HEART SCORE -->
+<article class="calculator-card">
+<h2>HEART Score</h2>
+
+<p class="calculator-subtitle">
+History, ECG, Age, Risk factors, Troponin. Typical ED chest pain risk score.
+</p>
+
+<form id="heart-form" class="calc-form">
+
+<div class="calc-field">
+<label for="heart-history">History</label>
+<select id="heart-history">
+<option value="0">Slightly suspicious (0)</option>
+<option value="1">Moderately suspicious (1)</option>
+<option value="2">Highly suspicious (2)</option>
+</select>
+</div>
+
+<div class="calc-field">
+<label for="heart-ecg">ECG</label>
+<select id="heart-ecg">
+<option value="0">Normal (0)</option>
+<option value="1">Nonspecific repolarization changes (1)</option>
+<option value="2">Significant ST deviation (2)</option>
+</select>
+</div>
+
+<div class="calc-field">
+<label for="heart-age">Age</label>
+<input id="heart-age" type="number" min="16" max="120" value="55">
+<div class="helper">&lt;45 = 0 points, 45–65 = 1 point, &gt;65 = 2 points.</div>
+</div>
+
+<div class="calc-field">
+<label for="heart-risk">Risk factors</label>
+<select id="heart-risk">
+<option value="0">No known risk factors (0)</option>
+<option value="1">1–2 risk factors (1)</option>
+<option value="2">≥3 risk factors or known atherosclerotic disease (2)</option>
+</select>
+<div class="helper">Risk factors: HTN, hyperlipidemia, DM, obesity, smoking, family history, known CAD/PAD/CVA.</div>
+</div>
+
+<div class="calc-field">
+<label for="heart-trop">Troponin relative to upper limit of normal</label>
+<select id="heart-trop">
+<option value="0">≤ normal limit (0)</option>
+<option value="1">1–3× upper limit of normal (1)</option>
+<option value="2">&gt;3× upper limit of normal (2)</option>
+</select>
+</div>
+
+<div class="button-row">
+<button type="submit" class="calc-btn">Calculate HEART</button>
+<button type="button" class="calc-btn secondary" id="heart-reset">Reset</button>
+</div>
+
+</form>
+
+<div id="heart-result" class="calc-result">
+<div class="calc-block">
+<div class="calc-block-title">Result will appear here.</div>
+<div>Enter values and click “Calculate HEART”.</div>
+</div>
+</div>
+</article>
+
+<!-- TIMI SCORE -->
+<article class="calculator-card">
+<h2>TIMI Risk Score for UA/NSTEMI</h2>
+
+<p class="calculator-subtitle">
+Classical 14-day risk score for unstable angina/NSTEMI: death, MI, or urgent revascularization.
+</p>
+
+<form id="timi-form" class="calc-form">
+
+<div class="calc-field">
+<label>Check all that apply</label>
+
+<div class="checkbox-list">
+<label><input type="checkbox" id="timi-age"> Age ≥65 years</label>
+<label><input type="checkbox" id="timi-rf3"> ≥3 CAD risk factors: FHx, HTN, HLD, DM, current smoker</label>
+<label><input type="checkbox" id="timi-cad"> Known CAD with stenosis ≥50%</label>
+<label><input type="checkbox" id="timi-asa"> Aspirin use in past 7 days</label>
+<label><input type="checkbox" id="timi-angina"> ≥2 angina episodes in last 24 hours</label>
+<label><input type="checkbox" id="timi-st"> ST deviation ≥0.5 mm</label>
+<label><input type="checkbox" id="timi-marker"> Elevated cardiac marker: troponin or CK-MB</label>
+</div>
+</div>
+
+<div class="button-row">
+<button type="submit" class="calc-btn">Calculate TIMI</button>
+<button type="button" class="calc-btn secondary" id="timi-reset">Reset</button>
+</div>
+
+</form>
+
+<div id="timi-result" class="calc-result">
+<div class="calc-block">
+<div class="calc-block-title">Result will appear here.</div>
+<div>Tick applicable items and click “Calculate TIMI”.</div>
+</div>
+</div>
+</article>
+
+</section>
+
+<section class="calculator-grid two">
+
+<!-- GRACE STYLE ACS -->
+<article class="calculator-card">
+<h2>ACS Risk Helper</h2>
+
+<p class="calculator-subtitle">
+Simplified GRACE-style helper using standard ACS risk variables. Educational only — not the official GRACE calculator.
+</p>
+
+<form id="acs-form" class="calc-form">
+
+<div class="inline-fields three">
+<div class="calc-field">
+<label for="acs-age">Age</label>
+<input id="acs-age" type="number" min="18" max="110" value="65">
+</div>
+
+<div class="calc-field">
+<label for="acs-sbp">Systolic BP</label>
+<input id="acs-sbp" type="number" min="50" max="260" value="120">
+</div>
+
+<div class="calc-field">
+<label for="acs-hr">Heart rate</label>
+<input id="acs-hr" type="number" min="20" max="220" value="80">
+</div>
+</div>
+
+<div class="inline-fields">
+<div class="calc-field">
+<label for="acs-creat">Creatinine</label>
+<input id="acs-creat" type="number" min="0.1" max="10" step="0.1" value="1.0">
+<div class="helper">Use baseline or presentation value.</div>
+</div>
+
+<div class="calc-field">
+<label for="acs-killip">Killip class</label>
+<select id="acs-killip">
+<option value="1">Class I — no HF signs</option>
+<option value="2">Class II — S3, rales</option>
+<option value="3">Class III — frank pulmonary edema</option>
+<option value="4">Class IV — cardiogenic shock</option>
+</select>
+</div>
+</div>
+
+<div class="inline-fields">
+<div class="calc-field">
+<label for="acs-stdev">ST-segment deviation</label>
+<select id="acs-stdev">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+<div class="calc-field">
+<label for="acs-markers">Elevated cardiac markers</label>
+<select id="acs-markers">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+</div>
+
+<div class="inline-fields">
+<div class="calc-field">
+<label for="acs-arrest">Cardiac arrest at admission</label>
+<select id="acs-arrest">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+<div class="calc-field">
+<label for="acs-presentation">Presentation</label>
+<select id="acs-presentation">
+<option value="nstemi">NSTEMI / UA</option>
+<option value="stemi">STEMI</option>
+</select>
+</div>
+</div>
+
+<div class="button-row">
+<button type="submit" class="calc-btn">Assess ACS Risk</button>
+<button type="button" class="calc-btn secondary" id="acs-reset">Reset</button>
+</div>
+
+</form>
+
+<div id="acs-result" class="calc-result">
+<div class="calc-block">
+<div class="calc-block-title">Result will appear here.</div>
+<div>Enter values and click “Assess ACS Risk”.</div>
+</div>
+</div>
+</article>
+
+<!-- STEMI REPERFUSION -->
+<article class="calculator-card">
+<h2>STEMI Reperfusion Helper</h2>
+
+<p class="calculator-subtitle">
+Quick PCI vs fibrinolysis strategy helper for true STEMI presentation. Always follow local STEMI protocol.
+</p>
+
+<form id="stemi-form" class="calc-form">
+
+<div class="inline-fields">
+<div class="calc-field">
+<label for="stemi-symptom-time">Symptom onset, hours ago</label>
+<input id="stemi-symptom-time" type="number" min="0" max="48" step="0.5" value="2">
+</div>
+
+<div class="calc-field">
+<label for="stemi-door-balloon">Expected door-to-balloon time, minutes</label>
+<input id="stemi-door-balloon" type="number" min="0" max="480" value="80">
+<div class="helper">From now until PCI device across lesion.</div>
+</div>
+</div>
+
+<div class="inline-fields">
+<div class="calc-field">
+<label for="stemi-door-needle">Expected door-to-needle time, minutes</label>
+<input id="stemi-door-needle" type="number" min="0" max="480" value="30">
+<div class="helper">From now until fibrinolytic bolus.</div>
+</div>
+
+<div class="calc-field">
+<label for="stemi-transfer">Transfer to PCI center?</label>
+<select id="stemi-transfer">
+<option value="no">No — PCI on site</option>
+<option value="yes">Yes — needs transfer</option>
+</select>
+</div>
+</div>
+
+<div class="calc-field">
+<label for="stemi-shock">Cardiogenic shock or severe instability?</label>
+<select id="stemi-shock">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+</div>
+
+<div class="calc-field">
+<label for="stemi-contra">Absolute contraindication to fibrinolysis?</label>
+<select id="stemi-contra">
+<option value="no">No</option>
+<option value="yes">Yes — prior ICH, major bleed, aortic dissection concern, etc.</option>
+</select>
+</div>
+
+<div class="button-row">
+<button type="submit" class="calc-btn">Suggest Reperfusion Strategy</button>
+<button type="button" class="calc-btn secondary" id="stemi-reset">Reset</button>
+</div>
+
+</form>
+
+<div id="stemi-result" class="calc-result">
+<div class="calc-block">
+<div class="calc-block-title">Result will appear here.</div>
+<div>Enter times and key features, then click “Suggest Reperfusion Strategy”.</div>
+</div>
+</div>
+
+<div class="calc-block quick-list">
+<div class="calc-block-title">Quick Reminders</div>
+<ul>
+<li>Primary PCI is preferred when it can be performed quickly by an experienced team.</li>
+<li>Many pathways favor PCI if door-to-balloon is within about 90 minutes, or about 120 minutes from first medical contact.</li>
+<li>Fibrinolysis may be considered if STEMI is within 12 hours of onset, PCI is delayed, and there are no contraindications.</li>
+<li>Cardiogenic shock or severe heart failure generally favors PCI rather than lytics if possible.</li>
+<li>Always check absolute and relative contraindications before fibrinolysis.</li>
+</ul>
+</div>
+</article>
+
+</section>
+
+<div class="calculator-note">
+Educational support only. These tools simplify chest pain and ACS decision logic and do not replace ECG interpretation, serial troponins, cardiology consultation, local ACS/STEMI pathways, ACC/AHA/ESC guidance, or clinical judgment.
+</div>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+
+</main>
+
+<footer class="footer">
+Learn Medicine • ACS and Chest Pain Calculators
+</footer>
+
+</div>
+
+<script>
+/* -------------------------
+   TROPOIN I TREND
+-------------------------- */
+const TROP_URL = 0.034;
+const TROP_NSTEMI = 0.12;
+
+function troponinZone(val){
+  if(val < TROP_URL) return "Normal";
+  if(val <= TROP_NSTEMI) return "Elevated";
+  return "NSTEMI range";
+}
+
+document.getElementById("troponin-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const prev = parseFloat(document.getElementById("trop-prev").value);
+  const curr = parseFloat(document.getElementById("trop-curr").value);
+  const box = document.getElementById("troponin-result");
+
+  if(isNaN(prev) || isNaN(curr)){
+    box.innerHTML = `
+      <div class="calc-block">
+        <div class="calc-block-title">Missing values</div>
+        <div>Please enter both previous and current troponin values.</div>
+      </div>`;
+    return;
+  }
+
+  const change = curr - prev;
+  const percent = prev === 0 ? Infinity : (change / prev) * 100;
+
+  let interpretation = "";
+
+  if(curr > TROP_NSTEMI){
+    interpretation = "Troponin now in NSTEMI range (&gt;0.12). Meets NSTEMI criteria in the right clinical context.";
+  } else if(prev < TROP_URL && curr < TROP_URL){
+    interpretation = "Both values are below URL. Low concern from troponin trend alone. Repeat only if clinically suspicious.";
+  } else if(prev < TROP_URL && curr >= TROP_URL && percent >= 20){
+    interpretation = "Significant rise with value now above URL. Concerning upward trend. Continue trending and correlate clinically.";
+  } else if(percent >= 20 && (prev >= TROP_URL || curr >= TROP_URL)){
+    interpretation = "Rising troponin: ≥20% increase with value above URL. Continue trending and evaluate for acute myocardial injury.";
+  } else if(percent <= -20 && (prev >= TROP_URL || curr >= TROP_URL)){
+    interpretation = "Falling troponin: ≥20% decrease from prior elevated value. Trend once more if needed to confirm trajectory.";
+  } else {
+    interpretation = "Plateaued troponin: ≤20% change. Stable/chronic injury pattern is possible. Further trending depends on clinical context.";
+  }
+
+  box.innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Troponin Trend Result</div>
+      <div><strong>Previous:</strong> ${prev} ng/mL (${troponinZone(prev)})</div>
+      <div><strong>Current:</strong> ${curr} ng/mL (${troponinZone(curr)})</div>
+      <div><strong>Absolute change:</strong> ${change.toFixed(3)} ng/mL</div>
+      <div><strong>Percent change:</strong> ${percent === Infinity ? "N/A" : percent.toFixed(1) + "%"}</div>
+      <br>
+      <div>${interpretation}</div>
+    </div>`;
+});
+
+document.getElementById("troponin-reset").addEventListener("click", function(){
+  document.getElementById("troponin-form").reset();
+  document.getElementById("troponin-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Awaiting input…</div>
+      <div>Enter two values and click “Analyze Troponin”.</div>
+    </div>`;
+});
+
+
+/* -------------------------
+   HEART SCORE
+-------------------------- */
+function heartAgePoints(age){
+  if(isNaN(age)) return 0;
+  if(age < 45) return 0;
+  if(age <= 65) return 1;
+  return 2;
+}
+
+function heartCategory(score){
+  if(score <= 3){
+    return {
+      label:"Low risk",
+      css:"risk-low",
+      note:"Approx. ~1% short-term MACE in many references. Many protocols consider early discharge with close follow-up if no other red flags."
+    };
+  }
+  if(score <= 6){
+    return {
+      label:"Intermediate risk",
+      css:"risk-int",
+      note:"Consider observation, serial troponins, and further testing per ACS pathway."
+    };
+  }
+  return {
+    label:"High risk",
+    css:"risk-high",
+    note:"High risk of MACE. Usually warrants aggressive ACS management and cardiology involvement."
+  };
+}
+
+document.getElementById("heart-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const history = Number(document.getElementById("heart-history").value || 0);
+  const ecg = Number(document.getElementById("heart-ecg").value || 0);
+  const age = Number(document.getElementById("heart-age").value || 0);
+  const rf = Number(document.getElementById("heart-risk").value || 0);
+  const trop = Number(document.getElementById("heart-trop").value || 0);
+
+  const agePts = heartAgePoints(age);
+  const total = history + ecg + agePts + rf + trop;
+  const cat = heartCategory(total);
+
+  document.getElementById("heart-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">HEART Score: ${total} / 10</div>
+      <div class="${cat.css}">${cat.label}</div>
+      <div>${cat.note}</div>
+      <div class="chip-row">
+        <span class="chip">History: ${history}</span>
+        <span class="chip">ECG: ${ecg}</span>
+        <span class="chip">Age: ${agePts}</span>
+        <span class="chip">Risk factors: ${rf}</span>
+        <span class="chip">Troponin: ${trop}</span>
+      </div>
+    </div>`;
+});
+
+document.getElementById("heart-reset").addEventListener("click", function(){
+  document.getElementById("heart-form").reset();
+  document.getElementById("heart-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Result will appear here.</div>
+      <div>Enter values and click “Calculate HEART”.</div>
+    </div>`;
+});
+
+
+/* -------------------------
+   TIMI SCORE
+-------------------------- */
+function timiCategory(score){
+  if(score <= 2){
+    return {
+      label:"Low risk",
+      css:"risk-low",
+      note:"Approx. ~5% 14-day risk of death/MI/urgent revascularization in the original cohort."
+    };
+  }
+  if(score <= 4){
+    return {
+      label:"Intermediate risk",
+      css:"risk-int",
+      note:"Approx. ~13–20% 14-day event risk. Consider aggressive medical therapy and early invasive strategy depending on guideline context."
+    };
+  }
+  return {
+    label:"High risk",
+    css:"risk-high",
+    note:"Approx. ≥25–40% 14-day event risk. High-risk ACS usually requires intensive monitoring and early invasive strategy."
+  };
+}
+
+document.getElementById("timi-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const fields = [
+    "timi-age",
+    "timi-rf3",
+    "timi-cad",
+    "timi-asa",
+    "timi-angina",
+    "timi-st",
+    "timi-marker"
+  ];
+
+  let score = 0;
+  fields.forEach(function(id){
+    if(document.getElementById(id).checked) score += 1;
+  });
+
+  const cat = timiCategory(score);
+
+  document.getElementById("timi-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">TIMI UA/NSTEMI Score: ${score} / 7</div>
+      <div class="${cat.css}">${cat.label}</div>
+      <div>${cat.note}</div>
+      <div class="chip-row">
+        ${
+          fields.map(function(id){
+            const el = document.getElementById(id);
+            const label = el.parentElement.textContent.trim();
+            return el.checked ? `<span class="chip">${label}</span>` : "";
+          }).join("")
+        }
+      </div>
+    </div>`;
+});
+
+document.getElementById("timi-reset").addEventListener("click", function(){
+  document.getElementById("timi-form").reset();
+  document.getElementById("timi-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Result will appear here.</div>
+      <div>Tick applicable items and click “Calculate TIMI”.</div>
+    </div>`;
+});
+
+
+/* -------------------------
+   GRACE-STYLE ACS RISK
+-------------------------- */
+function scoreACS(data){
+  let score = 0;
+
+  if(data.age >= 80) score += 25;
+  else if(data.age >= 70) score += 18;
+  else if(data.age >= 60) score += 12;
+  else if(data.age >= 50) score += 6;
+
+  if(data.sbp < 80) score += 25;
+  else if(data.sbp < 100) score += 18;
+  else if(data.sbp < 120) score += 10;
+  else if(data.sbp < 140) score += 4;
+
+  if(data.hr > 140) score += 20;
+  else if(data.hr > 110) score += 14;
+  else if(data.hr > 90) score += 8;
+  else if(data.hr > 70) score += 4;
+
+  if(data.creat >= 3.0) score += 20;
+  else if(data.creat >= 2.0) score += 14;
+  else if(data.creat >= 1.4) score += 8;
+
+  if(data.killip === 2) score += 10;
+  if(data.killip === 3) score += 20;
+  if(data.killip === 4) score += 30;
+
+  if(data.stdev) score += 10;
+  if(data.markers) score += 12;
+  if(data.arrest) score += 25;
+  if(data.presentation === "stemi") score += 10;
+
+  return score;
+}
+
+function categoryACS(score){
+  if(score < 40){
+    return {
+      label:"Low risk",
+      css:"risk-low",
+      comment:"Short-term mortality risk likely low if no other high-risk features. Continue usual ACS care and guideline-directed therapy."
+    };
+  }
+  if(score < 80){
+    return {
+      label:"Intermediate risk",
+      css:"risk-int",
+      comment:"Intermediate risk. Many patients in this group benefit from early invasive evaluation depending on clinical context and guidelines."
+    };
+  }
+  return {
+    label:"High risk",
+    css:"risk-high",
+    comment:"High risk of complications or mortality. Consider early invasive strategy, higher level of monitoring, and aggressive guideline-directed therapy."
+  };
+}
+
+document.getElementById("acs-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = {
+    age:Number(document.getElementById("acs-age").value || 0),
+    sbp:Number(document.getElementById("acs-sbp").value || 0),
+    hr:Number(document.getElementById("acs-hr").value || 0),
+    creat:Number(document.getElementById("acs-creat").value || 0),
+    killip:Number(document.getElementById("acs-killip").value || 1),
+    stdev:document.getElementById("acs-stdev").value === "1",
+    markers:document.getElementById("acs-markers").value === "1",
+    arrest:document.getElementById("acs-arrest").value === "1",
+    presentation:document.getElementById("acs-presentation").value
+  };
+
+  const score = scoreACS(data);
+  const cat = categoryACS(score);
+  const chips = [];
+
+  if(data.age >= 70) chips.push("Older age");
+  if(data.sbp < 100) chips.push("Low SBP");
+  if(data.hr > 110) chips.push("Tachycardia");
+  if(data.creat >= 1.4) chips.push("Renal dysfunction");
+  if(data.killip > 1) chips.push("Killip class ≥II");
+  if(data.stdev) chips.push("ST deviation");
+  if(data.markers) chips.push("Positive markers");
+  if(data.arrest) chips.push("Cardiac arrest at admission");
+  if(data.presentation === "stemi") chips.push("STEMI");
+
+  document.getElementById("acs-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Simplified ACS Score: ${score}</div>
+      <div class="${cat.css}">${cat.label}</div>
+      <div>${cat.comment}</div>
+      <div class="chip-row">
+        ${chips.length ? chips.map(function(c){ return `<span class="chip">${c}</span>`; }).join("") : "<span class='chip'>No major adverse features selected</span>"}
+      </div>
+    </div>`;
+});
+
+document.getElementById("acs-reset").addEventListener("click", function(){
+  document.getElementById("acs-form").reset();
+  document.getElementById("acs-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Result will appear here.</div>
+      <div>Enter values and click “Assess ACS Risk”.</div>
+    </div>`;
+});
+
+
+/* -------------------------
+   STEMI REPERFUSION
+-------------------------- */
+document.getElementById("stemi-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const symptomHrs = Number(document.getElementById("stemi-symptom-time").value || 0);
+  const dtb = Number(document.getElementById("stemi-door-balloon").value || 999);
+  const dtn = Number(document.getElementById("stemi-door-needle").value || 999);
+  const transfer = document.getElementById("stemi-transfer").value === "yes";
+  const shock = document.getElementById("stemi-shock").value === "yes";
+  const contra = document.getElementById("stemi-contra").value === "yes";
+
+  let recommendation = "";
+  let category = "risk-low";
+  let title = "Suggested approach";
+  const extra = [];
+
+  if(shock || contra){
+    category = "risk-high";
+    recommendation = "Primary PCI is preferred if available, especially with cardiogenic shock or contraindication to fibrinolysis. Activate cath lab or transfer urgently.";
+  } else if(symptomHrs > 12){
+    category = "risk-int";
+    recommendation = "Presentation is more than 12 hours from onset. Benefit of fibrinolysis is reduced. Consider PCI-based strategy and individualize based on ongoing ischemia, hemodynamics, and guideline recommendations.";
+  } else {
+    const pciGood = dtb <= 90 || (!transfer && dtb <= 120);
+    const lyticsMuchSooner = dtn + 30 < dtb;
+
+    if(pciGood){
+      category = "risk-low";
+      recommendation = "Door-to-balloon time appears acceptable. Primary PCI strategy is usually preferred when rapidly available in experienced centers.";
+    } else if(lyticsMuchSooner && dtn <= 30 && !contra && symptomHrs <= 12){
+      category = "risk-int";
+      recommendation = "PCI appears delayed while fibrinolysis can be given quickly with no absolute contraindications. Many pathways support fibrinolysis followed by early routine angiography.";
+    } else {
+      category = "risk-int";
+      recommendation = "Times are suboptimal for standard targets. Discuss urgently with cardiology/STEMI team to choose the best reperfusion strategy and expedite transfer or PCI.";
+    }
+  }
+
+  if(transfer) extra.push("Transfer required.");
+  if(shock) extra.push("Cardiogenic shock or severe instability.");
+  if(contra) extra.push("Possible absolute contraindication to fibrinolysis.");
+  if(symptomHrs <= 3) extra.push("Very early presentation ≤3 hours — time is myocardium.");
+
+  document.getElementById("stemi-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">${title}</div>
+      <div class="${category}">${recommendation}</div>
+      ${extra.length ? `<ul>${extra.map(function(x){ return `<li>${x}</li>`; }).join("")}</ul>` : ""}
+    </div>`;
+});
+
+document.getElementById("stemi-reset").addEventListener("click", function(){
+  document.getElementById("stemi-form").reset();
+  document.getElementById("stemi-result").innerHTML = `
+    <div class="calc-block">
+      <div class="calc-block-title">Result will appear here.</div>
+      <div>Enter times and key features, then click “Suggest Reperfusion Strategy”.</div>
+    </div>`;
+});
+</script>
+
+</body>
+</html>
