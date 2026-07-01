@@ -1,5 +1,27 @@
 [
   {
+    "title": "Community-Acquired Pneumonia: Outpatient Treatment and High-Value Workup",
+    "date": "2026-07-01",
+    "category": "Infectious Disease",
+    "tags": [
+      "community-acquired pneumonia",
+      "CAP",
+      "amoxicillin",
+      "doxycycline",
+      "macrolide",
+      "levofloxacin",
+      "outpatient pneumonia",
+      "sputum culture",
+      "blood cultures",
+      "IDSA",
+      "ATS"
+    ],
+    "summary": "A practical resident guide to outpatient community-acquired pneumonia including when amoxicillin is first-line, when to avoid routine cultures and CT, when to use fluoroquinolones, MRSA and Pseudomonas risk factors, and high-value diagnostic testing.",
+    "featured": false,
+    "readingTime": 10,
+    "file": "posts/2026-07-01-cap.html"
+  },
+  {
     "title": "Carbapenem-Resistant Enterobacterales (CRE): Practical Treatment Guide",
     "date": "2026-07-01",
     "category": "Infectious Disease",
