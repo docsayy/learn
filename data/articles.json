@@ -1,5 +1,27 @@
 [
   {
+    "title": "Carbapenem-Resistant Enterobacterales (CRE): Practical Treatment Guide",
+    "date": "2026-07-01",
+    "category": "Infectious Disease",
+    "tags": [
+      "CRE",
+      "carbapenem-resistant Enterobacterales",
+      "Klebsiella pneumoniae",
+      "KPC",
+      "NDM",
+      "ceftazidime-avibactam",
+      "meropenem-vaborbactam",
+      "cefiderocol",
+      "ESBL",
+      "pyelonephritis",
+      "complicated UTI"
+    ],
+    "summary": "A practical resident guide to carbapenem-resistant Enterobacterales infections including recognition of CRE susceptibility patterns, risk factors, complicated UTI and pyelonephritis treatment, ceftazidime-avibactam, meropenem-vaborbactam, cefiderocol, fosfomycin limitations, ESBL distinction, and resistant gram-negative treatment pearls.",
+    "featured": false,
+    "readingTime": 9,
+    "file": "posts/2026-07-01-cre.html"
+  },
+  {
     "title": "Staphylococcus aureus Bacteremia and Endocarditis: The Complete Resident Guide",
     "date": "2026-07-01",
     "category": "Infectious Disease",
