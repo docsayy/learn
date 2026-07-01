@@ -44,6 +44,26 @@
     "file": "posts/2026-07-01-cre.html"
   },
   {
+    "title": "Heart Failure Calculators: NYHA Class and HFrEF GDMT Helper",
+    "date": "2026-07-01",
+    "category": "Calculators",
+    "tags": [
+      "heart failure",
+      "HFrEF",
+      "GDMT",
+      "NYHA",
+      "cardiology calculator",
+      "ARNI",
+      "beta blocker",
+      "MRA",
+      "SGLT2 inhibitor"
+    ],
+    "summary": "Two practical cardiology calculators for heart failure: NYHA functional class helper and HFrEF guideline-directed medical therapy helper.",
+    "featured": false,
+    "readingTime": 2,
+    "file": "posts/2026-07-01-heart-failure.html"
+  },
+  {
     "title": "Staphylococcus aureus Bacteremia and Endocarditis: The Complete Resident Guide",
     "date": "2026-07-01",
     "category": "Infectious Disease",
