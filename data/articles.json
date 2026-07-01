@@ -1,5 +1,25 @@
 [
   {
+    "title": "ACS and Chest Pain Calculators",
+    "date": "2026-07-01",
+    "category": "Calculators",
+    "tags": [
+      "ACS",
+      "chest pain",
+      "HEART score",
+      "TIMI score",
+      "GRACE",
+      "STEMI",
+      "troponin",
+      "NSTEMI",
+      "cardiology calculators"
+    ],
+    "summary": "Combined ACS and chest pain calculator page including Troponin I trend assistant, HEART score, TIMI UA/NSTEMI score, GRACE-style ACS risk helper, and STEMI reperfusion helper.",
+    "featured": false,
+    "readingTime": 3,
+    "file": "posts/2026-07-01-acs-calculators.html"
+  },
+  {
     "title": "Community-Acquired Pneumonia: Outpatient Treatment and High-Value Workup",
     "date": "2026-07-01",
     "category": "Infectious Disease",
