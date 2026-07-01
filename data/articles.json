@@ -1,5 +1,27 @@
 [
   {
+    "title": "Steroids in Critical Care: Practical ICU Guide",
+    "date": "2026-07-01",
+    "category": "Critical Care",
+    "tags": [
+      "steroids",
+      "critical care",
+      "septic shock",
+      "ARDS",
+      "COVID",
+      "influenza",
+      "pneumonia",
+      "hydrocortisone",
+      "dexamethasone",
+      "methylprednisolone",
+      "status asthmaticus"
+    ],
+    "summary": "A practical ICU guide to steroid use in critical care, including steroid pharmacology, COVID, viral pneumonia, influenza, community-acquired pneumonia, septic shock, ARDS, status asthmaticus, anaphylaxis, tapering, and bedside controversies.",
+    "featured": false,
+    "readingTime": 14,
+    "file": "posts/2026-07-01-steroids.html"
+  },
+  {
     "title": "ACLS: The Complete Resident Guide to Running a Code",
     "date": "2026-06-28",
     "category": "Critical Care",
