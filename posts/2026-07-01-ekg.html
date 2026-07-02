@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="title" content="ECG Stepwise Guide">
-<meta name="date" content="2026-07-01">
+<meta name="date" content="2026-07-02">
 <meta name="category" content="Cardiology">
-<meta name="tags" content="ECG,EKG,cardiology,rhythm,rate,axis,PR interval,QRS,STEMI,QT interval,electrolytes">
+<meta name="tags" content="ECG,EKG,cardiology,rhythm,rate,axis,PR interval,QRS,STEMI,QT interval,electrolytes,LVH,RVH,Cornell,Sokolow-Lyon">
 <meta name="summary" content="A structured stepwise ECG interpretation guide covering rhythm, rate, P waves, PR interval, axis, QRS duration, hypertrophy, infarction patterns, ST-T changes, QT interval, and electrolyte abnormalities.">
 <meta name="featured" content="false">
 
@@ -176,6 +176,38 @@
   border-color:var(--accent);
 }
 
+.ecg-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:14px 0;
+  font-size:0.9rem;
+}
+
+.ecg-table th,
+.ecg-table td{
+  border:1px solid var(--border);
+  padding:10px;
+  text-align:left;
+  vertical-align:top;
+}
+
+.ecg-table th{
+  background:var(--soft);
+  color:var(--accent);
+}
+
+.memory-box{
+  background:var(--soft);
+  border-left:4px solid var(--accent);
+  border-radius:12px;
+  padding:14px;
+  margin:14px 0;
+}
+
+.memory-box h4{
+  margin:0 0 8px;
+}
+
 #imageModal{
   position:fixed;
   inset:0;
@@ -247,7 +279,17 @@ Learn Medicine › Cardiology
 <h1>ECG Stepwise Guide</h1>
 
 <div class="article-meta">
-Added July 1, 2026 • Cardiology • ECG
+Added July 2, 2026 • Cardiology • ECG
+</div>
+
+<p class="article-summary">
+A structured cookbook approach to ECG interpretation: rhythm → rate → P waves → PR interval → axis → QRS duration → precordial transition → voltage and hypertrophy → infarction patterns → ST segment and T waves → QT interval and electrolytes. Use the same sequence every time to avoid missing rhythm abnormalities, conduction disease, dangerous intervals, hypertrophy, or ischemic patterns.
+</p>
+
+<div class="tool-links">
+<a href="../index.html" class="tool-link">🏠 Home</a>
+<a href="../cardiology.html" class="tool-link">⬅ Back to Cardiology</a>
+<a href="ekg_interpreter.html" class="tool-link primary">🧮 Open ECG Interpreter Tool</a>
 </div>
 
 </header>
@@ -398,19 +440,105 @@ Measure from the beginning of the P wave to the beginning of the QRS complex.
 <h2 class="step-heading"><span class="step-badge">5</span> QRS Axis</h2>
 
 <p>
-Use a quick frontal-plane axis method.
+Use the two-lead quadrant method first. Look at QRS polarity in lead I and aVF. Then use lead II to refine the result.
 </p>
+
+<table class="ecg-table">
+<thead>
+<tr>
+<th>Lead I</th>
+<th>aVF</th>
+<th>Axis Quadrant</th>
+<th>Approximate Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive</td>
+<td>Positive</td>
+<td>Normal axis</td>
+<td>−30° to +90°</td>
+</tr>
+<tr>
+<td>Positive</td>
+<td>Negative</td>
+<td>Left axis deviation</td>
+<td>−30° to −90°</td>
+</tr>
+<tr>
+<td>Negative</td>
+<td>Positive</td>
+<td>Right axis deviation</td>
+<td>+90° to +180°</td>
+</tr>
+<tr>
+<td>Negative</td>
+<td>Negative</td>
+<td>Extreme axis deviation</td>
+<td>−90° to −180°</td>
+</tr>
+</tbody>
+</table>
+
+<div class="memory-box">
+<h4>Axis Memory Aid</h4>
+<ul>
+<li><strong>Lead I positive:</strong> the axis points leftward.</li>
+<li><strong>aVF positive:</strong> the axis points downward.</li>
+<li><strong>Both positive:</strong> down and left = normal quadrant.</li>
+<li><strong>Both negative:</strong> neither left nor down = extreme / northwest axis.</li>
+</ul>
+</div>
+
+<h3>Refine With Lead II</h3>
+
+<table class="ecg-table">
+<thead>
+<tr>
+<th>Lead I</th>
+<th>aVF</th>
+<th>Lead II</th>
+<th>Refined Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive</td>
+<td>Positive</td>
+<td>Positive</td>
+<td>Axis approximately 0° to +60°: clearly normal</td>
+</tr>
+<tr>
+<td>Positive</td>
+<td>Positive</td>
+<td>Negative</td>
+<td>Axis approximately +60° to +90°: borderline rightward but still within adult normal range</td>
+</tr>
+<tr>
+<td>Positive</td>
+<td>Negative</td>
+<td>Positive</td>
+<td>Axis approximately 0° to −30°: borderline or mild leftward axis</td>
+</tr>
+<tr>
+<td>Positive</td>
+<td>Negative</td>
+<td>Negative</td>
+<td>Axis approximately −30° to −90°: true left axis deviation; consider left anterior fascicular block when pattern fits</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Fascicular Block Thresholds</h3>
 
 <ul>
-<li>Lead I positive and lead II positive → normal axis.</li>
-<li>Lead I positive and lead II negative → left axis deviation.</li>
-<li>Lead I negative and aVF positive → right axis deviation.</li>
-<li>Lead I negative and aVF negative → northwest axis.</li>
+<li><strong>Left anterior fascicular block:</strong> axis −45° to −90° with qR pattern in aVL and rS pattern in II, III, and aVF.</li>
+<li><strong>Left posterior fascicular block:</strong> axis +90° to +180° with rS pattern in I and aVL, and qR pattern in III and aVF.</li>
 </ul>
 
-<p>
-Always interpret axis together with the rest of the tracing. For example, RBBB plus left axis deviation suggests bifascicular block.
-</p>
+<div class="warning">
+Do not rely only on the automated computer axis. Confirm visually using leads I, aVF, and lead II. Computer algorithms can make obvious axis errors that are easy to catch by inspection.
+</div>
 
 <figure class="article-image">
 <a href="https://docsayy.github.io/help/cardiology/ekg_images/axis_circle_cabrera.webp" target="_blank">
@@ -426,24 +554,34 @@ Always interpret axis together with the rest of the tracing. For example, RBBB p
 <div class="mini-grid">
 <div class="mini-card">
 <h4>Normal Axis</h4>
-<p>Approximately −30° to +90°.</p>
+<p>Adult normal QRS axis is approximately −30° to +90°.</p>
 </div>
 
 <div class="mini-card">
 <h4>Left Axis Deviation</h4>
-<p>Seen with LVH, left anterior fascicular block, and inferior MI.</p>
+<p>Seen with LVH, left anterior fascicular block, inferior MI, paced rhythm, or conduction disease.</p>
 </div>
 
 <div class="mini-card">
 <h4>Right Axis Deviation</h4>
-<p>Seen with RVH, pulmonary hypertension, and left posterior fascicular block.</p>
+<p>Seen with RVH, pulmonary hypertension, PE, lateral MI, or left posterior fascicular block.</p>
 </div>
 
 <div class="mini-card">
-<h4>Northwest Axis</h4>
-<p>Think ventricular rhythm, severe conduction disease, or toxicity.</p>
+<h4>Extreme Axis Deviation</h4>
+<p>Also called northwest axis. Think ventricular rhythm, severe conduction disease, hyperkalemia, sodium-channel blockade, or limb lead reversal.</p>
 </div>
 </div>
+
+<h3>Clinical Interpretation Pearls</h3>
+
+<ul>
+<li>Always interpret axis with QRS duration and morphology.</li>
+<li>RBBB plus left axis deviation suggests bifascicular block: RBBB + left anterior fascicular block.</li>
+<li>Right axis deviation with tall R in V1 supports RVH or pulmonary hypertension.</li>
+<li>Left axis deviation with high voltage and lateral ST-T changes supports LVH with secondary repolarization abnormality.</li>
+<li>Extreme axis should prompt a quick check for limb lead reversal before calling severe pathology.</li>
+</ul>
 </article>
 
 </section>
@@ -468,6 +606,14 @@ Always interpret axis together with the rest of the tracing. For example, RBBB p
 <div class="key-point">
 A wide QRS changes how you interpret ST-T abnormalities because bundle branch blocks create secondary repolarization changes.
 </div>
+
+<h3>QRS Duration and LVH Nuance</h3>
+
+<ul>
+<li>LVH can mildly prolong QRS duration and produce secondary ST-T abnormalities.</li>
+<li>In LBBB, voltage criteria become harder to apply.</li>
+<li>When LBBB is present, very wide QRS duration, especially greater than 155 ms, can support associated LVH with high specificity, but ECG alone should not be treated as definitive.</li>
+</ul>
 </article>
 
 <article class="ecg-card">
@@ -494,11 +640,67 @@ A wide QRS changes how you interpret ST-T abnormalities because bundle branch bl
 <article class="ecg-card">
 <h2 class="step-heading"><span class="step-badge">8</span> Voltage and Ventricular Hypertrophy</h2>
 
+<p>
+LVH and RVH are ECG pattern diagnoses, not single-number diagnoses. No single voltage criterion is perfect. Voltage must be interpreted with age, sex, race, body habitus, QRS duration, axis, and ST-T pattern.
+</p>
+
+<h3>Left Ventricular Hypertrophy Criteria</h3>
+
+<table class="ecg-table">
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Threshold</th>
+<th>Key Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sokolow-Lyon</td>
+<td>SV1 + RV5 or RV6 &gt; 35 mm</td>
+<td>Most common; low sensitivity but high specificity</td>
+</tr>
+<tr>
+<td>Cornell voltage</td>
+<td>RaVL + SV3 &gt; 28 mm in men; &gt; 20 mm in women</td>
+<td>Sex-specific and often useful when body habitus lowers precordial voltage</td>
+</tr>
+<tr>
+<td>Cornell product</td>
+<td>(RaVL + SV3) × QRS duration &gt; 2436 mm·ms</td>
+<td>Combines voltage and QRS duration; strong prognostic performance</td>
+</tr>
+<tr>
+<td>Peguero-Lo Presti</td>
+<td>Deepest S wave in any lead + SV4 ≥ 28 mm in men; ≥ 23 mm in women</td>
+<td>Higher sensitivity, lower specificity than traditional criteria</td>
+</tr>
+<tr>
+<td>Romhilt-Estes</td>
+<td>≥5 points definite LVH; ≥4 points probable LVH</td>
+<td>Uses voltage, ST-T changes, P-wave abnormality, axis, QRS duration, and intrinsicoid deflection</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Supporting LVH Clues</h3>
+
 <ul>
-<li><strong>LVH:</strong> high voltage criteria with or without strain pattern.</li>
-<li><strong>RVH:</strong> tall R wave in V1, R/S ratio greater than 1 in V1, deep S waves in V5–V6, and right axis deviation.</li>
-<li><strong>Low voltage:</strong> QRS amplitude less than 0.5 mV in limb leads. Consider pericardial effusion, COPD, obesity, or infiltrative disease.</li>
+<li>Left axis deviation.</li>
+<li>Left atrial abnormality.</li>
+<li>Prolonged QRS duration.</li>
+<li>Secondary ST-T abnormalities, formerly called “strain.”</li>
+<li>Lateral downsloping ST depression and asymmetric T-wave inversion in I, aVL, V5, or V6.</li>
 </ul>
+
+<div class="memory-box">
+<h4>LVH Memory Aid</h4>
+<ul>
+<li><strong>Sokolow-Lyon:</strong> deep S in V1 + tall R in V5/V6.</li>
+<li><strong>Cornell:</strong> aVL R + V3 S.</li>
+<li><strong>Peguero:</strong> deepest S anywhere + S in V4.</li>
+</ul>
+</div>
 
 <figure class="article-image">
 <a href="https://docsayy.github.io/help/cardiology/ekg_images/lvh_voltage_example.jpeg" target="_blank">
@@ -506,6 +708,66 @@ A wide QRS changes how you interpret ST-T abnormalities because bundle branch bl
 </a>
 <figcaption>LVH voltage example.</figcaption>
 </figure>
+</article>
+
+<article class="ecg-card">
+<h3>Right Ventricular Hypertrophy Criteria</h3>
+
+<p>
+RVH ECG criteria are usually highly specific but poorly sensitive, especially for mild RVH. In most cases, RVH should have both rightward axis and prominent anterior forces in the right precordial leads.
+</p>
+
+<table class="ecg-table">
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Threshold</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tall R in V1</td>
+<td>R wave &gt; 6 mm</td>
+<td>Specific, especially in congenital heart disease or marked RV pressure load</td>
+</tr>
+<tr>
+<td>R:S ratio in V1</td>
+<td>&gt; 1.0</td>
+<td>Suggests right-sided pressure overload pattern</td>
+</tr>
+<tr>
+<td>Sokolow-Lyon RVH</td>
+<td>RV1 + SV5 or SV6 &gt; 10.5 mm</td>
+<td>Voltage-based RVH criterion</td>
+</tr>
+<tr>
+<td>Deep S in V5</td>
+<td>&gt; 10 mm</td>
+<td>Reflects rightward QRS shift</td>
+</tr>
+<tr>
+<td>R peak time in V1</td>
+<td>&gt; 0.035 sec when QRS &lt; 0.12 sec</td>
+<td>Delayed right precordial activation</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Supporting RVH Clues</h3>
+
+<ul>
+<li>Right axis deviation greater than +90°.</li>
+<li>Tall R wave in V1.</li>
+<li>R:S ratio greater than 1 in V1.</li>
+<li>Deep S waves in V5–V6.</li>
+<li>Right atrial enlargement may coexist.</li>
+<li>Secondary ST-T changes in right precordial leads can occur with RV strain.</li>
+</ul>
+
+<div class="warning">
+In COPD, low voltage and altered chest anatomy can distort the usual RVH pattern. Do not diagnose RVH from one criterion alone; look for a coherent pattern.
+</div>
 
 <figure class="article-image">
 <a href="https://docsayy.github.io/help/cardiology/ekg_images/rvh_r_in_v1.jpeg" target="_blank">
@@ -513,14 +775,12 @@ A wide QRS changes how you interpret ST-T abnormalities because bundle branch bl
 </a>
 <figcaption>RVH example with tall R wave in V1.</figcaption>
 </figure>
-</article>
 
-<article class="ecg-card">
 <h3>When Voltage Matters</h3>
 
 <ul>
 <li>LVH with strain suggests chronic pressure load such as hypertension or aortic stenosis.</li>
-<li>RVH with right axis deviation suggests pulmonary hypertension, chronic lung disease, or right-sided pressure overload.</li>
+<li>RVH with right axis deviation suggests pulmonary hypertension, chronic lung disease, pulmonary embolism, or congenital heart disease.</li>
 <li>Low voltage plus tachycardia should raise concern for pericardial effusion or tamponade, especially if the clinical picture fits.</li>
 </ul>
 </article>
@@ -635,6 +895,14 @@ At the end of your ECG review, you should be able to produce two clean lines.
 </p>
 </div>
 
+<p>
+The ECG Interpreter Tool helps generate a copy-friendly version of this interpretation.
+</p>
+
+<div class="tool-links">
+<a href="ekg_interpreter.html" class="tool-link primary">🧮 Open ECG Interpreter Tool</a>
+</div>
+</article>
 
 </section>
 
@@ -646,8 +914,12 @@ At the end of your ECG review, you should be able to produce two clean lines.
 <li>Start with rhythm before looking for ischemia.</li>
 <li>Irregularly irregular rhythm should immediately raise concern for atrial fibrillation.</li>
 <li>Short PR plus delta wave suggests WPW pattern.</li>
+<li>Use leads I and aVF first for axis, then lead II to refine borderline left or rightward patterns.</li>
+<li>Lead I positive + aVF negative + lead II negative = true left axis deviation.</li>
 <li>RBBB plus left axis deviation suggests bifascicular block.</li>
 <li>LBBB and LVH can make ST-T interpretation difficult.</li>
+<li>Sokolow-Lyon, Cornell, Cornell product, Peguero-Lo Presti, and Romhilt-Estes are all LVH tools; no single criterion is perfect.</li>
+<li>RVH criteria are specific but insensitive. Look for right axis deviation plus prominent anterior forces.</li>
 <li>Posterior MI can present as ST depression in V1–V3 with tall R waves.</li>
 <li>Hyperkalemia progresses from peaked T waves to loss of P waves to QRS widening.</li>
 <li>Hypokalemia can cause prominent U waves.</li>
@@ -656,11 +928,21 @@ At the end of your ECG review, you should be able to produce two clean lines.
 </section>
 
 <section>
+<h2>References</h2>
+
+<ul>
+<li>Surawicz B, Childers R, Deal BJ, Gettes LS. AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: Part III. <em>Journal of the American College of Cardiology</em>. 2009.</li>
+<li>Peguero JG, Lo Presti S, Perez J, Issa O, Brenes JC, Tolentino A. Electrocardiographic criteria for the diagnosis of left ventricular hypertrophy. <em>Journal of the American College of Cardiology</em>. 2017.</li>
+<li>Merck Manual Professional Edition. Criteria for ECG diagnosis of left ventricular hypertrophy.</li>
+</ul>
+</section>
+
+<section>
 <h2>Bottom Line</h2>
 
 <div class="summary-box">
 <p>
-A safe ECG interpretation follows a consistent order: rhythm, rate, P waves, PR interval, axis, QRS width, precordial transition, voltage, infarction patterns, ST-T changes, QT interval, and electrolyte clues. This prevents premature closure and helps you identify rhythm disorders, conduction disease, hypertrophy, ischemia, infarction, and dangerous electrolyte abnormalities.
+A safe ECG interpretation follows a consistent order: rhythm, rate, P waves, PR interval, axis, QRS width, precordial transition, voltage, infarction patterns, ST-T changes, QT interval, and electrolyte clues. For axis, start with lead I and aVF, then refine with lead II. For hypertrophy, use multiple criteria rather than a single voltage number. This prevents premature closure and helps you identify rhythm disorders, conduction disease, hypertrophy, ischemia, infarction, and dangerous electrolyte abnormalities.
 </p>
 </div>
 
@@ -701,7 +983,8 @@ Learn Medicine • ECG Stepwise Guide
   }
 
   document.querySelectorAll("img[data-zoom]").forEach(function(img){
-    img.addEventListener("click", function(){
+    img.addEventListener("click", function(event){
+      event.preventDefault();
       openModal(img.getAttribute("src"), img.getAttribute("alt"));
     });
 
