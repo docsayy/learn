@@ -11,6 +11,11 @@
       "rate",
       "axis",
       "PR interval",
+      "AV block",
+      "bundle branch block",
+      "RBBB",
+      "LBBB",
+      "bifascicular block",
       "QRS",
       "STEMI",
       "QT interval",
@@ -20,10 +25,10 @@
       "Cornell",
       "Sokolow-Lyon"
     ],
-    "summary": "A structured stepwise ECG interpretation guide covering rhythm, rate, P waves, PR interval, axis, QRS duration, hypertrophy, infarction patterns, ST-T changes, QT interval, and electrolyte abnormalities.",
+    "summary": "A structured stepwise ECG interpretation guide covering rhythm, rate, P waves, PR interval, AV blocks, axis, QRS duration, bundle branch blocks, fascicular blocks, hypertrophy, infarction patterns, ST-T changes, QT interval, and electrolyte abnormalities.",
     "featured": false,
-    "readingTime": 10,
-    "file": "posts/2026-07-01-ekg.html"
+    "readingTime": 16,
+    "file": "posts/2026-07-02-ekg.html"
   },
   {
     "title": "Stroke Localization, Imaging, TIA Mimics, and Acute Ischemic Stroke: Complete Resident Guide",
