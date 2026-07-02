@@ -1,5 +1,34 @@
 [
   {
+    "title": "Stroke Localization, Imaging, TIA Mimics, and Acute Ischemic Stroke: Complete Resident Guide",
+    "date": "2026-07-02",
+    "category": "Neurology",
+    "tags": [
+      "stroke",
+      "acute ischemic stroke",
+      "TIA",
+      "stroke mimics",
+      "brain imaging",
+      "CT head",
+      "CTA",
+      "CT perfusion",
+      "MRI DWI",
+      "FLAIR",
+      "MCA",
+      "ACA",
+      "PCA",
+      "PICA",
+      "Wallenberg",
+      "basilar artery",
+      "HINTS",
+      "neurologic exam"
+    ],
+    "summary": "A complete resident guide to acute ischemic stroke including vascular territories, stroke syndromes, localization, neuro exam, TIA mimics, CT/CTA/perfusion/MRI imaging, thrombolysis, thrombectomy, secondary prevention, and high-yield memory aids.",
+    "featured": false,
+    "readingTime": 16,
+    "file": "posts/2026-07-02-stroke.html"
+  },
+  {
     "title": "ACS and Chest Pain Calculators",
     "date": "2026-07-01",
     "category": "Calculators",
