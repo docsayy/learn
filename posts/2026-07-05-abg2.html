@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="Blood Gas ICU Cases and Pimp Questions: Resident Drill Guide">
+<meta name="date" content="2026-07-05">
+<meta name="category" content="Critical Care">
+<meta name="tags" content="ABG,VBG,blood gas,ICU cases,pimp questions,acid-base,anion gap,delta gap,HAGMA,NAGMA,ventilator,BiPAP,HFNC,intubation,critical care">
+<meta name="summary" content="A long ICU drill guide with blood gas cases, attending-style pimp questions, short answers, ventilator adjustments, BiPAP and HFNC decisions, mixed acid-base disorders, HAGMA, NAGMA, delta gap, and oxygenation interpretation.">
+<meta name="featured" content="false">
+
+<title>Blood Gas ICU Cases and Pimp Questions: Resident Drill Guide | Learn Medicine</title>
+
+<link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+.case-card,
+.qa-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  margin:18px 0;
+  box-shadow:0 8px 22px rgba(15,23,42,0.05);
+}
+
+.case-card h3,
+.qa-card h3{
+  margin-top:0;
+}
+
+.formula{
+  background:#f8fafc;
+  border:1px dashed var(--border);
+  border-radius:12px;
+  padding:13px 15px;
+  font-weight:700;
+  margin:12px 0;
+}
+
+.answer{
+  background:var(--soft);
+  border-left:4px solid var(--accent);
+  border-radius:12px;
+  padding:12px 14px;
+  margin-top:10px;
+}
+
+.pitfall{
+  background:#fff7ed;
+  border-left:4px solid #f97316;
+  border-radius:12px;
+  padding:12px 14px;
+  margin-top:10px;
+}
+
+.danger{
+  background:#fef2f2;
+  border-left:4px solid #dc2626;
+  border-radius:12px;
+  padding:12px 14px;
+  margin-top:10px;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+
+@media(min-width:850px){
+  .quick-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+.badge-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:10px 0;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:5px 9px;
+  background:var(--soft);
+  color:var(--accent);
+  border:1px solid var(--border);
+  font-size:0.82rem;
+  font-weight:700;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+
+<div class="article-breadcrumb">
+Learn Medicine › Critical Care
+</div>
+
+<h1>Blood Gas ICU Cases and Pimp Questions: Resident Drill Guide</h1>
+
+<div class="article-meta">
+Added July 5, 2026 • Critical Care • ~50 min read</div>
+
+<p class="article-summary">
+This is a practical ICU drill companion for blood gas interpretation. It is built around real attending-style questions, rapid ABG/VBG interpretation, acid-base formulas, ventilator adjustments, BiPAP and HFNC decisions, and mixed disorder recognition.
+</p>
+
+</header>
+
+<div class="layout">
+
+<nav class="toc">
+<h3>Table of Contents</h3>
+<a href="#rapid">Rapid Formula Sheet</a>
+<a href="#cases-basic">Basic ICU Cases</a>
+<a href="#cases-mixed">Mixed Disorder Cases</a>
+<a href="#cases-vent">Ventilator Cases</a>
+<a href="#cases-niv">BiPAP / HFNC Cases</a>
+<a href="#cases-poison">Toxicology Cases</a>
+<a href="#cases-renal">Renal / Electrolyte Cases</a>
+<a href="#pimp-basic">Pimp Questions: Basics</a>
+<a href="#pimp-compensation">Pimp Questions: Compensation</a>
+<a href="#pimp-gap">Pimp Questions: Anion Gap</a>
+<a href="#pimp-oxygen">Pimp Questions: Oxygenation</a>
+<a href="#pimp-vent">Pimp Questions: Ventilator</a>
+<a href="#pitfalls">Common Pitfalls</a>
+<a href="#references">References</a>
+</nav>
+
+<main class="content">
+
+<section id="rapid">
+<h2>Rapid Formula Sheet</h2>
+
+<div class="quick-grid">
+
+<div class="case-card">
+<h3>Core Values</h3>
+<ul>
+<li>pH: 7.35–7.45</li>
+<li>PaCO₂: 35–45 mm Hg</li>
+<li>HCO₃⁻: 22–26 mEq/L</li>
+<li>PaO₂: roughly 80–100 mm Hg on room air, age dependent</li>
+<li>Lactate: usually &lt;2 mmol/L</li>
+</ul>
+</div>
+
+<div class="case-card">
+<h3>Core Formulas</h3>
+<div class="formula">Anion gap = Na − (Cl + HCO₃)</div>
+<div class="formula">Corrected AG = AG + 2.5 × (4 − albumin)</div>
+<div class="formula">Winter formula = 1.5 × HCO₃ + 8 ± 2</div>
+<div class="formula">P/F ratio = PaO₂ / FiO₂</div>
+</div>
+
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Disorder</th>
+<th>Expected Compensation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metabolic acidosis</td>
+<td>Expected PaCO₂ = 1.5 × HCO₃ + 8 ± 2</td>
+</tr>
+<tr>
+<td>Metabolic alkalosis</td>
+<td>Expected PaCO₂ ≈ 0.7 × (HCO₃ − 24) + 40 ± 5</td>
+</tr>
+<tr>
+<td>Acute respiratory acidosis</td>
+<td>HCO₃ rises ~1 for every 10 PaCO₂ above 40</td>
+</tr>
+<tr>
+<td>Chronic respiratory acidosis</td>
+<td>HCO₃ rises ~4 for every 10 PaCO₂ above 40</td>
+</tr>
+<tr>
+<td>Acute respiratory alkalosis</td>
+<td>HCO₃ falls ~2 for every 10 PaCO₂ below 40</td>
+</tr>
+<tr>
+<td>Chronic respiratory alkalosis</td>
+<td>HCO₃ falls ~4–5 for every 10 PaCO₂ below 40</td>
+</tr>
+</tbody>
+</table>
+
+<div class="summary-box">
+<p>
+Fast method: identify pH → identify primary process → check compensation → calculate anion gap → correct for albumin → delta ratio if gap is high → assess oxygenation → decide whether ventilator/NIV/O₂ support needs adjustment.
+</p>
+</div>
+</section>
+
+<section id="cases-basic">
+<h2>Basic ICU Cases</h2>
+
+<div class="case-card">
+<h3>Case 1: Simple Acute Respiratory Acidosis</h3>
+<p><strong>ABG:</strong> pH 7.22 / PaCO₂ 68 / PaO₂ 90 / HCO₃ 27</p>
+<p><strong>Scenario:</strong> Patient received opioids after surgery and is somnolent.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Primary respiratory acidosis. HCO₃ is only mildly elevated, appropriate for acute compensation.</p>
+<p><strong>Likely cause:</strong> Hypoventilation from opioid/sedative effect.</p>
+<p><strong>Management:</strong> Assess airway, reduce sedatives, consider naloxone if opioid toxicity, support ventilation, repeat gas. Intubate if unable to protect airway or worsening mental status.</p>
+</div>
+<div class="pitfall">
+Do not give bicarbonate for isolated respiratory acidosis. The problem is ventilation, not bicarbonate deficiency.
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 2: Chronic Respiratory Acidosis</h3>
+<p><strong>ABG:</strong> pH 7.36 / PaCO₂ 62 / PaO₂ 68 / HCO₃ 35</p>
+<p><strong>Scenario:</strong> Severe COPD, awake, comfortable, baseline home oxygen.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Chronic respiratory acidosis with renal compensation. pH is near normal because kidneys retained bicarbonate.</p>
+<p><strong>Management:</strong> Do not chase a normal PaCO₂ if this is baseline. Treat the patient and compare with prior gases if available.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 3: Acute on Chronic Respiratory Acidosis</h3>
+<p><strong>ABG:</strong> pH 7.24 / PaCO₂ 78 / PaO₂ 58 / HCO₃ 34</p>
+<p><strong>Scenario:</strong> COPD exacerbation, wheezing, accessory muscle use.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Acute on chronic hypercapnic respiratory failure. The high HCO₃ shows chronic compensation, but the low pH shows acute worsening.</p>
+<p><strong>Management:</strong> BiPAP if awake and protecting airway, bronchodilators, steroids, controlled O₂, antibiotics if indicated, reassess within 1–2 hours.</p>
+</div>
+<div class="danger">
+If mental status worsens, pH falls, work of breathing increases, or BiPAP is not tolerated, intubate.
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 4: Simple Metabolic Acidosis</h3>
+<p><strong>ABG:</strong> pH 7.21 / PaCO₂ 25 / HCO₃ 10</p>
+<p><strong>BMP:</strong> Na 138, Cl 100, HCO₃ 10</p>
+<div class="answer">
+<p><strong>Step 1:</strong> pH low = acidemia.</p>
+<p><strong>Step 2:</strong> HCO₃ low = metabolic acidosis.</p>
+<p><strong>Step 3:</strong> AG = 138 − (100 + 10) = 28 → high anion gap metabolic acidosis.</p>
+<p><strong>Step 4:</strong> Winter = 1.5 × 10 + 8 ±2 = 23 ±2. Actual PaCO₂ 25 is appropriate.</p>
+<p><strong>Interpretation:</strong> HAGMA with appropriate respiratory compensation.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 5: Metabolic Alkalosis from Vomiting</h3>
+<p><strong>ABG:</strong> pH 7.55 / PaCO₂ 50 / HCO₃ 42</p>
+<p><strong>Scenario:</strong> Persistent vomiting, low K, low chloride.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Primary metabolic alkalosis with respiratory compensation.</p>
+<p><strong>Likely cause:</strong> Gastric acid loss, volume contraction, hypokalemia, chloride depletion.</p>
+<p><strong>Management:</strong> Normal saline, potassium chloride, magnesium if low, antiemetics, stop NG suction if possible.</p>
+</div>
+</div>
+
+</section>
+
+<section id="cases-mixed">
+<h2>Mixed Disorder Cases</h2>
+
+<div class="case-card">
+<h3>Case 6: DKA with Respiratory Fatigue</h3>
+<p><strong>ABG:</strong> pH 7.08 / PaCO₂ 30 / HCO₃ 8</p>
+<p><strong>BMP:</strong> Na 132, Cl 94, HCO₃ 8, glucose 620</p>
+<div class="answer">
+<p><strong>AG:</strong> 132 − (94 + 8) = 30.</p>
+<p><strong>Winter:</strong> 1.5 × 8 + 8 ±2 = 20 ±2.</p>
+<p><strong>Actual PaCO₂:</strong> 30, which is higher than expected.</p>
+<p><strong>Interpretation:</strong> DKA causing HAGMA plus superimposed respiratory acidosis/inadequate compensation.</p>
+<p><strong>Clinical concern:</strong> Patient may be tiring. In severe metabolic acidosis, the patient must hyperventilate to compensate. If PaCO₂ rises, the pH can crash.</p>
+</div>
+<div class="danger">
+Do not sedate this patient casually. Intubation is high risk because losing their compensatory hyperventilation can cause severe acidemia.
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 7: Salicylate Poisoning with Normal pH</h3>
+<p><strong>ABG:</strong> pH 7.42 / PaCO₂ 20 / HCO₃ 13</p>
+<p><strong>BMP:</strong> Na 140, Cl 102, HCO₃ 13</p>
+<div class="answer">
+<p><strong>AG:</strong> 140 − (102 + 13) = 25.</p>
+<p><strong>Interpretation:</strong> High anion gap metabolic acidosis plus primary respiratory alkalosis. pH looks “normal-ish” because two dangerous disorders offset each other.</p>
+<p><strong>Likely cause:</strong> Salicylate toxicity is classic.</p>
+<p><strong>Management:</strong> Salicylate level, poison control, sodium bicarbonate infusion, potassium repletion, dialysis if severe.</p>
+</div>
+<div class="pitfall">
+Normal pH does not mean normal physiology. Always inspect PaCO₂ and HCO₃.
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 8: Sepsis with Lactic Acidosis and Respiratory Alkalosis</h3>
+<p><strong>ABG:</strong> pH 7.36 / PaCO₂ 22 / HCO₃ 12</p>
+<p><strong>Lactate:</strong> 7 mmol/L</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> HAGMA from lactic acidosis plus respiratory alkalosis from sepsis/pain/hyperventilation. pH is near normal because disorders oppose each other.</p>
+<p><strong>Management:</strong> Treat sepsis: source control, antibiotics, fluids/pressors as clinically indicated, oxygen delivery, trend lactate in context.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 9: COPD + Diuresis</h3>
+<p><strong>ABG:</strong> pH 7.46 / PaCO₂ 65 / HCO₃ 45</p>
+<p><strong>Scenario:</strong> COPD patient aggressively diuresed for HF.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Chronic respiratory acidosis plus metabolic alkalosis. HCO₃ is higher than expected for chronic CO₂ retention alone, and pH is alkalemic.</p>
+<p><strong>Likely cause:</strong> Loop diuretics, chloride depletion, hypokalemia, post-hypercapnic alkalosis.</p>
+<p><strong>Management:</strong> Check K, Cl, Mg, volume status. Replete chloride/potassium; consider acetazolamide in selected ventilated or volume-overloaded patients.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 10: HAGMA + NAGMA</h3>
+<p><strong>ABG:</strong> pH 7.18 / PaCO₂ 25 / HCO₃ 9</p>
+<p><strong>BMP:</strong> Na 138, Cl 112, HCO₃ 9</p>
+<div class="answer">
+<p><strong>AG:</strong> 138 − (112 + 9) = 17.</p>
+<p><strong>Delta ratio:</strong> (17 − 12) / (24 − 9) = 5 / 15 = 0.33.</p>
+<p><strong>Interpretation:</strong> Mixed HAGMA + NAGMA. The chloride is high and bicarbonate fell more than the anion gap rose.</p>
+<p><strong>Common causes:</strong> DKA after saline resuscitation, diarrhea plus lactic acidosis, renal failure plus RTA.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 11: HAGMA + Metabolic Alkalosis</h3>
+<p><strong>ABG:</strong> pH 7.47 / PaCO₂ 45 / HCO₃ 32</p>
+<p><strong>BMP:</strong> Na 140, Cl 92, HCO₃ 32</p>
+<div class="answer">
+<p><strong>AG:</strong> 140 − (92 + 32) = 16.</p>
+<p><strong>Delta ratio:</strong> (16 − 12) / (24 − 32) cannot be interpreted normally because HCO₃ is elevated, not low.</p>
+<p><strong>Interpretation:</strong> Metabolic alkalosis with an elevated anion gap process hiding underneath. Think vomiting/diuresis plus lactate, renal failure, or ketoacids.</p>
+</div>
+</div>
+
+</section>
+
+<section id="cases-vent">
+<h2>Ventilator Cases</h2>
+
+<div class="case-card">
+<h3>Case 12: Ventilated Patient with Respiratory Acidosis</h3>
+<p><strong>Vent:</strong> Volume control, RR 16, TV 420 mL, PEEP 5, FiO₂ 40%</p>
+<p><strong>ABG:</strong> 7.20 / 62 / 88 / 24</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Acute respiratory acidosis with acceptable oxygenation.</p>
+<p><strong>Ventilator move:</strong> Increase minute ventilation. Usually increase RR first if no severe air trapping. Example: RR 16 → 20.</p>
+<p><strong>Check:</strong> Plateau pressure, driving pressure, expiratory flow returning to baseline, auto-PEEP.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 13: Ventilated Patient with Respiratory Alkalosis</h3>
+<p><strong>Vent:</strong> RR 26, TV 450, PEEP 5, FiO₂ 30%</p>
+<p><strong>ABG:</strong> 7.55 / 24 / 110 / 22</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Respiratory alkalosis from excessive ventilation or patient overbreathing.</p>
+<p><strong>Ventilator move:</strong> Reduce minute ventilation if appropriate. Decrease set RR, assess pain/anxiety/sepsis, review sedation and synchrony.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 14: ARDS Hypoxemia</h3>
+<p><strong>Vent:</strong> FiO₂ 80%, PEEP 8</p>
+<p><strong>ABG:</strong> 7.36 / 42 / 70 / 24</p>
+<div class="answer">
+<p><strong>P/F ratio:</strong> 70 / 0.80 = 87.5.</p>
+<p><strong>Interpretation:</strong> Severe oxygenation defect if ARDS criteria met.</p>
+<p><strong>Ventilator move:</strong> Increase PEEP per ARDS table/strategy, maintain lung-protective tidal volume, consider proning if P/F &lt;150 despite optimization, treat underlying cause.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 15: Too Much Oxygen</h3>
+<p><strong>Vent:</strong> FiO₂ 100%, PEEP 5</p>
+<p><strong>ABG:</strong> 7.40 / 40 / 280 / 24</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Hyperoxia.</p>
+<p><strong>Ventilator move:</strong> Decrease FiO₂. If oxygenation remains stable, continue titrating down to a safe SpO₂ goal.</p>
+</div>
+<div class="pitfall">
+Do not leave patients on FiO₂ 100% longer than necessary.
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 16: Severe Asthma on Vent</h3>
+<p><strong>Vent:</strong> RR 24, TV 500, PEEP 5</p>
+<p><strong>ABG:</strong> 7.16 / 75 / 95 / 26</p>
+<p><strong>Waveform:</strong> Expiratory flow does not return to baseline.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Respiratory acidosis from severe obstruction with air trapping.</p>
+<p><strong>Correct move:</strong> Do not reflexively increase RR. Reduce RR, increase expiratory time, consider lower TV, bronchodilators, deep sedation if needed, permissive hypercapnia.</p>
+</div>
+<div class="danger">
+In asthma, increasing RR can worsen dynamic hyperinflation, hypotension, barotrauma, and arrest.
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 17: Post-Intubation DKA Crash</h3>
+<p><strong>Before intubation:</strong> pH 7.05 / PaCO₂ 15 / HCO₃ 4</p>
+<p><strong>After intubation:</strong> Vent RR 16, TV 420</p>
+<div class="answer">
+<p><strong>Problem:</strong> The patient was compensating with extreme minute ventilation. If the ventilator does not match that compensation, PaCO₂ rises and pH can collapse.</p>
+<p><strong>Management:</strong> Pre-intubation resuscitation if possible, avoid apnea, set high minute ventilation initially, monitor closely, repeat gas rapidly.</p>
+</div>
+</div>
+
+</section>
+
+<section id="cases-niv">
+<h2>BiPAP / HFNC Cases</h2>
+
+<div class="case-card">
+<h3>Case 18: COPD Exacerbation Needing BiPAP</h3>
+<p><strong>ABG:</strong> 7.28 / 68 / 58 / 31</p>
+<p><strong>Patient:</strong> Awake, wheezing, using accessory muscles, protecting airway.</p>
+<div class="answer">
+<p><strong>Best support:</strong> BiPAP.</p>
+<p><strong>Why:</strong> Main problem is ventilatory failure with hypercapnic acidemia. IPAP helps CO₂ clearance.</p>
+<p><strong>Follow-up:</strong> Repeat gas after trial. Improvement in pH, PaCO₂, RR, work of breathing, and mental status suggests success.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 19: COPD Exacerbation Failing BiPAP</h3>
+<p><strong>Initial ABG:</strong> 7.28 / 68 / 58 / 31</p>
+<p><strong>After BiPAP:</strong> 7.18 / 82 / 55 / 30</p>
+<p><strong>Patient:</strong> Sleepy, poor mask tolerance.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Worsening hypercapnic respiratory failure despite NIV.</p>
+<p><strong>Management:</strong> Intubate if consistent with goals of care.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 20: Pneumonia Hypoxemia Needing HFNC</h3>
+<p><strong>ABG:</strong> 7.46 / 32 / 58 / 22 on non-rebreather</p>
+<p><strong>Patient:</strong> Awake, tachypneic, not hypercapnic.</p>
+<div class="answer">
+<p><strong>Best support:</strong> HFNC is reasonable if no immediate intubation criteria.</p>
+<p><strong>Why:</strong> Main problem is hypoxemic respiratory failure, not CO₂ retention.</p>
+<p><strong>Watch for failure:</strong> Increasing work of breathing, rising oxygen needs, worsening mental status, shock, inability to maintain saturation.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 21: Cardiogenic Pulmonary Edema</h3>
+<p><strong>ABG:</strong> 7.30 / 50 / 60 / 24</p>
+<p><strong>Patient:</strong> Hypertensive, pulmonary edema, severe dyspnea.</p>
+<div class="answer">
+<p><strong>Best support:</strong> CPAP or BiPAP depending on hypercapnia/work of breathing.</p>
+<p><strong>Why:</strong> Positive pressure reduces preload/afterload and improves oxygenation. BiPAP adds ventilatory support if CO₂ is elevated.</p>
+<p><strong>Management:</strong> Nitrates if hypertensive, diuresis when appropriate, treat trigger.</p>
+</div>
+</div>
+
+</section>
+
+<section id="cases-poison">
+<h2>Toxicology Cases</h2>
+
+<div class="case-card">
+<h3>Case 22: Methanol</h3>
+<p><strong>ABG:</strong> 7.10 / 24 / 7</p>
+<p><strong>BMP:</strong> Na 140, Cl 100, HCO₃ 7</p>
+<p><strong>Osm gap:</strong> Elevated</p>
+<p><strong>Symptoms:</strong> Blurry vision.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Severe HAGMA with osmolar gap and visual symptoms.</p>
+<p><strong>Diagnosis:</strong> Methanol toxicity.</p>
+<p><strong>Management:</strong> Fomepizole, dialysis if severe, folinic/folic acid, poison control.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 23: Ethylene Glycol</h3>
+<p><strong>ABG:</strong> 7.12 / 20 / 6</p>
+<p><strong>BMP:</strong> Na 138, Cl 98, HCO₃ 6</p>
+<p><strong>Findings:</strong> AKI, calcium oxalate crystals.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> Severe HAGMA with toxic alcohol concern.</p>
+<p><strong>Diagnosis:</strong> Ethylene glycol toxicity.</p>
+<p><strong>Management:</strong> Fomepizole, dialysis if severe, thiamine/pyridoxine, poison control.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 24: Carbon Monoxide</h3>
+<p><strong>ABG:</strong> PaO₂ 300 on high FiO₂, saturation by pulse ox 100%</p>
+<p><strong>Patient:</strong> Headache, confusion, house fire exposure.</p>
+<div class="answer">
+<p><strong>Interpretation:</strong> PaO₂ can be normal or high because dissolved oxygen is present. Pulse ox can be falsely normal because it misreads carboxyhemoglobin.</p>
+<p><strong>Diagnosis:</strong> Carbon monoxide poisoning.</p>
+<p><strong>Management:</strong> Co-oximetry, 100% oxygen, consider hyperbaric oxygen depending on severity/pregnancy/neurologic or cardiac findings.</p>
+</div>
+</div>
+
+</section>
+
+<section id="cases-renal">
+<h2>Renal / Electrolyte Cases</h2>
+
+<div class="case-card">
+<h3>Case 25: Type 4 RTA</h3>
+<p><strong>ABG:</strong> 7.29 / 32 / 15</p>
+<p><strong>BMP:</strong> Na 138, Cl 113, HCO₃ 15, K 5.8</p>
+<div class="answer">
+<p><strong>AG:</strong> 138 − (113 + 15) = 10.</p>
+<p><strong>Interpretation:</strong> NAGMA with hyperkalemia.</p>
+<p><strong>Likely diagnosis:</strong> Type 4 RTA, often from diabetes, CKD, hypoaldosteronism, ACEi/ARB, spironolactone, heparin, or TMP-SMX.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 26: Diarrhea</h3>
+<p><strong>ABG:</strong> 7.25 / 30 / 13</p>
+<p><strong>BMP:</strong> Na 140, Cl 116, HCO₃ 13, K 2.9</p>
+<div class="answer">
+<p><strong>AG:</strong> 140 − (116 + 13) = 11.</p>
+<p><strong>Interpretation:</strong> NAGMA from bicarbonate loss.</p>
+<p><strong>Likely cause:</strong> Diarrhea, especially with hypokalemia.</p>
+<p><strong>Management:</strong> Fluids, potassium, treat cause of diarrhea.</p>
+</div>
+</div>
+
+<div class="case-card">
+<h3>Case 27: Uremic Acidosis</h3>
+<p><strong>ABG:</strong> 7.22 / 28 / 11</p>
+<p><strong>BMP:</strong> Na 136, Cl 100, HCO₃ 11, BUN 110, Cr 8.5</p>
+<div class="answer">
+<p><strong>AG:</strong> 136 − (100 + 11) = 25.</p>
+<p><strong>Interpretation:</strong> HAGMA from renal failure/uremia.</p>
+<p><strong>Management:</strong> Assess dialysis indications: acidosis, electrolyte abnormalities, intoxications, overload, uremic symptoms.</p>
+</div>
+</div>
+
+</section>
+
+<section id="pimp-basic">
+<h2>Pimp Questions: Basics</h2>
+
+<div class="qa-card">
+<h3>Q1. What is an ABG?</h3>
+<div class="answer">An arterial blood gas measures arterial pH, PaCO₂, PaO₂, and often calculated bicarbonate and oxygen saturation. It tells you ventilation, oxygenation, and acid-base status.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q2. What is the difference between oxygenation and ventilation?</h3>
+<div class="answer">Oxygenation is getting oxygen into arterial blood, reflected by PaO₂ and saturation. Ventilation is clearing CO₂, reflected by PaCO₂.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q3. What number tells you ventilation?</h3>
+<div class="answer">PaCO₂. High PaCO₂ means inadequate alveolar ventilation. Low PaCO₂ means hyperventilation.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q4. What number tells you oxygenation?</h3>
+<div class="answer">PaO₂ on an ABG, interpreted with FiO₂. SpO₂ is useful but can be misleading in CO poisoning, methemoglobinemia, or poor waveform states.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q5. Why can oxygen saturation be okay while PaCO₂ is terrible?</h3>
+<div class="answer">Oxygenation and ventilation are different. A patient can receive enough oxygen to maintain saturation but still hypoventilate and retain CO₂.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q6. Is VBG good enough?</h3>
+<div class="answer">Often for pH and acid-base trend, especially DKA or stable metabolic disorders. Not for oxygenation, P/F ratio, shunt assessment, or precise PaCO₂ in unstable patients.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q7. What is serum chemistry CO₂?</h3>
+<div class="answer">Mostly bicarbonate. BMP CO₂ is not PaCO₂. BMP CO₂ reflects the metabolic side; ABG PaCO₂ reflects ventilation.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q8. Why does bicarbonate on ABG differ from BMP CO₂?</h3>
+<div class="answer">ABG bicarbonate is calculated from pH and PaCO₂. BMP CO₂ is measured total CO₂, mostly bicarbonate. Timing, sample handling, and rapid changes can cause differences.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q9. What does base excess mean?</h3>
+<div class="answer">Base excess estimates the metabolic component of acid-base disturbance. Negative base excess suggests metabolic acidosis; positive suggests metabolic alkalosis.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q10. What is the first step in ABG interpretation?</h3>
+<div class="answer">Look at pH. Decide acidemia, alkalemia, or normal pH with possible mixed disorder.</div>
+</div>
+
+</section>
+
+<section id="pimp-compensation">
+<h2>Pimp Questions: Compensation</h2>
+
+<div class="qa-card">
+<h3>Q11. Can compensation fully normalize pH?</h3>
+<div class="answer">Compensation can bring pH closer to normal but should not overshoot. If it overshoots, suspect a mixed disorder.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q12. How fast does respiratory compensation occur?</h3>
+<div class="answer">Minutes. The lungs can change PaCO₂ quickly by changing alveolar ventilation.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q13. How fast does renal compensation occur?</h3>
+<div class="answer">Hours to days. Kidney bicarbonate retention or excretion is slower than respiratory compensation.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q14. What is Winter’s formula?</h3>
+<div class="answer">Expected PaCO₂ = 1.5 × HCO₃ + 8 ± 2. Use it in metabolic acidosis.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q15. In metabolic acidosis, what if actual PaCO₂ is higher than Winter’s expected PaCO₂?</h3>
+<div class="answer">There is superimposed respiratory acidosis or inadequate respiratory compensation. In ICU this may mean fatigue, COPD, CNS depression, or impending respiratory failure.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q16. In metabolic acidosis, what if actual PaCO₂ is lower than expected?</h3>
+<div class="answer">There is superimposed respiratory alkalosis, such as sepsis, pain, anxiety, pregnancy, liver disease, PE, or salicylates.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q17. PaCO₂ is 70 and HCO₃ is 27. Acute or chronic respiratory acidosis?</h3>
+<div class="answer">Acute. PaCO₂ is 30 above 40, so acute HCO₃ rise should be about 3, from 24 to 27.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q18. PaCO₂ is 70 and HCO₃ is 36. Acute or chronic?</h3>
+<div class="answer">Chronic. PaCO₂ is 30 above 40, so chronic HCO₃ rise should be about 12, from 24 to 36.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q19. Why is acute respiratory acidosis more acidemic than chronic respiratory acidosis?</h3>
+<div class="answer">The kidneys have not had time to retain bicarbonate. Chronic CO₂ retention allows renal compensation.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q20. Why is a “normal” PaCO₂ dangerous in severe metabolic acidosis?</h3>
+<div class="answer">Because PaCO₂ should be low as compensation. A normal PaCO₂ in severe metabolic acidosis may actually represent ventilatory failure.</div>
+</div>
+
+</section>
+
+<section id="pimp-gap">
+<h2>Pimp Questions: Anion Gap and Delta Gap</h2>
+
+<div class="qa-card">
+<h3>Q21. Why calculate anion gap?</h3>
+<div class="answer">To determine whether metabolic acidosis is due to unmeasured acids. HAGMA changes the differential and can reveal toxins, lactate, ketoacids, or renal failure.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q22. Why correct anion gap for albumin?</h3>
+<div class="answer">Albumin is the main unmeasured anion. Low albumin lowers the measured gap and can hide high anion gap acidosis.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q23. What is the albumin correction?</h3>
+<div class="answer">Corrected AG = AG + 2.5 × (4 − albumin).</div>
+</div>
+
+<div class="qa-card">
+<h3>Q24. What is GOLD MARK?</h3>
+<div class="answer">Glycols, Oxoproline, L-lactate, D-lactate, Methanol, Aspirin, Renal failure, Ketoacidosis.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q25. What is HARDUP?</h3>
+<div class="answer">Hyperalimentation, Acetazolamide/Addison, RTA, Diarrhea, Ureteral diversion, Pancreatic fistula.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q26. What does delta ratio tell you?</h3>
+<div class="answer">Whether the fall in bicarbonate matches the rise in anion gap. It helps detect HAGMA plus NAGMA or HAGMA plus metabolic alkalosis.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q27. Delta ratio less than 0.4?</h3>
+<div class="answer">Mostly NAGMA or HAGMA plus significant NAGMA.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q28. Delta ratio 0.8 to 2?</h3>
+<div class="answer">Typical pure HAGMA pattern.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q29. Delta ratio greater than 2?</h3>
+<div class="answer">HAGMA plus metabolic alkalosis, or high baseline bicarbonate from chronic respiratory acidosis.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q30. Why can DKA become hyperchloremic NAGMA during treatment?</h3>
+<div class="answer">Ketoacids are cleared and bicarbonate regenerates slowly; large-volume normal saline adds chloride and lowers strong ion difference, causing hyperchloremic acidosis.</div>
+</div>
+
+</section>
+
+<section id="pimp-oxygen">
+<h2>Pimp Questions: Oxygenation</h2>
+
+<div class="qa-card">
+<h3>Q31. What is the P/F ratio?</h3>
+<div class="answer">PaO₂ divided by FiO₂. Example: PaO₂ 80 on FiO₂ 0.40 gives P/F 200.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q32. What P/F ratio suggests severe ARDS?</h3>
+<div class="answer">P/F ≤100, if ARDS criteria are met and PEEP/CPAP requirement is satisfied by the definition used.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q33. What is the A-a gradient?</h3>
+<div class="answer">The difference between alveolar oxygen and arterial oxygen. It helps separate hypoventilation from gas exchange problems.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q34. Normal A-a gradient with hypoxemia means what?</h3>
+<div class="answer">Hypoventilation or low inspired oxygen/high altitude. Gas exchange across the lung is relatively preserved.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q35. High A-a gradient means what?</h3>
+<div class="answer">V/Q mismatch, shunt, or diffusion limitation.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q36. Why does PEEP improve oxygenation?</h3>
+<div class="answer">PEEP recruits alveoli, prevents derecruitment, reduces shunt, and improves functional residual capacity.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q37. Why does FiO₂ not fix shunt as well as V/Q mismatch?</h3>
+<div class="answer">In true shunt, blood passes through nonventilated lung units and never sees alveolar oxygen, so extra FiO₂ has limited effect.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q38. Why can pulse ox be falsely normal in carbon monoxide poisoning?</h3>
+<div class="answer">Standard pulse oximetry cannot reliably distinguish oxyhemoglobin from carboxyhemoglobin. Use co-oximetry.</div>
+</div>
+
+</section>
+
+<section id="pimp-vent">
+<h2>Pimp Questions: Ventilator / NIV</h2>
+
+<div class="qa-card">
+<h3>Q39. If PaCO₂ is high on the ventilator, what do you change?</h3>
+<div class="answer">Increase minute ventilation: RR × tidal volume. Usually increase RR first if safe, while monitoring auto-PEEP and pressures.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q40. If PaO₂ is low on the ventilator, what do you change?</h3>
+<div class="answer">Increase FiO₂ and/or PEEP. FiO₂ works quickly; PEEP recruits alveoli and reduces shunt.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q41. In ARDS, why not simply increase tidal volume to clear CO₂?</h3>
+<div class="answer">High tidal volumes can cause ventilator-induced lung injury. Use lung-protective ventilation and accept permissive hypercapnia if pH tolerates it.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q42. What is permissive hypercapnia?</h3>
+<div class="answer">Accepting elevated PaCO₂ to avoid injurious ventilation, especially in ARDS or obstructive lung disease, as long as pH and hemodynamics are acceptable.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q43. What does IPAP do on BiPAP?</h3>
+<div class="answer">IPAP increases inspiratory pressure support, tidal volume, and CO₂ clearance.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q44. What does EPAP do on BiPAP?</h3>
+<div class="answer">EPAP is similar to PEEP. It improves oxygenation and helps keep airways/alveoli open.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q45. When is BiPAP best?</h3>
+<div class="answer">COPD exacerbation with hypercapnic acidemia, obesity hypoventilation, cardiogenic pulmonary edema, and selected neuromuscular/chest wall disorders if airway protection is intact.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q46. When is HFNC best?</h3>
+<div class="answer">Hypoxemic respiratory failure where oxygenation and high flow are needed, such as pneumonia or early ARDS, without primary severe ventilatory failure.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q47. When should you intubate instead of trying BiPAP/HFNC?</h3>
+<div class="answer">Airway protection failure, severe shock, cardiac arrest, worsening mental status, inability to tolerate interface, severe aspiration risk, exhaustion, or worsening gas despite noninvasive support.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q48. Why can intubating a severe metabolic acidosis patient be dangerous?</h3>
+<div class="answer">They may be maintaining pH by extreme hyperventilation. Sedation/apnea or inadequate ventilator minute ventilation can cause PaCO₂ to rise and pH to crash.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q49. What is the ABG target after starting BiPAP for COPD?</h3>
+<div class="answer">Improving pH and decreasing PaCO₂, but not necessarily normal PaCO₂. Clinical work of breathing and mental status matter just as much.</div>
+</div>
+
+<div class="qa-card">
+<h3>Q50. Why should you avoid excessive oxygen in COPD?</h3>
+<div class="answer">Excess oxygen can worsen hypercapnia through V/Q changes, Haldane effect, and reduced hypoxic pulmonary vasoconstriction. Target controlled oxygen saturation per local protocol.</div>
+</div>
+
+</section>
+
+<section id="pitfalls">
+<h2>Common Pitfalls</h2>
+
+<ul>
+<li>Calling a normal pH “normal ABG” without checking PaCO₂ and HCO₃.</li>
+<li>Using VBG oxygen values to make oxygenation decisions.</li>
+<li>Forgetting Winter’s formula in metabolic acidosis.</li>
+<li>Not correcting anion gap for albumin.</li>
+<li>Missing salicylate toxicity because pH is normal.</li>
+<li>Giving bicarbonate for isolated respiratory acidosis.</li>
+<li>Increasing RR in severe asthma and worsening auto-PEEP.</li>
+<li>Forgetting that chemistry CO₂ is mostly bicarbonate, not PaCO₂.</li>
+<li>Assuming all high lactate is sepsis; seizures, beta-agonists, liver failure, ischemia, and shock states matter.</li>
+<li>Leaving FiO₂ at 100% when PaO₂ is very high.</li>
+<li>Waiting too long to intubate a failing BiPAP patient.</li>
+<li>Intubating severe metabolic acidosis without matching pre-intubation minute ventilation.</li>
+<li>Ignoring the patient because the ABG “looks better.”</li>
+</ul>
+
+<div class="summary-box">
+<p>
+The ICU skill is not just naming the disorder. The skill is identifying whether compensation is appropriate, whether oxygenation or ventilation is failing, and what bedside intervention follows from the physiology.
+</p>
+</div>
+</section>
+
+<section id="references">
+<h2>References</h2>
+
+<ul>
+<li>Berend K, de Vries APJ, Gans ROB. Physiological approach to assessment of acid-base disturbances. <em>New England Journal of Medicine</em>. 2014;371:1434-1445.</li>
+<li>Davidson C, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. <em>Thorax</em>. 2016;71 Suppl 2:ii1-ii35.</li>
+<li>ARDS Definition Task Force. Acute respiratory distress syndrome: the Berlin Definition. <em>JAMA</em>. 2012;307:2526-2533.</li>
+<li>Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. <em>Intensive Care Medicine</em>. 2021.</li>
+<li>Adrogué HJ, Madias NE. Management of life-threatening acid-base disorders. <em>New England Journal of Medicine</em>.</li>
+<li>Life in the Fast Lane. Acid-base disorders and blood gas interpretation reference.</li>
+</ul>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+</section>
+
+</main>
+
+</div>
+
+<footer class="footer">
+Learn Medicine • Blood Gas ICU Cases and Pimp Questions
+</footer>
+
+</div>
+
+<script src="../assets/js/article-progress.js"></script>
+
+</body>
+</html>
