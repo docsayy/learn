@@ -1,5 +1,31 @@
 [
   {
+    "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
+    "date": "2026-07-05",
+    "category": "Critical Care",
+    "tags": [
+      "ABG",
+      "VBG",
+      "blood gas",
+      "acid-base",
+      "anion gap",
+      "HAGMA",
+      "NAGMA",
+      "delta gap",
+      "Winter formula",
+      "metabolic acidosis",
+      "respiratory acidosis",
+      "ventilator",
+      "BiPAP",
+      "HFNC",
+      "ICU"
+    ],
+    "summary": "A complete ICU resident guide to ABG and VBG interpretation including blood gas basics, chemistry bicarbonate, compensation, anion gap, delta gap, HAGMA, NAGMA, ventilator adjustment, BiPAP, HFNC, and ICU attending-style questions.",
+    "featured": false,
+    "readingTime": 19,
+    "file": "posts/2026-07-05-abg1.html"
+  },
+  {
     "title": "ECG Stepwise Guide",
     "date": "2026-07-02",
     "category": "Cardiology",
