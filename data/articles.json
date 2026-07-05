@@ -26,6 +26,32 @@
     "file": "posts/2026-07-05-abg1.html"
   },
   {
+    "title": "Blood Gas ICU Cases and Pimp Questions: Resident Drill Guide",
+    "date": "2026-07-05",
+    "category": "Critical Care",
+    "tags": [
+      "ABG",
+      "VBG",
+      "blood gas",
+      "ICU cases",
+      "pimp questions",
+      "acid-base",
+      "anion gap",
+      "delta gap",
+      "HAGMA",
+      "NAGMA",
+      "ventilator",
+      "BiPAP",
+      "HFNC",
+      "intubation",
+      "critical care"
+    ],
+    "summary": "A long ICU drill guide with blood gas cases, attending-style pimp questions, short answers, ventilator adjustments, BiPAP and HFNC decisions, mixed acid-base disorders, HAGMA, NAGMA, delta gap, and oxygenation interpretation.",
+    "featured": false,
+    "readingTime": 18,
+    "file": "posts/2026-07-05-abg2.html"
+  },
+  {
     "title": "ECG Stepwise Guide",
     "date": "2026-07-02",
     "category": "Cardiology",
