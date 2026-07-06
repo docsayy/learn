@@ -1,5 +1,26 @@
 [
   {
+    "title": "HIV/AIDS: Diagnosis, Initial Evaluation & Management",
+    "date": "2026-07-06",
+    "category": "Infectious Disease",
+    "tags": [
+      "HIV",
+      "AIDS",
+      "ART",
+      "CD4",
+      "viral load",
+      "opportunistic infections",
+      "PCP prophylaxis",
+      "IRIS",
+      "HIV diagnosis",
+      "internal medicine"
+    ],
+    "summary": "A PGY-3 internal medicine review of HIV/AIDS focused on diagnosis, baseline evaluation, ART initiation, CD4 interpretation, opportunistic infection prophylaxis, inpatient care, monitoring, and board pearls.",
+    "featured": false,
+    "readingTime": 15,
+    "file": "posts/2026-07-06-hiv.html"
+  },
+  {
     "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
     "date": "2026-07-05",
     "category": "Critical Care",
