@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="title" content="Antimicrobial Stewardship and Antibiotic Selection: The Complete Resident Guide">
+<meta name="title" content="Antimicrobial Stewardship: The Complete Advanced Resident Guide">
 <meta name="date" content="2026-07-13">
 <meta name="category" content="Infectious Disease">
-<meta name="tags" content="antibiotics,antimicrobial stewardship,resistance,empiric therapy,de-escalation,source control">
-<meta name="summary" content="A practical PGY-3 guide to antibiotic spectrum, empiric selection, de-escalation, dosing, toxicities, resistance mechanisms, IV-to-oral conversion, duration, and source control.">
+<meta name="tags" content="antimicrobial stewardship,antibiotics,antibiotic spectrum,de-escalation,antibiogram,antimicrobial resistance,IV to oral,source control,ID consult">
+<meta name="summary" content="A complete PGY-3 internal medicine and infectious disease review of antimicrobial stewardship, including empiric antibiotic selection, cultures, spectrum, pharmacokinetics, dosing, de-escalation, treatment duration, IV-to-oral conversion, allergy assessment, resistant organisms, source control, and board pearls.">
 <meta name="featured" content="true">
 
-<title>Antimicrobial Stewardship and Antibiotic Selection: The Complete Resident Guide | Learn Medicine</title>
+<title>Antimicrobial Stewardship: The Complete Advanced Resident Guide | Learn Medicine</title>
 
 <link rel="stylesheet" href="../assets/css/article.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,233 +19,2339 @@
 
 <body>
 
+<div class="container">
+
 <a href="../index.html" class="home-btn">← Home</a>
 
-<div class="container">
-<div class="article-header">
+<header class="article-header">
 
-<div class="article-breadcrumb">Learn Medicine › Infectious Disease</div>
+<div class="article-breadcrumb">
+Learn Medicine › Infectious Disease
+</div>
 
-<h1>Antimicrobial Stewardship and Antibiotic Selection: The Complete Resident Guide</h1>
+<h1>Antimicrobial Stewardship: The Complete Advanced Resident Guide</h1>
 
 <div class="article-meta">
-Added July 13, 2026 • Infectious Disease • ~22 min
+Added July 13, 2026 • Infectious Disease • ~32 min read
 </div>
 
-<p>A practical guide to antibiotic spectrum, empiric selection, de-escalation, dosing, toxicities, resistance mechanisms, IV-to-oral conversion, duration, and source control.</p>
+<p class="article-summary">
+Antimicrobial stewardship is the clinical discipline of choosing the correct antimicrobial only when it is needed, at the appropriate dose, route, and duration, while minimizing toxicity, resistance, unnecessary broad-spectrum exposure, and disruption of the microbiome. This guide reviews the practical reasoning expected of a PGY-3 medicine resident on infectious disease consultation rounds and on ABIM-style examinations.
+</p>
 
-</div>
-</div>
+</header>
 
 <div class="layout">
 
 <nav class="toc">
-<h3>Contents</h3>
-<a href="#framework">The ID Approach to Antibiotics</a>
-<a href="#spectrum">High-Yield Spectrum</a>
-<a href="#resistance">Resistance Mechanisms Residents Should Recognize</a>
-<a href="#toxicity">Antibiotic Toxicities and Monitoring</a>
+<h3>Table of Contents</h3>
+<a href="#overview">What Is Stewardship?</a>
+<a href="#framework">The Stewardship Framework</a>
+<a href="#core-elements">CDC Core Elements</a>
+<a href="#initial-approach">Initial Clinical Approach</a>
+<a href="#cultures">Cultures & Diagnostic Stewardship</a>
+<a href="#colonization">Colonization vs Infection</a>
+<a href="#empiric">Empiric Antibiotic Selection</a>
+<a href="#spectrum">Antibiotic Spectrum</a>
+<a href="#antibiogram">Antibiograms & Resistance Risk</a>
+<a href="#pkpd">PK/PD & Optimized Dosing</a>
+<a href="#time-out">Antibiotic Time-Out</a>
+<a href="#deescalation">De-escalation</a>
+<a href="#duration">Treatment Duration</a>
 <a href="#oral">IV-to-Oral Conversion</a>
-<a href="#duration">Duration and Source Control</a>
+<a href="#allergy">Antibiotic Allergy</a>
+<a href="#biomarkers">Biomarkers & Rapid Diagnostics</a>
+<a href="#source-control">Source Control</a>
+<a href="#resistance">Resistant Organisms</a>
+<a href="#toxicity">Toxicity & Monitoring</a>
+<a href="#syndromes">Syndrome-Based Stewardship</a>
+<a href="#prophylaxis">Antimicrobial Prophylaxis</a>
+<a href="#programs">Hospital Stewardship Programs</a>
+<a href="#daily-checklist">Daily Inpatient Checklist</a>
+<a href="#scenarios">Clinical Scenarios</a>
 <a href="#pitfalls">Common Pitfalls</a>
-<a href="#pearls">Board and Consult Pearls</a>
+<a href="#pearls">Board & Consult Pearls</a>
+<a href="#bottom-line">Bottom Line</a>
 <a href="#references">References</a>
 </nav>
 
-<div class="content">
+<main class="content">
 
-<h2 id="framework">The ID Approach to Antibiotics</h2>
-<p>Antibiotic selection is not simply choosing a drug that appears active. Define the syndrome, estimate likely organisms, assess host and resistance factors, obtain useful cultures, identify source-control needs, and select the narrowest regimen with adequate exposure at the infected site.</p><div class="formula">Syndrome → Host → Organisms → Source Control → Drug → Dose → Duration → Reassessment</div><ul>
-<li>Confirm infection rather than colonization or sterile inflammation.</li>
-<li>Obtain cultures before antibiotics when this will not create unsafe delay.</li>
-<li>Use prior cultures, recent antibiotics, healthcare exposure, devices, and local antibiogram data.</li>
-<li>Account for renal/hepatic function, body size, allergy history, interactions, pregnancy, and tissue penetration.</li>
-<li>Reassess at 48–72 hours and narrow, stop, or convert to oral therapy.</li>
+<section id="overview">
+
+<h2>What Is Antimicrobial Stewardship?</h2>
+
+<p>
+Antimicrobial stewardship is the coordinated effort to improve how antimicrobial medications are selected, prescribed, administered, monitored, and discontinued. Although the term is frequently used interchangeably with antibiotic stewardship, antimicrobial stewardship also includes antifungal, antiviral, and antiparasitic therapy.
+</p>
+
+<p>
+Stewardship is not simply using fewer antibiotics. The goal is to provide effective treatment to patients who truly have infection while reducing unnecessary exposure and avoiding preventable harm.
+</p>
+
+<div class="formula">
+Right Diagnosis • Right Drug • Right Dose • Right Route • Right Duration
+</div>
+
+<h3>Why Stewardship Matters</h3>
+
+<ul>
+<li>Improves the likelihood of clinical cure</li>
+<li>Reduces medication toxicity and drug interactions</li>
+<li>Reduces <em>Clostridioides difficile</em> infection</li>
+<li>Reduces selection of resistant organisms</li>
+<li>Preserves the patient's microbiome</li>
+<li>Reduces unnecessary IV access and hospitalization</li>
+<li>Improves transition from IV to oral therapy</li>
+<li>Reduces cost without compromising care</li>
+<li>Preserves antimicrobial effectiveness for future patients</li>
 </ul>
 
-<h2 id="spectrum">High-Yield Spectrum</h2>
+<div class="key-point">
+Stewardship means giving broad therapy rapidly when it is needed, then narrowing or stopping therapy as soon as the clinical and microbiologic data allow.
+</div>
+
+<h3>Antibiotics Are Not Benign</h3>
+
+<p>
+Every antimicrobial prescription creates potential benefit and potential harm. Even an apparently well-tolerated antibiotic may cause allergic reactions, nephrotoxicity, hepatotoxicity, cytopenias, QT prolongation, drug interactions, microbiome disruption, resistance, or <em>C. difficile</em> infection.
+</p>
+
+<p>
+The question is therefore not simply:
+</p>
+
+<div class="formula">
+“Could this be an infection?”
+</div>
+
+<p>
+The more useful questions are:
+</p>
+
+<ul>
+<li>How likely is bacterial infection?</li>
+<li>What is the most likely source?</li>
+<li>Which organisms are plausible?</li>
+<li>What host factors change the differential?</li>
+<li>How sick is the patient?</li>
+<li>Is source control required?</li>
+<li>What is the narrowest effective treatment?</li>
+</ul>
+
+</section>
+
+<section id="framework">
+
+<h2>The Stewardship Framework</h2>
+
+<h3>The Five D's of Antimicrobial Stewardship</h3>
+
 <table>
-<thead><tr>
-<th>Target</th>
-<th>Commonly Useful Agents</th>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Clinical Question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagnosis</td>
+<td>Does the patient truly have a bacterial, fungal, viral, or parasitic infection?</td>
+</tr>
+<tr>
+<td>Drug</td>
+<td>Which antimicrobial has the necessary spectrum and tissue penetration?</td>
+</tr>
+<tr>
+<td>Dose</td>
+<td>Is the dose appropriate for weight, renal function, severity, and site?</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>What is the shortest evidence-supported course?</td>
+</tr>
+<tr>
+<td>De-escalation</td>
+<td>Can therapy be narrowed, changed to oral treatment, or stopped?</td>
+</tr>
+</tbody>
+</table>
+
+<h3>The Three Moments of Antibiotic Decision-Making</h3>
+
+<table>
+<thead>
+<tr>
+<th>Moment</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Before starting</td>
+<td>Does the patient have an infection requiring antibiotics? What cultures and imaging are needed first?</td>
+</tr>
+<tr>
+<td>After initiation</td>
+<td>Is the empiric regimen appropriate for the syndrome, host, severity, and local resistance?</td>
+</tr>
+<tr>
+<td>At 48–72 hours</td>
+<td>Can treatment be stopped, narrowed, converted to oral therapy, or assigned a definitive duration?</td>
+</tr>
+</tbody>
+</table>
+
+<div class="note">
+The most important stewardship action performed by a medicine resident is the structured 48–72-hour reassessment.
+</div>
+
+</section>
+
+<section id="core-elements">
+
+<h2>CDC Core Elements of Hospital Antibiotic Stewardship</h2>
+
+<table>
+<thead>
+<tr>
+<th>Core Element</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leadership Commitment</td>
+<td>Hospital leaders provide protected time, staffing, information technology, and financial support.</td>
+</tr>
+<tr>
+<td>Accountability</td>
+<td>A designated leader is responsible for program outcomes.</td>
+</tr>
+<tr>
+<td>Pharmacy Expertise</td>
+<td>A pharmacist with antimicrobial expertise helps lead implementation.</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>The program performs interventions that improve antimicrobial prescribing.</td>
+</tr>
+<tr>
+<td>Tracking</td>
+<td>Antibiotic use, resistance, outcomes, and interventions are measured.</td>
+</tr>
+<tr>
+<td>Reporting</td>
+<td>Prescribers and leadership receive regular feedback.</td>
+</tr>
+<tr>
+<td>Education</td>
+<td>Clinicians, nurses, patients, and families receive education about appropriate use.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Major Hospital Stewardship Interventions</h3>
+
+<ul>
+<li>Prospective audit with prescriber feedback</li>
+<li>Preauthorization for selected broad-spectrum agents</li>
+<li>Facility-specific clinical pathways</li>
+<li>Antibiotic time-outs</li>
+<li>Automatic IV-to-oral conversion</li>
+<li>Renal dose adjustment</li>
+<li>Pharmacokinetic dosing services</li>
+<li>Penicillin allergy evaluation</li>
+<li>Rapid diagnostic interpretation</li>
+<li>Syndrome-specific interventions</li>
+<li>Duration and stop-date protocols</li>
+</ul>
+
+<div class="key-point">
+The strongest stewardship programs combine infectious disease physician leadership, pharmacy expertise, microbiology support, infection prevention, and bedside clinician engagement.
+</div>
+
+</section>
+
+<section id="initial-approach">
+
+<h2>Initial Clinical Approach Before Prescribing</h2>
+
+<h3>Step 1: Define the Clinical Syndrome</h3>
+
+<p>
+Do not begin with the antibiotic. Begin with the syndrome.
+</p>
+
+<ul>
+<li>Pneumonia</li>
+<li>Bloodstream infection</li>
+<li>Meningitis or encephalitis</li>
+<li>Urinary infection</li>
+<li>Skin and soft-tissue infection</li>
+<li>Intra-abdominal infection</li>
+<li>Bone or joint infection</li>
+<li>Endovascular infection</li>
+<li>Febrile neutropenia</li>
+<li>Undifferentiated sepsis</li>
+</ul>
+
+<h3>Step 2: Assess Severity</h3>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Stewardship Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Septic shock</td>
+<td>Immediate broad empiric treatment is appropriate; do not delay for nonessential testing.</td>
+</tr>
+<tr>
+<td>Organ dysfunction</td>
+<td>Use doses appropriate for severe infection and altered pharmacokinetics.</td>
+</tr>
+<tr>
+<td>Hemodynamic stability</td>
+<td>Allows more targeted evaluation before exposing the patient to broad therapy.</td>
+</tr>
+<tr>
+<td>Immunocompromised host</td>
+<td>Broader differential, lower threshold for treatment, and different organisms.</td>
+</tr>
+<tr>
+<td>Localized mild syndrome</td>
+<td>Narrower therapy or observation may be appropriate.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Step 3: Identify Host Factors</h3>
+
+<ul>
+<li>Age</li>
+<li>Pregnancy</li>
+<li>Renal or hepatic dysfunction</li>
+<li>Neutropenia</li>
+<li>HIV and CD4 count</li>
+<li>Transplantation</li>
+<li>Chronic corticosteroids or biologic therapy</li>
+<li>Asplenia</li>
+<li>Recent surgery or hospitalization</li>
+<li>Indwelling devices or prosthetic material</li>
+<li>Prior resistant organisms</li>
+<li>Recent antimicrobial exposure</li>
+<li>Drug allergy history</li>
+</ul>
+
+<h3>Step 4: Review Previous Microbiology</h3>
+
+<p>
+Previous cultures may be more useful than population-level risk factors. Review urine, respiratory, wound, blood, and surveillance cultures from prior admissions.
+</p>
+
+<div class="note">
+A patient previously colonized or infected with an ESBL-producing organism, CRE, MRSA, or resistant <em>Pseudomonas</em> has increased risk of recurrence, especially after recent antibiotic exposure.
+</div>
+
+<h3>Step 5: Decide Whether Antibiotics Are Needed Now</h3>
+
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Septic shock or bacterial meningitis suspected</td>
+<td>Give effective empiric therapy immediately.</td>
+</tr>
+<tr>
+<td>Stable patient with uncertain diagnosis</td>
+<td>Obtain focused diagnostic information before committing to treatment.</td>
+</tr>
+<tr>
+<td>Likely viral syndrome</td>
+<td>Avoid antibiotics unless bacterial coinfection is reasonably suspected.</td>
+</tr>
+<tr>
+<td>Colonization without symptoms</td>
+<td>Do not treat.</td>
+</tr>
+<tr>
+<td>Drainable infection</td>
+<td>Arrange source control in addition to antibiotics.</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="cultures">
+
+<h2>Cultures and Diagnostic Stewardship</h2>
+
+<p>
+Diagnostic stewardship means ordering the correct test, from the correct site, at the correct time, and interpreting the result in the clinical context.
+</p>
+
+<h3>General Culture Principles</h3>
+
+<ul>
+<li>Obtain cultures before antibiotics when this does not meaningfully delay treatment.</li>
+<li>Culture the actual site of infection whenever safely possible.</li>
+<li>Avoid superficial swabs when deep tissue or aspirate is needed.</li>
+<li>Document whether cultures were obtained before or after antibiotics.</li>
+<li>Interpret results based on specimen quality and collection method.</li>
+<li>Do not treat a laboratory result without a compatible clinical syndrome.</li>
+</ul>
+
+<h3>Blood Cultures</h3>
+
+<h4>When Blood Cultures Are High Yield</h4>
+
+<ul>
+<li>Sepsis or septic shock</li>
+<li>Suspected endocarditis</li>
+<li>Suspected vascular catheter infection</li>
+<li>Severe pneumonia</li>
+<li>Possible vertebral osteomyelitis or epidural abscess</li>
+<li>Febrile neutropenia</li>
+<li>Severe immunocompromise</li>
+<li>Cholangitis or severe intra-abdominal infection</li>
+<li>Concern for <em>Staphylococcus aureus</em> bacteremia</li>
+</ul>
+
+<h4>When Repeat Blood Cultures Are Usually Needed</h4>
+
+<ul>
+<li><em>Staphylococcus aureus</em> bacteremia</li>
+<li>Candidemia</li>
+<li>Suspected or confirmed endocarditis</li>
+<li>Persistent fever or hemodynamic instability</li>
+<li>Retained infected intravascular device</li>
+<li>Concern for inadequate source control</li>
+<li>Persistent bacteremia with selected multidrug-resistant organisms</li>
+</ul>
+
+<h4>When Repeat Cultures Are Often Unnecessary</h4>
+
+<ul>
+<li>Uncomplicated gram-negative bacteremia with clear clinical improvement</li>
+<li>Transient bacteremia with controlled source and no endovascular concern</li>
+<li>Routine surveillance after clinical resolution</li>
+</ul>
+
+<h3>Urine Cultures</h3>
+
+<p>
+A positive urine culture does not equal urinary tract infection.
+</p>
+
+<ul>
+<li>Send urine cultures when symptoms or systemic signs suggest infection.</li>
+<li>Avoid reflex cultures for isolated pyuria or abnormal urinalysis.</li>
+<li>Pyuria is common with catheters and does not prove infection.</li>
+<li>Cloudy or foul-smelling urine alone is not diagnostic of UTI.</li>
+<li>Do not culture urine solely because a patient is confused without a compatible syndrome.</li>
+</ul>
+
+<h3>Respiratory Cultures</h3>
+
+<ul>
+<li>Assess sputum quality before interpreting culture results.</li>
+<li>Endotracheal aspirates frequently show colonizing organisms.</li>
+<li>Candida in respiratory cultures almost always represents colonization.</li>
+<li>A positive multiplex respiratory PCR must be interpreted with symptoms and imaging.</li>
+<li>A negative MRSA nasal test can help discontinue empiric MRSA therapy in appropriate pneumonia patients.</li>
+</ul>
+
+<h3>Wound Cultures</h3>
+
+<ul>
+<li>Avoid superficial swabs of chronic ulcers.</li>
+<li>Obtain deep tissue, aspirate, or bone culture when possible.</li>
+<li>Chronic wounds are frequently colonized with multiple organisms.</li>
+<li>Treat the patient and the invasive infection, not every organism reported from a surface swab.</li>
+</ul>
+
+<div class="warning">
+Poor-quality specimens create misleading results, unnecessary broadening, and prolonged treatment.
+</div>
+
+</section>
+
+<section id="colonization">
+
+<h2>Colonization vs Infection</h2>
+
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Likely Interpretation</th>
+<th>Usual Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asymptomatic bacteriuria</td>
+<td>Colonization</td>
+<td>Do not treat except pregnancy or selected urologic procedures.</td>
+</tr>
+<tr>
+<td>Candida in sputum</td>
+<td>Airway colonization</td>
+<td>Do not treat as Candida pneumonia.</td>
+</tr>
+<tr>
+<td>Candida in urine without symptoms</td>
+<td>Often colonization</td>
+<td>Remove risk factors; treat only selected high-risk situations.</td>
+</tr>
+<tr>
+<td>Positive catheter urine culture without symptoms</td>
+<td>Colonization</td>
+<td>Do not treat.</td>
+</tr>
+<tr>
+<td>Coagulase-negative staphylococcus in one blood culture bottle</td>
+<td>Possible contamination</td>
+<td>Interpret with devices, number of sets, time to positivity, and symptoms.</td>
+</tr>
+<tr>
+<td><em>Staphylococcus aureus</em> in blood</td>
+<td>True bacteremia until proven otherwise</td>
+<td>Full evaluation and treatment.</td>
+</tr>
+<tr>
+<td>Candida in blood</td>
+<td>True invasive infection</td>
+<td>Never dismiss as contamination.</td>
+</tr>
+<tr>
+<td>Positive <em>C. difficile</em> PCR without diarrhea</td>
+<td>Colonization</td>
+<td>Do not treat or test asymptomatic patients.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Signs Supporting True Infection</h3>
+
+<ul>
+<li>Compatible symptoms and examination findings</li>
+<li>Objective inflammation or organ dysfunction</li>
+<li>Imaging consistent with infection</li>
+<li>High-quality specimen from a sterile site</li>
+<li>Repeated recovery of the same organism</li>
+<li>Clinical response to targeted therapy</li>
+<li>Evidence of invasion rather than surface colonization</li>
+</ul>
+
+</section>
+
+<section id="empiric">
+
+<h2>Empiric Antibiotic Selection</h2>
+
+<p>
+Empiric therapy is treatment initiated before the causative organism and susceptibilities are known. The regimen should cover the most likely pathogens while avoiding unnecessary spectrum.
+</p>
+
+<h3>Four Inputs for Empiric Therapy</h3>
+
+<div class="formula">
+Syndrome + Severity + Host + Local Resistance
+</div>
+
+<h3>Questions Before Choosing Empiric Therapy</h3>
+
+<ol>
+<li>What is the likely source?</li>
+<li>Which organisms commonly cause this syndrome?</li>
+<li>Does the patient need MRSA coverage?</li>
+<li>Does the patient need antipseudomonal coverage?</li>
+<li>Are anaerobes likely clinically important?</li>
+<li>Is there a risk of ESBL, AmpC, CRE, or other resistance?</li>
+<li>Does the drug reach the site?</li>
+<li>What previous cultures are available?</li>
+<li>What allergies, toxicities, and interactions matter?</li>
+<li>Is source control required?</li>
+</ol>
+
+<h3>When Broad Empiric Therapy Is Appropriate</h3>
+
+<ul>
+<li>Septic shock</li>
+<li>Neutropenic fever</li>
+<li>Bacterial meningitis</li>
+<li>Severe healthcare-associated infection</li>
+<li>Known recent multidrug-resistant colonization</li>
+<li>Severe immunocompromise</li>
+<li>Unclear source with rapidly progressive organ dysfunction</li>
+</ul>
+
+<h3>When Narrow Empiric Therapy Is Reasonable</h3>
+
+<ul>
+<li>Stable community-acquired syndrome</li>
+<li>Low risk for resistant organisms</li>
+<li>Clear localized source</li>
+<li>Reliable follow-up</li>
+<li>Previous cultures showing predictable susceptible organisms</li>
+</ul>
+
+<div class="key-point">
+Broad empiric therapy is a temporary strategy, not a permanent plan.
+</div>
+
+</section>
+
+<section id="spectrum">
+
+<h2>Antibiotic Spectrum: Practical Resident Review</h2>
+
+<h3>Common Beta-Lactams</h3>
+
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Major Coverage</th>
+<th>Important Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Penicillin G</td>
+<td>Streptococci, susceptible anaerobes, syphilis</td>
+<td>Most staphylococci and gram-negative rods</td>
+</tr>
+<tr>
+<td>Nafcillin / Oxacillin</td>
+<td>MSSA and streptococci</td>
+<td>MRSA, enterococci, gram-negative rods</td>
+</tr>
+<tr>
+<td>Ampicillin</td>
+<td>Streptococci, <em>Enterococcus faecalis</em>, Listeria, selected gram-negatives</td>
+<td>Beta-lactamase-producing organisms</td>
+</tr>
+<tr>
+<td>Ampicillin-Sulbactam</td>
+<td>MSSA, streptococci, enterococci, oral anaerobes, selected gram-negatives</td>
+<td>Pseudomonas; unreliable for many resistant hospital gram-negatives</td>
+</tr>
+<tr>
+<td>Piperacillin-Tazobactam</td>
+<td>Broad gram-negative, Pseudomonas, anaerobes, streptococci, <em>E. faecalis</em></td>
+<td>MRSA, VRE, atypicals; not preferred for many invasive ESBL infections</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Cephalosporins</h3>
+
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Major Coverage</th>
+<th>Stewardship Pearl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cefazolin</td>
+<td>MSSA, streptococci, selected gram-negative rods</td>
+<td>Preferred definitive option for many MSSA infections.</td>
+</tr>
+<tr>
+<td>Ceftriaxone</td>
+<td>Streptococci, pneumococcus, many Enterobacterales</td>
+<td>No Pseudomonas or Enterococcus; useful once-daily agent.</td>
+</tr>
+<tr>
+<td>Ceftazidime</td>
+<td>Pseudomonas and gram-negative rods</td>
+<td>Weak gram-positive coverage.</td>
+</tr>
+<tr>
+<td>Cefepime</td>
+<td>Pseudomonas, many gram-negative rods, MSSA, streptococci</td>
+<td>Renally adjust; accumulation may cause encephalopathy or seizures.</td>
+</tr>
+<tr>
+<td>Ceftaroline</td>
+<td>MRSA, MSSA, streptococci, selected gram-negative rods</td>
+<td>Not reliable for Pseudomonas or ESBL organisms.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Carbapenems and Aztreonam</h3>
+
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Major Coverage</th>
 <th>Key Limitation</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>MSSA</td>
-<td>Cefazolin; nafcillin/oxacillin</td>
-<td>Vancomycin is inferior definitive therapy when a beta-lactam can be used.</td>
+<td>Ertapenem</td>
+<td>ESBL Enterobacterales, anaerobes, many gram-negatives</td>
+<td>No Pseudomonas, Acinetobacter, or Enterococcus coverage.</td>
 </tr>
 <tr>
-<td>MRSA</td>
-<td>Vancomycin; linezolid; daptomycin depending on site</td>
-<td>Daptomycin is inactivated by pulmonary surfactant and does not treat pneumonia.</td>
+<td>Meropenem</td>
+<td>Very broad gram-negative including Pseudomonas, ESBL, anaerobes</td>
+<td>No MRSA or VRE; reserve for appropriate resistant infections.</td>
 </tr>
 <tr>
-<td>Enterococcus faecalis</td>
-<td>Ampicillin when susceptible</td>
-<td>Cephalosporins do not reliably treat Enterococcus.</td>
+<td>Imipenem-Cilastatin</td>
+<td>Broad gram-positive, gram-negative, anaerobic coverage</td>
+<td>Seizure risk; no MRSA.</td>
 </tr>
 <tr>
-<td>Enterococcus faecium / VRE</td>
-<td>Linezolid or daptomycin</td>
-<td>High-dose daptomycin is often needed for serious bloodstream infection.</td>
-</tr>
-<tr>
-<td>Pseudomonas</td>
-<td>Cefepime, piperacillin-tazobactam, ceftazidime, meropenem, newer agents</td>
-<td>Use susceptibility and severity; avoid unnecessary double coverage.</td>
-</tr>
-<tr>
-<td>Anaerobes</td>
-<td>Metronidazole, beta-lactam/beta-lactamase inhibitors, carbapenems</td>
-<td>Do not add metronidazole to piperacillin-tazobactam or a carbapenem.</td>
-</tr>
-<tr>
-<td>Atypical respiratory pathogens</td>
-<td>Azithromycin, doxycycline, respiratory fluoroquinolone</td>
-<td>Beta-lactams alone do not cover atypicals.</td>
+<td>Aztreonam</td>
+<td>Aerobic gram-negative rods including Pseudomonas</td>
+<td>No gram-positive or anaerobic coverage.</td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="resistance">Resistance Mechanisms Residents Should Recognize</h2>
-<table>
-<thead><tr>
-<th>Mechanism</th>
-<th>Clue</th>
-<th>Practical Consequence</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>ESBL</td>
-<td>Resistance to many penicillins and cephalosporins in Enterobacterales</td>
-<td>Carbapenem often preferred for severe nonurinary infection; use susceptibility-guided options.</td>
-</tr>
-<tr>
-<td>AmpC</td>
-<td>Enterobacter cloacae complex, Klebsiella aerogenes, Citrobacter freundii</td>
-<td>Avoid vulnerable agents in serious infection; cefepime may be appropriate when susceptible.</td>
-</tr>
-<tr>
-<td>CRE</td>
-<td>Carbapenem resistance</td>
-<td>Use mechanism- and susceptibility-directed newer therapy with ID input.</td>
-</tr>
-<tr>
-<td>MRSA</td>
-<td>Altered penicillin-binding protein</td>
-<td>Use MRSA-active agents; most cephalosporins do not cover MRSA.</td>
-</tr>
-<tr>
-<td>VRE</td>
-<td>Vancomycin resistance genes</td>
-<td>Linezolid or daptomycin are common options.</td>
-</tr>
-</tbody>
-</table>
+<h3>Agents for Resistant Gram-Positive Infection</h3>
 
-<h2 id="toxicity">Antibiotic Toxicities and Monitoring</h2>
 <table>
-<thead><tr>
-<th>Drug</th>
-<th>Major Issue</th>
-<th>Monitoring Pearl</th>
-</tr></thead>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Major Use</th>
+<th>Important Limitation</th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>Vancomycin</td>
-<td>AKI; infusion reaction</td>
-<td>Use AUC-guided dosing for serious MRSA infections when available.</td>
+<td>MRSA and susceptible gram-positive infections</td>
+<td>Nephrotoxicity; inferior to beta-lactams for definitive MSSA treatment.</td>
+</tr>
+<tr>
+<td>Linezolid</td>
+<td>MRSA pneumonia, VRE, gram-positive infection</td>
+<td>Thrombocytopenia, neuropathy, serotonin toxicity with prolonged use.</td>
+</tr>
+<tr>
+<td>Daptomycin</td>
+<td>MRSA or VRE bacteremia and endovascular infection</td>
+<td>Inactivated by pulmonary surfactant; do not use for pneumonia.</td>
+</tr>
+<tr>
+<td>Ceftaroline</td>
+<td>MRSA pneumonia and selected invasive MRSA infections</td>
+<td>Not active against Pseudomonas.</td>
+</tr>
+<tr>
+<td>Tedizolid</td>
+<td>Selected gram-positive infections</td>
+<td>Less clinical experience for severe invasive disease.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Atypical Coverage</h3>
+
+<ul>
+<li>Azithromycin</li>
+<li>Clarithromycin</li>
+<li>Doxycycline</li>
+<li>Levofloxacin</li>
+<li>Moxifloxacin</li>
+</ul>
+
+<p>
+Beta-lactams do not cover atypical organisms because atypical bacteria lack conventional extracellular cell-wall targets or live intracellularly.
+</p>
+
+<h3>Anaerobic Coverage</h3>
+
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metronidazole</td>
+<td>Reliable activity against many clinically important anaerobes below the diaphragm</td>
+</tr>
+<tr>
+<td>Ampicillin-Sulbactam</td>
+<td>Oral flora, aspiration-associated abscess, bite wounds, polymicrobial infection</td>
+</tr>
+<tr>
+<td>Piperacillin-Tazobactam</td>
+<td>Broad intra-abdominal and healthcare-associated polymicrobial infection</td>
+</tr>
+<tr>
+<td>Carbapenems</td>
+<td>Broad anaerobic and resistant gram-negative coverage</td>
+</tr>
+<tr>
+<td>Clindamycin</td>
+<td>Selected toxin-mediated and oral anaerobic infections</td>
+</tr>
+</tbody>
+</table>
+
+<div class="warning">
+Do not add metronidazole to piperacillin-tazobactam or a carbapenem simply to “double cover” anaerobes.
+</div>
+
+<h3>Antipseudomonal Agents</h3>
+
+<ul>
+<li>Piperacillin-tazobactam</li>
+<li>Cefepime</li>
+<li>Ceftazidime</li>
+<li>Aztreonam</li>
+<li>Meropenem</li>
+<li>Imipenem-cilastatin</li>
+<li>Ciprofloxacin</li>
+<li>Levofloxacin</li>
+<li>Aminoglycosides</li>
+<li>Selected newer beta-lactam/beta-lactamase inhibitor agents</li>
+</ul>
+
+<div class="note">
+Ertapenem does not cover Pseudomonas.
+</div>
+
+</section>
+
+<section id="antibiogram">
+
+<h2>Antibiograms and Resistance Risk</h2>
+
+<p>
+An antibiogram summarizes local susceptibility patterns. It is designed to guide empiric therapy, not replace patient-specific culture results.
+</p>
+
+<h3>How to Use an Antibiogram</h3>
+
+<ul>
+<li>Use the antibiogram for empiric selection before susceptibilities are known.</li>
+<li>Use the most specific unit or population data available.</li>
+<li>Recognize that ICU resistance may differ from general medical wards.</li>
+<li>Review organism-specific susceptibility rather than relying on overall hospital percentages.</li>
+<li>Once patient-specific susceptibilities return, use those results instead.</li>
+</ul>
+
+<h3>Risk Factors for Resistant Organisms</h3>
+
+<ul>
+<li>Previous infection or colonization with the organism</li>
+<li>Recent broad-spectrum antimicrobial exposure</li>
+<li>Recent hospitalization</li>
+<li>Prolonged hospitalization</li>
+<li>Residence in a healthcare facility</li>
+<li>Chronic dialysis</li>
+<li>Invasive devices</li>
+<li>Immunocompromise</li>
+<li>Frequent healthcare contact</li>
+<li>Travel or hospitalization in areas with high resistance</li>
+</ul>
+
+<div class="key-point">
+Previous patient-specific cultures are often more predictive than the label “healthcare-associated.”
+</div>
+
+<h3>Do Not Use Resistance Risk as an Excuse for Permanent Broad Therapy</h3>
+
+<p>
+It may be appropriate to begin with broad therapy in a severely ill patient with resistant-organism risk. Once cultures, imaging, clinical response, and source-control data become available, narrow therapy promptly.
+</p>
+
+</section>
+
+<section id="pkpd">
+
+<h2>Pharmacokinetics, Pharmacodynamics, and Optimized Dosing</h2>
+
+<h3>Pharmacokinetics</h3>
+
+<p>
+Pharmacokinetics describes what the body does to the drug:
+</p>
+
+<ul>
+<li>Absorption</li>
+<li>Distribution</li>
+<li>Metabolism</li>
+<li>Elimination</li>
+</ul>
+
+<h3>Pharmacodynamics</h3>
+
+<p>
+Pharmacodynamics describes the relationship between drug exposure and antimicrobial activity.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Drug Group</th>
+<th>Major PK/PD Driver</th>
+<th>Dosing Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta-lactams</td>
+<td>Time above MIC</td>
+<td>Frequent dosing, prolonged infusion, or continuous infusion in selected severe infections</td>
+</tr>
+<tr>
+<td>Aminoglycosides</td>
+<td>Peak concentration relative to MIC</td>
+<td>High-dose extended-interval dosing when appropriate</td>
+</tr>
+<tr>
+<td>Fluoroquinolones</td>
+<td>AUC relative to MIC</td>
+<td>Ensure adequate total exposure</td>
+</tr>
+<tr>
+<td>Vancomycin</td>
+<td>AUC relative to MIC</td>
+<td>AUC-guided dosing for serious MRSA infection</td>
+</tr>
+<tr>
+<td>Daptomycin</td>
+<td>Concentration-dependent activity</td>
+<td>Higher weight-based dosing may be needed for severe bacteremia or endovascular disease</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Vancomycin Monitoring</h3>
+
+<p>
+For serious MRSA infections, AUC-guided monitoring is preferred over trough-only monitoring. A commonly used target AUC/MIC is 400–600 when the MIC is assumed to be 1 mg/L.
+</p>
+
+<div class="note">
+Vancomycin is appropriate empirically for suspected MRSA, but definitive MSSA bacteremia should generally be treated with cefazolin, nafcillin, or oxacillin rather than vancomycin.
+</div>
+
+<h3>Extended-Infusion Beta-Lactams</h3>
+
+<p>
+Prolonged infusion may increase the amount of time that free drug concentrations remain above the organism's MIC. This may be useful for:
+</p>
+
+<ul>
+<li>Severe sepsis or septic shock</li>
+<li>High bacterial burden</li>
+<li>Organisms with higher but susceptible MICs</li>
+<li>Augmented renal clearance</li>
+<li>Critically ill patients with altered volume of distribution</li>
+</ul>
+
+<h3>Loading Doses</h3>
+
+<p>
+A loading dose depends primarily on volume of distribution rather than renal clearance. Critically ill patients may still require a full loading dose even when maintenance doses need renal adjustment.
+</p>
+
+<h3>Special Dosing Situations</h3>
+
+<ul>
+<li>Obesity</li>
+<li>Severe renal dysfunction</li>
+<li>Augmented renal clearance</li>
+<li>Intermittent hemodialysis</li>
+<li>Continuous renal replacement therapy</li>
+<li>Extracorporeal membrane oxygenation</li>
+<li>Burns</li>
+<li>Major fluid resuscitation</li>
+<li>Hypoalbuminemia</li>
+</ul>
+
+<div class="warning">
+A creatinine that appears “normal” does not guarantee normal drug clearance in a patient with low muscle mass.
+</div>
+
+</section>
+
+<section id="time-out">
+
+<h2>The Antibiotic Time-Out</h2>
+
+<p>
+An antibiotic time-out is a structured reassessment usually performed within 48–72 hours after initiation.
+</p>
+
+<h3>Questions to Ask</h3>
+
+<ol>
+<li>Does the patient still appear to have an infection?</li>
+<li>What is the most likely source?</li>
+<li>Are the cultures meaningful?</li>
+<li>Is the current therapy active against the identified organism?</li>
+<li>Can MRSA coverage be stopped?</li>
+<li>Can antipseudomonal coverage be stopped?</li>
+<li>Can therapy be narrowed?</li>
+<li>Can the patient change to oral therapy?</li>
+<li>Has source control occurred?</li>
+<li>What is the planned stop date?</li>
+</ol>
+
+<h3>Possible Outcomes of the Time-Out</h3>
+
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stop therapy</td>
+<td>Viral infection confirmed with no evidence of bacterial coinfection</td>
+</tr>
+<tr>
+<td>Narrow therapy</td>
+<td>Vancomycin plus cefepime changed to cefazolin for MSSA</td>
+</tr>
+<tr>
+<td>Change route</td>
+<td>IV antibiotic converted to a highly bioavailable oral agent</td>
+</tr>
+<tr>
+<td>Optimize dose</td>
+<td>Renally adjusted or changed to prolonged infusion</td>
+</tr>
+<tr>
+<td>Broaden therapy</td>
+<td>Culture reveals resistance not covered by the initial regimen</td>
+</tr>
+<tr>
+<td>Pursue source control</td>
+<td>Persistent fever due to undrained abscess</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="deescalation">
+
+<h2>De-escalation</h2>
+
+<p>
+De-escalation means reducing antimicrobial spectrum or intensity once diagnostic information becomes available.
+</p>
+
+<h3>Forms of De-escalation</h3>
+
+<ul>
+<li>Stopping unnecessary agents</li>
+<li>Changing from combination therapy to monotherapy</li>
+<li>Stopping MRSA coverage</li>
+<li>Stopping antipseudomonal coverage</li>
+<li>Changing from a carbapenem to a narrower beta-lactam</li>
+<li>Changing from IV to oral therapy</li>
+<li>Assigning a shorter course</li>
+</ul>
+
+<h3>Examples</h3>
+
+<table>
+<thead>
+<tr>
+<th>Initial Therapy</th>
+<th>Final Data</th>
+<th>Stewardship Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vancomycin + cefepime</td>
+<td>Blood cultures grow MSSA</td>
+<td>Change to cefazolin or antistaphylococcal penicillin.</td>
+</tr>
+<tr>
+<td>Vancomycin + piperacillin-tazobactam</td>
+<td>Urine culture grows susceptible <em>E. coli</em></td>
+<td>Stop vancomycin and narrow gram-negative therapy.</td>
+</tr>
+<tr>
+<td>Cefepime + metronidazole</td>
+<td>No abscess; uncomplicated biliary infection with source control</td>
+<td>Narrow and define a short course.</td>
+</tr>
+<tr>
+<td>Vancomycin for pneumonia</td>
+<td>MRSA nasal test negative and no other MRSA evidence</td>
+<td>Discontinue vancomycin if clinical context supports it.</td>
+</tr>
+<tr>
+<td>Meropenem</td>
+<td>Organism susceptible to ceftriaxone without resistant mechanism</td>
+<td>Change to ceftriaxone.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="key-point">
+De-escalation is not undertreatment. It is the transition from uncertainty to precision.
+</div>
+
+</section>
+
+<section id="duration">
+
+<h2>Treatment Duration</h2>
+
+<p>
+Longer treatment is not automatically safer. Excess duration increases toxicity, resistance, <em>C. difficile</em>, line complications, and medication burden.
+</p>
+
+<h3>Typical Duration Framework</h3>
+
+<table>
+<thead>
+<tr>
+<th>Infection</th>
+<th>Common Duration in Selected Patients</th>
+<th>Important Qualification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Community-acquired pneumonia</td>
+<td>At least 5 days</td>
+<td>Patient must be clinically stable and improving.</td>
+</tr>
+<tr>
+<td>Hospital-acquired / ventilator-associated pneumonia</td>
+<td>Approximately 7 days</td>
+<td>May differ with slow response, abscess, empyema, or complications.</td>
+</tr>
+<tr>
+<td>Uncomplicated cellulitis</td>
+<td>Approximately 5 days</td>
+<td>Extend if there is inadequate improvement.</td>
+</tr>
+<tr>
+<td>Uncomplicated cystitis</td>
+<td>Agent-specific short course</td>
+<td>Depends on drug, sex, pregnancy, anatomy, and host factors.</td>
+</tr>
+<tr>
+<td>Pyelonephritis</td>
+<td>Agent- and severity-dependent</td>
+<td>Shorter courses may be used with selected high-bioavailability agents.</td>
+</tr>
+<tr>
+<td>Complicated intra-abdominal infection</td>
+<td>Approximately 4 days after adequate source control</td>
+<td>Persistent symptoms should trigger evaluation for failed source control, not automatic extension.</td>
+</tr>
+<tr>
+<td>Uncomplicated gram-negative bacteremia</td>
+<td>Approximately 7 days in selected stable patients</td>
+<td>Requires source control, clinical stability, and no endovascular focus.</td>
+</tr>
+<tr>
+<td>Uncomplicated <em>S. aureus</em> bacteremia</td>
+<td>At least 14 days</td>
+<td>All strict uncomplicated criteria must be met.</td>
+</tr>
+<tr>
+<td>Complicated <em>S. aureus</em> bacteremia</td>
+<td>Usually 4–6 weeks</td>
+<td>Depends on endocarditis, bone, joint, device, or metastatic infection.</td>
+</tr>
+<tr>
+<td>Native vertebral osteomyelitis</td>
+<td>Often approximately 6 weeks</td>
+<td>Longer therapy may be required in selected cases.</td>
+</tr>
+<tr>
+<td>Endocarditis</td>
+<td>Usually several weeks</td>
+<td>Organism-, valve-, and complication-specific.</td>
+</tr>
+<tr>
+<td><em>C. difficile</em> infection</td>
+<td>Usually 10 days for an initial standard course</td>
+<td>Recurrence strategies differ.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>What Determines Duration?</h3>
+
+<ul>
+<li>Site of infection</li>
+<li>Organism</li>
+<li>Source control</li>
+<li>Presence of bacteremia</li>
+<li>Endovascular involvement</li>
+<li>Prosthetic material</li>
+<li>Immune status</li>
+<li>Clinical response</li>
+<li>Ability to use active oral therapy</li>
+</ul>
+
+<div class="warning">
+Persistent fever does not always mean antibiotics should be extended. Consider drug fever, thrombosis, inflammatory disease, tissue necrosis, resistant infection, or inadequate source control.
+</div>
+
+<h3>When Does Day 1 Begin?</h3>
+
+<p>
+The treatment clock may begin from:
+</p>
+
+<ul>
+<li>The first day of effective therapy</li>
+<li>The first negative blood culture</li>
+<li>The date of source control</li>
+<li>The date infected hardware is removed</li>
+</ul>
+
+<p>
+The correct starting point depends on the infection. Document the intended treatment anchor clearly.
+</p>
+
+</section>
+
+<section id="oral">
+
+<h2>IV-to-Oral Conversion</h2>
+
+<p>
+IV therapy is not inherently stronger than oral therapy. The relevant question is whether the oral agent achieves adequate exposure at the site of infection.
+</p>
+
+<h3>Criteria for Oral Step-Down</h3>
+
+<ul>
+<li>Hemodynamic stability</li>
+<li>Clinical improvement</li>
+<li>Functional gastrointestinal absorption</li>
+<li>Ability to take and adhere to oral medication</li>
+<li>Active oral agent based on susceptibility</li>
+<li>Adequate source control</li>
+<li>No uncontrolled endovascular or CNS infection</li>
+</ul>
+
+<h3>Highly Bioavailable Oral Agents</h3>
+
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Approximate Clinical Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fluoroquinolones</td>
+<td>Selected susceptible gram-negative infections; weigh toxicity and resistance.</td>
+</tr>
+<tr>
+<td>Linezolid</td>
+<td>Oral therapy achieves exposure similar to IV treatment.</td>
+</tr>
+<tr>
+<td>Metronidazole</td>
+<td>Excellent oral absorption.</td>
+</tr>
+<tr>
+<td>TMP-SMX</td>
+<td>Useful for susceptible urinary, skin, and selected invasive infections.</td>
+</tr>
+<tr>
+<td>Doxycycline</td>
+<td>Excellent oral absorption for susceptible infections.</td>
+</tr>
+<tr>
+<td>Clindamycin</td>
+<td>Good oral absorption when susceptibility is reliable.</td>
+</tr>
+<tr>
+<td>Fluconazole</td>
+<td>Excellent oral bioavailability for susceptible fungal infection.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Potential Benefits of Oral Therapy</h3>
+
+<ul>
+<li>Removes IV-line infection and thrombosis risk</li>
+<li>Facilitates discharge</li>
+<li>Reduces nursing burden</li>
+<li>Improves mobility</li>
+<li>Reduces cost</li>
+<li>Avoids outpatient IV complications</li>
+</ul>
+
+<h3>Situations Requiring Greater Caution</h3>
+
+<ul>
+<li>Bacterial meningitis</li>
+<li>Uncontrolled endocarditis</li>
+<li>Persistent bacteremia</li>
+<li>Undrained abscess</li>
+<li>Severe malabsorption</li>
+<li>Hemodynamic instability</li>
+<li>Unreliable adherence</li>
+<li>Organism without a dependable oral option</li>
+</ul>
+
+<div class="note">
+Some traditionally IV-treated infections may be eligible for oral step-down in carefully selected patients, but complex endovascular, bone, joint, and hardware infections should be discussed with infectious disease specialists.
+</div>
+
+</section>
+
+<section id="allergy">
+
+<h2>Antibiotic Allergy Assessment</h2>
+
+<p>
+A penicillin allergy label frequently leads to broader, less effective, more toxic, or more expensive treatment. Most patients who report penicillin allergy are not truly allergic when formally evaluated.
+</p>
+
+<h3>Questions to Ask</h3>
+
+<ul>
+<li>Which drug caused the reaction?</li>
+<li>What exactly happened?</li>
+<li>How soon after the dose did symptoms begin?</li>
+<li>How long ago did the reaction occur?</li>
+<li>Was treatment required?</li>
+<li>Has the patient tolerated penicillins or cephalosporins since?</li>
+<li>Was the reaction a side effect rather than allergy?</li>
+</ul>
+
+<h3>Low-Risk Histories</h3>
+
+<ul>
+<li>Isolated gastrointestinal upset</li>
+<li>Headache</li>
+<li>Fatigue</li>
+<li>Family history of penicillin allergy</li>
+<li>Remote vague childhood reaction</li>
+<li>Pruritus without rash or systemic symptoms</li>
+</ul>
+
+<h3>High-Risk Immediate Reactions</h3>
+
+<ul>
+<li>Anaphylaxis</li>
+<li>Angioedema</li>
+<li>Bronchospasm</li>
+<li>Hypotension</li>
+<li>Immediate urticaria</li>
+</ul>
+
+<h3>Severe Delayed Reactions</h3>
+
+<ul>
+<li>Stevens-Johnson syndrome</li>
+<li>Toxic epidermal necrolysis</li>
+<li>DRESS</li>
+<li>Acute generalized exanthematous pustulosis</li>
+<li>Drug-induced hepatitis</li>
+<li>Interstitial nephritis</li>
+<li>Hemolytic anemia</li>
+</ul>
+
+<div class="warning">
+Do not perform a routine oral challenge in a patient with a history of severe cutaneous adverse reaction or serious organ involvement.
+</div>
+
+<h3>Stewardship Approach</h3>
+
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Potential Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low risk</td>
+<td>Structured history and, when appropriate, supervised direct oral challenge</td>
+</tr>
+<tr>
+<td>Moderate risk</td>
+<td>Allergy testing or specialist assessment</td>
+</tr>
+<tr>
+<td>High-risk IgE-mediated history</td>
+<td>Avoid culprit drug; consider testing or desensitization when essential</td>
+</tr>
+<tr>
+<td>Severe delayed reaction</td>
+<td>Avoid culprit and related agents based on specialist guidance</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="biomarkers">
+
+<h2>Biomarkers and Rapid Diagnostics</h2>
+
+<h3>Procalcitonin</h3>
+
+<p>
+Procalcitonin may support antimicrobial discontinuation in selected patients when interpreted with clinical improvement. It should not be used as the sole reason to withhold initial antibiotics from a patient with severe suspected bacterial infection.
+</p>
+
+<h4>Potential Uses</h4>
+
+<ul>
+<li>Supporting discontinuation in clinically improving sepsis patients</li>
+<li>Helping distinguish bacterial from viral lower respiratory disease in selected contexts</li>
+<li>Following trends rather than relying on a single value</li>
+</ul>
+
+<h4>Limitations</h4>
+
+<ul>
+<li>May be low early in infection</li>
+<li>May be low in localized infection</li>
+<li>May be elevated after trauma, surgery, burns, or shock</li>
+<li>May be difficult to interpret in severe renal dysfunction</li>
+<li>Does not replace examination, imaging, and cultures</li>
+</ul>
+
+<div class="warning">
+Do not withhold initial therapy for radiographically confirmed community-acquired pneumonia solely because procalcitonin is low.
+</div>
+
+<h3>Rapid Molecular Diagnostics</h3>
+
+<ul>
+<li>Blood-culture identification panels</li>
+<li>Respiratory pathogen panels</li>
+<li>Meningitis/encephalitis panels</li>
+<li>Gastrointestinal pathogen panels</li>
+<li>MRSA nasal PCR</li>
+<li>Carbapenemase gene detection</li>
+<li>Resistance marker identification</li>
+</ul>
+
+<h3>Stewardship Principle</h3>
+
+<p>
+Rapid tests improve care only when results are reviewed promptly and translated into action. A rapid result that does not change therapy provides limited stewardship value.
+</p>
+
+<h3>MRSA Nasal Testing</h3>
+
+<p>
+A negative MRSA nasal PCR or culture has a high negative predictive value for MRSA pneumonia in many settings and may support early discontinuation of vancomycin or linezolid when the rest of the clinical picture is compatible.
+</p>
+
+<div class="note">
+A positive MRSA nasal result indicates colonization and has a much lower positive predictive value for MRSA pneumonia.
+</div>
+
+</section>
+
+<section id="source-control">
+
+<h2>Source Control</h2>
+
+<p>
+Source control means physically removing, draining, debriding, or correcting the site that sustains infection.
+</p>
+
+<h3>Examples</h3>
+
+<ul>
+<li>Drain an abscess</li>
+<li>Remove an infected central line</li>
+<li>Debride necrotic tissue</li>
+<li>Operate on necrotizing fasciitis</li>
+<li>Relieve an obstructed infected urinary system</li>
+<li>Perform ERCP for obstructed cholangitis</li>
+<li>Remove infected prosthetic material when required</li>
+<li>Drain empyema</li>
+<li>Exchange or remove an infected urinary catheter</li>
+</ul>
+
+<div class="formula">
+Antibiotics Cannot Reliably Sterilize an Undrained Abscess
+</div>
+
+<h3>Clues That Source Control Is Inadequate</h3>
+
+<ul>
+<li>Persistent bacteremia</li>
+<li>Persistent fever despite active therapy</li>
+<li>Worsening organ dysfunction</li>
+<li>Increasing leukocytosis</li>
+<li>Continued purulent drainage</li>
+<li>Progressive imaging findings</li>
+<li>Relapsing infection after treatment</li>
+</ul>
+
+<div class="key-point">
+When a patient does not improve despite an apparently active antibiotic, first reconsider the diagnosis and source control before automatically broadening therapy.
+</div>
+
+</section>
+
+<section id="resistance">
+
+<h2>Approach to Resistant Organisms</h2>
+
+<h3>ESBL-Producing Enterobacterales</h3>
+
+<p>
+Extended-spectrum beta-lactamases hydrolyze many penicillins and cephalosporins.
+</p>
+
+<h4>General Principles</h4>
+
+<ul>
+<li>Carbapenems are preferred for many invasive ESBL infections, especially outside the urinary tract.</li>
+<li>Urinary infections may have additional options depending on site and susceptibility.</li>
+<li>Oral TMP-SMX or fluoroquinolone step-down may be reasonable in selected stable patients when susceptible and source control is adequate.</li>
+<li>Avoid using susceptibility results without considering infection site and resistance mechanism.</li>
+</ul>
+
+<h3>AmpC-Producing Enterobacterales</h3>
+
+<p>
+Certain organisms may induce AmpC beta-lactamase production during therapy, creating resistance despite initial susceptibility.
+</p>
+
+<h4>Common Higher-Risk Organisms</h4>
+
+<ul>
+<li><em>Enterobacter cloacae</em> complex</li>
+<li><em>Klebsiella aerogenes</em></li>
+<li><em>Citrobacter freundii</em></li>
+</ul>
+
+<p>
+Cefepime is often used when susceptible because of greater stability against AmpC. Third-generation cephalosporins may select resistance during therapy in invasive infection.
+</p>
+
+<h3>Carbapenem-Resistant Enterobacterales</h3>
+
+<p>
+Treatment depends on the carbapenemase mechanism.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Potential Active Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KPC</td>
+<td>Selected newer beta-lactam/beta-lactamase inhibitor agents</td>
+</tr>
+<tr>
+<td>Metallo-beta-lactamase</td>
+<td>Aztreonam-based strategy with beta-lactamase inhibition or cefiderocol</td>
+</tr>
+<tr>
+<td>OXA-48-like</td>
+<td>Ceftazidime-avibactam may be active</td>
+</tr>
+</tbody>
+</table>
+
+<div class="warning">
+CRE therapy should be guided by susceptibility testing, resistance mechanism, infection site, and infectious disease consultation.
+</div>
+
+<h3>Difficult-to-Treat Resistant Pseudomonas</h3>
+
+<p>
+Potential options include:
+</p>
+
+<ul>
+<li>Ceftolozane-tazobactam</li>
+<li>Ceftazidime-avibactam</li>
+<li>Imipenem-cilastatin-relebactam</li>
+<li>Cefiderocol</li>
+</ul>
+
+<p>
+Use susceptibility testing and avoid unnecessary combination therapy once a reliably active beta-lactam is identified.
+</p>
+
+<h3>MRSA</h3>
+
+<table>
+<thead>
+<tr>
+<th>Syndrome</th>
+<th>Common Preferred Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bacteremia / endocarditis</td>
+<td>Vancomycin or daptomycin</td>
+</tr>
+<tr>
+<td>Pneumonia</td>
+<td>Vancomycin or linezolid</td>
+</tr>
+<tr>
+<td>Purulent SSTI</td>
+<td>Drainage plus active oral or IV therapy based on severity</td>
+</tr>
+<tr>
+<td>Osteomyelitis</td>
+<td>Agent selected by susceptibility, surgery, and clinical context</td>
+</tr>
+</tbody>
+</table>
+
+<h3>VRE</h3>
+
+<ul>
+<li>Linezolid</li>
+<li>Daptomycin</li>
+<li>Selected organism- and site-specific alternatives</li>
+</ul>
+
+<h3>Stenotrophomonas maltophilia</h3>
+
+<p>
+This organism frequently colonizes the respiratory tract and hospital environment. Before treating, determine whether it is causing true infection. Potential active agents may include TMP-SMX, minocycline, levofloxacin, or cefiderocol depending on susceptibility and severity.
+</p>
+
+<h3>Acinetobacter baumannii</h3>
+
+<p>
+Carbapenem-resistant <em>Acinetobacter</em> requires mechanism-aware therapy and infectious disease input. Sulbactam-based treatment is central to many current approaches.
+</p>
+
+<div class="note">
+Newer agents should not be used simply because they are broad. Reserve them for infections in which their activity is needed.
+</div>
+
+</section>
+
+<section id="toxicity">
+
+<h2>Antimicrobial Toxicity and Monitoring</h2>
+
+<table>
+<thead>
+<tr>
+<th>Drug</th>
+<th>Important Toxicity</th>
+<th>Monitoring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vancomycin</td>
+<td>Nephrotoxicity, infusion reaction</td>
+<td>Renal function and AUC-guided levels for serious MRSA infection</td>
+</tr>
+<tr>
+<td>Aminoglycosides</td>
+<td>Nephrotoxicity and ototoxicity</td>
+<td>Renal function and drug levels</td>
+</tr>
+<tr>
+<td>Linezolid</td>
+<td>Thrombocytopenia, anemia, neuropathy, serotonin toxicity</td>
+<td>CBC; monitor duration and interacting medications</td>
+</tr>
+<tr>
+<td>Daptomycin</td>
+<td>Myopathy and eosinophilic pneumonia</td>
+<td>CK and clinical symptoms</td>
+</tr>
+<tr>
+<td>TMP-SMX</td>
+<td>Hyperkalemia, AKI, rash, cytopenias</td>
+<td>Potassium, creatinine, CBC</td>
 </tr>
 <tr>
 <td>Cefepime</td>
 <td>Encephalopathy, myoclonus, seizures</td>
-<td>Renally adjust, especially in older or critically ill patients.</td>
-</tr>
-<tr>
-<td>TMP-SMX</td>
-<td>Hyperkalemia, creatinine rise, AKI, cytopenias</td>
-<td>Monitor potassium, creatinine, and CBC.</td>
-</tr>
-<tr>
-<td>Linezolid</td>
-<td>Thrombocytopenia, neuropathy, serotonin toxicity</td>
-<td>Monitor CBC during prolonged therapy and review serotonergic drugs.</td>
-</tr>
-<tr>
-<td>Daptomycin</td>
-<td>Myopathy, eosinophilic pneumonia</td>
-<td>Check CK and review statin use.</td>
+<td>Renal dosing and neurologic status</td>
 </tr>
 <tr>
 <td>Fluoroquinolones</td>
-<td>QT prolongation, tendinopathy, neuropathy, dysglycemia, C. difficile</td>
-<td>Avoid when safer narrow options exist.</td>
+<td>Tendon injury, neuropathy, dysglycemia, QT prolongation, aortic risk</td>
+<td>Review risk factors and interactions</td>
+</tr>
+<tr>
+<td>Macrolides</td>
+<td>QT prolongation and drug interactions</td>
+<td>ECG and medication review when high risk</td>
+</tr>
+<tr>
+<td>Metronidazole</td>
+<td>Neuropathy with prolonged therapy</td>
+<td>Neurologic symptoms and duration</td>
 </tr>
 <tr>
 <td>Rifampin</td>
-<td>Hepatotoxicity; strong inducer</td>
-<td>Never use alone for active bacterial infection; review all interactions.</td>
+<td>Hepatotoxicity, major drug interactions</td>
+<td>Liver enzymes and full medication review</td>
 </tr>
 <tr>
 <td>Carbapenems</td>
-<td>Seizure risk; profound valproate interaction</td>
-<td>Avoid combining with valproate when possible.</td>
+<td>Seizures and reduced valproate levels</td>
+<td>Neurologic risk and medication interactions</td>
+</tr>
+<tr>
+<td>Amphotericin B</td>
+<td>AKI, hypokalemia, hypomagnesemia, anemia</td>
+<td>Creatinine, potassium, magnesium, CBC</td>
+</tr>
+<tr>
+<td>Flucytosine</td>
+<td>Bone marrow suppression and hepatotoxicity</td>
+<td>CBC, liver enzymes, renal dosing, levels when available</td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="oral">IV-to-Oral Conversion</h2>
-<p>Oral therapy can be definitive when the patient is clinically improving, absorbs medications, has adequate source control, and an active oral agent reaches the infected site.</p><ul>
-<li>High-bioavailability options include fluoroquinolones, linezolid, TMP-SMX, metronidazole, doxycycline, clindamycin, and fluconazole.</li>
-<li>Dose oral beta-lactams adequately for the indication.</li>
-<li>S. aureus bacteremia, endovascular disease, CNS infection, and some hardware infections require specialist-directed decisions.</li>
-</ul>
+<h3>Daily Medication Review</h3>
 
-<h2 id="duration">Duration and Source Control</h2>
-<div class="note"><strong>Core principle:</strong> The correct duration often starts after adequate source control and, for many bloodstream infections, after documented clearance—not automatically on admission day.</div><ul>
-<li>Drain abscesses and infected collections.</li>
-<li>Remove infected lines when indicated.</li>
-<li>Relieve urinary or biliary obstruction.</li>
-<li>Debride necrotic tissue.</li>
-<li>Do not compensate for absent source control by extending or broadening antibiotics indefinitely.</li>
-</ul>
-
-<h2 id="pitfalls">Common Pitfalls</h2>
 <ul>
-<li>Treating colonization, asymptomatic bacteriuria, or a positive superficial wound culture.</li>
-<li>Continuing vancomycin after MSSA is identified.</li>
-<li>Using daptomycin for pneumonia.</li>
-<li>Duplicating anaerobic coverage.</li>
-<li>Failing to renal-dose cefepime or acyclovir.</li>
-<li>Choosing a duration without defining source control and clinical endpoints.</li>
+<li>Renal function</li>
+<li>Hepatic function</li>
+<li>Electrolytes</li>
+<li>CBC</li>
+<li>QT interval</li>
+<li>Drug interactions</li>
+<li>Therapeutic drug levels</li>
+<li>New rash or allergic symptoms</li>
+<li>Neurologic changes</li>
+<li>Planned stop date</li>
 </ul>
 
-<h2 id="pearls">Board and Consult Pearls</h2>
-<div class="note"><ul>
-<li>MSSA bacteremia: cefazolin or an antistaphylococcal penicillin when possible.</li>
-<li>Daptomycin treats bloodstream infection but not pneumonia.</li>
-<li>A positive culture is not synonymous with infection.</li>
-<li>The narrowest adequate regimen is usually the safest regimen.</li>
-<li>Source control is an antimicrobial intervention.</li>
-</ul></div>
+</section>
 
-<h2 id="references">References</h2>
-<ol class="references-list">
-<li><a href="https://www.idsociety.org/practice-guideline/implementing-an-ASP/" target="_blank" rel="noopener">IDSA/SHEA Antimicrobial Stewardship Guideline</a></li>
-<li><a href="https://www.idsociety.org/practice-guideline/amr-guidance/" target="_blank" rel="noopener">IDSA Antimicrobial-Resistant Gram-Negative Guidance</a></li>
-<li><a href="https://www.idsociety.org/practice-guideline/all-practice-guidelines/" target="_blank" rel="noopener">IDSA Practice Guidelines A–Z</a></li>
+<section id="syndromes">
+
+<h2>Syndrome-Based Stewardship</h2>
+
+<h3>Community-Acquired Pneumonia</h3>
+
+<ul>
+<li>Confirm a compatible clinical syndrome and imaging finding.</li>
+<li>Do not automatically cover MRSA or Pseudomonas.</li>
+<li>Use validated patient-specific risk factors and previous cultures.</li>
+<li>Stop vancomycin when MRSA is unlikely and testing supports de-escalation.</li>
+<li>Avoid unnecessary anaerobic coverage for uncomplicated aspiration pneumonia.</li>
+<li>Use a short course when clinically stable.</li>
+</ul>
+
+<h3>Hospital-Acquired and Ventilator-Associated Pneumonia</h3>
+
+<ul>
+<li>Distinguish true pneumonia from colonization and ventilator-associated events.</li>
+<li>Use local ICU susceptibility data.</li>
+<li>Obtain respiratory cultures before antibiotics when feasible.</li>
+<li>Use dual antipseudomonal therapy only when justified by resistance or mortality risk.</li>
+<li>De-escalate based on cultures and response.</li>
+<li>A standard course is often approximately 7 days.</li>
+</ul>
+
+<h3>Urinary Tract Infection</h3>
+
+<ul>
+<li>Do not treat asymptomatic bacteriuria except in established indications.</li>
+<li>Do not diagnose UTI from pyuria alone.</li>
+<li>Remove or exchange a chronic catheter when appropriate.</li>
+<li>Look for obstruction, abscess, stone, or prostatitis when response is poor.</li>
+<li>Narrow therapy to urine culture results.</li>
+<li>Use oral step-down when feasible.</li>
+</ul>
+
+<h3>Skin and Soft-Tissue Infection</h3>
+
+<ul>
+<li>Incision and drainage is the primary treatment for many abscesses.</li>
+<li>Nonpurulent cellulitis usually requires streptococcal coverage.</li>
+<li>Do not add MRSA coverage to every cellulitis case.</li>
+<li>Bilateral lower-extremity erythema is frequently a noninfectious mimic.</li>
+<li>Necrotizing infection requires immediate surgery.</li>
+<li>Do not rely on superficial wound swabs.</li>
+</ul>
+
+<h3>Intra-Abdominal Infection</h3>
+
+<ul>
+<li>Source control is essential.</li>
+<li>Choose therapy based on community versus healthcare exposure and severity.</li>
+<li>Avoid redundant anaerobic coverage.</li>
+<li>Do not continue antibiotics indefinitely after effective drainage.</li>
+<li>Persistent illness after source control should prompt reevaluation for ongoing infection or another diagnosis.</li>
+</ul>
+
+<h3>Bloodstream Infection</h3>
+
+<ul>
+<li>Identify whether the isolate is a pathogen or contaminant.</li>
+<li>Repeat cultures selectively.</li>
+<li>Remove infected lines when indicated.</li>
+<li>Search for endovascular or metastatic infection.</li>
+<li>Define the start date and duration clearly.</li>
+<li>Use narrow definitive therapy.</li>
+</ul>
+
+<h3>Staphylococcus aureus Bacteremia</h3>
+
+<ul>
+<li>Never dismiss as contamination.</li>
+<li>Repeat blood cultures until clearance.</li>
+<li>Evaluate for endocarditis.</li>
+<li>Search for metastatic infection.</li>
+<li>Remove infected intravascular devices.</li>
+<li>Use cefazolin or antistaphylococcal penicillin for MSSA when appropriate.</li>
+<li>Do not use a short course unless all uncomplicated criteria are fulfilled.</li>
+</ul>
+
+<h3>Bacterial Meningitis</h3>
+
+<ul>
+<li>Do not delay treatment for CT or LP when suspicion is high.</li>
+<li>Use age- and host-specific empiric therapy.</li>
+<li>Give dexamethasone before or with the first antibiotic dose when indicated.</li>
+<li>Narrow once organism and susceptibilities are known.</li>
+<li>Use CNS-penetrating doses.</li>
+</ul>
+
+<h3>Febrile Neutropenia</h3>
+
+<ul>
+<li>Start an antipseudomonal beta-lactam rapidly.</li>
+<li>Do not add vancomycin routinely.</li>
+<li>Add MRSA coverage for defined indications such as catheter infection, pneumonia, severe mucositis, or hemodynamic instability.</li>
+<li>Reassess persistent fever based on duration, neutrophil recovery, and fungal risk.</li>
+</ul>
+
+<h3>Clostridioides difficile</h3>
+
+<ul>
+<li>Test only patients with clinically significant unformed stool.</li>
+<li>Do not perform a test of cure.</li>
+<li>Stop unnecessary inciting antibiotics.</li>
+<li>Use guideline-directed therapy for initial and recurrent disease.</li>
+<li>Do not treat PCR positivity without a compatible syndrome.</li>
+</ul>
+
+</section>
+
+<section id="prophylaxis">
+
+<h2>Antimicrobial Prophylaxis</h2>
+
+<h3>Surgical Prophylaxis</h3>
+
+<ul>
+<li>Administer before incision at the recommended interval.</li>
+<li>Select the narrowest agent that covers expected organisms.</li>
+<li>Redose during prolonged procedures or major blood loss when indicated.</li>
+<li>Do not continue prophylaxis simply because a drain remains in place.</li>
+<li>Most prophylaxis should stop within the recommended perioperative window.</li>
+</ul>
+
+<h3>Medical Prophylaxis</h3>
+
+<ul>
+<li>PCP prophylaxis based on HIV CD4 count or immunosuppression</li>
+<li>Toxoplasmosis prophylaxis in appropriate HIV patients</li>
+<li>Antiviral prophylaxis after transplant or during selected chemotherapy</li>
+<li>Antifungal prophylaxis in defined high-risk populations</li>
+<li>Postexposure prophylaxis after meningococcal exposure</li>
+<li>Rabies postexposure prophylaxis</li>
+<li>HIV postexposure prophylaxis</li>
+</ul>
+
+<div class="key-point">
+Prophylaxis should have a defined indication, start point, dose, and stop point.
+</div>
+
+<h3>Common Prophylaxis Errors</h3>
+
+<ul>
+<li>Continuing surgical antibiotics for several postoperative days without infection</li>
+<li>Using unnecessarily broad prophylaxis</li>
+<li>Failing to adjust for weight</li>
+<li>Incorrect timing before incision</li>
+<li>Continuing prophylaxis after the risk period has ended</li>
+</ul>
+
+</section>
+
+<section id="programs">
+
+<h2>Hospital Stewardship Program Strategies</h2>
+
+<h3>Prospective Audit and Feedback</h3>
+
+<p>
+The stewardship team reviews active antimicrobial therapy and provides recommendations to the treating team.
+</p>
+
+<h4>Common Recommendations</h4>
+
+<ul>
+<li>Stop therapy</li>
+<li>Narrow therapy</li>
+<li>Adjust dose</li>
+<li>Change to oral treatment</li>
+<li>Obtain source control</li>
+<li>Shorten duration</li>
+<li>Clarify allergy</li>
+<li>Obtain ID consultation</li>
+</ul>
+
+<h3>Preauthorization</h3>
+
+<p>
+Selected agents require approval before use. These often include:
+</p>
+
+<ul>
+<li>Carbapenems</li>
+<li>New beta-lactam/beta-lactamase inhibitor agents</li>
+<li>Linezolid</li>
+<li>Daptomycin</li>
+<li>Ceftaroline</li>
+<li>Fidaxomicin</li>
+<li>Restricted antifungals</li>
+</ul>
+
+<h3>Tracking Metrics</h3>
+
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Days of therapy</td>
+<td>Each day a patient receives a specific antimicrobial</td>
+</tr>
+<tr>
+<td>Defined daily dose</td>
+<td>Standardized drug-consumption measure</td>
+</tr>
+<tr>
+<td>SAAR</td>
+<td>Standardized antimicrobial administration ratio</td>
+</tr>
+<tr>
+<td>C. difficile rates</td>
+<td>Potential adverse consequence of antibiotic exposure</td>
+</tr>
+<tr>
+<td>Resistance trends</td>
+<td>Local organism susceptibility changes</td>
+</tr>
+<tr>
+<td>Acceptance rate</td>
+<td>Proportion of stewardship recommendations implemented</td>
+</tr>
+<tr>
+<td>Clinical outcomes</td>
+<td>Mortality, readmission, length of stay, recurrence, adverse events</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Education Is Necessary but Not Sufficient</h3>
+
+<p>
+Lectures alone rarely produce sustained prescribing improvement. Effective programs combine education with clinical pathways, order-set design, audit and feedback, diagnostic support, and prescriber accountability.
+</p>
+
+</section>
+
+<section id="daily-checklist">
+
+<h2>Daily Inpatient Antimicrobial Checklist</h2>
+
+<div class="summary-box">
+
+<ul>
+<li>What infection are we treating?</li>
+<li>Is infection still the most likely diagnosis?</li>
+<li>What is the presumed source?</li>
+<li>What cultures and imaging are available?</li>
+<li>Were cultures obtained before antibiotics?</li>
+<li>Is the organism colonization, contamination, or true infection?</li>
+<li>Does the patient still need every antimicrobial?</li>
+<li>Can MRSA coverage stop?</li>
+<li>Can antipseudomonal coverage stop?</li>
+<li>Can anaerobic coverage stop?</li>
+<li>Is the dose correct for renal function and weight?</li>
+<li>Does the drug reach the infected site?</li>
+<li>Has source control occurred?</li>
+<li>Can therapy change to oral?</li>
+<li>What adverse effects require monitoring?</li>
+<li>What is the treatment start date?</li>
+<li>What is the planned stop date?</li>
+</ul>
+
+</div>
+
+<h3>How to Present Antibiotics on ID Rounds</h3>
+
+<p>
+A strong resident presentation should include:
+</p>
+
+<ul>
+<li>Drug name</li>
+<li>Dose</li>
+<li>Route</li>
+<li>Start date</li>
+<li>Renal function</li>
+<li>Culture data</li>
+<li>Reason for selection</li>
+<li>Planned duration</li>
+<li>Potential oral step-down</li>
+<li>Monitoring plan</li>
+</ul>
+
+<div class="note">
+Avoid saying only, “The patient is on vancomycin and Zosyn.” Explain what each drug is covering and why that coverage remains necessary.
+</div>
+
+</section>
+
+<section id="scenarios">
+
+<h2>Common Clinical Scenarios</h2>
+
+<h3>Case 1: Broad Therapy Continued Despite Negative Data</h3>
+
+<p>
+A stable patient was admitted with fever and started on vancomycin plus cefepime. Blood cultures remain negative, chest imaging shows no infiltrate, urinalysis is unremarkable, and the patient has a positive influenza test.
+</p>
+
+<div class="key-point">
+Stewardship decision: Stop antibacterial therapy unless there is a specific concern for bacterial coinfection.
+</div>
+
+<h3>Case 2: MSSA Bacteremia on Vancomycin</h3>
+
+<p>
+Blood cultures identify MSSA. The patient remains on vancomycin because the original regimen was “working.”
+</p>
+
+<div class="warning">
+Stewardship decision: Change to cefazolin, nafcillin, or oxacillin unless a specific contraindication exists. Vancomycin is not preferred definitive therapy for MSSA bacteremia.
+</div>
+
+<h3>Case 3: Asymptomatic Bacteriuria</h3>
+
+<p>
+An older nursing-home resident is admitted after a fall. Urine culture grows <em>E. coli</em>, but there are no urinary symptoms, fever, hypotension, or leukocytosis.
+</p>
+
+<div class="key-point">
+Stewardship decision: Do not treat the urine culture. Search for other causes of the fall.
+</div>
+
+<h3>Case 4: Persistent Fever After Abscess Treatment</h3>
+
+<p>
+A patient with an intra-abdominal abscess remains febrile despite meropenem. Imaging shows an enlarging fluid collection.
+</p>
+
+<div class="warning">
+Stewardship decision: This is primarily a source-control failure. Broader antibiotics will not replace drainage.
+</div>
+
+<h3>Case 5: Negative MRSA Nasal PCR in Pneumonia</h3>
+
+<p>
+A patient with community-acquired pneumonia is receiving ceftriaxone, azithromycin, and vancomycin. MRSA nasal PCR is negative, cultures show no MRSA, and the patient is improving.
+</p>
+
+<div class="key-point">
+Stewardship decision: Discontinue vancomycin if no other strong MRSA evidence exists.
+</div>
+
+<h3>Case 6: Positive Candida Respiratory Culture</h3>
+
+<p>
+Candida grows from an endotracheal aspirate in an intubated patient.
+</p>
+
+<div class="key-point">
+Stewardship decision: Candida in respiratory cultures almost always represents colonization. Do not start antifungal therapy solely for this finding.
+</div>
+
+<h3>Case 7: Cefepime Neurotoxicity</h3>
+
+<p>
+A patient with CKD receiving cefepime develops confusion and myoclonus.
+</p>
+
+<div class="warning">
+Stewardship decision: Review renal dosing and consider cefepime neurotoxicity rather than assuming worsening sepsis.
+</div>
+
+<h3>Case 8: Prolonged IV Therapy Despite Oral Option</h3>
+
+<p>
+A clinically stable patient with susceptible gram-negative pyelonephritis is tolerating food and has negative follow-up blood cultures.
+</p>
+
+<div class="key-point">
+Stewardship decision: Evaluate for oral step-down rather than maintaining a central line solely for IV antibiotics.
+</div>
+
+</section>
+
+<section id="pitfalls">
+
+<h2>Common Stewardship Pitfalls</h2>
+
+<div class="note">
+
+<ul>
+<li>Treating a positive culture instead of a clinical infection</li>
+<li>Using vancomycin for definitive MSSA treatment</li>
+<li>Continuing MRSA coverage without evidence of MRSA</li>
+<li>Continuing antipseudomonal therapy in a low-risk patient</li>
+<li>Treating asymptomatic bacteriuria</li>
+<li>Treating Candida in respiratory cultures</li>
+<li>Treating chronic wound surface cultures</li>
+<li>Using antibiotics for a viral syndrome</li>
+<li>Adding anaerobic coverage when it is already present</li>
+<li>Using two beta-lactams without a clear indication</li>
+<li>Failing to adjust for renal function</li>
+<li>Failing to use a loading dose in critical illness</li>
+<li>Continuing antibiotics because leukocytosis persists</li>
+<li>Extending antibiotics instead of obtaining source control</li>
+<li>Assuming IV therapy is always superior to oral therapy</li>
+<li>Failing to document a stop date</li>
+<li>Labeling every cephalosporin as unsafe in penicillin allergy</li>
+<li>Using procalcitonin as the sole diagnostic test</li>
+<li>Ignoring previous culture results</li>
+<li>Using a newer antibiotic when a narrower older agent is active</li>
+</ul>
+
+</div>
+
+</section>
+
+<section id="pearls">
+
+<h2>Board and ID Consult Pearls</h2>
+
+<ul>
+<li>Antimicrobial stewardship is not simply reducing antibiotic use; it is optimizing treatment.</li>
+<li>Start broad therapy rapidly in septic shock, then de-escalate when data return.</li>
+<li>Obtain cultures before antibiotics when doing so does not delay urgent treatment.</li>
+<li>A positive culture does not always represent infection.</li>
+<li><em>Staphylococcus aureus</em> and Candida in blood should never be casually dismissed.</li>
+<li>Previous patient cultures are among the strongest predictors of resistance.</li>
+<li>Vancomycin is inferior to beta-lactams for definitive MSSA bacteremia.</li>
+<li>Daptomycin should not be used for pneumonia.</li>
+<li>Ertapenem does not cover Pseudomonas.</li>
+<li>Aztreonam covers aerobic gram-negative organisms but not gram-positive organisms or anaerobes.</li>
+<li>Cefepime can cause neurotoxicity in renal dysfunction.</li>
+<li>Beta-lactams are time-dependent antibiotics.</li>
+<li>Aminoglycosides are concentration-dependent antibiotics.</li>
+<li>For serious MRSA infection, vancomycin AUC-guided dosing is preferred.</li>
+<li>Do not double cover anaerobes without a specific reason.</li>
+<li>Do not treat asymptomatic bacteriuria except in defined circumstances.</li>
+<li>Candida in respiratory cultures usually represents colonization.</li>
+<li>A negative MRSA nasal test can support stopping MRSA pneumonia coverage.</li>
+<li>Source control may be more important than broadening antibiotics.</li>
+<li>Shorter courses are effective for many uncomplicated infections.</li>
+<li>IV therapy is not automatically superior to highly bioavailable oral therapy.</li>
+<li>A reported penicillin allergy should be clarified rather than accepted without history.</li>
+<li>Procalcitonin is an adjunct, not a substitute for clinical judgment.</li>
+<li>Every antibiotic order should have an indication and planned stop date.</li>
+<li>The 48–72-hour antibiotic time-out is one of the highest-yield stewardship interventions.</li>
+</ul>
+
+</section>
+
+<section id="bottom-line">
+
+<h2>Bottom Line</h2>
+
+<div class="summary-box">
+
+<p>
+Antimicrobial stewardship begins with an accurate diagnosis. Before prescribing, define the syndrome, assess severity, review host factors, obtain appropriate cultures, and identify prior resistant organisms. In severe infection, give effective empiric therapy promptly. Once microbiology and clinical data return, stop unnecessary agents, narrow coverage, optimize dosing, obtain source control, convert to oral therapy when appropriate, and choose the shortest effective duration.
+</p>
+
+<p>
+The strongest medicine resident does not simply know which antibiotic is broadest. The strongest resident can explain why an antimicrobial is needed, what organisms it covers, what it does not cover, how it reaches the infected site, how it should be dosed, when it can be narrowed, and exactly when it should stop.
+</p>
+
+</div>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+
+</section>
+
+<section id="references">
+
+<h2>References</h2>
+
+<ol>
+
+<li>
+Centers for Disease Control and Prevention.
+Core Elements of Hospital Antibiotic Stewardship Programs.
+<a href="https://www.cdc.gov/antibiotic-use/hcp/core-elements/hospital.html" target="_blank" rel="noopener">
+https://www.cdc.gov/antibiotic-use/hcp/core-elements/hospital.html
+</a>
+</li>
+
+<li>
+Centers for Disease Control and Prevention.
+Core Elements of Antibiotic Stewardship.
+<a href="https://www.cdc.gov/antibiotic-use/hcp/core-elements/index.html" target="_blank" rel="noopener">
+https://www.cdc.gov/antibiotic-use/hcp/core-elements/index.html
+</a>
+</li>
+
+<li>
+Barlam TF, Cosgrove SE, Abbo LM, et al.
+Implementing an Antibiotic Stewardship Program: Guidelines by the Infectious Diseases Society of America and the Society for Healthcare Epidemiology of America.
+<a href="https://www.idsociety.org/practice-guideline/implementing-an-ASP/" target="_blank" rel="noopener">
+https://www.idsociety.org/practice-guideline/implementing-an-ASP/
+</a>
+</li>
+
+<li>
+Infectious Diseases Society of America.
+IDSA Guidance on the Treatment of Antimicrobial-Resistant Gram-Negative Infections.
+<a href="https://www.idsociety.org/practice-guideline/amr-guidance/" target="_blank" rel="noopener">
+https://www.idsociety.org/practice-guideline/amr-guidance/
+</a>
+</li>
+
+<li>
+Miller JM, Binnicker MJ, Campbell S, et al.
+Guide to Utilization of the Microbiology Laboratory for Diagnosis of Infectious Diseases: 2024 Update by IDSA and ASM.
+<a href="https://www.idsociety.org/practice-guideline/laboratory-diagnosis-of-infectious-diseases/" target="_blank" rel="noopener">
+https://www.idsociety.org/practice-guideline/laboratory-diagnosis-of-infectious-diseases/
+</a>
+</li>
+
+<li>
+Rybak MJ, Le J, Lodise TP, et al.
+Therapeutic Monitoring of Vancomycin for Serious Methicillin-Resistant Staphylococcus aureus Infections.
+<a href="https://www.idsociety.org/practice-guideline/vancomycin/" target="_blank" rel="noopener">
+https://www.idsociety.org/practice-guideline/vancomycin/
+</a>
+</li>
+
+<li>
+Centers for Disease Control and Prevention.
+Clinical Features of Penicillin Allergy.
+<a href="https://www.cdc.gov/antibiotic-use/hcp/clinical-signs/index.html" target="_blank" rel="noopener">
+https://www.cdc.gov/antibiotic-use/hcp/clinical-signs/index.html
+</a>
+</li>
+
+<li>
+Infectious Diseases Society of America.
+Community-Acquired Pneumonia Clinical Pathway.
+<a href="https://www.idsociety.org/globalassets/idsa/practice-guidelines/community-acquired-pneumonia-in-adults/cap-clinical-pathway-final-online.pdf" target="_blank" rel="noopener">
+https://www.idsociety.org/globalassets/idsa/practice-guidelines/community-acquired-pneumonia-in-adults/cap-clinical-pathway-final-online.pdf
+</a>
+</li>
+
+<li>
+Kalil AC, Metersky ML, Klompas M, et al.
+Management of Adults With Hospital-Acquired and Ventilator-Associated Pneumonia.
+<a href="https://www.idsociety.org/practice-guideline/hap_vap/" target="_blank" rel="noopener">
+https://www.idsociety.org/practice-guideline/hap_vap/
+</a>
+</li>
+
+<li>
+Infectious Diseases Society of America.
+Guidelines on Diagnosing and Managing Complicated Intra-Abdominal Infections.
+<a href="https://www.idsociety.org/practice-guideline/intra-abdominal-infections/" target="_blank" rel="noopener">
+https://www.idsociety.org/practice-guideline/intra-abdominal-infections/
+</a>
+</li>
+
+<li>
+Infectious Diseases Society of America.
+Complicated Urinary Tract Infection Guideline.
+<a href="https://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/" target="_blank" rel="noopener">
+https://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/
+</a>
+</li>
+
+<li>
+Johnson S, Lavergne V, Skinner AM, et al.
+SHEA/IDSA Clinical Practice Guideline Update for Clostridioides difficile Infection.
+<a href="https://www.idsociety.org/practice-guideline/clostridioides-difficile-2021-focused-update/" target="_blank" rel="noopener">
+https://www.idsociety.org/practice-guideline/clostridioides-difficile-2021-focused-update/
+</a>
+</li>
+
 </ol>
 
-<div class="footer">
-Antimicrobial Stewardship and Antibiotic Selection: The Complete Resident Guide • Resident-Level Infectious Disease Review • Learn Medicine
-</div>
+</section>
+
+</main>
 
 </div>
 
-<a href="../index.html" class="back-home">← Home</a>
+<footer class="footer">
+Learn Medicine • Antimicrobial Stewardship • Advanced Resident Infectious Disease Review
+</footer>
+
+</div>
 
 <script src="../assets/js/article-progress.js"></script>
+
 </body>
 </html>
