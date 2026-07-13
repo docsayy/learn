@@ -40,6 +40,27 @@
     "file": "posts/2026-07-13-antimicrobial-stewardship.html"
   },
   {
+    "title": "Bloodstream Infections and Staphylococcus aureus Bacteremia: The Complete Advanced Resident Guide",
+    "date": "2026-07-13",
+    "category": "Infectious Disease",
+    "tags": [
+      "bacteremia",
+      "bloodstream infection",
+      "staphylococcus aureus bacteremia",
+      "MSSA",
+      "MRSA",
+      "CLABSI",
+      "catheter infection",
+      "blood cultures",
+      "endocarditis",
+      "sepsis"
+    ],
+    "summary": "A complete PGY-3 internal medicine and infectious disease review of bloodstream infections, blood culture interpretation, Staphylococcus aureus bacteremia, gram-negative bacteremia, catheter-related infection, source control, echocardiography, treatment duration, oral step-down, and board pearls.",
+    "featured": true,
+    "readingTime": 30,
+    "file": "posts/2026-07-13-bacteremia.html"
+  },
+  {
     "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
     "date": "2026-07-05",
     "category": "Critical Care",
