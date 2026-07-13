@@ -61,6 +61,27 @@
     "file": "posts/2026-07-13-bacteremia.html"
   },
   {
+    "title": "Infective Endocarditis: The Complete Advanced Resident Guide",
+    "date": "2026-07-13",
+    "category": "Infectious Disease",
+    "tags": [
+      "infective endocarditis",
+      "endocarditis",
+      "vegetation",
+      "bacteremia",
+      "Duke criteria",
+      "TTE",
+      "TEE",
+      "prosthetic valve endocarditis",
+      "cardiac device infection",
+      "antibiotic prophylaxis"
+    ],
+    "summary": "A complete PGY-3 internal medicine and infectious disease review of infective endocarditis, including diagnosis, blood cultures, Duke criteria, echocardiography, organism-specific therapy, prosthetic valve and device infection, embolic and neurologic complications, surgical indications, prophylaxis, and board pearls.",
+    "featured": true,
+    "readingTime": 36,
+    "file": "posts/2026-07-13-endocarditis.html"
+  },
+  {
     "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
     "date": "2026-07-05",
     "category": "Critical Care",
