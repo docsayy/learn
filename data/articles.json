@@ -125,6 +125,27 @@
     "file": "posts/2026-07-13-ssti.html"
   },
   {
+    "title": "Urinary Tract Infections: The Complete Advanced Resident Guide",
+    "date": "2026-07-13",
+    "category": "Infectious Disease",
+    "tags": [
+      "urinary tract infection",
+      "UTI",
+      "cystitis",
+      "pyelonephritis",
+      "complicated UTI",
+      "CAUTI",
+      "asymptomatic bacteriuria",
+      "prostatitis",
+      "ESBL",
+      "candiduria"
+    ],
+    "summary": "A complete PGY-3 internal medicine and infectious disease review of cystitis, pyelonephritis, complicated urinary tract infection, catheter-associated UTI, asymptomatic bacteriuria, prostatitis, infected obstruction, candiduria, resistant organisms, pregnancy, treatment duration, and board pearls.",
+    "featured": true,
+    "readingTime": 30,
+    "file": "posts/2026-07-13-uti.html"
+  },
+  {
     "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
     "date": "2026-07-05",
     "category": "Critical Care",
