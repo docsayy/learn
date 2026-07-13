@@ -104,6 +104,27 @@
     "file": "posts/2026-07-13-pneumonia.html"
   },
   {
+    "title": "Skin and Soft-Tissue Infections: The Complete Advanced Resident Guide",
+    "date": "2026-07-13",
+    "category": "Infectious Disease",
+    "tags": [
+      "skin infection",
+      "soft tissue infection",
+      "cellulitis",
+      "erysipelas",
+      "abscess",
+      "MRSA",
+      "necrotizing fasciitis",
+      "Fournier gangrene",
+      "diabetic foot infection",
+      "bite wounds"
+    ],
+    "summary": "A complete PGY-3 internal medicine and infectious disease review of cellulitis, erysipelas, abscesses, MRSA, necrotizing infections, surgical-site infections, bite wounds, water-associated infections, diabetic-foot infections, source control, recurrent disease, antibiotic selection, and board pearls.",
+    "featured": true,
+    "readingTime": 32,
+    "file": "posts/2026-07-13-ssti.html"
+  },
+  {
     "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
     "date": "2026-07-05",
     "category": "Critical Care",
