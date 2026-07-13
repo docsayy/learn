@@ -4,1152 +4,1193 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HIV/AIDS: Diagnosis, Initial Evaluation & Management | Learn Medicine</title>
-
-<meta name="title" content="HIV/AIDS: Diagnosis, Initial Evaluation & Management">
-<meta name="date" content="2026-07-06">
+<meta name="title" content="HIV Infection: Diagnosis, Initial Evaluation, and Management">
+<meta name="date" content="2026-07-13">
 <meta name="category" content="Infectious Disease">
-<meta name="tags" content="HIV,AIDS,ART,CD4,viral load,opportunistic infections,PCP prophylaxis,IRIS,HIV diagnosis,internal medicine">
-<meta name="summary" content="A PGY-3 internal medicine review of HIV/AIDS focused on diagnosis, baseline evaluation, ART initiation, CD4 interpretation, opportunistic infection prophylaxis, inpatient care, monitoring, and board pearls.">
-<meta name="featured" content="false">
+<meta name="tags" content="hiv,aids,art,cd4,viral load,opportunistic infection,pcp prophylaxis,iris,antiretroviral therapy">
+<meta name="summary" content="Resident-level review of HIV infection covering diagnosis, baseline evaluation, CD4 interpretation, antiretroviral therapy, opportunistic infection prophylaxis, inpatient management, IRIS, and board pearls.">
+<meta name="featured" content="true">
+
+<title>HIV Infection: Diagnosis, Initial Evaluation, and Management | Learn Medicine</title>
 
 <link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="progress-bar" id="progressBar"></div>
+<a href="../index.html" class="home-btn">
+← Home
+</a>
 
 <div class="container">
 
-<a href="../index.html" class="back-home">← Back Home</a>
+<div class="article-header">
 
-<header class="article-header">
-    <div class="breadcrumb">Learn Medicine › Infectious Disease</div>
-
-    <h1>HIV/AIDS: Diagnosis, Initial Evaluation & Management</h1>
-
-    <div class="article-meta">
-        Added July 6, 2026 • Infectious Disease • ~22 min read
-    </div>
-
-    <p class="article-summary">
-        This is a PGY-3 medicine review of HIV/AIDS focused on what matters on rounds, overnight admissions,
-        clinic follow-up, and board exams: how to diagnose HIV, what labs to order, when to start ART,
-        which opportunistic infections to prevent, and what not to miss in hospitalized patients with advanced AIDS.
-    </p>
-</header>
-
-<div class="article-layout">
-
-<aside class="toc">
-    <h3>Contents</h3>
-    <a href="#big-picture">Big Picture</a>
-    <a href="#definitions">Definitions</a>
-    <a href="#screening">Screening & Diagnosis</a>
-    <a href="#baseline">Baseline Evaluation</a>
-    <a href="#cd4">CD4 Count Guide</a>
-    <a href="#viral-load">Viral Load</a>
-    <a href="#new-diagnosis">New HIV Diagnosis Approach</a>
-    <a href="#art-start">When to Start ART</a>
-    <a href="#art-regimens">Initial ART Regimens</a>
-    <a href="#art-pearls">ART Pearls</a>
-    <a href="#oi-prophylaxis">OI Prophylaxis</a>
-    <a href="#vaccines">Vaccinations</a>
-    <a href="#hospitalized">Hospitalized Patient with HIV</a>
-    <a href="#fever">Fever in AIDS</a>
-    <a href="#iris">IRIS</a>
-    <a href="#chronic-care">Long-Term Care</a>
-    <a href="#pitfalls">Common Pitfalls</a>
-    <a href="#boards">Board Pearls</a>
-    <a href="#algorithm">Algorithm</a>
-    <a href="#references">References</a>
-</aside>
-
-<main class="article-content">
-
-<section id="big-picture">
-<h2>Big Picture</h2>
-
-<p>
-HIV is now a chronic manageable disease when diagnosed early and treated with effective antiretroviral therapy.
-For internal medicine, the key tasks are:
-</p>
-
-<ul>
-<li>Diagnose HIV correctly.</li>
-<li>Stage immune status using CD4 count.</li>
-<li>Assess viral replication using HIV viral load.</li>
-<li>Start ART promptly unless a specific opportunistic infection requires delay.</li>
-<li>Prevent opportunistic infections based on CD4 count.</li>
-<li>Recognize complications of advanced AIDS and immune reconstitution.</li>
-</ul>
-
-<div class="key-point">
-<strong>PGY-3 framing:</strong> Every HIV patient should be approached with 3 questions:
-<br>
-1. What is the CD4 count?
-<br>
-2. What is the viral load?
-<br>
-3. Are they on ART and taking it reliably?
+<div class="article-breadcrumb">
+Learn Medicine › Infectious Disease
 </div>
 
-</section>
+<h1>HIV Infection: Diagnosis, Initial Evaluation, and Management</h1>
 
-<section id="definitions">
-<h2>Definitions</h2>
+<div class="article-meta">
+Added July 13, 2026 • Infectious Disease • ~20 min read
+</div>
+
+<p>
+A high-yield internal medicine review of HIV infection covering diagnostic testing,
+baseline evaluation, CD4 and viral load interpretation, initial antiretroviral therapy,
+opportunistic infection prophylaxis, inpatient management, immune reconstitution inflammatory syndrome,
+and board-style clinical pearls.
+</p>
+
+</div>
+
+</div>
+
+<div class="layout">
+
+<nav class="toc">
+<h3>Contents</h3>
+<a href="#overview">Clinical Overview</a>
+<a href="#definitions">Key Definitions</a>
+<a href="#screening">Screening</a>
+<a href="#diagnosis">Diagnostic Algorithm</a>
+<a href="#acute-hiv">Acute HIV</a>
+<a href="#baseline">Baseline Evaluation</a>
+<a href="#cd4">CD4 Count Guide</a>
+<a href="#viral-load">Viral Load</a>
+<a href="#art-timing">When to Start ART</a>
+<a href="#initial-art">Initial ART Regimens</a>
+<a href="#art-classes">ART Classes & Toxicities</a>
+<a href="#interactions">Drug Interactions</a>
+<a href="#oi-prophylaxis">OI Prophylaxis</a>
+<a href="#vaccines">Vaccinations</a>
+<a href="#hospitalized">Hospitalized Patient</a>
+<a href="#fever">Fever in Advanced HIV</a>
+<a href="#iris">IRIS</a>
+<a href="#failure">Virologic Failure</a>
+<a href="#coinfections">HBV, HCV & TB</a>
+<a href="#chronic">Long-Term Care</a>
+<a href="#pitfalls">Common Pitfalls</a>
+<a href="#algorithm">Clinical Algorithm</a>
+<a href="#pearls">Board Pearls</a>
+<a href="#references">References</a>
+</nav>
+
+<div class="content">
+
+<h2 id="overview">Clinical Overview</h2>
+
+<p>
+HIV infection is a chronic viral illness characterized by progressive impairment of cell-mediated immunity.
+Modern antiretroviral therapy can achieve durable viral suppression, restore immune function,
+prevent opportunistic infections, and eliminate sexual transmission when viral suppression is maintained.
+</p>
+
+<p>
+For the internal medicine resident, HIV management revolves around four questions:
+</p>
+
+<div class="formula">
+CD4 Count • HIV Viral Load • ART Status • Opportunistic Infection Risk
+</div>
+
+<ul>
+<li>How immunosuppressed is the patient?</li>
+<li>Is the virus suppressed?</li>
+<li>Is the patient receiving a complete and effective ART regimen?</li>
+<li>Does the patient have symptoms or CD4 thresholds suggesting an opportunistic infection?</li>
+</ul>
+
+<div class="note">
+<strong>Resident Pearl:</strong>
+Do not manage HIV by CD4 count alone. CD4 reflects immune function, while viral load reflects active viral replication and response to treatment.
+</div>
+
+<h2 id="definitions">Key Definitions</h2>
 
 <table>
-<thead>
 <tr>
 <th>Term</th>
-<th>Meaning</th>
+<th>Definition</th>
 <th>Clinical Importance</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>HIV infection</td>
-<td>Chronic infection with human immunodeficiency virus</td>
-<td>Can be asymptomatic for years but causes progressive immune dysfunction without ART.</td>
+<td>Infection with human immunodeficiency virus</td>
+<td>Requires lifelong antiretroviral therapy</td>
 </tr>
 <tr>
 <td>AIDS</td>
-<td>CD4 &lt;200 cells/µL or AIDS-defining illness</td>
-<td>High risk for opportunistic infections and malignancy.</td>
-</tr>
-<tr>
-<td>CD4 count</td>
-<td>Marker of immune function</td>
-<td>Guides OI risk and prophylaxis.</td>
-</tr>
-<tr>
-<td>HIV viral load</td>
-<td>Amount of circulating HIV RNA</td>
-<td>Measures disease activity and ART response.</td>
+<td>CD4 count &lt;200 cells/µL or an AIDS-defining illness</td>
+<td>Signals advanced immunosuppression</td>
 </tr>
 <tr>
 <td>Virologic suppression</td>
-<td>Usually HIV RNA below assay detection</td>
-<td>Goal of ART and prevents transmission: U=U.</td>
+<td>HIV RNA below the assay detection threshold</td>
+<td>Primary goal of ART</td>
 </tr>
-</tbody>
+<tr>
+<td>Viral blip</td>
+<td>Isolated low-level detectable HIV RNA followed by resuppression</td>
+<td>Usually not treatment failure</td>
+</tr>
+<tr>
+<td>Virologic failure</td>
+<td>Persistent inability to achieve or maintain suppression</td>
+<td>Requires adherence, interaction, and resistance evaluation</td>
+</tr>
+<tr>
+<td>IRIS</td>
+<td>Inflammatory worsening after immune recovery with ART</td>
+<td>May unmask or worsen an opportunistic infection</td>
+</tr>
 </table>
 
-</section>
+<h2 id="screening">HIV Screening</h2>
 
-<section id="screening">
-<h2>Screening & Diagnosis</h2>
+<p>
+Routine opt-out HIV screening should be incorporated into general medical care.
+Repeat testing is appropriate when ongoing exposure risk is present.
+</p>
 
-<h3>Who should be screened?</h3>
+<h3>Who Should Be Tested?</h3>
 
 <ul>
-<li>All adults and adolescents at least once using opt-out screening.</li>
-<li>Repeat screening for patients with ongoing risk.</li>
-<li>All pregnant patients early in pregnancy.</li>
-<li>Patients with STI, TB, hepatitis B, hepatitis C, unexplained cytopenias, weight loss, recurrent infections, or opportunistic infections.</li>
+<li>All adolescents and adults at least once</li>
+<li>Patients with ongoing sexual or injection-related risk</li>
+<li>All pregnant patients early in pregnancy</li>
+<li>Patients with another sexually transmitted infection</li>
+<li>Patients with tuberculosis, hepatitis B, or hepatitis C</li>
+<li>Patients with unexplained weight loss, lymphadenopathy, cytopenias, or recurrent infections</li>
+<li>Patients with an AIDS-defining or unusual opportunistic infection</li>
 </ul>
 
-<h3>HIV diagnostic algorithm</h3>
+<div class="note">
+HIV testing should be offered whenever the diagnosis would change the differential, treatment plan, or infection-control counseling.
+</div>
+
+<h2 id="diagnosis">HIV Diagnostic Algorithm</h2>
 
 <table>
-<thead>
 <tr>
 <th>Step</th>
 <th>Test</th>
 <th>Interpretation</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>1</td>
-<td>Fourth-generation HIV-1/2 antigen-antibody immunoassay</td>
-<td>Detects p24 antigen and HIV antibodies. Best first screening test.</td>
+<td>Fourth-generation HIV-1/2 antigen-antibody assay</td>
+<td>Detects p24 antigen and HIV-1/2 antibodies</td>
 </tr>
 <tr>
 <td>2</td>
 <td>HIV-1/HIV-2 antibody differentiation assay</td>
-<td>Confirms and differentiates HIV-1 from HIV-2.</td>
+<td>Confirms infection and differentiates HIV-1 from HIV-2</td>
 </tr>
 <tr>
 <td>3</td>
-<td>HIV-1 RNA nucleic acid test</td>
-<td>Used when acute HIV is suspected or differentiation assay is negative/indeterminate after positive screen.</td>
+<td>HIV-1 RNA nucleic acid testing</td>
+<td>Used when differentiation testing is negative or indeterminate, or acute infection is suspected</td>
 </tr>
-</tbody>
 </table>
 
-<div class="clinical-pearl">
-<strong>Board pearl:</strong> Positive fourth-generation test plus negative differentiation assay means possible acute HIV.
-Next step is HIV RNA testing.
+<h3>How to Interpret Common Results</h3>
+
+<table>
+<tr>
+<th>Result</th>
+<th>Interpretation</th>
+<th>Next Step</th>
+</tr>
+<tr>
+<td>Fourth-generation negative</td>
+<td>No laboratory evidence of HIV</td>
+<td>Order HIV RNA if acute infection is strongly suspected</td>
+</tr>
+<tr>
+<td>Fourth-generation positive, differentiation positive</td>
+<td>Confirmed HIV infection</td>
+<td>Baseline evaluation and ART</td>
+</tr>
+<tr>
+<td>Fourth-generation positive, differentiation negative</td>
+<td>Possible acute HIV or false-positive screen</td>
+<td>Order HIV-1 RNA</td>
+</tr>
+<tr>
+<td>Fourth-generation negative, HIV RNA positive</td>
+<td>Acute HIV infection</td>
+<td>Start ART promptly</td>
+</tr>
+</table>
+
+<div class="note">
+<strong>Board Pearl:</strong>
+A reactive fourth-generation test followed by a negative differentiation assay requires HIV RNA testing.
 </div>
 
-<h3>When to suspect acute HIV</h3>
+<h2 id="acute-hiv">Acute HIV Infection</h2>
+
+<p>
+Acute HIV often resembles infectious mononucleosis, influenza, or another nonspecific viral syndrome.
+Symptoms typically occur several weeks after exposure.
+</p>
+
+<h3>Common Manifestations</h3>
 
 <ul>
 <li>Fever</li>
 <li>Pharyngitis</li>
-<li>Diffuse rash</li>
+<li>Diffuse maculopapular rash</li>
 <li>Lymphadenopathy</li>
-<li>Myalgias</li>
+<li>Myalgias and arthralgias</li>
+<li>Diarrhea</li>
+<li>Oral or genital ulcers</li>
 <li>Aseptic meningitis</li>
-<li>Recent high-risk exposure</li>
-<li>Negative or indeterminate antibody testing with high suspicion</li>
 </ul>
 
-</section>
+<h3>Diagnostic Clue</h3>
 
-<section id="baseline">
-<h2>Baseline Evaluation After New HIV Diagnosis</h2>
+<div class="formula">
+Compatible Syndrome + Recent Exposure + Negative Antibody Test = Check HIV RNA
+</div>
 
 <p>
-The first visit should answer: how advanced is the disease, is ART safe to start, are there coinfections,
-and does the patient need opportunistic infection prophylaxis?
+ART should be initiated promptly in acute HIV because viral burden is high,
+transmission risk is elevated, and early therapy preserves immune function.
 </p>
 
-<h3>Initial labs</h3>
+<h2 id="baseline">Baseline Evaluation After Diagnosis</h2>
+
+<p>
+The baseline evaluation should determine the degree of immune suppression,
+identify coinfections, assess organ function, detect transmitted resistance,
+and identify contraindications to specific ART regimens.
+</p>
 
 <table>
-<thead>
 <tr>
 <th>Test</th>
-<th>Why It Matters</th>
+<th>Purpose</th>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td>CD4 count</td>
-<td>Stages immune suppression; determines OI prophylaxis.</td>
+<td>CD4 count and percentage</td>
+<td>Stages immune function and guides OI prophylaxis</td>
 </tr>
 <tr>
 <td>HIV viral load</td>
-<td>Baseline disease activity; used to monitor response to ART.</td>
+<td>Measures baseline viral replication</td>
 </tr>
 <tr>
-<td>HIV genotype resistance testing</td>
-<td>Detects transmitted resistance; obtain before or at ART start.</td>
+<td>Genotypic resistance testing</td>
+<td>Detects transmitted resistance</td>
 </tr>
 <tr>
 <td>CBC with differential</td>
-<td>Baseline anemia, leukopenia, thrombocytopenia; medication toxicity monitoring.</td>
+<td>Evaluates anemia, leukopenia, and thrombocytopenia</td>
 </tr>
 <tr>
-<td>CMP</td>
-<td>Renal and liver function before ART and prophylaxis.</td>
+<td>Comprehensive metabolic panel</td>
+<td>Assesses kidney and liver function</td>
+</tr>
+<tr>
+<td>Urinalysis and urine protein</td>
+<td>Evaluates renal disease and possible HIVAN</td>
 </tr>
 <tr>
 <td>Hepatitis B serologies</td>
-<td>HBsAg, anti-HBs, anti-HBc; determines need for HBV-active ART.</td>
+<td>Guides HBV-active ART selection</td>
 </tr>
 <tr>
 <td>Hepatitis C antibody with reflex RNA</td>
-<td>Common coinfection; affects liver management.</td>
+<td>Identifies active HCV coinfection</td>
 </tr>
 <tr>
-<td>HAV IgG</td>
-<td>Vaccinate if nonimmune and risk factors/chronic liver disease.</td>
+<td>Hepatitis A immunity</td>
+<td>Determines vaccination need</td>
 </tr>
 <tr>
 <td>TB screening</td>
-<td>IGRA or TST; HIV increases TB risk.</td>
+<td>Detects latent or active tuberculosis risk</td>
 </tr>
 <tr>
 <td>Toxoplasma IgG</td>
-<td>If positive and CD4 &lt;100, needs toxoplasma prophylaxis.</td>
+<td>Determines need for prophylaxis at CD4 &lt;100</td>
 </tr>
 <tr>
-<td>Serum cryptococcal antigen</td>
-<td>Consider when CD4 &lt;100, especially if symptoms or high-prevalence setting.</td>
+<td>Syphilis and site-specific STI testing</td>
+<td>Identifies common coinfections</td>
 </tr>
 <tr>
-<td>STI testing</td>
-<td>Syphilis, gonorrhea, chlamydia, trichomonas when relevant.</td>
-</tr>
-<tr>
-<td>Pregnancy test</td>
-<td>For patients who could become pregnant; affects regimen selection.</td>
-</tr>
-<tr>
-<td>G6PD</td>
-<td>If considering dapsone or primaquine.</td>
+<td>Pregnancy testing when applicable</td>
+<td>Guides regimen and perinatal management</td>
 </tr>
 <tr>
 <td>HLA-B*57:01</td>
-<td>Required before abacavir.</td>
+<td>Required before abacavir</td>
+</tr>
+<tr>
+<td>G6PD level</td>
+<td>Required before dapsone or primaquine</td>
 </tr>
 <tr>
 <td>Lipid panel and A1c</td>
-<td>Baseline cardiometabolic risk.</td>
+<td>Establishes cardiometabolic baseline</td>
 </tr>
-<tr>
-<td>Urinalysis</td>
-<td>Baseline renal disease; proteinuria may suggest HIVAN or tenofovir concerns.</td>
-</tr>
-</tbody>
 </table>
 
-<div class="key-point">
-<strong>Do not delay ART just because every baseline lab is not back.</strong>
-Resistance testing should be sent, but ART can usually be started before results return if using a high-barrier regimen.
+<div class="note">
+Do not delay ART solely while waiting for every baseline result. Send resistance testing first, then use a high-barrier regimen when rapid treatment is appropriate.
 </div>
 
-</section>
-
-<section id="cd4">
-<h2>CD4 Count Guide</h2>
-
-<p>
-CD4 count predicts the risk of opportunistic infections and determines prophylaxis.
-</p>
+<h2 id="cd4">CD4 Count Guide</h2>
 
 <table>
-<thead>
 <tr>
 <th>CD4 Count</th>
-<th>Think About</th>
-<th>Prophylaxis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&gt;500</td>
-<td>Near-normal immune function</td>
-<td>No OI prophylaxis</td>
+<th>Clinical Associations</th>
+<th>Important Actions</th>
 </tr>
 <tr>
-<td>&lt;350</td>
-<td>TB, zoster, bacterial pneumonia, HPV-related disease</td>
-<td>No routine CD4-based prophylaxis, but screen for TB/STIs</td>
+<td>&gt;500 cells/µL</td>
+<td>Near-normal cellular immunity</td>
+<td>Routine HIV management</td>
 </tr>
 <tr>
-<td>&lt;200</td>
-<td>Pneumocystis jirovecii pneumonia, esophageal candidiasis</td>
-<td>TMP-SMX for PCP prophylaxis</td>
+<td>&lt;350 cells/µL</td>
+<td>Increased TB, zoster, bacterial pneumonia, and HPV disease</td>
+<td>Assess vaccines and latent TB</td>
 </tr>
 <tr>
-<td>&lt;100</td>
+<td>&lt;200 cells/µL</td>
+<td>PCP and esophageal candidiasis</td>
+<td>Start PCP prophylaxis</td>
+</tr>
+<tr>
+<td>&lt;100 cells/µL</td>
 <td>Toxoplasmosis, cryptococcosis, PML</td>
-<td>TMP-SMX if Toxo IgG positive; consider serum CrAg screening</td>
+<td>Toxoplasma prophylaxis if IgG positive; evaluate for cryptococcal disease when indicated</td>
 </tr>
 <tr>
-<td>&lt;50</td>
-<td>CMV retinitis, disseminated MAC, CNS lymphoma</td>
-<td>MAC prophylaxis only if not starting effective ART promptly or remains viremic</td>
+<td>&lt;50 cells/µL</td>
+<td>CMV retinitis, disseminated MAC, primary CNS lymphoma</td>
+<td>Ask about vision symptoms and assess need for MAC prophylaxis</td>
 </tr>
-</tbody>
 </table>
 
-<div class="clinical-pearl">
-<strong>Classic board association:</strong>
+<div class="note">
+<strong>Classic Board Thresholds:</strong>
 CD4 &lt;200 = PCP.
-CD4 &lt;100 = toxoplasma and cryptococcus.
-CD4 &lt;50 = MAC and CMV.
+CD4 &lt;100 = toxoplasmosis and cryptococcus.
+CD4 &lt;50 = CMV and MAC.
 </div>
 
-</section>
-
-<section id="viral-load">
-<h2>HIV Viral Load</h2>
+<h3>Important CD4 Nuance</h3>
 
 <p>
-HIV viral load is used to assess disease activity and response to ART.
+CD4 count may transiently fall during acute illness, sepsis, corticosteroid exposure, or physiologic stress.
+Use the clinical context and CD4 percentage when a result seems discordant.
 </p>
 
-<h3>How to use viral load</h3>
-
-<ul>
-<li>Obtain at baseline.</li>
-<li>Repeat about 2–4 weeks after starting or changing ART.</li>
-<li>Then monitor every 4–8 weeks until suppressed.</li>
-<li>Once stable and suppressed, monitor every 3–6 months depending on adherence and stability.</li>
-</ul>
-
-<h3>Expected response</h3>
-
-<ul>
-<li>Viral load should fall significantly within weeks of ART.</li>
-<li>Goal is durable virologic suppression.</li>
-<li>Persistent viremia suggests nonadherence, resistance, drug interaction, malabsorption, or wrong regimen.</li>
-</ul>
-
-<div class="warning">
-<strong>Do not call ART failure after one small viral blip.</strong>
-Repeat testing and assess adherence, missed doses, and interactions.
-</div>
-
-</section>
-
-<section id="new-diagnosis">
-<h2>Approach to a Newly Diagnosed HIV Patient</h2>
-
-<div class="algorithm">
-<h3>Initial approach</h3>
-
-<ol>
-<li><strong>Confirm diagnosis</strong> using the HIV testing algorithm.</li>
-<li><strong>Assess symptoms</strong> suggesting opportunistic infection: fever, headache, cough, dyspnea, diarrhea, weight loss, visual symptoms, focal neurologic deficits.</li>
-<li><strong>Order baseline labs</strong> including CD4, viral load, genotype, CBC, CMP, hepatitis serologies, STI testing, TB testing, and pregnancy test if applicable.</li>
-<li><strong>Screen for OIs</strong> based on symptoms and CD4 count.</li>
-<li><strong>Start ART promptly</strong> unless a specific infection requires delay.</li>
-<li><strong>Start OI prophylaxis</strong> if CD4 threshold is met.</li>
-<li><strong>Arrange close follow-up</strong> within 1–2 weeks if newly started on ART.</li>
-</ol>
-</div>
-
-<h3>Symptoms that should slow down same-day ART</h3>
-
-<table>
-<thead>
-<tr>
-<th>Symptom</th>
-<th>Concern</th>
-<th>Why It Matters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Severe headache, photophobia, altered mental status</td>
-<td>Cryptococcal meningitis or TB meningitis</td>
-<td>ART may need to be delayed, especially in cryptococcal meningitis.</td>
-</tr>
-<tr>
-<td>Focal neurologic deficit or seizure</td>
-<td>Toxoplasmosis, CNS lymphoma, PML</td>
-<td>Needs urgent imaging and diagnosis.</td>
-</tr>
-<tr>
-<td>Severe dyspnea or hypoxemia</td>
-<td>PCP, TB, bacterial pneumonia</td>
-<td>Needs acute treatment; ART timing depends on diagnosis.</td>
-</tr>
-<tr>
-<td>Visual floaters or vision loss</td>
-<td>CMV retinitis</td>
-<td>Urgent ophthalmology evaluation.</td>
-</tr>
-<tr>
-<td>Persistent fever and weight loss</td>
-<td>TB, MAC, lymphoma, disseminated fungal infection</td>
-<td>Workup before assuming uncomplicated HIV.</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-
-<section id="art-start">
-<h2>When to Start ART</h2>
+<h2 id="viral-load">HIV Viral Load</h2>
 
 <p>
-For most patients, ART should be started immediately or as soon as possible after diagnosis, regardless of CD4 count.
+HIV viral load is the best marker of treatment response.
+The goal of ART is durable virologic suppression.
 </p>
 
-<h3>Start ART promptly in most situations</h3>
+<h3>Monitoring Strategy</h3>
 
 <ul>
-<li>New HIV diagnosis without severe untreated OI</li>
+<li>Obtain before ART initiation</li>
+<li>Repeat after starting or changing therapy</li>
+<li>Continue every several weeks until suppressed</li>
+<li>Once stable, monitor every 3–6 months</li>
+</ul>
+
+<h3>Persistent Viremia: Think About</h3>
+
+<ul>
+<li>Missed doses</li>
+<li>Medication access</li>
+<li>Drug-drug interactions</li>
+<li>Drug-food interactions</li>
+<li>Malabsorption</li>
+<li>Incorrect dosing</li>
+<li>Resistance</li>
+<li>Incomplete regimen</li>
+</ul>
+
+<div class="note">
+The most common cause of virologic failure is nonadherence, not resistance.
+</div>
+
+<h2 id="art-timing">When to Start ART</h2>
+
+<p>
+ART is recommended for every patient with HIV regardless of CD4 count.
+For most patients, treatment should begin immediately or as soon as possible.
+</p>
+
+<h3>Start ART Promptly</h3>
+
+<ul>
+<li>Newly diagnosed HIV without a major untreated CNS infection</li>
+<li>Acute HIV</li>
 <li>Pregnancy</li>
-<li>Acute HIV infection</li>
-<li>HBV coinfection, using HBV-active ART</li>
-<li>Most opportunistic infections after treatment is started</li>
+<li>Hepatitis B coinfection using an HBV-active regimen</li>
+<li>Most opportunistic infections after OI treatment has begun</li>
 </ul>
 
-<h3>Important ART timing exceptions</h3>
+<h3>Important Timing Exceptions</h3>
 
 <table>
-<thead>
 <tr>
 <th>Condition</th>
-<th>ART Timing</th>
+<th>Recommended ART Timing</th>
 <th>Reason</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>Cryptococcal meningitis</td>
-<td>Delay ART about 4–6 weeks after antifungal therapy</td>
-<td>Early ART increases risk of severe CNS IRIS and mortality.</td>
+<td>Usually delay 4–6 weeks</td>
+<td>Early ART increases severe CNS IRIS and mortality</td>
 </tr>
 <tr>
 <td>TB meningitis</td>
-<td>Delay ART initially, often several weeks</td>
-<td>High risk of CNS IRIS.</td>
+<td>Delay initially</td>
+<td>High risk of neurologic IRIS</td>
 </tr>
 <tr>
-<td>Other TB disease</td>
-<td>Usually start ART within 2 weeks if CD4 &lt;50; by 8 weeks if CD4 higher</td>
-<td>Balances mortality benefit and IRIS risk.</td>
+<td>Non-CNS tuberculosis with CD4 &lt;50</td>
+<td>Start within approximately 2 weeks</td>
+<td>Reduces mortality despite increased IRIS risk</td>
+</tr>
+<tr>
+<td>Non-CNS tuberculosis with CD4 ≥50</td>
+<td>Start within approximately 8 weeks</td>
+<td>Balances benefit and IRIS risk</td>
 </tr>
 <tr>
 <td>PCP</td>
-<td>Start ART within 2 weeks of PCP diagnosis</td>
-<td>Early ART improves outcomes.</td>
+<td>Start within 2 weeks</td>
+<td>Early ART improves outcomes</td>
 </tr>
-</tbody>
 </table>
 
-<div class="key-point">
-<strong>Most tested exception:</strong> Cryptococcal meningitis — do not start ART immediately.
+<div class="note">
+<strong>Most Tested Exception:</strong>
+Do not start ART immediately in cryptococcal meningitis.
 </div>
 
-</section>
-
-<section id="art-regimens">
-<h2>Initial ART Regimens</h2>
+<h2 id="initial-art">Initial ART Regimens</h2>
 
 <p>
-Most initial regimens use an integrase strand transfer inhibitor plus two nucleoside reverse transcriptase inhibitors.
+Most patients should receive an integrase strand transfer inhibitor combined with two nucleoside reverse transcriptase inhibitors.
 </p>
 
-<h3>Preferred initial regimens for most patients</h3>
-
 <table>
-<thead>
 <tr>
 <th>Regimen</th>
-<th>Components</th>
-<th>Best Use</th>
-<th>Important Cautions</th>
+<th>Advantages</th>
+<th>Important Limitations</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>Bictegravir/TAF/FTC</td>
-<td>INSTI + 2 NRTIs</td>
-<td>Excellent single-tablet first-line option</td>
-<td>Not for severe renal dysfunction depending on formulation limits; check interactions with polyvalent cations.</td>
+<td>Single tablet, high resistance barrier, well tolerated</td>
+<td>Check renal function and polyvalent cation use</td>
 </tr>
 <tr>
 <td>Dolutegravir + TAF/FTC</td>
-<td>INSTI + 2 NRTIs</td>
-<td>High barrier to resistance</td>
-<td>Separate from iron, calcium, magnesium, aluminum.</td>
+<td>High resistance barrier, flexible regimen</td>
+<td>Cation interaction; monitor weight and metabolic effects</td>
 </tr>
 <tr>
 <td>Dolutegravir + TDF/FTC</td>
-<td>INSTI + 2 NRTIs</td>
-<td>Good when TDF appropriate</td>
-<td>Avoid or use caution in CKD or osteoporosis risk.</td>
+<td>Effective and HBV active</td>
+<td>Avoid or use caution in CKD and osteoporosis</td>
 </tr>
 <tr>
 <td>Dolutegravir/lamivudine</td>
-<td>Two-drug regimen</td>
-<td>Select patients with low complexity</td>
-<td>Do not use if HBV coinfection, high viral load, unknown resistance, or need for rapid start before labs.</td>
+<td>Two-drug single-tablet option</td>
+<td>Not for HBV coinfection, very high viral load, unknown resistance, or rapid start before key labs</td>
 </tr>
-</tbody>
+<tr>
+<td>Boosted darunavir + two NRTIs</td>
+<td>Very high resistance barrier</td>
+<td>Many drug interactions and metabolic effects</td>
+</tr>
 </table>
 
-<h3>Backbone choice: TAF vs TDF</h3>
+<h3>TAF versus TDF</h3>
 
 <table>
-<thead>
 <tr>
 <th>Feature</th>
 <th>TAF</th>
 <th>TDF</th>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td>Renal safety</td>
-<td>Better</td>
-<td>More renal tubular toxicity risk</td>
+<td>Renal toxicity</td>
+<td>Lower</td>
+<td>Higher proximal tubular toxicity risk</td>
 </tr>
 <tr>
-<td>Bone safety</td>
-<td>Better</td>
-<td>More bone mineral density loss</td>
+<td>Bone effects</td>
+<td>Less bone loss</td>
+<td>Greater reduction in bone mineral density</td>
 </tr>
 <tr>
-<td>Lipids/weight</td>
-<td>May increase lipids/weight more</td>
+<td>Lipid effects</td>
+<td>May raise lipids more</td>
 <td>More lipid-lowering effect</td>
 </tr>
 <tr>
+<td>Weight</td>
+<td>May be associated with more weight gain</td>
+<td>Less weight gain</td>
+</tr>
+<tr>
 <td>HBV activity</td>
-<td>Yes</td>
-<td>Yes</td>
+<td>Active</td>
+<td>Active</td>
 </tr>
-</tbody>
 </table>
 
-<h3>When to avoid certain regimens</h3>
+<h3>When a Two-Drug Regimen Is Not Appropriate</h3>
+
+<ul>
+<li>Hepatitis B coinfection</li>
+<li>Known lamivudine resistance</li>
+<li>Very high baseline viral load</li>
+<li>Suspected opportunistic infection requiring immediate treatment decisions</li>
+<li>Rapid ART start before HBV and resistance results are available</li>
+</ul>
+
+<h2 id="art-classes">ART Classes and Major Toxicities</h2>
 
 <table>
-<thead>
-<tr>
-<th>Situation</th>
-<th>Avoid / Be Careful</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HBV coinfection</td>
-<td>Avoid dolutegravir/lamivudine alone</td>
-<td>Needs two HBV-active agents, usually TAF/TDF + FTC/3TC.</td>
-</tr>
-<tr>
-<td>Unknown genotype and high concern for resistance</td>
-<td>Avoid low-barrier regimens</td>
-<td>Use high-barrier INSTI or boosted darunavir-based regimen.</td>
-</tr>
-<tr>
-<td>Severe CKD</td>
-<td>Avoid TDF</td>
-<td>Renal toxicity and dosing limitations.</td>
-</tr>
-<tr>
-<td>Abacavir consideration</td>
-<td>Do not use without HLA-B*57:01 testing</td>
-<td>Risk of severe hypersensitivity reaction.</td>
-</tr>
-<tr>
-<td>Polyvalent cations</td>
-<td>Separate from INSTIs</td>
-<td>Calcium, iron, magnesium, aluminum reduce INSTI absorption.</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-
-<section id="art-pearls">
-<h2>ART Pearls for Medicine Residents</h2>
-
-<h3>Major ART classes</h3>
-
-<table>
-<thead>
 <tr>
 <th>Class</th>
 <th>Examples</th>
-<th>Key Toxicities / Pearls</th>
+<th>High-Yield Toxicities and Pearls</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>INSTIs</td>
 <td>Bictegravir, dolutegravir, raltegravir, cabotegravir</td>
-<td>First-line class. Watch weight gain and cation interactions.</td>
+<td>Preferred first-line class; cation interactions; possible weight gain</td>
 </tr>
 <tr>
 <td>NRTIs</td>
 <td>Tenofovir, emtricitabine, lamivudine, abacavir</td>
-<td>Backbone drugs. Tenofovir covers HBV; abacavir needs HLA-B*57:01.</td>
+<td>Tenofovir is HBV active; abacavir requires HLA-B*57:01</td>
 </tr>
 <tr>
 <td>NNRTIs</td>
 <td>Efavirenz, rilpivirine, doravirine</td>
-<td>More interactions/resistance issues; efavirenz causes CNS effects.</td>
+<td>Resistance and interaction concerns; efavirenz causes neuropsychiatric effects</td>
 </tr>
 <tr>
 <td>Protease inhibitors</td>
 <td>Darunavir, atazanavir</td>
-<td>Often boosted; many CYP interactions; high resistance barrier.</td>
+<td>CYP interactions, dyslipidemia, insulin resistance; high resistance barrier</td>
 </tr>
 <tr>
-<td>Entry/fusion/capsid agents</td>
-<td>Maraviroc, enfuvirtide, lenacapavir</td>
-<td>Usually specialist-managed for resistant HIV.</td>
+<td>CCR5 antagonist</td>
+<td>Maraviroc</td>
+<td>Requires tropism testing</td>
 </tr>
-</tbody>
+<tr>
+<td>Fusion inhibitor</td>
+<td>Enfuvirtide</td>
+<td>Injection-site reactions</td>
+</tr>
+<tr>
+<td>Capsid inhibitor</td>
+<td>Lenacapavir</td>
+<td>Used for multidrug-resistant HIV under specialist management</td>
+</tr>
 </table>
 
-<h3>Common interactions</h3>
-
-<ul>
-<li><strong>INSTIs:</strong> separate from calcium, iron, magnesium, aluminum, multivitamins.</li>
-<li><strong>Boosted protease inhibitors:</strong> many CYP3A interactions; check statins, DOACs, antiarrhythmics, anticonvulsants.</li>
-<li><strong>Rifampin:</strong> major interaction with many ART drugs; coordinate with ID/HIV specialist.</li>
-<li><strong>Acid suppression:</strong> affects rilpivirine and atazanavir absorption.</li>
-<li><strong>HBV coinfection:</strong> stopping tenofovir/emtricitabine/lamivudine can cause HBV flare.</li>
-</ul>
-
-<div class="warning">
-<strong>Medication reconciliation matters:</strong> HIV patients are high risk for drug interactions, especially with rifamycins,
-antiepileptics, PPIs, statins, anticoagulants, and supplements.
-</div>
-
-</section>
-
-<section id="oi-prophylaxis">
-<h2>Opportunistic Infection Prophylaxis</h2>
+<h3>Classic Drug Toxicities</h3>
 
 <table>
-<thead>
+<tr>
+<th>Drug</th>
+<th>Classic Toxicity</th>
+</tr>
+<tr>
+<td>Abacavir</td>
+<td>Hypersensitivity reaction; avoid if HLA-B*57:01 positive</td>
+</tr>
+<tr>
+<td>TDF</td>
+<td>Proximal tubular injury and bone mineral loss</td>
+</tr>
+<tr>
+<td>Zidovudine</td>
+<td>Macrocytic anemia and myopathy</td>
+</tr>
+<tr>
+<td>Efavirenz</td>
+<td>Vivid dreams, mood changes, CNS effects</td>
+</tr>
+<tr>
+<td>Atazanavir</td>
+<td>Indirect hyperbilirubinemia and nephrolithiasis</td>
+</tr>
+<tr>
+<td>Boosted protease inhibitors</td>
+<td>Metabolic effects and major CYP3A interactions</td>
+</tr>
+</table>
+
+<h2 id="interactions">Important Drug Interactions</h2>
+
+<h3>Polyvalent Cations</h3>
+
+<p>
+Calcium, iron, magnesium, aluminum, antacids, and multivitamins can reduce INSTI absorption.
+Separate administration according to the specific product instructions.
+</p>
+
+<h3>Rifamycins</h3>
+
+<p>
+Rifampin strongly induces drug metabolism and interacts with many ART agents.
+TB and HIV treatment should be coordinated with infectious disease and pharmacy.
+</p>
+
+<h3>Acid Suppression</h3>
+
+<ul>
+<li>Rilpivirine requires gastric acidity</li>
+<li>Atazanavir absorption is reduced by acid suppression</li>
+<li>Review PPI and H2-blocker use carefully</li>
+</ul>
+
+<h3>Boosted Protease Inhibitors</h3>
+
+<p>
+Ritonavir- and cobicistat-boosted regimens can interact with:
+</p>
+
+<ul>
+<li>Statins</li>
+<li>Direct oral anticoagulants</li>
+<li>Antiarrhythmics</li>
+<li>Antiepileptic medications</li>
+<li>Antipsychotics</li>
+<li>Inhaled and systemic corticosteroids</li>
+</ul>
+
+<div class="note">
+Avoid simvastatin and lovastatin with boosted protease inhibitors because of severe toxicity risk.
+</div>
+
+<h2 id="oi-prophylaxis">Opportunistic Infection Prophylaxis</h2>
+
+<table>
 <tr>
 <th>Indication</th>
-<th>Prevent</th>
-<th>Preferred Prophylaxis</th>
-<th>When to Stop</th>
+<th>Prevented Infection</th>
+<th>Preferred Regimen</th>
+<th>Discontinuation</th>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td>CD4 &lt;200 or oropharyngeal candidiasis</td>
+<td>CD4 &lt;200 cells/µL or oropharyngeal candidiasis</td>
 <td>PCP</td>
-<td>TMP-SMX DS 1 tab daily</td>
-<td>CD4 &gt;200 for at least 3 months on ART</td>
+<td>TMP-SMX DS 1 tablet daily</td>
+<td>CD4 &gt;200 for at least 3 months on suppressive ART</td>
 </tr>
 <tr>
 <td>CD4 &lt;100 and Toxoplasma IgG positive</td>
 <td>Toxoplasma encephalitis</td>
-<td>TMP-SMX DS 1 tab daily</td>
-<td>CD4 &gt;200 for at least 3 months on ART</td>
+<td>TMP-SMX DS 1 tablet daily</td>
+<td>CD4 &gt;200 for at least 3 months on suppressive ART</td>
 </tr>
 <tr>
-<td>CD4 &lt;50 and not starting effective ART promptly</td>
+<td>CD4 &lt;50 and no immediate effective ART</td>
 <td>Disseminated MAC</td>
 <td>Azithromycin 1200 mg weekly</td>
-<td>Once on effective ART with immune recovery</td>
+<td>After effective ART and immune recovery</td>
 </tr>
 <tr>
-<td>Positive latent TB testing</td>
-<td>Active TB</td>
-<td>Latent TB regimen based on interactions</td>
-<td>After completing LTBI therapy</td>
+<td>Latent TB infection</td>
+<td>Active tuberculosis</td>
+<td>Interaction-adjusted latent TB regimen</td>
+<td>After completion of therapy</td>
 </tr>
-</tbody>
 </table>
 
-<h3>PCP prophylaxis alternatives</h3>
+<h3>PCP Prophylaxis Alternatives</h3>
 
 <ul>
-<li>Dapsone if G6PD normal</li>
+<li>Dapsone after confirming normal G6PD</li>
 <li>Atovaquone</li>
 <li>Aerosolized pentamidine</li>
 </ul>
 
-<div class="clinical-pearl">
-<strong>Best prophylaxis drug:</strong> TMP-SMX covers PCP and toxoplasmosis and also reduces some bacterial infections.
+<div class="note">
+TMP-SMX is preferred because it prevents PCP and toxoplasmosis and provides additional protection against some bacterial infections.
 </div>
 
-</section>
+<h3>Important MAC Nuance</h3>
 
-<section id="vaccines">
-<h2>Vaccinations in HIV</h2>
+<p>
+Primary MAC prophylaxis is generally not required if effective ART will be started immediately.
+Before starting azithromycin prophylaxis, exclude active disseminated MAC if compatible symptoms are present.
+</p>
+
+<h2 id="vaccines">Vaccinations in HIV</h2>
 
 <table>
-<thead>
 <tr>
 <th>Vaccine</th>
 <th>Recommendation</th>
-<th>Pearl</th>
+<th>High-Yield Note</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>Influenza</td>
 <td>Annually</td>
-<td>Use inactivated vaccine.</td>
+<td>Use inactivated or recombinant vaccine</td>
 </tr>
 <tr>
 <td>COVID-19</td>
-<td>Per current guidance</td>
-<td>Advanced HIV may need enhanced schedule.</td>
+<td>Per current immunocompromised schedule</td>
+<td>Advanced HIV may require additional doses</td>
 </tr>
 <tr>
 <td>Pneumococcal</td>
-<td>PCV20 once, or PCV15 followed by PPSV23</td>
-<td>Important due to increased pneumococcal risk.</td>
+<td>PCV20/21 alone or PCV15 followed by PPSV23</td>
+<td>Follow current adult immunization guidance</td>
 </tr>
 <tr>
 <td>Hepatitis B</td>
 <td>Vaccinate if nonimmune</td>
-<td>Check post-vaccine antibody response.</td>
+<td>Confirm post-vaccination anti-HBs response</td>
 </tr>
 <tr>
 <td>Hepatitis A</td>
-<td>If risk factors, chronic liver disease, or nonimmune with indication</td>
-<td>Especially important with liver disease or MSM risk.</td>
+<td>Vaccinate when indicated and nonimmune</td>
+<td>Especially important with chronic liver disease</td>
 </tr>
 <tr>
 <td>HPV</td>
-<td>Through age 26; consider shared decision-making to 45</td>
-<td>Prevents HPV-related malignancy.</td>
+<td>Routine through age 26; shared decision-making through age 45</td>
+<td>Use a 3-dose series in immunocompromised patients</td>
 </tr>
 <tr>
 <td>Tdap/Td</td>
-<td>Tdap once, then Td/Tdap every 10 years</td>
-<td>Routine adult care.</td>
-</tr>
-<tr>
-<td>MMR</td>
-<td>If nonimmune and CD4 &gt;200</td>
-<td>Live vaccine; avoid if CD4 &lt;200.</td>
-</tr>
-<tr>
-<td>Varicella</td>
-<td>If nonimmune and CD4 &gt;200</td>
-<td>Live vaccine; avoid if CD4 &lt;200.</td>
+<td>Tdap once, then Td or Tdap every 10 years</td>
+<td>Follow routine adult schedule</td>
 </tr>
 <tr>
 <td>Recombinant zoster</td>
-<td>Recommended for eligible adults</td>
-<td>Non-live vaccine.</td>
+<td>Recommended for adults with HIV</td>
+<td>Non-live vaccine</td>
 </tr>
-</tbody>
+<tr>
+<td>MMR</td>
+<td>If nonimmune and CD4 ≥200</td>
+<td>Live vaccine; avoid with severe immunosuppression</td>
+</tr>
+<tr>
+<td>Varicella</td>
+<td>If nonimmune and CD4 ≥200</td>
+<td>Live vaccine; avoid with severe immunosuppression</td>
+</tr>
 </table>
 
-<div class="warning">
-<strong>Live vaccine rule:</strong> Avoid live vaccines when CD4 &lt;200 cells/µL.
+<div class="note">
+<strong>Live Vaccine Rule:</strong>
+MMR and varicella are generally avoided when CD4 count is below 200 cells/µL.
 </div>
 
-</section>
+<h2 id="hospitalized">Approach to the Hospitalized Patient with HIV</h2>
 
-<section id="hospitalized">
-<h2>Approach to the Hospitalized Patient with HIV</h2>
+<h3>Admission Checklist</h3>
+
+<ul>
+<li>Confirm the exact ART regimen and last dose</li>
+<li>Determine adherence and access barriers</li>
+<li>Review the most recent CD4 count and viral load</li>
+<li>Check whether OI prophylaxis is indicated</li>
+<li>Screen for headache, dyspnea, diarrhea, weight loss, visual symptoms, and neurologic deficits</li>
+<li>Review renal and hepatic dosing</li>
+<li>Check all medication interactions</li>
+<li>Avoid incomplete ART regimens</li>
+<li>Continue established ART unless there is a specific contraindication</li>
+</ul>
+
+<h3>Do Not Stop ART Casually</h3>
 
 <p>
-Hospitalized patients may present with known HIV, newly diagnosed HIV, uncontrolled viremia, ART interruption,
-or an opportunistic infection.
+Abrupt interruption may cause viral rebound, resistance, HBV flare in coinfected patients,
+and progression of immune dysfunction.
 </p>
-
-<h3>Admission checklist</h3>
-
-<ul>
-<li>Confirm current ART regimen and last dose.</li>
-<li>Check adherence and barriers.</li>
-<li>Check CD4 count if unknown or outdated.</li>
-<li>Check HIV viral load if unknown, not suppressed, or concern for failure.</li>
-<li>Review OI prophylaxis needs.</li>
-<li>Screen for OI symptoms: headache, cough, dyspnea, diarrhea, fever, weight loss, visual symptoms, neurologic deficits.</li>
-<li>Review drug interactions before starting antibiotics, anticonvulsants, anticoagulants, statins, or TB therapy.</li>
-<li>Do not stop ART casually.</li>
-<li>Consult ID for advanced AIDS, OI, ART failure, major interactions, pregnancy, or resistance.</li>
-</ul>
-
-<h3>When to continue ART inpatient</h3>
-
-<ul>
-<li>Most patients already taking ART should continue it.</li>
-<li>Confirm dosing and renal adjustment.</li>
-<li>Avoid partial regimens; incomplete ART can drive resistance.</li>
-<li>If unable to take PO, discuss with ID/pharmacy rather than holding indefinitely.</li>
-</ul>
-
-<h3>When to be cautious with ART initiation inpatient</h3>
-
-<ul>
-<li>Suspected cryptococcal meningitis</li>
-<li>Suspected TB meningitis</li>
-<li>Severe undiagnosed CNS process</li>
-<li>Concern for adherence barriers that make immediate outpatient continuation unlikely</li>
-<li>Major drug interaction requiring regimen selection help</li>
-</ul>
-
-<div class="key-point">
-<strong>Inpatient pearl:</strong> Starting ART is usually good. Starting ART blindly in an undiagnosed CNS opportunistic
-infection can be dangerous.
-</div>
-
-</section>
-
-<section id="fever">
-<h2>Approach to Fever in AIDS</h2>
 
 <p>
-Fever in AIDS should be evaluated based on CD4 count, symptoms, geography, exposures, and ART status.
+If the patient cannot take oral medication, consult infectious disease and pharmacy rather than administering only part of the regimen.
 </p>
+
+<h3>When to Obtain Infectious Disease Consultation</h3>
+
+<ul>
+<li>New AIDS diagnosis with an opportunistic infection</li>
+<li>Suspected cryptococcal or TB meningitis</li>
+<li>Virologic failure or resistance</li>
+<li>Complex drug interactions</li>
+<li>Pregnancy</li>
+<li>Severe IRIS</li>
+<li>Multidrug-resistant HIV</li>
+</ul>
+
+<h2 id="fever">Fever in Advanced HIV</h2>
 
 <table>
-<thead>
 <tr>
 <th>Clinical Pattern</th>
-<th>Think About</th>
-<th>Initial Workup</th>
+<th>Major Differential</th>
+<th>Initial Evaluation</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>Fever + headache</td>
 <td>Cryptococcus, TB meningitis, toxoplasmosis, CNS lymphoma</td>
-<td>Neuro exam, serum CrAg, brain imaging if indicated, LP with opening pressure.</td>
+<td>Neuro exam, serum CrAg, imaging when indicated, LP with opening pressure</td>
 </tr>
 <tr>
-<td>Fever + dyspnea/hypoxemia</td>
+<td>Fever + hypoxemia</td>
 <td>PCP, bacterial pneumonia, TB, fungal pneumonia</td>
-<td>CXR/CT chest, LDH, beta-D-glucan, sputum studies, ABG if severe.</td>
+<td>Chest imaging, beta-D-glucan, sputum testing, ABG if severe</td>
 </tr>
 <tr>
 <td>Fever + chronic diarrhea</td>
-<td>Cryptosporidium, CMV colitis, MAC, bacterial/parasitic infection</td>
-<td>Stool studies, AFB if indicated, colonoscopy if severe or persistent.</td>
+<td>Cryptosporidium, CMV, MAC, bacterial or parasitic disease</td>
+<td>Stool studies, imaging, endoscopy when needed</td>
 </tr>
 <tr>
 <td>Fever + visual symptoms</td>
 <td>CMV retinitis</td>
-<td>Urgent ophthalmology exam.</td>
+<td>Urgent dilated ophthalmologic examination</td>
 </tr>
 <tr>
-<td>Fever + weight loss + anemia</td>
-<td>Disseminated MAC, TB, lymphoma, histoplasmosis</td>
-<td>Blood cultures including AFB, imaging, ferritin, LDH, biopsy if nodes/mass.</td>
+<td>Fever + weight loss + cytopenias</td>
+<td>Disseminated MAC, TB, histoplasmosis, lymphoma</td>
+<td>Blood cultures including AFB, imaging, tissue diagnosis when possible</td>
 </tr>
-</tbody>
 </table>
 
-</section>
+<div class="note">
+A low CD4 count broadens the differential but does not eliminate common diagnoses such as bacterial pneumonia, urinary infection, endocarditis, or medication fever.
+</div>
 
-<section id="iris">
-<h2>Immune Reconstitution Inflammatory Syndrome</h2>
+<h2 id="iris">Immune Reconstitution Inflammatory Syndrome</h2>
 
 <p>
-IRIS is clinical worsening caused by recovering immune response after ART initiation. It is most common in patients
-with low CD4 counts and high pathogen burden.
+IRIS is an inflammatory syndrome occurring after ART initiation as recovering immunity responds to an existing pathogen or antigen burden.
 </p>
 
-<h3>Two forms</h3>
+<h3>Types of IRIS</h3>
 
 <table>
-<thead>
 <tr>
 <th>Type</th>
-<th>Meaning</th>
+<th>Definition</th>
 <th>Example</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>Paradoxical IRIS</td>
-<td>Known OI worsens after ART despite appropriate therapy</td>
-<td>Cryptococcal meningitis symptoms worsen after ART.</td>
+<td>Previously diagnosed infection worsens after ART</td>
+<td>Worsening cryptococcal symptoms despite antifungal therapy</td>
 </tr>
 <tr>
 <td>Unmasking IRIS</td>
 <td>Previously occult infection becomes clinically apparent after ART</td>
-<td>TB lymphadenitis appears after ART.</td>
+<td>New TB lymphadenitis after ART initiation</td>
 </tr>
-</tbody>
 </table>
 
-<h3>Common IRIS-associated infections</h3>
+<h3>Common Associations</h3>
 
 <ul>
-<li>TB</li>
-<li>Cryptococcal meningitis</li>
+<li>Tuberculosis</li>
+<li>Cryptococcosis</li>
 <li>MAC</li>
 <li>CMV</li>
-<li>Progressive multifocal leukoencephalopathy</li>
-<li>Hepatitis B or C flare</li>
+<li>PML</li>
+<li>Hepatitis B and hepatitis C</li>
 </ul>
 
 <h3>Management</h3>
 
 <ul>
-<li>Rule out treatment failure, nonadherence, resistance, and new infection.</li>
-<li>Continue ART in most cases.</li>
-<li>Treat the underlying opportunistic infection.</li>
-<li>Use NSAIDs for mild symptoms if appropriate.</li>
-<li>Use corticosteroids for severe IRIS, especially with CNS disease, airway compromise, or severe inflammatory complications.</li>
-<li>Consult ID for severe or CNS IRIS.</li>
+<li>Exclude treatment failure, resistance, nonadherence, and a new infection</li>
+<li>Continue ART in most cases</li>
+<li>Continue or optimize treatment of the underlying infection</li>
+<li>Use NSAIDs for mild inflammatory symptoms when appropriate</li>
+<li>Use corticosteroids for severe IRIS after excluding uncontrolled infection</li>
+<li>Manage CNS IRIS with specialist input</li>
 </ul>
 
-<div class="warning">
-<strong>Exception:</strong> Cryptococcal meningitis is the classic scenario where ART is delayed to reduce severe IRIS risk.
+<div class="note">
+Stopping ART is rarely necessary and is reserved for life-threatening IRIS or situations where continued therapy creates greater immediate harm.
 </div>
 
-</section>
+<h2 id="failure">Approach to Virologic Failure</h2>
 
-<section id="chronic-care">
-<h2>Long-Term HIV Care</h2>
+<h3>Stepwise Evaluation</h3>
 
-<h3>Routine monitoring</h3>
+<ol>
+<li>Repeat HIV viral load to confirm persistence</li>
+<li>Assess missed doses and refill history</li>
+<li>Review food requirements</li>
+<li>Review antacids, supplements, and drug interactions</li>
+<li>Confirm renal and hepatic dosing</li>
+<li>Obtain resistance testing while the patient is taking the failing regimen or soon after discontinuation</li>
+<li>Construct a new complete regimen using at least two fully active agents when possible</li>
+</ol>
+
+<div class="formula">
+Do Not Add One Active Drug to a Failing Regimen
+</div>
+
+<p>
+Adding a single active medication to a failing regimen promotes resistance to the new agent.
+Regimen redesign should be done with an HIV specialist.
+</p>
+
+<h2 id="coinfections">Important Coinfections</h2>
+
+<h3>Hepatitis B</h3>
+
+<ul>
+<li>Use a regimen containing TAF or TDF plus FTC or lamivudine</li>
+<li>Do not use lamivudine as the only HBV-active drug</li>
+<li>Do not stop HBV-active ART without a plan because severe hepatitis flare may occur</li>
+</ul>
+
+<h3>Hepatitis C</h3>
+
+<ul>
+<li>Confirm active infection with HCV RNA</li>
+<li>Treat with direct-acting antivirals</li>
+<li>Check drug interactions with ART</li>
+<li>Assess fibrosis and hepatocellular carcinoma risk</li>
+</ul>
+
+<h3>Tuberculosis</h3>
+
+<ul>
+<li>Always consider active TB before treating latent TB</li>
+<li>Rifamycins interact with many ART agents</li>
+<li>ART timing depends on CD4 count and CNS involvement</li>
+<li>TB-IRIS is common when ART is started with advanced immunosuppression</li>
+</ul>
+
+<h2 id="chronic">Long-Term HIV Care</h2>
+
+<h3>Routine Monitoring</h3>
 
 <table>
-<thead>
 <tr>
 <th>Item</th>
-<th>Frequency / Timing</th>
+<th>Monitoring Approach</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>HIV viral load</td>
-<td>After ART start/change, then until suppressed, then every 3–6 months.</td>
+<td>After initiation or regimen change, then every 3–6 months once stable</td>
 </tr>
 <tr>
 <td>CD4 count</td>
-<td>More often if low; less often once stable and suppressed with high CD4.</td>
+<td>More frequently when low; less often after sustained suppression and immune recovery</td>
 </tr>
 <tr>
-<td>CBC/CMP</td>
-<td>Baseline and periodically depending on regimen and comorbidities.</td>
+<td>CBC and CMP</td>
+<td>Based on regimen, organ function, and comorbidities</td>
 </tr>
 <tr>
-<td>Lipids/A1c</td>
-<td>Baseline and periodically for cardiovascular risk.</td>
+<td>Lipids and A1c</td>
+<td>Baseline and periodically</td>
 </tr>
 <tr>
 <td>STI screening</td>
-<td>Based on risk and exposure.</td>
+<td>Based on sexual practices and risk</td>
 </tr>
 <tr>
-<td>Hepatitis B/C monitoring</td>
-<td>Based on serology and coinfection status.</td>
+<td>Renal assessment</td>
+<td>Especially with tenofovir or proteinuria</td>
+</tr>
+<tr>
+<td>Bone health</td>
+<td>Assess risk factors; consider DEXA when indicated</td>
+</tr>
 <tr>
 <td>Cancer screening</td>
-<td>Age/risk appropriate; include cervical and anal cancer screening when indicated.</td>
+<td>Age- and risk-based, including cervical and anal screening when appropriate</td>
 </tr>
-</tbody>
 </table>
 
-<h3>Comorbidities to remember</h3>
+<h3>Common Noninfectious Complications</h3>
 
 <ul>
-<li>Cardiovascular disease risk is increased in HIV.</li>
-<li>Chronic kidney disease can be from HIVAN, tenofovir toxicity, diabetes, hypertension, or other causes.</li>
-<li>Hepatitis B coinfection requires HBV-active ART.</li>
-<li>Hepatitis C should be treated.</li>
-<li>Depression, substance use, housing instability, and adherence barriers directly affect outcomes.</li>
-<li>HPV-related malignancy risk is increased.</li>
+<li>Accelerated cardiovascular disease</li>
+<li>Chronic kidney disease and HIV-associated nephropathy</li>
+<li>Bone mineral loss</li>
+<li>Metabolic syndrome and weight gain</li>
+<li>Neurocognitive impairment</li>
+<li>Depression and substance use disorders</li>
+<li>HPV-associated malignancy</li>
 </ul>
 
-<h3>Malignancy screening pearls</h3>
+<h3>HIV-Associated Nephropathy</h3>
+
+<p>
+HIVAN classically causes proteinuria, renal dysfunction, enlarged echogenic kidneys,
+and collapsing focal segmental glomerulosclerosis.
+</p>
+
+<h3>Management</h3>
 
 <ul>
-<li>Cervical cancer screening is essential for patients with a cervix.</li>
-<li>Anal cancer screening is considered for higher-risk groups depending on local practice and available high-resolution anoscopy.</li>
-<li>Screen for liver cancer in cirrhosis or chronic HBV per standard recommendations.</li>
-<li>Kaposi sarcoma, lymphoma, and cervical cancer are AIDS-defining malignancies.</li>
+<li>Start effective ART</li>
+<li>Use ACE inhibitor or ARB when appropriate</li>
+<li>Control blood pressure</li>
+<li>Exclude medication toxicity and other renal disease</li>
 </ul>
 
-</section>
+<h2 id="pitfalls">Common Pitfalls</h2>
 
-<section id="pitfalls">
-<h2>Common Pitfalls</h2>
-
+<div class="note">
 <ul>
-<li><strong>Forgetting CD4-based prophylaxis</strong> when CD4 is low.</li>
-<li><strong>Starting ART immediately in cryptococcal meningitis</strong> instead of delaying.</li>
-<li><strong>Using dolutegravir/lamivudine in HBV coinfection</strong> without adequate HBV coverage.</li>
-<li><strong>Not checking HLA-B*57:01 before abacavir.</strong></li>
-<li><strong>Missing INSTI-cation interactions</strong> with iron, calcium, magnesium, aluminum, or multivitamins.</li>
-<li><strong>Stopping HBV-active ART</strong> and causing hepatitis B flare.</li>
-<li><strong>Calling viral blips treatment failure</strong> without repeat testing.</li>
-<li><strong>Holding ART inpatient without a plan.</strong></li>
-<li><strong>Not asking about visual symptoms</strong> in CD4 &lt;50 patients.</li>
-<li><strong>Not considering HIV</strong> in unexplained thrombocytopenia, weight loss, lymphadenopathy, or recurrent infections.</li>
+<li>Starting ART immediately in cryptococcal meningitis</li>
+<li>Forgetting PCP prophylaxis when CD4 is below 200</li>
+<li>Forgetting toxoplasma prophylaxis when CD4 is below 100 and IgG is positive</li>
+<li>Automatically giving MAC prophylaxis despite immediate effective ART</li>
+<li>Using dolutegravir/lamivudine in HBV coinfection</li>
+<li>Prescribing abacavir without HLA-B*57:01 testing</li>
+<li>Missing cation interactions with integrase inhibitors</li>
+<li>Stopping HBV-active ART abruptly</li>
+<li>Calling a single low viral load result treatment failure</li>
+<li>Administering only part of an ART regimen</li>
+<li>Missing CMV retinitis in a patient with floaters or vision loss</li>
+<li>Assuming every fever in AIDS is an opportunistic infection</li>
 </ul>
-
-</section>
-
-<section id="boards">
-<h2>Board Pearls</h2>
-
-<div class="clinical-pearl">
-<strong>1.</strong> Fourth-generation HIV test detects p24 antigen and HIV antibodies.
 </div>
 
-<div class="clinical-pearl">
-<strong>2.</strong> Positive screening test with negative differentiation assay requires HIV RNA testing.
-</div>
-
-<div class="clinical-pearl">
-<strong>3.</strong> Start ART immediately in most patients regardless of CD4 count.
-</div>
-
-<div class="clinical-pearl">
-<strong>4.</strong> Delay ART in cryptococcal meningitis, usually about 4–6 weeks.
-</div>
-
-<div class="clinical-pearl">
-<strong>5.</strong> CD4 &lt;200 requires PCP prophylaxis.
-</div>
-
-<div class="clinical-pearl">
-<strong>6.</strong> CD4 &lt;100 plus positive Toxoplasma IgG requires toxoplasma prophylaxis.
-</div>
-
-<div class="clinical-pearl">
-<strong>7.</strong> CD4 &lt;50 raises concern for CMV retinitis and disseminated MAC.
-</div>
-
-<div class="clinical-pearl">
-<strong>8.</strong> TMP-SMX is preferred for PCP prophylaxis and also covers toxoplasmosis.
-</div>
-
-<div class="clinical-pearl">
-<strong>9.</strong> Abacavir requires HLA-B*57:01 testing before use.
-</div>
-
-<div class="clinical-pearl">
-<strong>10.</strong> Tenofovir plus emtricitabine or lamivudine treats both HIV and HBV.
-</div>
-
-<div class="clinical-pearl">
-<strong>11.</strong> Rifampin has major interactions with ART.
-</div>
-
-<div class="clinical-pearl">
-<strong>12.</strong> Live vaccines are generally avoided when CD4 &lt;200.
-</div>
-
-</section>
-
-<section id="algorithm">
-<h2>Clinical Algorithm</h2>
-
-<div class="algorithm">
-<h3>New HIV diagnosis</h3>
+<h2 id="algorithm">Clinical Algorithm for Newly Diagnosed HIV</h2>
 
 <ol>
-<li><strong>Confirm HIV diagnosis</strong> with standard testing algorithm.</li>
-<li><strong>Assess symptoms</strong> for opportunistic infection, especially headache, dyspnea, fever, diarrhea, visual symptoms, and focal neurologic deficits.</li>
-<li><strong>Order baseline labs:</strong> CD4, viral load, genotype, CBC, CMP, hepatitis serologies, STI testing, TB screening, pregnancy test if applicable.</li>
-<li><strong>Start ART promptly</strong> unless concern for cryptococcal meningitis, TB meningitis, or severe undiagnosed CNS OI.</li>
-<li><strong>Choose regimen:</strong> usually bictegravir/TAF/FTC or dolutegravir plus TAF/FTC or TDF/FTC.</li>
-<li><strong>Start OI prophylaxis</strong> based on CD4 count.</li>
-<li><strong>Vaccinate</strong> after reviewing CD4 count and live vaccine safety.</li>
-<li><strong>Follow viral load</strong> until suppressed.</li>
-<li><strong>Reassess adherence and interactions</strong> at every visit.</li>
+<li>Confirm HIV using the standard laboratory algorithm</li>
+<li>Assess for acute illness and symptoms of opportunistic infection</li>
+<li>Obtain CD4 count, viral load, genotype, CBC, CMP, hepatitis serologies, TB testing, STI testing, and pregnancy testing when applicable</li>
+<li>Look for CNS symptoms before immediate ART initiation</li>
+<li>Start a high-barrier INSTI-based regimen in most patients</li>
+<li>Provide HBV-active therapy when HBV coinfection is present</li>
+<li>Begin OI prophylaxis according to CD4 thresholds</li>
+<li>Update vaccinations</li>
+<li>Repeat viral load after ART initiation</li>
+<li>Address adherence, insurance, pharmacy access, transportation, mental health, and substance use</li>
 </ol>
+
+<h2 id="pearls">Board & Inpatient Pearls</h2>
+
+<div class="note">
+<ul>
+<li>Fourth-generation testing detects p24 antigen and HIV antibodies</li>
+<li>Positive screen + negative differentiation assay → HIV RNA</li>
+<li>AIDS = CD4 &lt;200 or AIDS-defining illness</li>
+<li>ART is recommended for every patient with HIV</li>
+<li>Cryptococcal meningitis is the major exception to immediate ART</li>
+<li>CD4 &lt;200 → PCP prophylaxis</li>
+<li>CD4 &lt;100 + Toxoplasma IgG positive → toxoplasma prophylaxis</li>
+<li>CD4 &lt;50 → think CMV and disseminated MAC</li>
+<li>TMP-SMX prevents both PCP and toxoplasmosis</li>
+<li>Abacavir requires HLA-B*57:01 testing</li>
+<li>Tenofovir + FTC or lamivudine provides HBV activity</li>
+<li>Integrase inhibitors interact with polyvalent cations</li>
+<li>Rifampin interacts with many ART agents</li>
+<li>Continue ART during most hospital admissions</li>
+<li>Do not add one active drug to a failing regimen</li>
+<li>Undetectable viral load prevents sexual transmission: U=U</li>
+</ul>
 </div>
 
-</section>
-
-<section id="references">
-<h2>References</h2>
+<h2 id="references">References</h2>
 
 <ol>
-<li>INSIGHT START Study Group. Initiation of antiretroviral therapy in early asymptomatic HIV infection. <em>New England Journal of Medicine</em>. 2015. https://pubmed.ncbi.nlm.nih.gov/26192873/</li>
-<li>ClinicalInfo HIV Guidelines. Guidelines for the Use of Antiretroviral Agents in Adults and Adolescents with HIV. https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-arv</li>
-<li>CDC. Laboratory testing for the diagnosis of HIV infection: updated recommendations. https://stacks.cdc.gov/view/cdc/23447</li>
-<li>USPSTF. Screening for HIV Infection. <em>JAMA</em>. 2019. https://pubmed.ncbi.nlm.nih.gov/31184701/</li>
-<li>NIH ClinicalInfo. Guidelines for Prevention and Treatment of Opportunistic Infections in Adults and Adolescents with HIV. https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-opportunistic-infections</li>
-<li>World Health Organization. HIV guidelines and antiretroviral therapy recommendations. https://www.who.int/teams/global-hiv-hepatitis-and-stis-programmes/hiv</li>
-<li>CDC. HIV Nexus: Clinical Guidance. https://www.cdc.gov/hivnexus/hcp/index.html</li>
-<li>American Family Physician. HIV diagnosis and management reviews. https://www.aafp.org/</li>
+<li>
+INSIGHT START Study Group.
+Initiation of antiretroviral therapy in early asymptomatic HIV infection.
+<em>New England Journal of Medicine</em>. 2015.
+<a href="https://pubmed.ncbi.nlm.nih.gov/26192873/" target="_blank" rel="noopener">
+https://pubmed.ncbi.nlm.nih.gov/26192873/
+</a>
+</li>
+
+<li>
+NIH ClinicalInfo.
+Guidelines for the Use of Antiretroviral Agents in Adults and Adolescents With HIV.
+<a href="https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-arv" target="_blank" rel="noopener">
+https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-arv
+</a>
+</li>
+
+<li>
+Centers for Disease Control and Prevention.
+Laboratory Testing for the Diagnosis of HIV Infection.
+<a href="https://stacks.cdc.gov/view/cdc/23447" target="_blank" rel="noopener">
+https://stacks.cdc.gov/view/cdc/23447
+</a>
+</li>
+
+<li>
+US Preventive Services Task Force.
+Screening for HIV Infection.
+<em>JAMA</em>. 2019.
+<a href="https://pubmed.ncbi.nlm.nih.gov/31184701/" target="_blank" rel="noopener">
+https://pubmed.ncbi.nlm.nih.gov/31184701/
+</a>
+</li>
+
+<li>
+NIH ClinicalInfo.
+Guidelines for the Prevention and Treatment of Opportunistic Infections in Adults and Adolescents With HIV.
+<a href="https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-opportunistic-infections" target="_blank" rel="noopener">
+https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-opportunistic-infections
+</a>
+</li>
+
+<li>
+Centers for Disease Control and Prevention.
+HIV Nexus: Clinical Resources.
+<a href="https://www.cdc.gov/hivnexus/hcp/index.html" target="_blank" rel="noopener">
+https://www.cdc.gov/hivnexus/hcp/index.html
+</a>
+</li>
+
+<li>
+World Health Organization.
+HIV Treatment and Clinical Guidance.
+<a href="https://www.who.int/teams/global-hiv-hepatitis-and-stis-programmes/hiv" target="_blank" rel="noopener">
+https://www.who.int/teams/global-hiv-hepatitis-and-stis-programmes/hiv
+</a>
+</li>
 </ol>
 
-</section>
-
-<a href="../index.html" class="back-home bottom">← Back Home</a>
-
-</main>
-</div>
+<div class="footer">
+HIV Infection • Resident-Level Infectious Disease Review • Learn Medicine
 </div>
 
-<script>
-(function(){
-    const progressBar = document.getElementById("progressBar");
+</div>
 
-    function updateProgress(){
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        if(progressBar){
-            progressBar.style.width = progress + "%";
-        }
-    }
+<a href="../index.html" class="back-home">
+← Back to Home
+</a>
 
-    window.addEventListener("scroll", updateProgress);
-    updateProgress();
-})();
-</script>
+<script src="../assets/js/article-progress.js"></script>
 
 </body>
 </html>
