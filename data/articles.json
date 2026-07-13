@@ -1,23 +1,22 @@
 [
   {
-    "title": "HIV/AIDS: Diagnosis, Initial Evaluation & Management",
-    "date": "2026-07-06",
+    "title": "HIV Infection: Diagnosis, Initial Evaluation, and Management",
+    "date": "2026-07-13",
     "category": "Infectious Disease",
     "tags": [
-      "HIV",
-      "AIDS",
-      "ART",
-      "CD4",
+      "hiv",
+      "aids",
+      "art",
+      "cd4",
       "viral load",
-      "opportunistic infections",
-      "PCP prophylaxis",
-      "IRIS",
-      "HIV diagnosis",
-      "internal medicine"
+      "opportunistic infection",
+      "pcp prophylaxis",
+      "iris",
+      "antiretroviral therapy"
     ],
-    "summary": "A PGY-3 internal medicine review of HIV/AIDS focused on diagnosis, baseline evaluation, ART initiation, CD4 interpretation, opportunistic infection prophylaxis, inpatient care, monitoring, and board pearls.",
-    "featured": false,
-    "readingTime": 15,
+    "summary": "Resident-level review of HIV infection covering diagnosis, baseline evaluation, CD4 interpretation, antiretroviral therapy, opportunistic infection prophylaxis, inpatient management, IRIS, and board pearls.",
+    "featured": true,
+    "readingTime": 16,
     "file": "posts/2026-07-06-hiv.html"
   },
   {
