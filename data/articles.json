@@ -82,6 +82,28 @@
     "file": "posts/2026-07-13-endocarditis.html"
   },
   {
+    "title": "Pneumonia: The Complete Advanced Resident Guide",
+    "date": "2026-07-13",
+    "category": "Infectious Disease",
+    "tags": [
+      "pneumonia",
+      "CAP",
+      "HAP",
+      "VAP",
+      "aspiration pneumonia",
+      "community acquired pneumonia",
+      "hospital acquired pneumonia",
+      "parapneumonic effusion",
+      "empyema",
+      "MRSA",
+      "Pseudomonas"
+    ],
+    "summary": "A complete PGY-3 internal medicine and infectious disease review of community-acquired pneumonia, hospital-acquired pneumonia, ventilator-associated pneumonia, aspiration syndromes, diagnostic testing, antimicrobial treatment, complications, resistant pathogens, immunocompromised hosts, and board pearls.",
+    "featured": true,
+    "readingTime": 29,
+    "file": "posts/2026-07-13-pneumonia.html"
+  },
+  {
     "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
     "date": "2026-07-05",
     "category": "Critical Care",
