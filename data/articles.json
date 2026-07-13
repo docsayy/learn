@@ -20,6 +20,23 @@
     "file": "posts/2026-07-06-hiv.html"
   },
   {
+    "title": "Antimicrobial Stewardship and Antibiotic Selection: The Complete Resident Guide",
+    "date": "2026-07-13",
+    "category": "Infectious Disease",
+    "tags": [
+      "antibiotics",
+      "antimicrobial stewardship",
+      "resistance",
+      "empiric therapy",
+      "de-escalation",
+      "source control"
+    ],
+    "summary": "A practical PGY-3 guide to antibiotic spectrum, empiric selection, de-escalation, dosing, toxicities, resistance mechanisms, IV-to-oral conversion, duration, and source control.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-13-antimicrobial-stewardship.html"
+  },
+  {
     "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
     "date": "2026-07-05",
     "category": "Critical Care",
