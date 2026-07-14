@@ -20,6 +20,29 @@
     "file": "posts/2026-07-06-hiv.html"
   },
   {
+    "title": "Acid–Base, Anion Gap and Compensation Calculator",
+    "date": "2026-07-13",
+    "category": "Nephrology",
+    "tags": [
+      "acid base",
+      "ABG",
+      "VBG",
+      "anion gap",
+      "Winter formula",
+      "delta ratio",
+      "HAGMA",
+      "NAGMA",
+      "GOLDMARK",
+      "HARDUP",
+      "osmolar gap",
+      "urine anion gap"
+    ],
+    "summary": "A bedside-first adult acid-base calculator for primary disorder identification, expected compensation, anion gap and albumin correction, delta analysis, osmolar gap, urine anion gap, oxygenation, and a copyable assessment and plan.",
+    "featured": true,
+    "readingTime": 6,
+    "file": "posts/2026-07-13-acid-base-calculator.html"
+  },
+  {
     "title": "Antimicrobial Stewardship: The Complete Advanced Resident Guide",
     "date": "2026-07-13",
     "category": "Infectious Disease",
