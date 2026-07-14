@@ -1,5 +1,24 @@
 [
   {
+    "title": "Bone, Joint, and Spinal Infections: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "osteomyelitis",
+      "septic arthritis",
+      "vertebral osteomyelitis",
+      "discitis",
+      "spinal epidural abscess",
+      "prosthetic joint infection",
+      "diabetic foot osteomyelitis",
+      "S aureus bacteremia"
+    ],
+    "summary": "A complete PGY-3 internal medicine and infectious disease review of osteomyelitis, septic arthritis, vertebral osteomyelitis, spinal epidural abscess, prosthetic-joint infection, diabetic-foot osteomyelitis, diagnostic sampling, imaging, source control, antimicrobial therapy, and treatment duration.",
+    "featured": true,
+    "readingTime": 32,
+    "file": "posts/2026-07-14-osteo.html"
+  },
+  {
     "title": "HIV Infection: Diagnosis, Initial Evaluation, and Management",
     "date": "2026-07-13",
     "category": "Infectious Disease",
