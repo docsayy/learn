@@ -20,6 +20,30 @@
     "file": "posts/2026-07-14-cns-infections.html"
   },
   {
+    "title": "HIV and Opportunistic Infections: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "HIV",
+      "AIDS",
+      "antiretroviral therapy",
+      "ART",
+      "opportunistic infections",
+      "PCP",
+      "Pneumocystis",
+      "toxoplasmosis",
+      "cryptococcal meningitis",
+      "MAC",
+      "CMV",
+      "tuberculosis",
+      "IRIS"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to HIV diagnosis, staging, baseline evaluation, rapid antiretroviral therapy, resistance, opportunistic-infection prophylaxis and treatment, immune reconstitution inflammatory syndrome, prevention, monitoring, and inpatient management.",
+    "featured": true,
+    "readingTime": 37,
+    "file": "posts/2026-07-14-hiv-aids.html"
+  },
+  {
     "title": "Bone, Joint, and Spinal Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
