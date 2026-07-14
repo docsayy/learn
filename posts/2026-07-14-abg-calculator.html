@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="Acid–Base Workflow Wizard">
+<meta name="date" content="2026-07-13">
+<meta name="category" content="Nephrology">
+<meta name="tags" content="ABG,VBG,acid base,anion gap,Winter formula,HAGMA,NAGMA,GOLDMARK,HARDUP,delta ratio">
+<meta name="summary" content="A step-by-step acid-base workflow wizard for primary disorder identification, compensation, anion gap correction, HAGMA/NAGMA evaluation, and delta analysis.">
+<meta name="featured" content="true">
+<title>Acid–Base Workflow Wizard | Learn Medicine</title>
+<link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --text:#1e293b;
+    --muted:#64748b;
+    --accent:#0f766e;
+    --accent-dark:#115e59;
+    --accent-soft:#f0fdfa;
+    --border:#e2e8f0;
+    --danger:#b91c1c;
+    --danger-soft:#fef2f2;
+    --warning:#92400e;
+    --warning-soft:#fffbeb;
+    --success:#166534;
+    --success-soft:#f0fdf4;
+    --blue-soft:#eff6ff;
+    --shadow:0 12px 34px rgba(15,23,42,.08);
+    --radius-lg:18px;
+    --radius-md:11px;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    padding:22px 16px 44px;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',Arial,sans-serif;
+    font-size:14px;
+    line-height:1.55;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+.app-shell{
+    width:100%;
+    max-width:1120px;
+    margin:0 auto;
+}
+
+header{
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+    margin-bottom:16px;
+    padding:22px;
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    background:linear-gradient(135deg,#ffffff 0%,var(--accent-soft) 100%);
+    box-shadow:var(--shadow);
+}
+
+.nav-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.nav-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:7px 11px;
+    border:1px solid var(--border);
+    border-radius:999px;
+    background:#ffffff;
+    color:var(--accent);
+    text-decoration:none;
+    font-size:.78rem;
+    font-weight:700;
+}
+
+.nav-btn:hover{
+    background:var(--accent-soft);
+}
+
+.nav-btn .icon{
+    font-size:1rem;
+}
+
+.title-row{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.icon-pill{
+    width:42px;
+    height:42px;
+    flex:0 0 auto;
+    display:grid;
+    place-items:center;
+    border-radius:12px;
+    background:var(--accent);
+    color:white;
+    box-shadow:0 8px 18px rgba(15,118,110,.2);
+    font-size:1.35rem;
+}
+
+h1{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:7px;
+    margin:0;
+    font-size:clamp(1.45rem,2.8vw,2.15rem);
+    line-height:1.18;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    padding:3px 8px;
+    border:1px solid #99f6e4;
+    border-radius:999px;
+    background:#ccfbf1;
+    color:var(--accent-dark);
+    font-size:.68rem;
+    font-weight:800;
+}
+
+.article-meta{
+    margin-top:6px;
+    color:var(--muted);
+    font-size:.78rem;
+}
+
+.subtitle{
+    max-width:880px;
+    margin:7px 0 0;
+    color:#475569;
+    font-size:.86rem;
+}
+
+.safety-note{
+    margin-bottom:16px;
+    padding:11px 13px;
+    border:1px solid #fecaca;
+    border-radius:12px;
+    background:var(--danger-soft);
+    color:#7f1d1d;
+    font-size:.8rem;
+}
+
+main{
+    display:grid;
+    grid-template-columns:minmax(0,1.35fr) minmax(320px,1fr);
+    gap:17px;
+    align-items:start;
+}
+
+.card{
+    min-width:0;
+    padding:15px;
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    background:var(--card);
+    box-shadow:var(--shadow);
+}
+
+main > .card:last-child{
+    position:sticky;
+    top:14px;
+}
+
+.accordion-section{
+    overflow:hidden;
+    margin-bottom:10px;
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    background:#ffffff;
+}
+
+.accordion-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:10px 12px;
+    cursor:pointer;
+    background:#f8fafc;
+}
+
+.accordion-header:hover{
+    background:var(--accent-soft);
+}
+
+.accordion-header h2{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    margin:0;
+    color:#334155;
+    font-size:.91rem;
+    line-height:1.3;
+}
+
+.step-tag{
+    flex:0 0 auto;
+    padding:2px 7px;
+    border-radius:999px;
+    background:#ccfbf1;
+    color:var(--accent-dark);
+    font-size:.65rem;
+    font-weight:800;
+}
+
+.accordion-toggle{
+    color:var(--muted);
+    font-size:.84rem;
+}
+
+.accordion-body{
+    display:none;
+    padding:11px 12px 13px;
+    border-top:1px solid var(--border);
+    background:#ffffff;
+}
+
+.accordion-body.active{
+    display:block;
+}
+
+.small-help{
+    margin:0 0 8px;
+    color:var(--muted);
+    font-size:.75rem;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px 11px;
+}
+
+.form-grid-2{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px 11px;
+}
+
+.field{
+    display:flex;
+    min-width:0;
+    flex-direction:column;
+    gap:4px;
+}
+
+label{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:7px;
+    color:#334155;
+    font-size:.76rem;
+    font-weight:700;
+}
+
+label .hint{
+    color:var(--muted);
+    font-size:.65rem;
+    font-weight:400;
+    text-align:right;
+}
+
+input[type="number"],
+select,
+textarea{
+    width:100%;
+    min-height:39px;
+    padding:8px 9px;
+    border:1px solid #cbd5e1;
+    border-radius:9px;
+    outline:none;
+    background:#ffffff;
+    color:var(--text);
+}
+
+textarea{
+    min-height:76px;
+    resize:vertical;
+}
+
+input[type="number"]:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(15,118,110,.12);
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#94a3b8;
+}
+
+.checkbox-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px 10px;
+    margin-top:5px;
+}
+
+.checkbox-item{
+    display:flex;
+    align-items:flex-start;
+    gap:7px;
+    padding:7px 8px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:#f8fafc;
+    color:#334155;
+    font-size:.73rem;
+}
+
+.checkbox-item input{
+    margin-top:2px;
+}
+
+.btn-row{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    margin-top:9px;
+}
+
+.primary-btn,
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:38px;
+    padding:8px 13px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:.78rem;
+    font-weight:700;
+}
+
+.primary-btn{
+    border:0;
+    background:var(--accent);
+    color:#ffffff;
+}
+
+.primary-btn:hover{
+    background:var(--accent-dark);
+}
+
+.secondary-btn{
+    border:1px solid var(--border);
+    background:#ffffff;
+    color:#334155;
+}
+
+.secondary-btn:hover{
+    background:var(--accent-soft);
+    border-color:#99f6e4;
+}
+
+.chip-row,
+.pill-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+    margin:7px 0;
+}
+
+.chip,
+.pill{
+    display:inline-flex;
+    align-items:center;
+    padding:3px 7px;
+    border-radius:999px;
+    background:var(--blue-soft);
+    color:#1d4ed8;
+    font-size:.64rem;
+    font-weight:700;
+}
+
+.pill.good{
+    background:#dcfce7;
+    color:var(--success);
+}
+
+.pill.bad{
+    background:#fee2e2;
+    color:var(--danger);
+}
+
+.pill.warn{
+    background:#fef3c7;
+    color:var(--warning);
+}
+
+.error-text{
+    min-height:1em;
+    margin-top:5px;
+    color:var(--danger);
+    font-size:.73rem;
+}
+
+.summary-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+}
+
+.summary-header h2{
+    margin:0;
+    font-size:1rem;
+}
+
+.status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    padding:3px 8px;
+    border-radius:999px;
+    font-size:.67rem;
+    font-weight:800;
+    text-align:right;
+}
+
+.status-neutral{
+    border:1px solid var(--border);
+    background:#f8fafc;
+    color:#475569;
+}
+
+.status-good{
+    border:1px solid #bbf7d0;
+    background:var(--success-soft);
+    color:var(--success);
+}
+
+.status-bad{
+    border:1px solid #fecaca;
+    background:var(--danger-soft);
+    color:#991b1b;
+}
+
+.summary-main{
+    margin-top:9px;
+    padding:10px 11px;
+    border:1px solid #99f6e4;
+    border-radius:10px;
+    background:var(--accent-soft);
+    color:#334155;
+    font-size:.8rem;
+}
+
+.section-block{
+    margin-top:11px;
+    padding-top:9px;
+    border-top:1px solid var(--border);
+}
+
+.section-block h3{
+    margin:0 0 4px;
+    color:#334155;
+    font-size:.84rem;
+}
+
+.section-block p,
+.section-block ul{
+    margin:0;
+    color:#475569;
+    font-size:.74rem;
+}
+
+.section-block ul{
+    padding-left:17px;
+}
+
+.section-block li{
+    margin:3px 0;
+}
+
+.copy-row{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    margin-top:11px;
+}
+
+.copy-msg{
+    min-height:1em;
+    color:var(--success);
+    font-size:.72rem;
+}
+
+#clipboardPayload{
+    position:fixed;
+    left:-9999px;
+    width:0;
+    height:0;
+    opacity:0;
+    pointer-events:none;
+}
+
+.tiny-note{
+    margin-top:9px;
+    color:#94a3b8;
+    font-size:.66rem;
+}
+
+.footer{
+    margin-top:18px;
+    padding:18px 0 2px;
+    color:var(--muted);
+    text-align:center;
+    font-size:.75rem;
+}
+
+@media(max-width:900px){
+    main{
+        grid-template-columns:1fr;
+    }
+
+    main > .card:last-child{
+        position:static;
+    }
+}
+
+@media(max-width:650px){
+    body{
+        padding:12px 9px 30px;
+    }
+
+    header,
+    .card{
+        padding:13px;
+    }
+
+    .title-row{
+        align-items:flex-start;
+    }
+
+    .icon-pill{
+        width:36px;
+        height:36px;
+        font-size:1.1rem;
+    }
+
+    .form-grid,
+    .form-grid-2,
+    .checkbox-grid{
+        grid-template-columns:1fr;
+    }
+
+    .summary-header{
+        display:block;
+    }
+
+    .status-pill{
+        margin-top:6px;
+    }
+}
+
+@media print{
+    body{
+        padding:0;
+        background:#ffffff;
+    }
+
+    .nav-row,
+    .btn-row,
+    .copy-row,
+    .footer{
+        display:none!important;
+    }
+
+    .app-shell{
+        max-width:none;
+    }
+
+    header,
+    .card{
+        box-shadow:none;
+    }
+
+    main{
+        grid-template-columns:1fr;
+    }
+
+    main > .card:last-child{
+        position:static;
+    }
+}
+</style>
+
+</head>
+<body>
+<div class="app-shell">
+    <header>
+        <div class="nav-row">
+            <a href="../index.html" class="nav-btn">
+                <span class="icon">🏠</span>
+                <span>Home</span>
+            </a>
+            <a href="../pulmonary.html" class="nav-btn">
+                <span class="icon">🫁</span>
+                <span>Back to Pulmonary</span>
+            </a>
+        </div>
+        <div class="title-row">
+            <div class="icon-pill">🧪</div>
+            <div>
+                <h1>Acid–Base Workflow Wizard <span class="badge">Nephrology / Critical Care</span></h1>
+                <div class="article-meta">Added July 13, 2026 • Adult bedside calculator</div>
+                <p class="subtitle">
+                    Stepwise interpretation in the original workflow: blood gas → compensation → anion gap → HAGMA or NAGMA → GOLDMARK / HARDUP → delta analysis → structured assessment and plan.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="safety-note">
+        <strong>Clinical safety:</strong> Use values obtained at approximately the same time. Venous pH and bicarbonate are often useful for metabolic assessment, but venous PCO₂ is not interchangeable with arterial PCO₂, and venous PO₂ must not be used to assess oxygenation.
+    </div>
+
+    <main>
+        <!-- LEFT: WIZARD STEPS -->
+        <section class="card">
+            <div class="accordion-section">
+                <div class="accordion-header" data-target="step1">
+                    <h2>
+                        <span class="step-tag">Step 1</span> ABG: Primary Disorder &amp; Compensation
+                    </h2>
+                    <span class="accordion-toggle" id="toggle-step1">▼</span>
+                </div>
+                <div class="accordion-body active" id="step1">
+                    <p class="small-help">Start here: define the primary disorder and whether respiratory compensation is appropriate.</p>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="sampleType">
+                                Sample type
+                                <span class="hint">ABG vs VBG</span>
+                            </label>
+                            <select id="sampleType">
+                                <option value="arterial">Arterial</option>
+                                <option value="venous">Venous</option>
+                                <option value="unknown">Not specified</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="pH">
+                                pH
+                                <span class="hint">e.g. 7.25</span>
+                            </label>
+                            <input type="number" id="pH" step="0.001" min="6.6" max="7.8" placeholder="7.25">
+                        </div>
+
+                        <div class="field">
+                            <label for="pco2">
+                                PCO₂ (mmHg)
+                                <span class="hint">arterial value if ABG</span>
+                            </label>
+                            <input type="number" id="pco2" step="0.1" min="5" max="160" placeholder="40">
+                        </div>
+
+                        <div class="field">
+                            <label for="hco3">
+                                HCO₃⁻ (mEq/L)
+                                <span class="hint">e.g. 18</span>
+                            </label>
+                            <input type="number" id="hco3" step="0.1" min="2" max="60" placeholder="24">
+                        </div>
+
+                        <div class="field">
+                            <label for="po2">
+                                PO₂ (mmHg)
+                                <span class="hint">optional</span>
+                            </label>
+                            <input type="number" id="po2" step="1" min="20" max="600" placeholder="80">
+                        </div>
+
+                        <div class="field">
+                            <label for="fio2">
+                                FiO₂ (%)
+                                <span class="hint">e.g. 21, 40</span>
+                            </label>
+                            <input type="number" id="fio2" step="1" min="21" max="100" placeholder="21">
+                        </div>
+                    </div>
+
+                    <div class="chip-row">
+                        <span class="chip">Required: pH, PCO₂, blood-gas HCO₃⁻</span>
+                        <span class="chip">PO₂/FiO₂ is interpreted only for an arterial sample</span>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="button" class="primary-btn" id="runStep1">
+                            <span class="icon">🧠</span>
+                            <span>Analyze Step 1</span>
+                        </button>
+                    </div>
+
+                    <div id="errorStep1" class="error-text"></div>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <div class="accordion-header" data-target="step2">
+                    <h2>
+                        <span class="step-tag">Step 2</span> Anion Gap &amp; Corrected Gap
+                    </h2>
+                    <span class="accordion-toggle" id="toggle-step2">▲</span>
+                </div>
+                <div class="accordion-body" id="step2">
+                    <p class="small-help">
+                        Use BMP and albumin to classify normal vs high anion gap and adjust for hypoalbuminemia.
+                    </p>
+
+                    <div class="form-grid-2">
+                        <div class="field">
+                            <label for="na">
+                                Na⁺ (mEq/L)
+                                <span class="hint">e.g. 140</span>
+                            </label>
+                            <input type="number" id="na" step="0.1" min="100" max="180" placeholder="140">
+                        </div>
+
+                        <div class="field">
+                            <label for="cl">
+                                Cl⁻ (mEq/L)
+                                <span class="hint">e.g. 104</span>
+                            </label>
+                            <input type="number" id="cl" step="0.1" min="60" max="140" placeholder="104">
+                        </div>
+
+                        <div class="field">
+                            <label for="bmpHco3">
+                                Serum total CO₂ / HCO₃⁻
+                                <span class="hint">preferred for AG</span>
+                            </label>
+                            <input type="number" id="bmpHco3" step="0.1" min="2" max="60" placeholder="24">
+                        </div>
+
+                        <div class="field">
+                            <label for="albumin">
+                                Albumin (g/dL)
+                                <span class="hint">optional, e.g. 4.0</span>
+                            </label>
+                            <input type="number" id="albumin" step="0.1" min="1" max="6" placeholder="4.0">
+                        </div>
+
+                        <div class="field">
+                            <label for="normalAg">
+                                Lab normal AG reference
+                                <span class="hint">default 12</span>
+                            </label>
+                            <input type="number" id="normalAg" step="0.1" min="4" max="20" value="12">
+                        </div>
+                    </div>
+
+                    <div class="chip-row">
+                        <span class="chip">AG = Na⁺ − (Cl⁻ + serum HCO₃⁻)</span>
+                        <span class="chip">Uses blood-gas HCO₃⁻ only when serum total CO₂ is unavailable</span>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="button" class="primary-btn" id="runStep2">
+                            <span class="icon">🧮</span>
+                            <span>Analyze Step 2</span>
+                        </button>
+                    </div>
+
+                    <div id="errorStep2" class="error-text"></div>
+                    <div id="agDisplay" class="small-help"></div>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <div class="accordion-header" data-target="step3">
+                    <h2>
+                        <span class="step-tag">Step 3</span> HAGMA vs NAGMA Routing
+                    </h2>
+                    <span class="accordion-toggle" id="toggle-step3">▲</span>
+                </div>
+                <div class="accordion-body" id="step3">
+                    <p class="small-help">
+                        Based on corrected AG and presence of metabolic acidosis, decide whether this is primarily a high
+                        anion gap metabolic acidosis (HAGMA) or a normal anion gap metabolic acidosis (NAGMA).
+                    </p>
+                    <div id="hagmaNagmaSummary" class="small-help">
+                        Run Steps 1 and 2 to auto-classify.
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">HAGMA → GOLDMARK</span>
+                        <span class="chip">NAGMA → HARDUP</span>
+                    </div>
+                    <div class="btn-row">
+                        <button type="button" class="secondary-btn" id="forceHAGMA">
+                            <span class="icon">🔁</span>
+                            <span>Force HAGMA Path</span>
+                        </button>
+                        <button type="button" class="secondary-btn" id="forceNAGMA">
+                            <span class="icon">🔁</span>
+                            <span>Force NAGMA Path</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <div class="accordion-header" data-target="step4A">
+                    <h2>
+                        <span class="step-tag">Step 4A</span> HAGMA – GOLDMARK Causes
+                    </h2>
+                    <span class="accordion-toggle" id="toggle-step4A">▲</span>
+                </div>
+                <div class="accordion-body" id="step4A">
+                    <p class="small-help">
+                        Check what is present or suspected. If labs not yet available, tick “suspected/possible” boxes and use this as a prompt for workup.
+                    </p>
+
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="glycols">
+                            <span><strong>G – Glycols</strong> (EG/PG ingestion, elevated osm gap, history of toxic alcohol exposure)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="oxoproline">
+                            <span><strong>O – Oxoproline</strong> (chronic acetaminophen, malnutrition, chronic illness)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="lactate">
+                            <span><strong>L – L-lactate</strong> (shock, sepsis, hypoxia, mesenteric ischemia, status epilepticus)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="dlactate">
+                            <span><strong>D – D-lactate</strong> (short gut, bowel bypass, high carb load, altered microbiome)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="methanol">
+                            <span><strong>M – Methanol</strong> (toxic alcohol, visual changes, high osm gap)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="aspirin">
+                            <span><strong>A – Aspirin</strong> (mixed respiratory alkalosis + metabolic acidosis, tinnitus, nausea)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="renalFailure">
+                            <span><strong>R – Renal failure</strong> (advanced CKD/AKI, uremia)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="ketoacidosis">
+                            <span><strong>K – Ketoacidosis</strong> (DKA, alcoholic ketoacidosis, starvation)</span>
+                        </label>
+                    </div>
+
+                    <div class="field" style="margin-top:8px;">
+                        <label for="goldmarkNotes">
+                            Notes / supporting features
+                            <span class="hint">optional</span>
+                        </label>
+                        <input type="text" id="goldmarkNotes" placeholder="e.g. septic shock on pressors, lactate 6, anuric CKD5 on HD...">
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="button" class="primary-btn" id="runGoldmark">
+                            <span class="icon">🧬</span>
+                            <span>Update GOLDMARK Assessment</span>
+                        </button>
+                    </div>
+
+                    <div id="goldmarkSummary" class="small-help"></div>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <div class="accordion-header" data-target="step4B">
+                    <h2>
+                        <span class="step-tag">Step 4B</span> NAGMA – HARDUP Causes
+                    </h2>
+                    <span class="accordion-toggle" id="toggle-step4B">▲</span>
+                </div>
+                <div class="accordion-body" id="step4B">
+                    <p class="small-help">
+                        For normal anion gap metabolic acidosis, tick likely contributors and use this as a checklist for workup.
+                    </p>
+
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="hyperalimentation">
+                            <span><strong>H – Hyperalimentation</strong> (TPN, high chloride load)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="acetazolamide">
+                            <span><strong>A – Acetazolamide / Add-on meds</strong> (CA inhibitors, high-dose loop diuretics with saline)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="rta">
+                            <span><strong>R – Renal tubular acidosis</strong> (hypokalemic or hyperkalemic RTA, autoimmune disease, drugs)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="diarrhea">
+                            <span><strong>D – Diarrhea</strong> (GI bicarbonate loss, enteric fistula)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="ureteralDiversion">
+                            <span><strong>U – Ureteral diversion</strong> (ileal conduit, neobladder)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="pancreaticDrainage">
+                            <span><strong>P – Pancreatic/biliary drainage</strong> (external drainage, fistulas)</span>
+                        </label>
+                    </div>
+
+                    <div class="field" style="margin-top:8px;">
+                        <label for="hardupNotes">
+                            Notes / supporting features
+                            <span class="hint">optional</span>
+                        </label>
+                        <input type="text" id="hardupNotes" placeholder="e.g. profuse diarrhea, K+ 2.8, non-anion gap acidosis...">
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="button" class="primary-btn" id="runHardup">
+                            <span class="icon">🧬</span>
+                            <span>Update HARDUP Assessment</span>
+                        </button>
+                    </div>
+
+                    <div id="hardupSummary" class="small-help"></div>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <div class="accordion-header" data-target="step5">
+                    <h2>
+                        <span class="step-tag">Step 5</span> Delta Gap &amp; Delta–Delta
+                    </h2>
+                    <span class="accordion-toggle" id="toggle-step5">▲</span>
+                </div>
+                <div class="accordion-body" id="step5">
+                    <p class="small-help">
+                        For high anion gap metabolic acidosis, compare ΔAG with ΔHCO₃⁻ to look for a second metabolic process
+                        (additional non-gap acidosis or metabolic alkalosis).
+                    </p>
+
+                    <div class="chip-row">
+                        <span class="chip">ΔAG = corrected AG − entered normal AG</span>
+                        <span class="chip">ΔHCO₃⁻ = 24 − serum HCO₃⁻</span>
+                        <span class="chip">Δ/Δ = ΔAG ÷ ΔHCO₃⁻</span>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="button" class="primary-btn" id="runDelta">
+                            <span class="icon">📊</span>
+                            <span>Analyze Delta–Delta</span>
+                        </button>
+                    </div>
+
+                    <div id="deltaSummary" class="small-help"></div>
+                </div>
+            </div>
+
+            <div class="btn-row" style="margin-top:12px;">
+                <button type="button" class="secondary-btn" id="recalcAll">
+                    <span class="icon">🔄</span>
+                    <span>Recalculate Entire Workflow</span>
+                </button>
+                <button type="button" class="secondary-btn" id="clearAll">
+                    <span class="icon">🧹</span>
+                    <span>Clear All Inputs</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- RIGHT: SUMMARY -->
+        <section class="card">
+            <div class="summary-header">
+                <h2>Assessment &amp; Plan (Structured)</h2>
+                <span id="statusPill" class="status-pill status-neutral">
+                    <span>ℹ️</span> Waiting for input
+                </span>
+            </div>
+
+            <div id="summaryMain" class="summary-main">
+                <strong>No analysis yet.</strong>
+                <div>Work through the steps on the left. As you fill ABG values and basic labs, this panel will populate with a concise assessment and high-level plan you can copy into your note.</div>
+            </div>
+
+            <div class="section-block">
+                <h3>1. Primary Acid–Base Disorder &amp; Compensation</h3>
+                <div id="summaryStep1">
+                    <p>Once Step 1 is run, a summary of the primary disorder and whether compensation is appropriate will appear here.</p>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h3>2. Anion Gap &amp; HAGMA/NAGMA</h3>
+                <div id="summaryStep2">
+                    <p>Step 2 will outline AG, corrected AG, and classification (normal vs high) plus routing to HAGMA vs NAGMA.</p>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h3>3. HAGMA (GOLDMARK) / NAGMA (HARDUP)</h3>
+                <div id="summaryStep3">
+                    <p>Selected GOLDMARK / HARDUP contributors and suggested workup will be summarized here.</p>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h3>4. Delta–Delta &amp; Mixed Metabolic Processes</h3>
+                <div id="summaryStep4">
+                    <p>Delta gap analysis will flag co-existing non-gap metabolic acidosis or metabolic alkalosis.</p>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h3>Key Numbers</h3>
+                <div id="summaryKey">
+                    <p>Key ABG and BMP values with compensation and AG calculations will appear here.</p>
+                </div>
+            </div>
+
+            <div class="copy-row">
+                <button type="button" class="secondary-btn" id="copyBtn">
+                    <span class="icon">📋</span>
+                    <span>Copy Assessment &amp; Plan</span>
+                </button>
+                <span id="copyMsg" class="copy-msg"></span>
+            </div>
+
+            <p class="tiny-note">
+                Educational decision support only. Always confirm calculations and interpret in full clinical context, local labs, and institutional protocols.
+            </p>
+
+            <textarea id="clipboardPayload"></textarea>
+        </section>
+    </main>
+
+    <footer class="footer">
+        Learn Medicine • Acid–Base Workflow Wizard • Nephrology / Critical Care
+    </footer>
+</div>
+
+<script>
+(function() {
+    // Utility helpers
+    function round(val, digits) {
+        if (val === null || val === undefined || isNaN(val)) return null;
+        var factor = Math.pow(10, digits || 1);
+        return Math.round(val * factor) / factor;
+    }
+
+    function setStatus(type, text) {
+        var pill = document.getElementById('statusPill');
+        pill.className = 'status-pill status-' + type;
+        var icon = type === 'good' ? '✅' : (type === 'bad' ? '⚠️' : 'ℹ️');
+        pill.innerHTML = '<span>' + icon + '</span> ' + text;
+    }
+
+    function getNumber(id) {
+        var el = document.getElementById(id);
+        if (!el) return null;
+        var v = parseFloat(el.value);
+        return isNaN(v) ? null : v;
+    }
+
+    // Accordion handling
+    function toggleSection(id) {
+        var body = document.getElementById(id);
+        if (!body) return;
+        var isActive = body.classList.contains('active');
+        body.classList.toggle('active', !isActive);
+        var toggleLabel = document.getElementById('toggle-' + id);
+        if (toggleLabel) {
+            toggleLabel.textContent = isActive ? '▲' : '▼';
+        }
+    }
+
+    document.querySelectorAll('.accordion-header').forEach(function(header) {
+        header.addEventListener('click', function(e) {
+            // avoid double toggle when clicking on button inside
+            if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
+            var id = header.getAttribute('data-target');
+            toggleSection(id);
+        });
+    });
+
+    // State object
+    var state = {
+        primaryDisorder: null,
+        mixed: false,
+        severity: null,
+        compensationNotes: [],
+        abgKeyLines: [],
+        ag: null,
+        agCorrected: null,
+        agClassification: null,
+        agReference: 12,
+        agHco3: null,
+        agHco3Source: null,
+        albumin: null,
+        hagma: false,
+        nagma: false,
+        routeOverride: null, // 'HAGMA' or 'NAGMA'
+        goldmarkHits: [],
+        goldmarkNotes: '',
+        hardupHits: [],
+        hardupNotes: '',
+        deltaAg: null,
+        deltaHco3: null,
+        deltaRatio: null,
+        deltaInterpretation: null
+    };
+
+    // Step 1: ABG interpretation
+    function interpretABG() {
+        var pH = getNumber('pH');
+        var pco2 = getNumber('pco2');
+        var hco3 = getNumber('hco3');
+        var sampleType = document.getElementById('sampleType').value;
+
+        var errBox = document.getElementById('errorStep1');
+        errBox.textContent = '';
+
+        if (pH === null || pco2 === null || hco3 === null) {
+            errBox.textContent = 'Enter pH, PaCO₂, and HCO₃⁻ for Step 1.';
+            return null;
+        }
+
+        var result = {
+            primary: '',
+            mixed: false,
+            severity: '',
+            status: 'neutral',
+            details: [],
+            keyLines: []
+        };
+
+        var acidemia = pH < 7.35;
+        var alkalemia = pH > 7.45;
+
+        if (acidemia) {
+            if (hco3 < 22 && pco2 > 45) {
+                result.primary = 'Combined metabolic and respiratory acidosis (mixed)';
+                result.mixed = true;
+            } else if (hco3 < 22) {
+                result.primary = 'Metabolic acidosis';
+            } else if (pco2 > 45) {
+                result.primary = 'Respiratory acidosis';
+            } else {
+                result.primary = 'Acidemia with no single obvious primary driver; verify the values and consider a mixed process.';
+            }
+        } else if (alkalemia) {
+            if (hco3 > 26 && pco2 < 35) {
+                result.primary = 'Combined metabolic and respiratory alkalosis (mixed)';
+                result.mixed = true;
+            } else if (hco3 > 26) {
+                result.primary = 'Metabolic alkalosis';
+            } else if (pco2 < 35) {
+                result.primary = 'Respiratory alkalosis';
+            } else {
+                result.primary = 'Alkalemia with no single obvious primary driver; verify the values and consider a mixed process.';
+            }
+        } else {
+            if (pco2 > 45 && hco3 > 26) {
+                result.primary = 'Chronic respiratory acidosis with metabolic compensation (near-normal pH).';
+            } else if (pco2 < 35 && hco3 < 22) {
+                result.primary = 'Chronic respiratory alkalosis with metabolic compensation (near-normal pH).';
+            } else if ((pco2 > 45 && hco3 < 22) || (pco2 < 35 && hco3 > 26)) {
+                result.primary = 'Mixed acid–base disorder with near-normal pH.';
+                result.mixed = true;
+            } else {
+                result.primary = 'No clear primary disorder (pH near normal; subtle/mixed patterns likely).';
+            }
+        }
+
+        // severity
+        if (pH < 7.25 || pH > 7.55) {
+            result.severity = 'Marked pH derangement';
+            result.status = 'bad';
+        } else if (pH < 7.30 || pH > 7.50) {
+            result.severity = 'Moderate pH derangement';
+            result.status = 'bad';
+        } else if (pH >= 7.35 && pH <= 7.45) {
+            result.severity = 'pH near physiological range';
+            result.status = 'good';
+        } else {
+            result.severity = 'Mild pH derangement';
+            result.status = 'neutral';
+        }
+
+        // compensation rules
+        // metabolic acidosis: Winter's
+        if (result.primary.indexOf('Metabolic acidosis') === 0) {
+            var expected = 1.5 * hco3 + 8;
+            var low = expected - 2;
+            var high = expected + 2;
+            result.keyLines.push('Winter\'s expected PaCO₂ ≈ 1.5 × HCO₃⁻ + 8 → ' + round(expected, 1) + ' mmHg (range ' + round(low,1) + '–' + round(high,1) + ').');
+            if (pco2 >= low && pco2 <= high) {
+                result.details.push('Respiratory compensation appears appropriate for metabolic acidosis.');
+            } else if (pco2 > high) {
+                result.details.push('PCO₂ above expected → superimposed respiratory acidosis.');
+                result.mixed = true;
+            } else {
+                result.details.push('PCO₂ below expected → superimposed respiratory alkalosis.');
+                result.mixed = true;
+            }
+        }
+
+        // metabolic alkalosis
+        if (result.primary.indexOf('Metabolic alkalosis') === 0) {
+            var expPaCO2 = 40 + 0.7 * (hco3 - 24);
+            var low2 = expPaCO2 - 5;
+            var high2 = expPaCO2 + 5;
+            result.keyLines.push('Expected PCO₂ in metabolic alkalosis ≈ 40 + 0.7 × (HCO₃⁻ − 24) → ' + round(expPaCO2, 1) + ' mmHg (±5).');
+            if (pco2 >= low2 && pco2 <= high2) {
+                result.details.push('Respiratory compensation appears appropriate for metabolic alkalosis.');
+            } else if (pco2 > high2) {
+                result.details.push('PCO₂ above expected → superimposed respiratory acidosis.');
+                result.mixed = true;
+            } else {
+                result.details.push('PCO₂ below expected → superimposed respiratory alkalosis.');
+                result.mixed = true;
+            }
+        }
+
+        // respiratory acidosis
+        if (result.primary.indexOf('Respiratory acidosis') !== -1) {
+            var dCO2 = pco2 - 40;
+            if (dCO2 > 0) {
+                var expAcute = 24 + (dCO2 / 10) * 1;
+                var expChronic = 24 + (dCO2 / 10) * 3.5;
+                var distAcute = Math.abs(hco3 - expAcute);
+                var distChronic = Math.abs(hco3 - expChronic);
+                result.keyLines.push('Expected HCO₃⁻ (acute) ≈ 24 + 1 × ΔPCO₂/10 → ' + round(expAcute,1) + ' mEq/L.');
+                result.keyLines.push('Expected HCO₃⁻ (chronic) ≈ 24 + 3.5 × ΔPCO₂/10 → ' + round(expChronic,1) + ' mEq/L.');
+                if (distAcute <= 3 && distAcute <= distChronic) {
+                    result.details.push('Pattern more consistent with acute respiratory acidosis with appropriate renal compensation.');
+                } else if (distChronic <= 3 && distChronic < distAcute) {
+                    result.details.push('Pattern more consistent with chronic respiratory acidosis with metabolic compensation.');
+                } else {
+                    result.details.push('HCO₃⁻ not near typical acute or chronic expectations → mixed metabolic process suspected.');
+                    result.mixed = true;
+                }
+            }
+        }
+
+        // respiratory alkalosis
+        if (result.primary.indexOf('Respiratory alkalosis') !== -1) {
+            var dCO2b = 40 - pco2;
+            if (dCO2b > 0) {
+                var expAcuteA = 24 - (dCO2b / 10) * 2;
+                var expChronicA = 24 - (dCO2b / 10) * 4;
+                var distAcuteA = Math.abs(hco3 - expAcuteA);
+                var distChronicA = Math.abs(hco3 - expChronicA);
+                result.keyLines.push('Expected HCO₃⁻ (acute) ≈ 24 − 2 × ΔPCO₂/10 → ' + round(expAcuteA,1) + ' mEq/L.');
+                result.keyLines.push('Expected HCO₃⁻ (chronic) ≈ 24 − 4 × ΔPCO₂/10 → ' + round(expChronicA,1) + ' mEq/L.');
+                if (distAcuteA <= 3 && distAcuteA <= distChronicA) {
+                    result.details.push('Pattern more consistent with acute respiratory alkalosis.');
+                } else if (distChronicA <= 3 && distChronicA < distAcuteA) {
+                    result.details.push('Pattern more consistent with chronic respiratory alkalosis with renal adaptation.');
+                } else {
+                    result.details.push('HCO₃⁻ not near typical acute or chronic expectations → mixed metabolic process suspected.');
+                    result.mixed = true;
+                }
+            }
+        }
+
+        // Internal consistency check using Henderson–Hasselbalch
+        var calculatedHco3 = 0.03 * pco2 * Math.pow(10, pH - 6.1);
+        var hco3Difference = Math.abs(calculatedHco3 - hco3);
+        result.keyLines.push('Henderson–Hasselbalch calculated HCO₃⁻ ≈ ' + round(calculatedHco3,1) + ' mEq/L.');
+        if (hco3Difference > 3) {
+            result.details.push('Reported HCO₃⁻ differs from the pH/PCO₂-derived value by ' + round(hco3Difference,1) + ' mEq/L → verify timing, transcription, and whether values came from the same sample.');
+        }
+
+        if (sampleType === 'venous') {
+            result.details.push('VBG selected: pH and bicarbonate are often clinically useful, but exact respiratory-compensation assessment may require an arterial PCO₂.');
+        }
+
+        if (!result.details.length) {
+            result.details.push('Compensation rules are inconclusive – consider chronic or mixed processes and correlate clinically.');
+        }
+
+        // oxygenation
+        var po2 = getNumber('po2');
+        var fio2 = getNumber('fio2');
+        var oxyLines = [];
+
+        if (sampleType === 'arterial') {
+            if (po2 !== null) {
+                var category = '';
+                if (po2 >= 80) {
+                    category = 'PaO₂ near normal only if the inspired oxygen and clinical context are appropriate.';
+                } else if (po2 >= 60) {
+                    category = 'Mild hypoxemia.';
+                } else if (po2 >= 40) {
+                    category = 'Moderate hypoxemia.';
+                } else {
+                    category = 'Severe hypoxemia – urgent evaluation of oxygenation and respiratory support.';
+                }
+                oxyLines.push('PaO₂ ' + round(po2,1) + ' mmHg: ' + category);
+            }
+
+            if (po2 !== null && fio2 !== null) {
+                var pfr = po2 / (fio2 / 100);
+                var ardsLabel = '';
+                if (pfr > 300) {
+                    ardsLabel = 'P/F ratio above the Berlin hypoxemia range.';
+                } else if (pfr > 200) {
+                    ardsLabel = 'Mild ARDS-range oxygenation impairment if other ARDS criteria are met.';
+                } else if (pfr >= 100) {
+                    ardsLabel = 'Moderate ARDS-range oxygenation impairment if other ARDS criteria are met.';
+                } else {
+                    ardsLabel = 'Severe ARDS-range oxygenation impairment if other ARDS criteria are met.';
+                }
+                oxyLines.push('PaO₂/FiO₂ ≈ ' + Math.round(pfr) + ': ' + ardsLabel);
+            }
+        } else if (po2 !== null) {
+            oxyLines.push('Venous or unspecified PO₂ cannot be used to assess arterial oxygenation or calculate a valid P/F ratio.');
+        }
+
+        // write to state
+        state.primaryDisorder = result.primary;
+        state.mixed = result.mixed;
+        state.severity = result.severity;
+        state.compensationNotes = result.details;
+        state.abgKeyLines = result.keyLines;
+        state.oxygenSummaryLines = oxyLines;
+        state.sampleType = sampleType;
+        state.pH = pH;
+        state.pco2 = pco2;
+        state.hco3 = hco3;
+        state.po2 = po2;
+        state.fio2 = fio2;
+
+        // UI summary for right panel
+        var sampleLabel = sampleType === 'arterial' ? 'Arterial' : (sampleType === 'venous' ? 'Venous' : 'Sample type not specified');
+        var main = document.getElementById('summaryStep1');
+        var html = '';
+        html += '<p><strong>Primary interpretation:</strong> ' + result.primary + '</p>';
+        html += '<div class="pill-row">';
+        html += '<span class="pill">' + sampleLabel + ' gas</span>';
+        html += '<span class="pill">' + result.severity + '</span>';
+        if (result.mixed) {
+            html += '<span class="pill bad">Mixed features suspected</span>';
+        }
+        html += '</div>';
+        html += '<ul>';
+        result.details.forEach(function(d) {
+            html += '<li>' + d + '</li>';
+        });
+        html += '</ul>';
+        if (oxyLines.length) {
+            html += '<p><strong>Oxygenation (Step 1):</strong></p><ul>';
+            oxyLines.forEach(function(l) {
+                html += '<li>' + l + '</li>';
+            });
+            html += '</ul>';
+        }
+        main.innerHTML = html;
+
+        // Key numbers in right panel
+        var key = document.getElementById('summaryKey');
+        var gasHeading = sampleType === 'arterial' ? 'ABG' : (sampleType === 'venous' ? 'VBG' : 'Blood gas');
+        var keyHtml = '<p><strong>' + gasHeading + ':</strong> pH ' + round(pH,3) + ', PCO₂ ' + round(pco2,1) + ' mmHg, HCO₃⁻ ' + round(hco3,1) + ' mEq/L';
+        if (po2 !== null) keyHtml += ', ' + (sampleType === 'arterial' ? 'PaO₂' : 'PO₂') + ' ' + round(po2,1) + ' mmHg';
+        if (fio2 !== null) keyHtml += ', FiO₂ ' + round(fio2,0) + '%';
+        keyHtml += '.</p>';
+        if (result.keyLines.length) {
+            keyHtml += '<ul>';
+            result.keyLines.forEach(function(line) {
+                keyHtml += '<li>' + line + '</li>';
+            });
+            keyHtml += '</ul>';
+        }
+        key.innerHTML = keyHtml;
+
+        // update main summary header
+        var summaryMain = document.getElementById('summaryMain');
+        summaryMain.innerHTML = '<strong>' + result.primary + '</strong><div>' + result.severity + '. Use downstream steps for AG, GOLDMARK/HARDUP, and delta–delta.</div>';
+
+        if (result.status === 'good') {
+            setStatus('good', 'Pattern looks compensated / near-normal pH');
+        } else if (result.status === 'bad') {
+            setStatus('bad', 'Significant acid–base derangement');
+        } else {
+            setStatus('neutral', 'Acid–base abnormality detected');
+        }
+
+        // auto-open Step 2
+        document.getElementById('step2').classList.add('active');
+        document.getElementById('toggle-step2').textContent = '▼';
+
+        return result;
+    }
+
+    // Step 2: Anion gap
+    function interpretAG() {
+        var na = getNumber('na');
+        var cl = getNumber('cl');
+        var bmpHco3 = getNumber('bmpHco3');
+        var gasHco3 = state.hco3 !== undefined ? state.hco3 : getNumber('hco3');
+        var hco3 = bmpHco3 !== null ? bmpHco3 : gasHco3;
+        var hco3Source = bmpHco3 !== null ? 'serum total CO₂/HCO₃⁻' : 'blood-gas HCO₃⁻';
+        var albumin = getNumber('albumin');
+        var normalAg = getNumber('normalAg');
+        if (normalAg === null) normalAg = 12;
+
+        var errBox = document.getElementById('errorStep2');
+        errBox.textContent = '';
+
+        if (na === null || cl === null || hco3 === null) {
+            errBox.textContent = 'Enter Na⁺, Cl⁻, and either serum total CO₂/HCO₃⁻ or the Step 1 blood-gas HCO₃⁻.';
+            return null;
+        }
+
+        var ag = na - (cl + hco3);
+        var agCorr = ag;
+
+        if (albumin !== null) {
+            agCorr = ag + 2.5 * (4 - albumin);
+        }
+
+        var classification = '';
+        if (agCorr > normalAg) {
+            classification = 'Elevated anion gap relative to the entered laboratory reference.';
+        } else if (agCorr < normalAg - 4) {
+            classification = 'Low anion gap – consider laboratory artifact, hypoalbuminemia, paraproteinemia, or unmeasured cations/halides.';
+        } else {
+            classification = 'Within the usual range around the entered laboratory reference.';
+        }
+
+        state.ag = ag;
+        state.agCorrected = agCorr;
+        state.agClassification = classification;
+        state.agReference = normalAg;
+        state.agHco3 = hco3;
+        state.agHco3Source = hco3Source;
+        state.albumin = albumin;
+
+        var display = document.getElementById('agDisplay');
+        var html = '';
+        html += '<div class="pill-row">';
+        html += '<span class="pill">AG ≈ ' + round(ag,1) + '</span>';
+        html += '<span class="pill">Corrected AG ≈ ' + round(agCorr,1) + '</span>';
+        html += '<span class="pill">Reference ≈ ' + round(normalAg,1) + '</span>';
+        html += '</div>';
+        html += '<p>' + classification + '</p>';
+        html += '<p><em>AG used ' + hco3Source + ' = ' + round(hco3,1) + ' mEq/L.</em></p>';
+
+        if (bmpHco3 !== null && gasHco3 !== null && Math.abs(bmpHco3 - gasHco3) > 3) {
+            html += '<p class="pill-row"><span class="pill warn">Serum and blood-gas HCO₃⁻ differ by ' + round(Math.abs(bmpHco3 - gasHco3),1) + ' mEq/L; verify timing.</span></p>';
+        }
+
+        display.innerHTML = html;
+
+        var summary = document.getElementById('summaryStep2');
+        var s = '<p><strong>Anion gap:</strong> AG ≈ ' + round(ag,1);
+
+        if (albumin !== null) {
+            s += ', corrected for albumin (' + round(albumin,1) + ' g/dL) → ' + round(agCorr,1);
+        }
+
+        s += '.</p>';
+        s += '<p>Reference AG entered: ' + round(normalAg,1) + '. Calculation used ' + hco3Source + '.</p>';
+        s += '<div class="pill-row">';
+
+        if (agCorr > normalAg) {
+            s += '<span class="pill bad">Elevated anion gap</span>';
+            state.hagma = true;
+            state.nagma = false;
+        } else if (agCorr >= normalAg - 4) {
+            s += '<span class="pill warn">Normal-range AG; check for NAGMA if metabolic acidosis is present</span>';
+            state.nagma = true;
+            state.hagma = false;
+        } else {
+            s += '<span class="pill warn">Low anion gap – reassess albumin, laboratory accuracy, and unmeasured proteins/cations</span>';
+            state.hagma = false;
+            state.nagma = false;
+        }
+
+        s += '</div>';
+        s += '<p>' + classification + '</p>';
+        summary.innerHTML = s;
+
+        updateHagmaNagmaRouting();
+
+        document.getElementById('step3').classList.add('active');
+        document.getElementById('toggle-step3').textContent = '▼';
+
+        return {
+            ag: ag,
+            agCorrected: agCorr,
+            classification: classification,
+            reference: normalAg,
+            hco3: hco3,
+            hco3Source: hco3Source
+        };
+    }
+
+    function updateHagmaNagmaRouting() {
+        var el = document.getElementById('hagmaNagmaSummary');
+        var label = '';
+        if (state.routeOverride === 'HAGMA') {
+            label = 'Manually routed to HAGMA path (GOLDMARK) regardless of current AG.';
+        } else if (state.routeOverride === 'NAGMA') {
+            label = 'Manually routed to NAGMA path (HARDUP) regardless of current AG.';
+        } else if (state.agCorrected === null || state.primaryDisorder === null) {
+            label = 'Run Steps 1 and 2 to classify HAGMA vs NAGMA.';
+        } else {
+            var isMetaAcid = state.primaryDisorder.indexOf('Metabolic acidosis') === 0 ||
+                             state.primaryDisorder.indexOf('Combined metabolic and respiratory acidosis') === 0;
+            if (!isMetaAcid) {
+                label = 'Corrected AG ≈ ' + round(state.agCorrected,1) + '. Primary disorder is not classic metabolic acidosis – use GOLDMARK/HARDUP if clinically relevant.';
+            } else if (state.agCorrected > (state.agReference !== undefined ? state.agReference : 12)) {
+                label = 'Corrected AG ≈ ' + round(state.agCorrected,1) + ' exceeds the entered reference → route to HAGMA path (GOLDMARK).';
+            } else {
+                label = 'Corrected AG ≈ ' + round(state.agCorrected,1) + ' with metabolic acidosis → route to NAGMA path (HARDUP).';
+            }
+        }
+        el.textContent = label;
+
+        // auto-open GOLDMARK or HARDUP based on routing
+        var useHagma = false;
+        var useNagma = false;
+
+        if (state.routeOverride === 'HAGMA') {
+            useHagma = true;
+        } else if (state.routeOverride === 'NAGMA') {
+            useNagma = true;
+        } else if (state.agCorrected !== null) {
+            var isMetaAcid2 = state.primaryDisorder && (state.primaryDisorder.indexOf('Metabolic acidosis') === 0 ||
+                             state.primaryDisorder.indexOf('Combined metabolic and respiratory acidosis') === 0);
+            if (isMetaAcid2) {
+                if (state.agCorrected > (state.agReference !== undefined ? state.agReference : 12)) useHagma = true;
+                else useNagma = true;
+            }
+        }
+
+        if (useHagma) {
+            document.getElementById('step4A').classList.add('active');
+            document.getElementById('toggle-step4A').textContent = '▼';
+        }
+        if (useNagma) {
+            document.getElementById('step4B').classList.add('active');
+            document.getElementById('toggle-step4B').textContent = '▼';
+        }
+    }
+
+    // Step 4A: GOLDMARK
+    function interpretGoldmark() {
+        var hits = [];
+        ['glycols', 'oxoproline', 'lactate', 'dlactate', 'methanol', 'aspirin', 'renalFailure', 'ketoacidosis'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el && el.checked) hits.push(id);
+        });
+        var labelMap = {
+            glycols: 'Glycols (EG/PG ingestion / osm gap)',
+            oxoproline: 'Oxoproline (chronic APAP)',
+            lactate: 'L-lactate (shock/sepsis/hypoxia)',
+            dlactate: 'D-lactate (short gut / bypass)',
+            methanol: 'Methanol (toxic alcohol)',
+            aspirin: 'Aspirin/salicylate toxicity',
+            renalFailure: 'Renal failure/uremia',
+            ketoacidosis: 'Ketoacidosis (DKA/AKA/starvation)'
+        };
+        var notes = document.getElementById('goldmarkNotes').value || '';
+        state.goldmarkHits = hits;
+        state.goldmarkNotes = notes;
+
+        var gm = document.getElementById('goldmarkSummary');
+        var html = '';
+        if (!hits.length && !notes) {
+            html = 'No specific GOLDMARK contributors selected yet – consider lactic acidosis, ketoacidosis, renal failure, and toxic ingestions based on history, exam, and labs.';
+        } else {
+            html += '<p><strong>Likely HAGMA contributors (GOLDMARK):</strong></p><ul>';
+            hits.forEach(function(h) {
+                html += '<li>' + labelMap[h] + '</li>';
+            });
+            if (notes) {
+                html += '<li><em>Context:</em> ' + notes + '</li>';
+            }
+            html += '</ul>';
+        }
+        gm.innerHTML = html;
+
+        // Right-side summary
+        var s3 = document.getElementById('summaryStep3');
+        var sHtml = s3.innerHTML || '';
+        // Overwrite only GOLDMARK part
+        var gmBlock = '<p><strong>GOLDMARK (HAGMA):</strong></p>';
+        if (!hits.length && !notes) {
+            gmBlock += '<p>No specific GOLDMARK driver selected; maintain broad differential and obtain appropriate toxicology/serum levels, lactate, ketones, and renal panel.</p>';
+        } else {
+            gmBlock += '<ul>';
+            hits.forEach(function(h) {
+                gmBlock += '<li>' + labelMap[h] + '</li>';
+            });
+            if (notes) gmBlock += '<li><em>Context:</em> ' + notes + '</li>';
+            gmBlock += '</ul>';
+        }
+
+        // If there is already HARDUP content, preserve it
+        var current = s3.getAttribute('data-hardup-block') || '';
+        s3.innerHTML = gmBlock + current;
+        s3.setAttribute('data-goldmark-block', gmBlock);
+    }
+
+    // Step 4B: HARDUP
+    function interpretHardup() {
+        var hits = [];
+        ['hyperalimentation','acetazolamide','rta','diarrhea','ureteralDiversion','pancreaticDrainage'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el && el.checked) hits.push(id);
+        });
+        var labelMap = {
+            hyperalimentation: 'Hyperalimentation / TPN / high chloride load',
+            acetazolamide: 'Acetazolamide / CA inhibitors / high-dose diuretics with saline',
+            rta: 'Renal tubular acidosis (RTA)',
+            diarrhea: 'Diarrhea / GI bicarbonate loss',
+            ureteralDiversion: 'Ureteral diversion (ileal conduit, neobladder)',
+            pancreaticDrainage: 'Pancreatic/biliary drainage or fistulas'
+        };
+        var notes = document.getElementById('hardupNotes').value || '';
+        state.hardupHits = hits;
+        state.hardupNotes = notes;
+
+        var hd = document.getElementById('hardupSummary');
+        var html = '';
+        if (!hits.length && !notes) {
+            html = 'No specific HARDUP contributors selected – think about diarrhea, RTA, and iatrogenic chloride load, especially if metabolic acidosis with normal AG.';
+        } else {
+            html += '<p><strong>Likely NAGMA contributors (HARDUP):</strong></p><ul>';
+            hits.forEach(function(h) {
+                html += '<li>' + labelMap[h] + '</li>';
+            });
+            if (notes) {
+                html += '<li><em>Context:</em> ' + notes + '</li>';
+            }
+            html += '</ul>';
+        }
+        hd.innerHTML = html;
+
+        // Right-side summary
+        var s3 = document.getElementById('summaryStep3');
+        var hdBlock = '<p><strong>HARDUP (NAGMA):</strong></p>';
+        if (!hits.length && !notes) {
+            hdBlock += '<p>No specific HARDUP driver selected; evaluate for diarrhea, RTA, ureteral diversions, pancreatic/biliary losses, and medication effects.</p>';
+        } else {
+            hdBlock += '<ul>';
+            hits.forEach(function(h) {
+                hdBlock += '<li>' + labelMap[h] + '</li>';
+            });
+            if (notes) hdBlock += '<li><em>Context:</em> ' + notes + '</li>';
+            hdBlock += '</ul>';
+        }
+
+        var currentGm = s3.getAttribute('data-goldmark-block') || '';
+        s3.innerHTML = currentGm + hdBlock;
+        s3.setAttribute('data-hardup-block', hdBlock);
+    }
+
+    // Step 5: Delta gap
+    function interpretDelta() {
+        if (
+            state.ag === null ||
+            state.agCorrected === null ||
+            state.agHco3 === null ||
+            state.agHco3 === undefined
+        ) {
+            document.getElementById('deltaSummary').textContent =
+                'Need Step 2 AG plus the serum total CO₂/HCO₃⁻ used for that calculation.';
+            return null;
+        }
+
+        var referenceAg =
+            state.agReference !== undefined && state.agReference !== null
+                ? state.agReference
+                : 12;
+
+        var deltaAg = state.agCorrected - referenceAg;
+        var deltaHco3 = 24 - state.agHco3;
+
+        state.deltaAg = deltaAg;
+        state.deltaHco3 = deltaHco3;
+
+        var ratio = null;
+        if (deltaHco3 > 0.01) {
+            ratio = deltaAg / deltaHco3;
+        }
+
+        state.deltaRatio = ratio;
+
+        var interp = '';
+
+        if (deltaAg <= 0) {
+            interp = 'Corrected AG is not above the entered reference; delta analysis is not useful. If metabolic acidosis is present, focus on normal-gap causes.';
+        } else if (ratio === null) {
+            interp = 'Unable to calculate a meaningful delta ratio because serum HCO₃⁻ is not reduced below 24 mEq/L.';
+        } else if (ratio < 0.4) {
+            interp = 'Δ/Δ <0.4 → the fall in bicarbonate is much larger than the rise in AG, strongly suggesting a predominant normal-gap metabolic acidosis.';
+        } else if (ratio < 0.8) {
+            interp = 'Δ/Δ 0.4–0.8 → suggests mixed high-gap and normal-gap metabolic acidosis.';
+        } else if (ratio <= 2.0) {
+            interp = 'Δ/Δ about 0.8–2 → compatible with a predominantly high-anion-gap metabolic acidosis.';
+        } else {
+            interp = 'Δ/Δ >2 → suggests concurrent metabolic alkalosis or a pre-existing elevated bicarbonate state such as chronic respiratory acidosis.';
+        }
+
+        state.deltaInterpretation = interp;
+
+        var ds = document.getElementById('deltaSummary');
+        var html = '<p><strong>Delta analysis:</strong></p>';
+        html += '<ul>';
+        html += '<li>ΔAG = corrected AG − reference AG (' + round(referenceAg,1) + ') ≈ ' + round(deltaAg,1) + '</li>';
+        html += '<li>ΔHCO₃⁻ = 24 − serum HCO₃⁻ (' + round(state.agHco3,1) + ') ≈ ' + round(deltaHco3,1) + '</li>';
+
+        if (ratio !== null) {
+            html += '<li>Δ/Δ ≈ ' + round(ratio,2) + '</li>';
+        }
+
+        html += '</ul>';
+        html += '<p>' + interp + '</p>';
+        html += '<p><em>Delta ratios are approximate and should be interpreted with the clinical course, albumin correction, and laboratory reference range.</em></p>';
+        ds.innerHTML = html;
+
+        var s4 = document.getElementById('summaryStep4');
+        s4.innerHTML = '<p><strong>Delta analysis:</strong></p>' + html;
+
+        return {
+            deltaAg: deltaAg,
+            deltaHco3: deltaHco3,
+            ratio: ratio,
+            interpretation: interp
+        };
+    }
+
+    // Build clipboard text
+    function buildClipboard() {
+        var lines = [];
+        lines.push('ACID–BASE WORKFLOW SUMMARY');
+        // ABG part
+        if (state.primaryDisorder) {
+            lines.push('');
+            lines.push('1) Primary acid–base disorder & compensation');
+            lines.push('- Interpretation: ' + state.primaryDisorder);
+            if (state.severity) lines.push('- Severity: ' + state.severity);
+            if (state.sampleType) lines.push('- Sample: ' + (state.sampleType === 'arterial' ? 'Arterial' : (state.sampleType === 'venous' ? 'Venous' : 'Not specified')));
+            if (state.pH !== undefined) {
+                var gasLabel = state.sampleType === 'arterial' ? 'ABG' : (state.sampleType === 'venous' ? 'VBG' : 'Blood gas');
+                var co2Label = state.sampleType === 'arterial' ? 'PaCO₂' : 'PCO₂';
+                var abgLine = '- ' + gasLabel + ': pH ' + round(state.pH,3) + ', ' + co2Label + ' ' + round(state.pco2,1) + ' mmHg, HCO₃⁻ ' + round(state.hco3,1) + ' mEq/L';
+                if (state.po2 !== null && state.po2 !== undefined) abgLine += ', ' + (state.sampleType === 'arterial' ? 'PaO₂' : 'PO₂') + ' ' + round(state.po2,1) + ' mmHg';
+                if (state.fio2 !== null && state.fio2 !== undefined) abgLine += ', FiO₂ ' + round(state.fio2,0) + '%';
+                lines.push(abgLine);
+            }
+            state.compensationNotes.forEach(function(n) {
+                lines.push('- ' + n);
+            });
+            if (state.oxygenSummaryLines && state.oxygenSummaryLines.length) {
+                lines.push('- Oxygenation:');
+                state.oxygenSummaryLines.forEach(function(l) {
+                    lines.push('  • ' + l);
+                });
+            }
+        }
+
+        // AG & routing
+        if (state.ag !== null && state.agCorrected !== null) {
+            lines.push('');
+            lines.push('2) Anion gap & HAGMA vs NAGMA');
+            lines.push('- AG ≈ ' + round(state.ag,1) + '; corrected AG ≈ ' + round(state.agCorrected,1) + '; reference AG ≈ ' + round(state.agReference,1) + '.');
+            if (state.agHco3Source) lines.push('- AG calculation used ' + state.agHco3Source + ' = ' + round(state.agHco3,1) + ' mEq/L.');
+            if (state.agClassification) lines.push('- Classification: ' + state.agClassification);
+            var routing = state.routeOverride ? ('Manual routing: ' + state.routeOverride) : '';
+            if (!routing && state.primaryDisorder && state.agCorrected !== null) {
+                var isMetaAcid = state.primaryDisorder.indexOf('Metabolic acidosis') === 0 ||
+                                 state.primaryDisorder.indexOf('Combined metabolic and respiratory acidosis') === 0;
+                if (isMetaAcid) {
+                    if (state.agCorrected > (state.agReference !== undefined ? state.agReference : 12)) routing = 'Auto-route: HAGMA (use GOLDMARK).';
+                    else routing = 'Auto-route: NAGMA (use HARDUP).';
+                }
+            }
+            if (routing) lines.push('- Routing: ' + routing);
+        }
+
+        // GOLDMARK
+        if (state.goldmarkHits && state.goldmarkHits.length) {
+            lines.push('');
+            lines.push('3) HAGMA – GOLDMARK contributors (suspected/present)');
+            var labelMap = {
+                glycols: 'Glycols (EG/PG ingestion / osm gap)',
+                oxoproline: 'Oxoproline (chronic APAP)',
+                lactate: 'L-lactate (shock/sepsis/hypoxia)',
+                dlactate: 'D-lactate (short gut / bypass)',
+                methanol: 'Methanol (toxic alcohol)',
+                aspirin: 'Aspirin/salicylate toxicity',
+                renalFailure: 'Renal failure/uremia',
+                ketoacidosis: 'Ketoacidosis (DKA/AKA/starvation)'
+            };
+            state.goldmarkHits.forEach(function(h) {
+                lines.push('- ' + labelMap[h]);
+            });
+            if (state.goldmarkNotes) lines.push('- Context: ' + state.goldmarkNotes);
+        }
+
+        // HARDUP
+        if (state.hardupHits && state.hardupHits.length) {
+            lines.push('');
+            lines.push('4) NAGMA – HARDUP contributors (suspected/present)');
+            var labelMapH = {
+                hyperalimentation: 'Hyperalimentation / TPN / high chloride load',
+                acetazolamide: 'Acetazolamide / CA inhibitors / diuretics with saline',
+                rta: 'Renal tubular acidosis',
+                diarrhea: 'Diarrhea / GI bicarbonate loss',
+                ureteralDiversion: 'Ureteral diversion (ileal conduit, neobladder)',
+                pancreaticDrainage: 'Pancreatic/biliary drainage or fistulas'
+            };
+            state.hardupHits.forEach(function(h) {
+                lines.push('- ' + labelMapH[h]);
+            });
+            if (state.hardupNotes) lines.push('- Context: ' + state.hardupNotes);
+        }
+
+        // Delta–delta
+        if (state.deltaInterpretation) {
+            lines.push('');
+            lines.push('5) Delta gap / delta–delta');
+            lines.push('- ΔAG ≈ ' + round(state.deltaAg,1) + '; ΔHCO₃⁻ ≈ ' + round(state.deltaHco3,1) + (state.deltaRatio !== null ? '; Δ/Δ ≈ ' + round(state.deltaRatio,2) : '') + '.');
+            lines.push('- Interpretation: ' + state.deltaInterpretation);
+        }
+
+        // High-level management notes
+        lines.push('');
+        lines.push('6) High-level management considerations (not orders)');
+        if (state.primaryDisorder && state.primaryDisorder.indexOf('Metabolic acidosis') === 0) {
+            lines.push('- Treat underlying driver of metabolic acidosis (shock, sepsis, toxins, renal failure, ketoacidosis).');
+        } else if (state.primaryDisorder && state.primaryDisorder.indexOf('Respiratory acidosis') !== -1) {
+            lines.push('- Assess for hypoventilation (COPD, sedation, neuromuscular weakness) and optimize airway/ventilation support as appropriate.');
+        } else if (state.primaryDisorder && state.primaryDisorder.indexOf('Metabolic alkalosis') === 0) {
+            lines.push('- Review diuretics, vomiting/NG losses, and volume status; consider chloride and volume repletion when indicated.');
+        } else if (state.primaryDisorder && state.primaryDisorder.indexOf('Respiratory alkalosis') !== -1) {
+            lines.push('- Evaluate for pain, anxiety, sepsis, pregnancy, or salicylate toxicity; treat underlying cause rather than pH alone.');
+        } else {
+            lines.push('- Pattern is subtle or mixed; integrate with history, exam, hemodynamics, and serial labs.');
+        }
+
+        lines.push('- Confirm calculations with the lab values in the chart and correlate with the full clinical picture, including lactate, ketones, and renal function.');
+        lines.push('- For detailed Na correction, water deficit, and renal indices (FENa/FEUrea/FEuric, AKI type), use the dedicated tools.');
+
+        lines.push('');
+        lines.push('Note: Educational decision support only – not a substitute for clinical judgment, local protocols, or specialist consultation.');
+
+        return lines.join('\n');
+    }
+
+    // Recalculate all helper
+    function recalcAll() {
+        interpretABG();
+        interpretAG();
+        updateHagmaNagmaRouting();
+        interpretGoldmark();
+        interpretHardup();
+        interpretDelta();
+    }
+
+    // Clear all inputs/state
+    function clearAll() {
+        ['pH','pco2','hco3','po2','fio2','na','cl','bmpHco3','albumin','goldmarkNotes','hardupNotes'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.value = '';
+        });
+        var normalAgEl = document.getElementById('normalAg');
+        if (normalAgEl) normalAgEl.value = '12';
+
+        ['glycols','oxoproline','lactate','dlactate','methanol','aspirin','renalFailure','ketoacidosis',
+         'hyperalimentation','acetazolamide','rta','diarrhea','ureteralDiversion','pancreaticDrainage'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.checked = false;
+        });
+        state = {
+            primaryDisorder: null,
+            mixed: false,
+            severity: null,
+            compensationNotes: [],
+            abgKeyLines: [],
+            ag: null,
+            agCorrected: null,
+            agClassification: null,
+            agReference: 12,
+            agHco3: null,
+            agHco3Source: null,
+            albumin: null,
+            hagma: false,
+            nagma: false,
+            routeOverride: null,
+            goldmarkHits: [],
+            goldmarkNotes: '',
+            hardupHits: [],
+            hardupNotes: '',
+            deltaAg: null,
+            deltaHco3: null,
+            deltaRatio: null,
+            deltaInterpretation: null
+        };
+        document.getElementById('errorStep1').textContent = '';
+        document.getElementById('errorStep2').textContent = '';
+        document.getElementById('agDisplay').textContent = '';
+        document.getElementById('goldmarkSummary').textContent = '';
+        document.getElementById('hardupSummary').textContent = '';
+        document.getElementById('deltaSummary').textContent = '';
+        document.getElementById('hagmaNagmaSummary').textContent = 'Run Steps 1 and 2 to classify HAGMA vs NAGMA.';
+        document.getElementById('summaryMain').innerHTML =
+            '<strong>No analysis yet.</strong><div>Work through the steps on the left. As you fill ABG values and basic labs, this panel will populate with a concise assessment and high-level plan you can copy into your note.</div>';
+        document.getElementById('summaryStep1').innerHTML =
+            '<p>Once Step 1 is run, a summary of the primary disorder and whether compensation is appropriate will appear here.</p>';
+        document.getElementById('summaryStep2').innerHTML =
+            '<p>Step 2 will outline AG, corrected AG, and classification (normal vs high) plus routing to HAGMA vs NAGMA.</p>';
+        document.getElementById('summaryStep3').innerHTML =
+            '<p>Selected GOLDMARK / HARDUP contributors and suggested workup will be summarized here.</p>';
+        document.getElementById('summaryStep3').removeAttribute('data-goldmark-block');
+        document.getElementById('summaryStep3').removeAttribute('data-hardup-block');
+        document.getElementById('summaryStep4').innerHTML =
+            '<p>Delta gap analysis will flag co-existing non-gap metabolic acidosis or metabolic alkalosis.</p>';
+        document.getElementById('summaryKey').innerHTML =
+            '<p>Key ABG and BMP values with compensation and AG calculations will appear here.</p>';
+        document.getElementById('copyMsg').textContent = '';
+        document.getElementById('clipboardPayload').value = '';
+        setStatus('neutral', 'Waiting for input');
+    }
+
+    // Event listeners
+    document.getElementById('runStep1').addEventListener('click', function() {
+        interpretABG();
+    });
+
+    document.getElementById('runStep2').addEventListener('click', function() {
+        interpretAG();
+    });
+
+    document.getElementById('forceHAGMA').addEventListener('click', function() {
+        state.routeOverride = 'HAGMA';
+        updateHagmaNagmaRouting();
+        document.getElementById('step4A').classList.add('active');
+        document.getElementById('toggle-step4A').textContent = '▼';
+    });
+
+    document.getElementById('forceNAGMA').addEventListener('click', function() {
+        state.routeOverride = 'NAGMA';
+        updateHagmaNagmaRouting();
+        document.getElementById('step4B').classList.add('active');
+        document.getElementById('toggle-step4B').textContent = '▼';
+    });
+
+    document.getElementById('runGoldmark').addEventListener('click', function() {
+        interpretGoldmark();
+    });
+
+    document.getElementById('runHardup').addEventListener('click', function() {
+        interpretHardup();
+    });
+
+    document.getElementById('runDelta').addEventListener('click', function() {
+        interpretAG(); // ensure AG fresh
+        interpretDelta();
+    });
+
+    document.getElementById('recalcAll').addEventListener('click', function() {
+        recalcAll();
+    });
+
+    document.getElementById('clearAll').addEventListener('click', function() {
+        clearAll();
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', async function() {
+        var msg = document.getElementById('copyMsg');
+        msg.textContent = '';
+        var payload = buildClipboard();
+        if (!payload.trim()) {
+            msg.textContent = 'Nothing to copy yet – run at least Step 1.';
+            msg.style.color = '#b91c1c';
+            return;
+        }
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(payload);
+            } else {
+                var area = document.getElementById('clipboardPayload');
+                area.value = payload;
+                area.style.display = 'block';
+                area.select();
+                document.execCommand('copy');
+                area.style.display = 'none';
+            }
+            msg.textContent = 'Assessment & plan copied to clipboard.';
+            msg.style.color = '#16a34a';
+        } catch (e) {
+            console.error(e);
+            msg.textContent = 'Could not copy automatically – select and copy manually if needed.';
+            msg.style.color = '#b91c1c';
+        }
+    });
+
+    // Initial: Step 1 open by default, others closed
+    document.getElementById('step1').classList.add('active');
+    document.getElementById('toggle-step1').textContent = '▼';
+})();
+</script>
+
+<script src="../assets/js/article-progress.js"></script>
+</body>
+</html>
