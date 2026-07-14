@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="Pleural Fluid Interpretation and Drainage Decision Calculator">
+<meta name="date" content="2026-07-13">
+<meta name="category" content="Pulmonary">
+<meta name="tags" content="pleural effusion,pleural fluid,Light criteria,exudate,transudate,empyema,parapneumonic effusion,chylothorax,hemothorax,ADA">
+<meta name="summary" content="A bedside pleural-fluid calculator that applies Light's criteria, evaluates pseudo-exudates, assesses pleural-infection drainage risk, and interprets cell differential, chylothorax, hemothorax, tuberculosis, malignancy, pancreatic disease, and urinothorax.">
+<meta name="featured" content="true">
+
+<title>Pleural Fluid Interpretation and Drainage Decision Calculator | Learn Medicine</title>
+
+<link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --text:#1e293b;
+    --muted:#64748b;
+    --accent:#0f766e;
+    --accent-dark:#115e59;
+    --border:#e2e8f0;
+    --soft:#f0fdfa;
+    --soft-blue:#eff6ff;
+    --blue:#1d4ed8;
+    --danger:#b91c1c;
+    --danger-bg:#fef2f2;
+    --warning:#9a3412;
+    --warning-bg:#fff7ed;
+    --success:#166534;
+    --success-bg:#f0fdf4;
+    --code:#f1f5f9;
+    --shadow:0 12px 34px rgba(15,23,42,.08);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',Arial,sans-serif;
+    line-height:1.65;
+    font-size:15px;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+.container{
+    max-width:1180px;
+    margin:auto;
+    padding:28px 18px 48px;
+}
+
+.home-btn,
+.back-home{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    color:var(--accent);
+    font-weight:700;
+    text-decoration:none;
+    margin-bottom:18px;
+}
+
+.home-btn:hover,
+.back-home:hover{
+    text-decoration:underline;
+}
+
+.article-header{
+    background:linear-gradient(135deg,#ffffff 0%,#f0fdfa 100%);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:26px;
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+}
+
+.article-breadcrumb{
+    color:var(--accent);
+    font-size:.86rem;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.article-header h1{
+    margin:0 0 10px;
+    font-size:clamp(1.7rem,3vw,2.4rem);
+    line-height:1.17;
+}
+
+.article-meta{
+    color:var(--muted);
+    font-size:.9rem;
+    margin-bottom:14px;
+}
+
+.article-summary{
+    margin:0;
+    color:#334155;
+    max-width:980px;
+}
+
+.alert{
+    border-radius:14px;
+    padding:14px 16px;
+    margin:15px 0;
+    border:1px solid;
+}
+
+.alert strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+.alert-danger{
+    background:var(--danger-bg);
+    border-color:#fecaca;
+    color:#7f1d1d;
+}
+
+.alert-warning{
+    background:var(--warning-bg);
+    border-color:#fed7aa;
+    color:#7c2d12;
+}
+
+.alert-info{
+    background:var(--soft-blue);
+    border-color:#bfdbfe;
+    color:#1e3a8a;
+}
+
+.alert-success{
+    background:var(--success-bg);
+    border-color:#bbf7d0;
+    color:#14532d;
+}
+
+.calculator-shell{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    margin-bottom:22px;
+}
+
+.calculator-head{
+    padding:19px 22px;
+    background:var(--soft);
+    border-bottom:1px solid var(--border);
+}
+
+.calculator-head h2{
+    margin:0 0 5px;
+    font-size:1.3rem;
+}
+
+.calculator-head p{
+    margin:0;
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+.calculator-body{
+    padding:22px;
+}
+
+.quick-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.25fr) minmax(340px,.75fr);
+    gap:18px;
+    align-items:start;
+}
+
+@media(max-width:980px){
+    .quick-layout{
+        grid-template-columns:1fr;
+    }
+}
+
+.input-panel,
+.output-panel{
+    min-width:0;
+}
+
+.section-box{
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:#fff;
+    padding:16px;
+    margin-bottom:14px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin:0 0 13px;
+    font-size:1rem;
+}
+
+.section-title span{
+    width:27px;
+    height:27px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--accent);
+    color:white;
+    font-size:.78rem;
+    flex:0 0 auto;
+}
+
+.section-subtitle{
+    margin:-5px 0 12px;
+    color:var(--muted);
+    font-size:.8rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+}
+
+.grid.two{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.grid.four{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+}
+
+@media(max-width:820px){
+    .grid,
+    .grid.four{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:560px){
+    .grid,
+    .grid.two,
+    .grid.four{
+        grid-template-columns:1fr;
+    }
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+label{
+    font-size:.81rem;
+    font-weight:700;
+    color:#334155;
+}
+
+.helper{
+    color:var(--muted);
+    font-size:.72rem;
+    margin-top:-1px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    min-height:42px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    background:white;
+    color:var(--text);
+    padding:9px 10px;
+    outline:none;
+}
+
+textarea{
+    min-height:82px;
+    resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(15,118,110,.12);
+}
+
+.check-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px 12px;
+}
+
+@media(max-width:620px){
+    .check-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+.check-item{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    padding:8px 9px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:#f8fafc;
+    font-size:.8rem;
+}
+
+.check-item input{
+    width:auto;
+    min-height:0;
+    margin-top:3px;
+}
+
+details.advanced{
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:12px;
+}
+
+details.advanced summary{
+    cursor:pointer;
+    padding:11px 13px;
+    font-weight:700;
+    background:#f8fafc;
+    color:#334155;
+}
+
+.details-body{
+    padding:14px;
+    border-top:1px solid var(--border);
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:1fr auto auto auto;
+    gap:9px;
+    margin-top:16px;
+}
+
+@media(max-width:680px){
+    .actions{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .actions .primary{
+        grid-column:1/-1;
+    }
+}
+
+.btn{
+    border:0;
+    border-radius:11px;
+    min-height:43px;
+    padding:9px 14px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.btn.primary{
+    background:var(--accent);
+    color:white;
+}
+
+.btn.primary:hover{
+    background:var(--accent-dark);
+}
+
+.btn.secondary{
+    background:#e2e8f0;
+    color:#334155;
+}
+
+.btn.outline{
+    background:white;
+    color:var(--accent);
+    border:1px solid var(--accent);
+}
+
+.output-panel{
+    position:sticky;
+    top:14px;
+}
+
+@media(max-width:980px){
+    .output-panel{
+        position:static;
+    }
+}
+
+.empty-state{
+    border:1px dashed #94a3b8;
+    border-radius:14px;
+    padding:24px 18px;
+    text-align:center;
+    color:var(--muted);
+    background:#f8fafc;
+}
+
+.result-hero{
+    background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+    color:white;
+    padding:17px;
+    border-radius:14px;
+    margin-bottom:12px;
+}
+
+.result-hero h3{
+    margin:0 0 6px;
+    font-size:1.1rem;
+}
+
+.result-hero p{
+    margin:0;
+    opacity:.94;
+    font-size:.86rem;
+}
+
+.result-card{
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:14px;
+    background:white;
+    margin-bottom:12px;
+}
+
+.result-card h3{
+    margin:0 0 9px;
+    font-size:.98rem;
+    color:var(--accent);
+}
+
+.result-card h4{
+    margin:12px 0 5px;
+    font-size:.88rem;
+}
+
+.result-card ul{
+    margin:6px 0 0;
+    padding-left:19px;
+}
+
+.result-card li{
+    margin:4px 0;
+    font-size:.84rem;
+}
+
+.metric{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    align-items:flex-start;
+    padding:8px 0;
+    border-bottom:1px solid #edf2f7;
+    font-size:.83rem;
+}
+
+.metric:last-child{
+    border-bottom:0;
+}
+
+.metric-label{
+    color:#475569;
+}
+
+.metric-value{
+    font-weight:700;
+    text-align:right;
+}
+
+.pill{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    padding:4px 9px;
+    border-radius:999px;
+    font-size:.73rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+}
+
+.pill.exudate{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.pill.transudate{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.pill.indeterminate{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.pill.info{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+.callout{
+    border-left:4px solid;
+    border-radius:9px;
+    padding:10px 11px;
+    margin:8px 0;
+    font-size:.82rem;
+}
+
+.callout.danger{
+    border-color:var(--danger);
+    background:var(--danger-bg);
+    color:#7f1d1d;
+}
+
+.callout.warning{
+    border-color:#f97316;
+    background:var(--warning-bg);
+    color:#7c2d12;
+}
+
+.callout.success{
+    border-color:#16a34a;
+    background:var(--success-bg);
+    color:#14532d;
+}
+
+.callout.info{
+    border-color:#3b82f6;
+    background:var(--soft-blue);
+    color:#1e3a8a;
+}
+
+.criteria-list{
+    display:grid;
+    gap:7px;
+}
+
+.criterion{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:9px;
+    padding:9px 10px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:#f8fafc;
+    font-size:.8rem;
+}
+
+.criterion.met{
+    border-color:#fecaca;
+    background:#fef2f2;
+}
+
+.criterion.not-met{
+    border-color:#bbf7d0;
+    background:#f0fdf4;
+}
+
+.criterion.missing{
+    border-color:#e2e8f0;
+    color:#64748b;
+}
+
+.criterion strong{
+    display:block;
+    margin-bottom:2px;
+}
+
+.content-section{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:22px;
+    margin:18px 0;
+    box-shadow:0 6px 20px rgba(15,23,42,.045);
+}
+
+.content-section h2{
+    margin:0 0 14px;
+    font-size:1.25rem;
+}
+
+.content-section h3{
+    margin:18px 0 7px;
+    font-size:1rem;
+}
+
+.content-section p{
+    margin:8px 0;
+}
+
+.content-section ul{
+    margin:8px 0;
+    padding-left:21px;
+}
+
+.content-section li{
+    margin:5px 0;
+}
+
+.formula{
+    display:block;
+    width:fit-content;
+    max-width:100%;
+    margin:13px auto;
+    background:var(--code);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px 15px;
+    font-weight:700;
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0;
+    font-size:.86rem;
+}
+
+th,
+td{
+    border:1px solid var(--border);
+    padding:9px;
+    text-align:left;
+    vertical-align:top;
+}
+
+th{
+    background:#f8fafc;
+    color:#334155;
+}
+
+.copy-message{
+    min-height:1.2em;
+    margin-top:7px;
+    color:var(--success);
+    font-size:.78rem;
+}
+
+.footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:.84rem;
+    padding:22px 0 8px;
+}
+
+@media print{
+    body{
+        background:white;
+    }
+
+    .home-btn,
+    .back-home,
+    .actions,
+    details.advanced,
+    .footer{
+        display:none!important;
+    }
+
+    .container{
+        max-width:none;
+        padding:0;
+    }
+
+    .article-header,
+    .calculator-shell,
+    .content-section,
+    .result-card{
+        box-shadow:none;
+        break-inside:avoid;
+    }
+
+    .quick-layout{
+        grid-template-columns:1fr;
+    }
+
+    .output-panel{
+        position:static;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+
+<div class="article-breadcrumb">
+Learn Medicine › Pulmonary › Calculator
+</div>
+
+<h1>Pleural Fluid Interpretation and Drainage Decision Calculator</h1>
+
+<div class="article-meta">
+Added July 13, 2026 • Pulmonary • Adult bedside diagnostic helper
+</div>
+
+<p class="article-summary">
+Classify a pleural effusion with Light’s criteria, check for a diuretic-associated pseudo-exudate, assess whether a parapneumonic effusion needs drainage, and interpret cell differential, chylothorax, hemothorax, tuberculosis, malignancy, pancreatic disease, heart failure, and urinothorax clues.
+</p>
+
+</header>
+
+<div class="alert alert-danger">
+
+<strong>Clinical safety notice</strong>
+
+This tool supports clinical interpretation; it does not decide whether thoracentesis or chest-tube placement is technically safe. Use thoracic ultrasound, evaluate bleeding risk and respiratory stability, confirm specimen handling, and involve pulmonary, interventional radiology, thoracic surgery, or another appropriate specialist when needed.
+
+</div>
+
+<div class="calculator-shell">
+
+<div class="calculator-head">
+<h2>Bedside Pleural Fluid Workflow</h2>
+<p>Enter paired serum and pleural studies whenever available. The result panel updates after calculation and provides a copyable assessment.</p>
+</div>
+
+<div class="calculator-body">
+
+<div class="quick-layout">
+
+<div class="input-panel">
+
+<div class="section-box">
+
+<h3 class="section-title"><span>1</span> Clinical context</h3>
+
+<div class="grid">
+
+<div class="field">
+<label for="side">Effusion distribution</label>
+<select id="side">
+<option value="">Not specified</option>
+<option value="left">Left unilateral</option>
+<option value="right">Right unilateral</option>
+<option value="bilateral">Bilateral</option>
+</select>
+</div>
+
+<div class="field">
+<label for="appearance">Fluid appearance</label>
+<select id="appearance">
+<option value="">Not specified</option>
+<option value="clear">Clear / straw colored</option>
+<option value="cloudy">Cloudy / turbid</option>
+<option value="purulent">Frank pus</option>
+<option value="bloody">Bloody</option>
+<option value="milky">Milky / opalescent</option>
+<option value="black">Black</option>
+</select>
+</div>
+
+<div class="field">
+<label for="size">Ultrasound or imaging size</label>
+<select id="size">
+<option value="">Not specified</option>
+<option value="small">Small</option>
+<option value="moderate">Moderate</option>
+<option value="large">Large</option>
+</select>
+</div>
+
+<div class="field">
+<label for="loculation">Septations / loculation</label>
+<select id="loculation">
+<option value="">Not specified</option>
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label for="fever">Ongoing fever / infection syndrome</label>
+<select id="fever">
+<option value="">Not specified</option>
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label for="diuretics">Receiving diuretics</label>
+<select id="diuretics">
+<option value="">Not specified</option>
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+</div>
+
+</div>
+
+<div class="check-grid" style="margin-top:12px;">
+
+<label class="check-item">
+<input type="checkbox" id="ctxPneumonia">
+<span><strong>Pneumonia or suspected pleural infection</strong><br>Fever, infiltrate, sepsis, pleuritic pain, or purulent sputum.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox" id="ctxCHF">
+<span><strong>Heart failure clinically plausible</strong><br>Volume overload, elevated JVP, reduced EF, or response to diuresis.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox" id="ctxCirrhosis">
+<span><strong>Cirrhosis / hepatic hydrothorax plausible</strong><br>Portal hypertension or ascites.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox" id="ctxMalignancy">
+<span><strong>Malignancy suspected or known</strong><br>Weight loss, pleural nodularity, recurrent unilateral effusion, or known cancer.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox" id="ctxTB">
+<span><strong>Tuberculosis risk</strong><br>Exposure, endemic residence, constitutional symptoms, or lymphocytic effusion.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox" id="ctxTrauma">
+<span><strong>Trauma / recent thoracic surgery</strong><br>Raises concern for hemothorax or chylothorax.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox" id="ctxPancreas">
+<span><strong>Pancreatitis or esophageal rupture concern</strong><br>High amylase may become important.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox" id="ctxAutoimmune">
+<span><strong>Rheumatoid or lupus pleuritis considered</strong><br>Very low glucose or low pH may occur.</span>
+</label>
+
+</div>
+
+</div>
+
+<div class="section-box">
+
+<h3 class="section-title"><span>2</span> Core paired studies</h3>
+<p class="section-subtitle">Use serum values drawn near the time of thoracentesis whenever possible.</p>
+
+<div class="grid four">
+
+<div class="field">
+<label for="sProtein">Serum protein (g/dL)</label>
+<input id="sProtein" type="number" min="0" step="0.1" placeholder="7.0">
+</div>
+
+<div class="field">
+<label for="pProtein">Pleural protein (g/dL)</label>
+<input id="pProtein" type="number" min="0" step="0.1" placeholder="3.8">
+</div>
+
+<div class="field">
+<label for="sLDH">Serum LDH (U/L)</label>
+<input id="sLDH" type="number" min="0" step="1" placeholder="220">
+</div>
+
+<div class="field">
+<label for="pLDH">Pleural LDH (U/L)</label>
+<input id="pLDH" type="number" min="0" step="1" placeholder="480">
+</div>
+
+<div class="field">
+<label for="ldhULN">Serum LDH upper limit (U/L)</label>
+<input id="ldhULN" type="number" min="0" step="1" placeholder="250">
+</div>
+
+<div class="field">
+<label for="sAlbumin">Serum albumin (g/dL)</label>
+<input id="sAlbumin" type="number" min="0" step="0.1" placeholder="3.5">
+</div>
+
+<div class="field">
+<label for="pAlbumin">Pleural albumin (g/dL)</label>
+<input id="pAlbumin" type="number" min="0" step="0.1" placeholder="2.0">
+</div>
+
+<div class="field">
+<label for="pH">Pleural pH</label>
+<input id="pH" type="number" min="6.5" max="8" step="0.01" placeholder="7.18">
+<div class="helper">Use immediate blood-gas analysis of a properly collected nonpurulent sample.</div>
+</div>
+
+<div class="field">
+<label for="pGlucose">Pleural glucose (mg/dL)</label>
+<input id="pGlucose" type="number" min="0" step="1" placeholder="45">
+</div>
+
+<div class="field">
+<label for="gramCulture">Gram stain / culture</label>
+<select id="gramCulture">
+<option value="">Not available</option>
+<option value="negative">Negative</option>
+<option value="positive">Positive</option>
+</select>
+</div>
+
+<div class="field">
+<label for="pWBC">Pleural WBC (cells/µL)</label>
+<input id="pWBC" type="number" min="0" step="1" placeholder="12000">
+</div>
+
+<div class="field">
+<label for="neutrophils">Neutrophils (%)</label>
+<input id="neutrophils" type="number" min="0" max="100" step="1" placeholder="82">
+</div>
+
+<div class="field">
+<label for="lymphocytes">Lymphocytes (%)</label>
+<input id="lymphocytes" type="number" min="0" max="100" step="1" placeholder="12">
+</div>
+
+<div class="field">
+<label for="eosinophils">Eosinophils (%)</label>
+<input id="eosinophils" type="number" min="0" max="100" step="1" placeholder="2">
+</div>
+
+</div>
+
+</div>
+
+<details class="advanced">
+
+<summary>Advanced and etiology-specific studies</summary>
+
+<div class="details-body">
+
+<div class="grid four">
+
+<div class="field">
+<label for="sHct">Serum hematocrit (%)</label>
+<input id="sHct" type="number" min="0" max="80" step="0.1" placeholder="36">
+</div>
+
+<div class="field">
+<label for="pHct">Pleural hematocrit (%)</label>
+<input id="pHct" type="number" min="0" max="80" step="0.1" placeholder="20">
+</div>
+
+<div class="field">
+<label for="triglycerides">Pleural triglycerides (mg/dL)</label>
+<input id="triglycerides" type="number" min="0" step="1" placeholder="135">
+</div>
+
+<div class="field">
+<label for="cholesterol">Pleural cholesterol (mg/dL)</label>
+<input id="cholesterol" type="number" min="0" step="1" placeholder="60">
+</div>
+
+<div class="field">
+<label for="chylomicrons">Chylomicrons</label>
+<select id="chylomicrons">
+<option value="">Not tested</option>
+<option value="negative">Not detected</option>
+<option value="positive">Detected</option>
+</select>
+</div>
+
+<div class="field">
+<label for="ada">Pleural ADA (U/L)</label>
+<input id="ada" type="number" min="0" step="1" placeholder="48">
+</div>
+
+<div class="field">
+<label for="sAmylase">Serum amylase (U/L)</label>
+<input id="sAmylase" type="number" min="0" step="1" placeholder="90">
+</div>
+
+<div class="field">
+<label for="pAmylase">Pleural amylase (U/L)</label>
+<input id="pAmylase" type="number" min="0" step="1" placeholder="420">
+</div>
+
+<div class="field">
+<label for="ntpro">Serum or pleural NT-proBNP (pg/mL)</label>
+<input id="ntpro" type="number" min="0" step="1" placeholder="2800">
+<div class="helper">Serum testing is usually sufficient when heart failure is suspected.</div>
+</div>
+
+<div class="field">
+<label for="sCreatinine">Serum creatinine (mg/dL)</label>
+<input id="sCreatinine" type="number" min="0" step="0.01" placeholder="1.0">
+</div>
+
+<div class="field">
+<label for="pCreatinine">Pleural creatinine (mg/dL)</label>
+<input id="pCreatinine" type="number" min="0" step="0.01" placeholder="1.3">
+</div>
+
+<div class="field">
+<label for="cytology">Pleural cytology</label>
+<select id="cytology">
+<option value="">Not sent / pending</option>
+<option value="negative">Negative</option>
+<option value="atypical">Atypical / indeterminate</option>
+<option value="positive">Malignant cells identified</option>
+</select>
+</div>
+
+<div class="field">
+<label for="flow">Flow cytometry</label>
+<select id="flow">
+<option value="">Not sent / pending</option>
+<option value="negative">No clonal population</option>
+<option value="positive">Clonal population identified</option>
+</select>
+</div>
+
+<div class="field">
+<label for="pANA">Pleural ANA</label>
+<select id="pANA">
+<option value="">Not tested</option>
+<option value="negative">Negative</option>
+<option value="positive">Positive / supportive</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="notes">Additional context</label>
+<textarea id="notes" placeholder="Example: recurrent unilateral effusion, pleural nodularity on CT, antibiotics started before thoracentesis, rheumatoid arthritis, recent CABG..."></textarea>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<div class="actions">
+
+<button class="btn primary" type="button" onclick="calculatePleural()">
+Calculate Interpretation
+</button>
+
+<button class="btn secondary" type="button" onclick="loadExample()">
+Example
+</button>
+
+<button class="btn secondary" type="button" onclick="resetCalculator()">
+Reset
+</button>
+
+<button class="btn outline" type="button" onclick="window.print()">
+Print
+</button>
+
+</div>
+
+</div>
+
+<div class="output-panel">
+
+<div id="results">
+<div class="empty-state">
+Enter available pleural and serum data, then calculate. Light’s criteria can classify an exudate when any one criterion is met, but a confident transudate classification requires all three criteria to be evaluable and negative.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<section class="content-section">
+
+<h2>How to Use the Result</h2>
+
+<h3>Step 1: Classify With Light’s Criteria</h3>
+
+<div class="formula">
+Exudate if any one criterion is met
+</div>
+
+<ul>
+<li>Pleural protein ÷ serum protein &gt;0.50</li>
+<li>Pleural LDH ÷ serum LDH &gt;0.60</li>
+<li>Pleural LDH &gt; two-thirds of the serum laboratory LDH upper limit of normal</li>
+</ul>
+
+<p>
+Light’s criteria favor sensitivity: they are designed not to miss exudates. Heart-failure and hepatic-hydrothorax effusions may become concentrated during diuresis and meet an exudative cutoff despite a transudative mechanism.
+</p>
+
+<h3>Step 2: Check for a Pseudo-Exudate</h3>
+
+<div class="formula">
+Serum–pleural albumin gradient &gt;1.2 g/dL supports a transudative mechanism
+</div>
+
+<div class="formula">
+Serum–pleural protein gradient &gt;3.1 g/dL also supports a transudative mechanism
+</div>
+
+<p>
+Use these gradients when Light’s criteria indicate an exudate but the clinical picture strongly favors heart failure, cirrhosis, or another transudative process—especially after diuresis. They do not override an incompatible clinical picture.
+</p>
+
+<h3>Step 3: Determine Whether a Parapneumonic Effusion Needs Drainage</h3>
+
+<table>
+<thead>
+<tr>
+<th>Pleural finding</th>
+<th>Interpretation</th>
+<th>Typical action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frank pus or positive Gram stain/culture</td>
+<td>Empyema / established pleural infection</td>
+<td>Antibiotics plus drainage when technically feasible</td>
+</tr>
+<tr>
+<td>pH ≤7.20</td>
+<td>High probability of complicated parapneumonic effusion or infection</td>
+<td>Insert an intercostal drain if accessible fluid makes this safe</td>
+</tr>
+<tr>
+<td>pH &gt;7.20 and &lt;7.40</td>
+<td>Intermediate probability</td>
+<td>Consider drainage when LDH &gt;900 U/L and clinical/imaging features support infection</td>
+</tr>
+<tr>
+<td>pH ≥7.40</td>
+<td>Low probability based on pH</td>
+<td>No immediate drain based on chemistry alone</td>
+</tr>
+<tr>
+<td>pH unavailable and glucose &lt;60 mg/dL</td>
+<td>Supports complicated infection in the appropriate syndrome</td>
+<td>Use with imaging, clinical course, LDH, and microbiology</td>
+</tr>
+</tbody>
+</table>
+
+<div class="alert alert-warning">
+
+<strong>Pleural pH is highly vulnerable to collection error.</strong>
+
+Collect nonpurulent fluid anaerobically in a heparinized blood-gas syringe, expel air, avoid contamination with local anesthetic, and analyze promptly. Frank pus does not need a pH measurement to establish drainage-level concern.
+
+</div>
+
+</section>
+
+<section class="content-section">
+
+<h2>Etiology-Specific Interpretation</h2>
+
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Important possibilities</th>
+<th>Nuance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Neutrophil-predominant exudate</td>
+<td>Parapneumonic effusion, pulmonary embolism, early tuberculosis</td>
+<td>Cell differential narrows the differential but is not diagnostic</td>
+</tr>
+<tr>
+<td>Lymphocyte-predominant exudate</td>
+<td>Malignancy, tuberculosis, lymphoma, chronic inflammatory disease, chylothorax</td>
+<td>Use cytology, imaging, ADA, microbiology, biopsy, and exposure history</td>
+</tr>
+<tr>
+<td>Eosinophils ≥10%</td>
+<td>Air or blood in pleural space, drugs, parasites, fungi, malignancy</td>
+<td>Does not exclude malignancy</td>
+</tr>
+<tr>
+<td>Pleural hematocrit ≥50% of serum hematocrit</td>
+<td>Hemothorax</td>
+<td>Trauma, surgery, vascular lesion, malignancy, or anticoagulation may be responsible</td>
+</tr>
+<tr>
+<td>Triglycerides ≥110 mg/dL or chylomicrons present</td>
+<td>Chylothorax</td>
+<td>Chylomicrons are definitive; fluid may not appear milky</td>
+</tr>
+<tr>
+<td>Triglycerides 50–109 mg/dL</td>
+<td>Indeterminate for chylothorax</td>
+<td>Send chylomicrons/lipoprotein electrophoresis</td>
+</tr>
+<tr>
+<td>Cholesterol &gt;200 mg/dL with low triglycerides</td>
+<td>Pseudochylothorax</td>
+<td>Often associated with chronic rheumatoid or tuberculous pleuritis</td>
+</tr>
+<tr>
+<td>ADA around or above 40 U/L in a lymphocytic exudate</td>
+<td>Supports tuberculous pleuritis in the right epidemiologic context</td>
+<td>Not diagnostic; empyema, lymphoma, and other inflammatory disease can elevate ADA</td>
+</tr>
+<tr>
+<td>Pleural amylase above serum ULN or pleural/serum ratio &gt;1</td>
+<td>Pancreatic disease, esophageal rupture, malignancy</td>
+<td>Clinical context and isoenzyme testing may be required</td>
+</tr>
+<tr>
+<td>Pleural/serum creatinine ratio &gt;1</td>
+<td>Urinothorax</td>
+<td>Usually a transudate with low pH; evaluate urinary obstruction or trauma</td>
+</tr>
+<tr>
+<td>Very low glucose</td>
+<td>Pleural infection, rheumatoid pleuritis, malignancy, tuberculosis</td>
+<td>Interpret with pH, LDH, imaging, and clinical syndrome</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+<section class="content-section">
+
+<h2>Specimen and Follow-Up Checklist</h2>
+
+<h3>Routine Diagnostic Thoracentesis</h3>
+
+<ul>
+<li>Protein and LDH with paired serum studies</li>
+<li>Cell count and differential</li>
+<li>Glucose</li>
+<li>pH when pleural infection is possible</li>
+<li>Gram stain and culture when infection is possible</li>
+<li>Cytology when malignancy is possible</li>
+</ul>
+
+<h3>When Infection Is Suspected</h3>
+
+<ul>
+<li>Send fluid in a sterile container and inoculate aerobic and anaerobic blood-culture bottles at the bedside when possible.</li>
+<li>Do not rely on a negative culture to exclude infection, particularly after antibiotics.</li>
+<li>Use ultrasound to evaluate septations, accessible fluid, and drain position.</li>
+<li>If drainage stops while residual infected fluid remains, reassess catheter position, intrapleural therapy, and thoracic-surgery involvement.</li>
+</ul>
+
+<h3>When Malignancy Is Suspected</h3>
+
+<ul>
+<li>Send approximately 25–50 mL for cytology when enough fluid is available.</li>
+<li>Request smear and cell-block preparation.</li>
+<li>A positive cytology is diagnostic, but a negative result does not exclude malignancy.</li>
+<li>Consider image-guided or thoracoscopic pleural biopsy when cytology is nondiagnostic and suspicion remains high.</li>
+<li>Send flow cytometry when lymphoma is possible.</li>
+</ul>
+
+<h3>When Tuberculosis Is Suspected</h3>
+
+<ul>
+<li>Interpret ADA according to local prevalence and pretest probability.</li>
+<li>Send mycobacterial culture and evaluate sputum for pulmonary tuberculosis when appropriate.</li>
+<li>Pleural tissue for histology and culture generally provides better diagnostic yield than pleural fluid alone.</li>
+</ul>
+
+</section>
+
+<section class="content-section">
+
+<h2>Common Pitfalls</h2>
+
+<ul>
+<li>Calling an effusion transudative when only one negative Light criterion was available</li>
+<li>Using pleural-protein concentration alone instead of paired ratios</li>
+<li>Ignoring the serum LDH laboratory upper limit</li>
+<li>Assuming every diuresed heart-failure effusion is a true exudate</li>
+<li>Allowing lidocaine, air, or delayed analysis to distort pleural pH</li>
+<li>Waiting for culture positivity before draining frank pus</li>
+<li>Treating pH as a stand-alone decision without imaging and clinical context</li>
+<li>Calling ADA ≥40 diagnostic of tuberculosis</li>
+<li>Assuming a negative cytology excludes malignant pleural disease</li>
+<li>Using right- or left-sided location alone to assign an etiology</li>
+<li>Assuming milky fluid is always chylous or that nonmilky fluid cannot be chylous</li>
+<li>Failing to compare pleural hematocrit with serum hematocrit</li>
+<li>Sending only a superficial or tiny cytology sample when a larger sample is available</li>
+</ul>
+
+</section>
+
+<section class="content-section">
+
+<h2>References</h2>
+
+<ol>
+<li>
+Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society Guideline for Pleural Disease. <em>Thorax</em>. 2023;78:1143–1156.
+</li>
+
+<li>
+Roberts ME, et al. British Thoracic Society Quality Standard for Pleural Disease. <em>BMJ Open Respiratory Research</em>. 2026;13:e003760.
+</li>
+
+<li>
+Light RW, Macgregor MI, Luchsinger PC, Ball WC Jr. Pleural Effusions: The Diagnostic Separation of Transudates and Exudates. <em>Annals of Internal Medicine</em>. 1972;77:507–513.
+</li>
+
+<li>
+Mohan G, et al. A Practical Approach to Pseudoexudative Pleural Effusions. <em>Respiratory Medicine</em>. 2023.
+</li>
+
+<li>
+British Thoracic Society. Investigation of the Undiagnosed Unilateral Pleural Effusion: Pleural Fluid Test Diagnostic Accuracy, Online Appendix B4. 2023.
+</li>
+</ol>
+
+</section>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+
+<footer class="footer">
+Learn Medicine • Pleural Fluid Interpretation and Drainage Decision Calculator
+</footer>
+
+</div>
+
+<script>
+'use strict';
+
+function getNumber(id){
+    const el = document.getElementById(id);
+    if(!el || el.value === ''){
+        return null;
+    }
+
+    const value = Number(el.value);
+    return Number.isFinite(value) ? value : null;
+}
+
+function getValue(id){
+    const el = document.getElementById(id);
+    return el ? el.value : '';
+}
+
+function isChecked(id){
+    const el = document.getElementById(id);
+    return Boolean(el && el.checked);
+}
+
+function fmt(value, decimals = 2){
+    if(value === null || !Number.isFinite(value)){
+        return '—';
+    }
+
+    return Number(value)
+        .toFixed(decimals)
+        .replace(/\.00$/,'')
+        .replace(/(\.\d)0$/,'$1');
+}
+
+function safeRatio(numerator, denominator){
+    if(
+        numerator === null ||
+        denominator === null ||
+        denominator <= 0
+    ){
+        return null;
+    }
+
+    return numerator / denominator;
+}
+
+function criterionCard(title, formula, value, cutoff, status, message){
+    const statusClass =
+        status === 'met'
+            ? 'met'
+            : status === 'not-met'
+                ? 'not-met'
+                : 'missing';
+
+    const icon =
+        status === 'met'
+            ? 'Meets criterion'
+            : status === 'not-met'
+                ? 'Does not meet'
+                : 'Missing data';
+
+    return `
+        <div class="criterion ${statusClass}">
+            <div>
+                <strong>${title}</strong>
+                <span>${formula}</span>
+                ${message ? `<div class="helper">${message}</div>` : ''}
+            </div>
+            <div style="text-align:right;">
+                <strong>${value}</strong>
+                <span>${icon}</span>
+            </div>
+        </div>
+    `;
+}
+
+function calculatePleural(){
+
+    const sProtein = getNumber('sProtein');
+    const pProtein = getNumber('pProtein');
+    const sLDH = getNumber('sLDH');
+    const pLDH = getNumber('pLDH');
+    const ldhULN = getNumber('ldhULN');
+    const sAlbumin = getNumber('sAlbumin');
+    const pAlbumin = getNumber('pAlbumin');
+    const pleuralPH = getNumber('pH');
+    const pGlucose = getNumber('pGlucose');
+    const pWBC = getNumber('pWBC');
+    const neutrophils = getNumber('neutrophils');
+    const lymphocytes = getNumber('lymphocytes');
+    const eosinophils = getNumber('eosinophils');
+
+    const sHct = getNumber('sHct');
+    const pHct = getNumber('pHct');
+    const triglycerides = getNumber('triglycerides');
+    const cholesterol = getNumber('cholesterol');
+    const ada = getNumber('ada');
+    const sAmylase = getNumber('sAmylase');
+    const pAmylase = getNumber('pAmylase');
+    const ntpro = getNumber('ntpro');
+    const sCreatinine = getNumber('sCreatinine');
+    const pCreatinine = getNumber('pCreatinine');
+
+    const appearance = getValue('appearance');
+    const side = getValue('side');
+    const size = getValue('size');
+    const loculation = getValue('loculation');
+    const fever = getValue('fever');
+    const diuretics = getValue('diuretics');
+    const gramCulture = getValue('gramCulture');
+    const chylomicrons = getValue('chylomicrons');
+    const cytology = getValue('cytology');
+    const flow = getValue('flow');
+    const pANA = getValue('pANA');
+    const notes = getValue('notes').trim();
+
+    const ctxPneumonia = isChecked('ctxPneumonia');
+    const ctxCHF = isChecked('ctxCHF');
+    const ctxCirrhosis = isChecked('ctxCirrhosis');
+    const ctxMalignancy = isChecked('ctxMalignancy');
+    const ctxTB = isChecked('ctxTB');
+    const ctxTrauma = isChecked('ctxTrauma');
+    const ctxPancreas = isChecked('ctxPancreas');
+    const ctxAutoimmune = isChecked('ctxAutoimmune');
+
+    const proteinRatio = safeRatio(pProtein,sProtein);
+    const ldhRatio = safeRatio(pLDH,sLDH);
+    const ldhCutoff =
+        ldhULN !== null
+            ? (2 / 3) * ldhULN
+            : null;
+
+    const lightCriteria = [];
+
+    if(proteinRatio !== null){
+        lightCriteria.push({
+            name:'Protein ratio',
+            met:proteinRatio > 0.5
+        });
+    }
+
+    if(ldhRatio !== null){
+        lightCriteria.push({
+            name:'LDH ratio',
+            met:ldhRatio > 0.6
+        });
+    }
+
+    if(pLDH !== null && ldhCutoff !== null){
+        lightCriteria.push({
+            name:'Absolute pleural LDH',
+            met:pLDH > ldhCutoff
+        });
+    }
+
+    const metCount =
+        lightCriteria.filter(item => item.met).length;
+
+    const evaluableCount =
+        lightCriteria.length;
+
+    let lightClass = 'indeterminate';
+    let lightLabel = 'Incomplete Light classification';
+
+    if(metCount >= 1){
+        lightClass = 'exudate';
+        lightLabel = 'Exudative by Light’s criteria';
+    }else if(evaluableCount === 3){
+        lightClass = 'transudate';
+        lightLabel = 'Transudative by Light’s criteria';
+    }
+
+    const spag =
+        sAlbumin !== null && pAlbumin !== null
+            ? sAlbumin - pAlbumin
+            : null;
+
+    const sppg =
+        sProtein !== null && pProtein !== null
+            ? sProtein - pProtein
+            : null;
+
+    const pseudoSupport =
+        lightClass === 'exudate' &&
+        (
+            (spag !== null && spag > 1.2) ||
+            (sppg !== null && sppg > 3.1)
+        ) &&
+        (
+            ctxCHF ||
+            ctxCirrhosis ||
+            diuretics === 'yes'
+        );
+
+    const criteriaHtml = [
+        proteinRatio !== null
+            ? criterionCard(
+                'Pleural/serum protein ratio',
+                'Exudative cutoff >0.50',
+                fmt(proteinRatio,2),
+                '>0.50',
+                proteinRatio > 0.5 ? 'met' : 'not-met',
+                ''
+            )
+            : criterionCard(
+                'Pleural/serum protein ratio',
+                'Exudative cutoff >0.50',
+                '—',
+                '>0.50',
+                'missing',
+                'Enter paired serum and pleural protein.'
+            ),
+
+        ldhRatio !== null
+            ? criterionCard(
+                'Pleural/serum LDH ratio',
+                'Exudative cutoff >0.60',
+                fmt(ldhRatio,2),
+                '>0.60',
+                ldhRatio > 0.6 ? 'met' : 'not-met',
+                ''
+            )
+            : criterionCard(
+                'Pleural/serum LDH ratio',
+                'Exudative cutoff >0.60',
+                '—',
+                '>0.60',
+                'missing',
+                'Enter paired serum and pleural LDH.'
+            ),
+
+        pLDH !== null && ldhCutoff !== null
+            ? criterionCard(
+                'Absolute pleural LDH',
+                `Exudative cutoff >${fmt(ldhCutoff,0)} U/L`,
+                `${fmt(pLDH,0)} U/L`,
+                `>${fmt(ldhCutoff,0)}`,
+                pLDH > ldhCutoff ? 'met' : 'not-met',
+                'Cutoff is two-thirds of the entered serum LDH upper limit.'
+            )
+            : criterionCard(
+                'Absolute pleural LDH',
+                'Exudative cutoff > two-thirds serum LDH ULN',
+                '—',
+                '',
+                'missing',
+                'Enter pleural LDH and the laboratory serum LDH upper limit.'
+            )
+    ].join('');
+
+    let infectionLevel = 'No pleural-infection decision available';
+    let infectionClass = 'info';
+    const infectionReasons = [];
+    const infectionActions = [];
+
+    const pus = appearance === 'purulent';
+    const positiveMicro = gramCulture === 'positive';
+    const clinicalInfection =
+        ctxPneumonia ||
+        fever === 'yes' ||
+        pus ||
+        positiveMicro;
+
+    if(pus || positiveMicro){
+        infectionLevel = 'Drainage-level pleural infection concern';
+        infectionClass = 'danger';
+
+        if(pus){
+            infectionReasons.push('Frank pus establishes empyema-level concern.');
+        }
+
+        if(positiveMicro){
+            infectionReasons.push('Gram stain or culture is positive.');
+        }
+
+        infectionActions.push('Begin or continue appropriate antibiotics.');
+        infectionActions.push('Arrange pleural drainage when technically safe and fluid is accessible.');
+        infectionActions.push('Send pleural fluid in sterile container and aerobic/anaerobic blood-culture bottles when possible.');
+
+    }else if(pleuralPH !== null && pleuralPH <= 7.20 && clinicalInfection){
+        infectionLevel = 'High-risk complicated parapneumonic effusion';
+        infectionClass = 'danger';
+        infectionReasons.push(`Pleural pH is ${fmt(pleuralPH,2)} (≤7.20).`);
+        infectionActions.push('Insert an intercostal drain if ultrasound shows safely accessible fluid.');
+        infectionActions.push('Treat pneumonia/pleural infection with antibiotics.');
+        infectionActions.push('Reassess drainage, residual collection, and clinical response.');
+
+    }else if(
+        pleuralPH !== null &&
+        pleuralPH > 7.20 &&
+        pleuralPH < 7.40 &&
+        clinicalInfection
+    ){
+        infectionLevel = 'Intermediate pleural-infection risk';
+        infectionClass = 'warning';
+        infectionReasons.push(`Pleural pH is ${fmt(pleuralPH,2)} (>7.20 and <7.40).`);
+
+        const intermediateSupport = [];
+
+        if(pLDH !== null && pLDH > 900){
+            intermediateSupport.push(`LDH ${fmt(pLDH,0)} U/L (>900)`);
+        }
+
+        if(pGlucose !== null && pGlucose <= 72){
+            intermediateSupport.push(`glucose ${fmt(pGlucose,0)} mg/dL (≤72)`);
+        }
+
+        if(loculation === 'yes'){
+            intermediateSupport.push('septations/loculation');
+        }
+
+        if(size === 'large'){
+            intermediateSupport.push('large fluid burden');
+        }
+
+        if(fever === 'yes'){
+            intermediateSupport.push('ongoing fever');
+        }
+
+        if(intermediateSupport.length){
+            infectionReasons.push(`Additional support: ${intermediateSupport.join(', ')}.`);
+        }
+
+        if(
+            (pLDH !== null && pLDH > 900) &&
+            (
+                pGlucose !== null && pGlucose <= 72 ||
+                loculation === 'yes' ||
+                size === 'large' ||
+                fever === 'yes'
+            )
+        ){
+            infectionActions.push('Drainage should be strongly considered with the full clinical and imaging picture.');
+        }else{
+            infectionActions.push('Integrate LDH, glucose, ultrasound septations, fluid volume, fever, and clinical trajectory before deciding on drainage.');
+        }
+
+    }else if(
+        pleuralPH !== null &&
+        pleuralPH >= 7.40 &&
+        clinicalInfection
+    ){
+        infectionLevel = 'Low immediate drainage risk by pH';
+        infectionClass = 'success';
+        infectionReasons.push(`Pleural pH is ${fmt(pleuralPH,2)} (≥7.40).`);
+        infectionActions.push('No immediate drain is indicated by chemistry alone.');
+        infectionActions.push('Continue clinical and imaging reassessment because pH does not exclude all complicated disease.');
+
+    }else if(
+        pleuralPH === null &&
+        pGlucose !== null &&
+        pGlucose < 60 &&
+        clinicalInfection
+    ){
+        infectionLevel = 'High probability of complicated pleural infection';
+        infectionClass = 'danger';
+        infectionReasons.push(`Pleural pH is unavailable and glucose is ${fmt(pGlucose,0)} mg/dL (<60).`);
+        infectionActions.push('Use glucose, LDH, microbiology, ultrasound, and clinical course to guide drainage.');
+        infectionActions.push('Obtain immediate properly collected pleural pH in future samples when possible.');
+
+    }else if(clinicalInfection){
+        infectionLevel = 'Pleural infection remains possible';
+        infectionClass = 'warning';
+        infectionReasons.push('An infectious clinical context is present, but decisive pH/pus/microbiology criteria are not available.');
+        infectionActions.push('Complete pleural pH, glucose, LDH, microbiology, and ultrasound assessment.');
+    }
+
+    const etiologyClues = [];
+    const nextSteps = [];
+
+    if(pGlucose !== null && pGlucose < 60){
+        etiologyClues.push(`Low pleural glucose (${fmt(pGlucose,0)} mg/dL): consider pleural infection, rheumatoid pleuritis, malignancy, or tuberculosis.`);
+    }
+
+    if(pLDH !== null && pLDH > 1000){
+        etiologyClues.push(`Very high pleural LDH (${fmt(pLDH,0)} U/L): compatible with intense pleural inflammation such as infection, rheumatoid pleuritis, or malignancy.`);
+    }
+
+    if(neutrophils !== null && neutrophils >= 50){
+        etiologyClues.push(`Neutrophil-predominant fluid (${fmt(neutrophils,0)}%): favors an acute process such as parapneumonic effusion, but pulmonary embolism and early tuberculosis remain possible.`);
+    }
+
+    if(lymphocytes !== null && lymphocytes >= 50){
+        etiologyClues.push(`Lymphocyte-predominant fluid (${fmt(lymphocytes,0)}%): consider malignancy, tuberculosis, lymphoma, chronic inflammatory disease, or chylothorax.`);
+    }
+
+    if(eosinophils !== null && eosinophils >= 10){
+        etiologyClues.push(`Pleural eosinophilia (${fmt(eosinophils,0)}%): consider air or blood in the pleural space, medication reaction, parasite/fungal disease, or malignancy.`);
+    }
+
+    const hctRatio = safeRatio(pHct,sHct);
+
+    if(hctRatio !== null){
+        if(hctRatio >= 0.50){
+            etiologyClues.push(`Pleural/serum hematocrit ratio ${fmt(hctRatio,2)}: meets the classic hemothorax definition.`);
+            nextSteps.push('Urgently assess hemodynamics, source of bleeding, chest-tube drainage, and thoracic-surgery or trauma involvement.');
+        }else if(hctRatio >= 0.25){
+            etiologyClues.push(`Pleural/serum hematocrit ratio ${fmt(hctRatio,2)}: substantial blood is present; a diluted or evolving hemothorax remains possible.`);
+        }
+    }
+
+    if(chylomicrons === 'positive'){
+        etiologyClues.push('Chylomicrons are present: this confirms chylothorax.');
+        nextSteps.push('Evaluate traumatic versus nontraumatic chylothorax, including thoracic-duct injury and lymphoma.');
+    }else if(triglycerides !== null){
+        if(triglycerides >= 110){
+            etiologyClues.push(`Pleural triglycerides ${fmt(triglycerides,0)} mg/dL (≥110): strongly supports chylothorax.`);
+            nextSteps.push('Send chylomicrons if confirmation is needed and investigate traumatic or lymphatic obstruction causes.');
+        }else if(triglycerides >= 50){
+            etiologyClues.push(`Pleural triglycerides ${fmt(triglycerides,0)} mg/dL (50–109): indeterminate for chylothorax.`);
+            nextSteps.push('Order chylomicron testing/lipoprotein electrophoresis.');
+        }else{
+            etiologyClues.push(`Pleural triglycerides ${fmt(triglycerides,0)} mg/dL (<50): chylothorax is unlikely unless severe fasting or malnutrition alters the result.`);
+        }
+    }
+
+    if(
+        cholesterol !== null &&
+        cholesterol > 200 &&
+        (triglycerides === null || triglycerides < 110)
+    ){
+        etiologyClues.push(`Pleural cholesterol ${fmt(cholesterol,0)} mg/dL (>200) with nonchylous triglycerides: consider pseudochylothorax.`);
+        nextSteps.push('Look for chronic rheumatoid or tuberculous pleural disease and cholesterol crystals.');
+    }
+
+    if(ada !== null){
+        if(ada >= 40){
+            const lymphPhrase =
+                lymphocytes !== null && lymphocytes >= 50
+                    ? ' in a lymphocyte-predominant effusion'
+                    : '';
+
+            etiologyClues.push(`ADA ${fmt(ada,0)} U/L${lymphPhrase}: supports tuberculous pleuritis only when pretest probability is meaningful; it is not diagnostic.`);
+            nextSteps.push('If tuberculosis is suspected, obtain mycobacterial studies and prioritize pleural tissue histology/culture when appropriate.');
+        }else if(ctxTB){
+            etiologyClues.push(`ADA ${fmt(ada,0)} U/L is below the common 40-U/L threshold, which lowers—but does not eliminate—the probability of pleural tuberculosis.`);
+        }
+    }
+
+    const amylaseRatio = safeRatio(pAmylase,sAmylase);
+
+    if(pAmylase !== null){
+        if(
+            amylaseRatio !== null && amylaseRatio > 1 ||
+            ctxPancreas
+        ){
+            etiologyClues.push(
+                amylaseRatio !== null
+                    ? `Pleural/serum amylase ratio ${fmt(amylaseRatio,2)}: consider pancreatic disease, esophageal rupture, or malignancy.`
+                    : `Pleural amylase ${fmt(pAmylase,0)} U/L in the selected clinical context: consider pancreatic disease, esophageal rupture, or malignancy.`
+            );
+            nextSteps.push('Correlate with symptoms and imaging; consider amylase isoenzymes when the source is unclear.');
+        }
+    }
+
+    if(ntpro !== null && ntpro >= 1500){
+        etiologyClues.push(`NT-proBNP ${fmt(ntpro,0)} pg/mL: supports a cardiac mechanism in the correct clinical context, but age and renal dysfunction affect interpretation.`);
+    }
+
+    const creatRatio = safeRatio(pCreatinine,sCreatinine);
+
+    if(creatRatio !== null && creatRatio > 1){
+        etiologyClues.push(`Pleural/serum creatinine ratio ${fmt(creatRatio,2)} (>1): supports urinothorax.`);
+        nextSteps.push('Evaluate urinary obstruction, urinary-tract trauma, or recent urologic procedure.');
+    }
+
+    if(cytology === 'positive'){
+        etiologyClues.push('Pleural cytology identified malignant cells: malignant pleural effusion is established.');
+        nextSteps.push('Coordinate staging, molecular testing needs, symptom-directed drainage, and pleural-service/oncology management.');
+    }else if(cytology === 'negative' && ctxMalignancy){
+        etiologyClues.push('Cytology is negative, but the selected clinical context still raises malignancy concern.');
+        nextSteps.push('A negative cytology does not exclude malignancy; consider repeat sampling or image-guided/thoracoscopic pleural biopsy based on tumor type and imaging.');
+    }else if(cytology === 'atypical'){
+        etiologyClues.push('Cytology is atypical or indeterminate and requires pathology correlation and further diagnostic planning.');
+    }
+
+    if(flow === 'positive'){
+        etiologyClues.push('Flow cytometry identified a clonal population: lymphoma or another hematologic malignancy should be evaluated.');
+    }
+
+    if(pANA === 'positive' && ctxAutoimmune){
+        etiologyClues.push('Pleural ANA supports lupus pleuritis in the appropriate clinical context but is not a stand-alone diagnosis.');
+    }
+
+    if(pseudoSupport){
+        etiologyClues.push('Light’s criteria indicate an exudate, but albumin/protein gradient and clinical context support a pseudo-exudative transudate.');
+    }
+
+    if(lightClass === 'transudate'){
+        nextSteps.push('Treat the underlying systemic process when the presentation is typical.');
+        nextSteps.push('Reconsider diagnostic sampling or alternate causes if the effusion is unilateral, atypical, recurrent, febrile, or does not improve as expected.');
+    }
+
+    if(lightClass === 'exudate'){
+        nextSteps.push('Use the clinical syndrome to direct cytology, microbiology, CT imaging, autoimmune testing, ADA/TB studies, or biopsy.');
+    }
+
+    if(lightClass === 'indeterminate'){
+        nextSteps.push('Complete all three Light criteria before confidently calling the fluid transudative.');
+    }
+
+    if(ctxMalignancy && cytology === ''){
+        nextSteps.push('Send 25–50 mL for cytology with smear and cell block when sufficient fluid is available.');
+    }
+
+    if(ctxPneumonia && gramCulture === ''){
+        nextSteps.push('Send sterile fluid plus aerobic and anaerobic blood-culture bottles if pleural infection is suspected.');
+    }
+
+    if(loculation === 'yes'){
+        nextSteps.push('Septations/loculation increase concern for difficult drainage; use ultrasound to guide catheter placement and reassess residual collections.');
+    }
+
+    if(appearance === 'milky'){
+        nextSteps.push('Do not classify by appearance alone; distinguish chylothorax, pseudochylothorax, and empyema with triglycerides, chylomicrons, cholesterol, and centrifugation/microbiology.');
+    }
+
+    if(appearance === 'bloody' && hctRatio === null){
+        nextSteps.push('Measure pleural and serum hematocrit to distinguish hemorrhagic effusion from hemothorax.');
+    }
+
+    if(side){
+        const sideText =
+            side === 'left'
+                ? 'left unilateral'
+                : side === 'right'
+                    ? 'right unilateral'
+                    : 'bilateral';
+
+        etiologyClues.push(`Distribution is ${sideText}; laterality alone does not establish an etiology.`);
+    }
+
+    if(notes){
+        etiologyClues.push(`Additional clinical context: ${escapeHtml(notes)}`);
+    }
+
+    const gradients = [];
+
+    if(spag !== null){
+        gradients.push(
+            `<div class="metric">
+                <span class="metric-label">Serum–pleural albumin gradient</span>
+                <span class="metric-value">${fmt(spag,2)} g/dL ${spag > 1.2 ? '— supports transudative mechanism' : '— does not support pseudo-exudate reclassification'}</span>
+            </div>`
+        );
+    }
+
+    if(sppg !== null){
+        gradients.push(
+            `<div class="metric">
+                <span class="metric-label">Serum–pleural protein gradient</span>
+                <span class="metric-value">${fmt(sppg,2)} g/dL ${sppg > 3.1 ? '— supports transudative mechanism' : ''}</span>
+            </div>`
+        );
+    }
+
+    if(amylaseRatio !== null){
+        gradients.push(
+            `<div class="metric">
+                <span class="metric-label">Pleural/serum amylase ratio</span>
+                <span class="metric-value">${fmt(amylaseRatio,2)}</span>
+            </div>`
+        );
+    }
+
+    if(hctRatio !== null){
+        gradients.push(
+            `<div class="metric">
+                <span class="metric-label">Pleural/serum hematocrit ratio</span>
+                <span class="metric-value">${fmt(hctRatio,2)}</span>
+            </div>`
+        );
+    }
+
+    if(creatRatio !== null){
+        gradients.push(
+            `<div class="metric">
+                <span class="metric-label">Pleural/serum creatinine ratio</span>
+                <span class="metric-value">${fmt(creatRatio,2)}</span>
+            </div>`
+        );
+    }
+
+    const etiologyHtml =
+        etiologyClues.length
+            ? `<ul>${etiologyClues.map(item => `<li>${item}</li>`).join('')}</ul>`
+            : '<p class="helper">No strong etiology-specific markers were entered.</p>';
+
+    const nextHtml =
+        nextSteps.length
+            ? `<ul>${unique(nextSteps).map(item => `<li>${item}</li>`).join('')}</ul>`
+            : '<p class="helper">Enter more clinical context and pleural studies to generate targeted next steps.</p>';
+
+    const infectionReasonsHtml =
+        infectionReasons.length
+            ? `<ul>${infectionReasons.map(item => `<li>${item}</li>`).join('')}</ul>`
+            : '';
+
+    const infectionActionsHtml =
+        infectionActions.length
+            ? `<h4>Action</h4><ul>${infectionActions.map(item => `<li>${item}</li>`).join('')}</ul>`
+            : '';
+
+    const resultHeroText =
+        lightClass === 'exudate'
+            ? `${metCount} of ${evaluableCount} evaluable Light criteria are positive.`
+            : lightClass === 'transudate'
+                ? 'All three Light criteria are evaluable and negative.'
+                : `${evaluableCount} of 3 Light criteria are evaluable and none are currently positive.`;
+
+    document.getElementById('results').innerHTML = `
+
+        <div class="result-hero">
+            <h3>${lightLabel}</h3>
+            <p>${resultHeroText}</p>
+        </div>
+
+        <div class="result-card">
+            <h3>1. Light’s Criteria</h3>
+            <div class="criteria-list">
+                ${criteriaHtml}
+            </div>
+
+            <div style="margin-top:10px;">
+                <span class="pill ${lightClass}">${lightLabel}</span>
+                ${
+                    pseudoSupport
+                        ? '<span class="pill info">Pseudo-exudate supported</span>'
+                        : ''
+                }
+            </div>
+        </div>
+
+        ${
+            gradients.length
+                ? `
+                    <div class="result-card">
+                        <h3>2. Gradients and Special Ratios</h3>
+                        ${gradients.join('')}
+                        ${
+                            pseudoSupport
+                                ? '<div class="callout info"><strong>Pseudo-exudate likely:</strong> Light’s criteria indicate exudate, but the selected heart-failure/cirrhosis/diuretic context plus serum–pleural gradient supports a transudative mechanism.</div>'
+                                : ''
+                        }
+                    </div>
+                `
+                : ''
+        }
+
+        <div class="result-card">
+            <h3>3. Pleural Infection and Drainage</h3>
+            <div class="callout ${infectionClass}">
+                <strong>${infectionLevel}</strong>
+                ${infectionReasonsHtml}
+                ${infectionActionsHtml}
+            </div>
+            <div class="helper">
+                Drainage decisions require clinical infection context, ultrasound-confirmed accessible fluid, procedural safety, and specialist judgment.
+            </div>
+        </div>
+
+        <div class="result-card">
+            <h3>4. Etiology Clues</h3>
+            ${etiologyHtml}
+        </div>
+
+        <div class="result-card">
+            <h3>5. Recommended Next Steps</h3>
+            ${nextHtml}
+        </div>
+
+        <div class="result-card">
+            <h3>Copyable Assessment</h3>
+            <button class="btn outline" type="button" onclick="copyAssessment()">Copy Assessment & Plan</button>
+            <div id="copyMessage" class="copy-message"></div>
+        </div>
+    `;
+
+    window.pleuralSummary = buildSummary({
+        lightLabel,
+        lightClass,
+        proteinRatio,
+        ldhRatio,
+        ldhCutoff,
+        pLDH,
+        spag,
+        sppg,
+        pseudoSupport,
+        infectionLevel,
+        infectionReasons,
+        infectionActions,
+        etiologyClues,
+        nextSteps:unique(nextSteps)
+    });
+
+    document.getElementById('results').scrollIntoView({
+        behavior:'smooth',
+        block:'start'
+    });
+}
+
+function buildSummary(data){
+
+    const lines = [];
+
+    lines.push('PLEURAL FLUID INTERPRETATION');
+
+    lines.push('');
+    lines.push('1) Light’s criteria');
+    lines.push(`- Classification: ${data.lightLabel}.`);
+
+    if(data.proteinRatio !== null){
+        lines.push(`- Pleural/serum protein ratio: ${fmt(data.proteinRatio,2)} (${data.proteinRatio > 0.5 ? 'meets' : 'does not meet'} >0.50 criterion).`);
+    }
+
+    if(data.ldhRatio !== null){
+        lines.push(`- Pleural/serum LDH ratio: ${fmt(data.ldhRatio,2)} (${data.ldhRatio > 0.6 ? 'meets' : 'does not meet'} >0.60 criterion).`);
+    }
+
+    if(data.pLDH !== null && data.ldhCutoff !== null){
+        lines.push(`- Pleural LDH: ${fmt(data.pLDH,0)} U/L; two-thirds serum LDH ULN cutoff ${fmt(data.ldhCutoff,0)} U/L (${data.pLDH > data.ldhCutoff ? 'meets' : 'does not meet'} criterion).`);
+    }
+
+    if(data.spag !== null || data.sppg !== null){
+        lines.push('');
+        lines.push('2) Pseudo-exudate assessment');
+
+        if(data.spag !== null){
+            lines.push(`- Serum–pleural albumin gradient: ${fmt(data.spag,2)} g/dL.`);
+        }
+
+        if(data.sppg !== null){
+            lines.push(`- Serum–pleural protein gradient: ${fmt(data.sppg,2)} g/dL.`);
+        }
+
+        lines.push(`- Interpretation: ${data.pseudoSupport ? 'Pseudo-exudative transudate is supported in the selected clinical context.' : 'No definitive pseudo-exudate reclassification from the entered data.'}`);
+    }
+
+    lines.push('');
+    lines.push('3) Pleural infection / drainage');
+    lines.push(`- ${data.infectionLevel}.`);
+
+    data.infectionReasons.forEach(item => {
+        lines.push(`- ${stripHtml(item)}`);
+    });
+
+    data.infectionActions.forEach(item => {
+        lines.push(`- Action: ${stripHtml(item)}`);
+    });
+
+    lines.push('');
+    lines.push('4) Etiology clues');
+
+    if(data.etiologyClues.length){
+        data.etiologyClues.forEach(item => {
+            lines.push(`- ${stripHtml(item)}`);
+        });
+    }else{
+        lines.push('- No strong etiology-specific markers entered.');
+    }
+
+    lines.push('');
+    lines.push('5) Next steps');
+
+    if(data.nextSteps.length){
+        data.nextSteps.forEach(item => {
+            lines.push(`- ${stripHtml(item)}`);
+        });
+    }else{
+        lines.push('- Complete clinical context, imaging, and targeted pleural studies.');
+    }
+
+    lines.push('');
+    lines.push('Educational decision support only. Confirm specimen handling, procedural safety, imaging, and the complete clinical context.');
+
+    return lines.join('\n');
+}
+
+async function copyAssessment(){
+
+    const message =
+        document.getElementById('copyMessage');
+
+    if(!window.pleuralSummary){
+        message.textContent =
+            'Calculate an interpretation first.';
+        return;
+    }
+
+    try{
+        await navigator.clipboard.writeText(
+            window.pleuralSummary
+        );
+
+        message.textContent =
+            'Assessment and plan copied.';
+    }catch(error){
+        const area =
+            document.createElement('textarea');
+
+        area.value =
+            window.pleuralSummary;
+
+        document.body.appendChild(area);
+        area.select();
+
+        try{
+            document.execCommand('copy');
+            message.textContent =
+                'Assessment and plan copied.';
+        }catch(copyError){
+            message.textContent =
+                'Automatic copy failed. Select the result manually.';
+        }
+
+        area.remove();
+    }
+}
+
+function loadExample(){
+
+    const values = {
+        side:'right',
+        appearance:'cloudy',
+        size:'moderate',
+        loculation:'yes',
+        fever:'yes',
+        diuretics:'no',
+        sProtein:'6.8',
+        pProtein:'4.1',
+        sLDH:'220',
+        pLDH:'1250',
+        ldhULN:'250',
+        sAlbumin:'3.4',
+        pAlbumin:'2.0',
+        pH:'7.12',
+        pGlucose:'38',
+        gramCulture:'negative',
+        pWBC:'18500',
+        neutrophils:'88',
+        lymphocytes:'8',
+        eosinophils:'1'
+    };
+
+    Object.entries(values).forEach(([id,value]) => {
+        const el = document.getElementById(id);
+        if(el){
+            el.value = value;
+        }
+    });
+
+    document.getElementById('ctxPneumonia').checked = true;
+
+    calculatePleural();
+}
+
+function resetCalculator(){
+
+    document.querySelectorAll(
+        'input[type="number"], textarea'
+    ).forEach(el => {
+        el.value = '';
+    });
+
+    document.querySelectorAll(
+        'select'
+    ).forEach(el => {
+        el.selectedIndex = 0;
+    });
+
+    document.querySelectorAll(
+        'input[type="checkbox"]'
+    ).forEach(el => {
+        el.checked = false;
+    });
+
+    window.pleuralSummary = '';
+
+    document.getElementById('results').innerHTML = `
+        <div class="empty-state">
+            Enter available pleural and serum data, then calculate. Light’s criteria can classify an exudate when any one criterion is met, but a confident transudate classification requires all three criteria to be evaluable and negative.
+        </div>
+    `;
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+
+function unique(items){
+    return [...new Set(items)];
+}
+
+function stripHtml(value){
+    const div = document.createElement('div');
+    div.innerHTML = value;
+    return div.textContent || div.innerText || '';
+}
+
+function escapeHtml(value){
+    return String(value)
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;')
+        .replaceAll("'",'&#039;');
+}
+</script>
+
+<script src="../assets/js/article-progress.js"></script>
+
+</body>
+</html>
