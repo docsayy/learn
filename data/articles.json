@@ -1,5 +1,25 @@
 [
   {
+    "title": "Central Nervous System Infections: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "meningitis",
+      "encephalitis",
+      "brain abscess",
+      "ventriculitis",
+      "HSV encephalitis",
+      "cryptococcal meningitis",
+      "tuberculous meningitis",
+      "lumbar puncture",
+      "CSF"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to acute bacterial meningitis, encephalitis, brain abscess, subdural empyema, healthcare-associated ventriculitis, chronic meningitis, CSF interpretation, empiric therapy, source control, complications, and prevention.",
+    "featured": true,
+    "readingTime": 36,
+    "file": "posts/2026-07-14-cns-infections.html"
+  },
+  {
     "title": "Bone, Joint, and Spinal Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
