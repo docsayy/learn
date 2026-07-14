@@ -105,6 +105,27 @@
     "file": "posts/2026-07-13-endocarditis.html"
   },
   {
+    "title": "Pleural Fluid Interpretation and Drainage Decision Calculator",
+    "date": "2026-07-13",
+    "category": "Pulmonary",
+    "tags": [
+      "pleural effusion",
+      "pleural fluid",
+      "Light criteria",
+      "exudate",
+      "transudate",
+      "empyema",
+      "parapneumonic effusion",
+      "chylothorax",
+      "hemothorax",
+      "ADA"
+    ],
+    "summary": "A bedside pleural-fluid calculator that applies Light",
+    "featured": true,
+    "readingTime": 7,
+    "file": "posts/2026-07-13-pleural-effusion.html"
+  },
+  {
     "title": "Pneumonia: The Complete Advanced Resident Guide",
     "date": "2026-07-13",
     "category": "Infectious Disease",
