@@ -1,5 +1,28 @@
 [
   {
+    "title": "Clostridioides difficile Infection: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "Clostridioides difficile",
+      "C difficile",
+      "CDI",
+      "pseudomembranous colitis",
+      "fidaxomicin",
+      "oral vancomycin",
+      "fulminant colitis",
+      "toxic megacolon",
+      "FMT",
+      "bezlotoxumab",
+      "VOWST",
+      "REBYOTA"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to Clostridioides difficile infection, including diagnostic testing, colonization, severity classification, fidaxomicin and vancomycin treatment, recurrence, fulminant colitis, surgery, bezlotoxumab, microbiota-based therapies, infection prevention, and antimicrobial stewardship.",
+    "featured": true,
+    "readingTime": 31,
+    "file": "posts/2026-07-14-cdif.html"
+  },
+  {
     "title": "Central Nervous System Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
