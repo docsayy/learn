@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="Acid–Base, Anion Gap and Compensation Calculator">
+<meta name="date" content="2026-07-13">
+<meta name="category" content="Nephrology">
+<meta name="tags" content="acid base,ABG,VBG,anion gap,Winter formula,delta ratio,HAGMA,NAGMA,GOLDMARK,HARDUP,osmolar gap,urine anion gap">
+<meta name="summary" content="A bedside-first adult acid-base calculator for primary disorder identification, expected compensation, anion gap and albumin correction, delta analysis, osmolar gap, urine anion gap, oxygenation, and a copyable assessment and plan.">
+<meta name="featured" content="true">
+
+<title>Acid–Base, Anion Gap and Compensation Calculator | Learn Medicine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --accent:#0f766e;
+  --accent-dark:#115e59;
+  --border:#e2e8f0;
+  --soft:#f0fdfa;
+  --soft-blue:#eff6ff;
+  --blue:#1d4ed8;
+  --warn-bg:#fff7ed;
+  --warn:#9a3412;
+  --danger-bg:#fef2f2;
+  --danger:#b91c1c;
+  --success-bg:#f0fdf4;
+  --success:#166534;
+  --violet-bg:#f5f3ff;
+  --violet:#6d28d9;
+  --shadow:0 12px 34px rgba(15,23,42,.08);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',Arial,sans-serif;
+  font-size:14px;
+  line-height:1.55;
+}
+button,input,select,textarea{font:inherit;}
+
+#reading-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:9999;
+  width:0;
+  height:4px;
+  background:var(--accent);
+}
+
+.container{
+  width:min(1180px,calc(100% - 24px));
+  margin:0 auto;
+  padding:22px 0 50px;
+}
+
+.home-btn,.back-home{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:14px;
+  color:var(--accent);
+  font-weight:700;
+  text-decoration:none;
+}
+.home-btn:hover,.back-home:hover{text-decoration:underline;}
+
+.article-header{
+  margin-bottom:14px;
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:linear-gradient(135deg,#ffffff 0%,#f0fdfa 100%);
+  box-shadow:var(--shadow);
+}
+.article-breadcrumb{
+  margin-bottom:6px;
+  color:var(--accent);
+  font-size:.82rem;
+  font-weight:700;
+}
+h1{
+  margin:0 0 8px;
+  font-size:clamp(1.45rem,2.7vw,2.15rem);
+  line-height:1.16;
+}
+.article-meta{
+  margin-bottom:10px;
+  color:var(--muted);
+  font-size:.84rem;
+}
+.article-summary{
+  max-width:1000px;
+  margin:0;
+  color:#334155;
+}
+
+.notice{
+  margin:12px 0;
+  padding:11px 13px;
+  border:1px solid;
+  border-radius:12px;
+}
+.notice strong{font-weight:800;}
+.notice-danger{background:var(--danger-bg);border-color:#fecaca;color:#7f1d1d;}
+.notice-warning{background:var(--warn-bg);border-color:#fed7aa;color:#7c2d12;}
+.notice-info{background:var(--soft-blue);border-color:#bfdbfe;color:#1e3a8a;}
+.notice-success{background:var(--success-bg);border-color:#bbf7d0;color:#14532d;}
+
+.quick-shell{
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:var(--card);
+  box-shadow:var(--shadow);
+}
+.quick-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  padding:15px 18px;
+  border-bottom:1px solid var(--border);
+  background:var(--soft);
+}
+.quick-head h2{margin:0 0 3px;font-size:1.15rem;}
+.quick-head p{margin:0;color:var(--muted);font-size:.82rem;}
+.quick-body{padding:18px;}
+
+.input-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0;}
+.field.full{grid-column:1/-1;}
+label{font-size:.76rem;font-weight:700;color:#334155;}
+.help{font-size:.68rem;color:var(--muted);line-height:1.32;}
+input,select{
+  width:100%;
+  min-height:39px;
+  padding:8px 9px;
+  border:1px solid #cbd5e1;
+  border-radius:9px;
+  outline:none;
+  background:#fff;
+  color:var(--text);
+}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(15,118,110,.12);
+  outline:none;
+}
+
+.section-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:16px 0 9px;
+  padding-top:13px;
+  border-top:1px solid var(--border);
+}
+.section-bar h3{margin:0;font-size:.92rem;}
+.section-bar span{font-size:.72rem;color:var(--muted);}
+
+.button-row{
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  gap:8px;
+  margin-top:15px;
+}
+.btn{
+  min-height:42px;
+  padding:9px 14px;
+  border:0;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-secondary{background:#e2e8f0;color:#334155;}
+.btn-outline{border:1px solid var(--accent);background:#fff;color:var(--accent);}
+
+.advanced{
+  margin-top:13px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:11px;
+}
+.advanced summary{
+  padding:10px 12px;
+  cursor:pointer;
+  background:#f8fafc;
+  color:#334155;
+  font-weight:700;
+}
+.advanced-body{padding:12px;}
+.check-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px 12px;
+}
+.check-item{
+  display:flex;
+  align-items:flex-start;
+  gap:7px;
+  font-size:.73rem;
+  color:#334155;
+}
+.check-item input{width:auto;min-height:0;margin-top:3px;}
+
+#results{margin-top:16px;scroll-margin-top:10px;}
+.empty{
+  padding:20px;
+  border:1px dashed #94a3b8;
+  border-radius:12px;
+  background:#f8fafc;
+  color:var(--muted);
+  text-align:center;
+}
+
+.quick-strip{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:8px;
+  margin-bottom:10px;
+}
+.metric{
+  min-width:0;
+  padding:10px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  background:#fff;
+}
+.metric .label{
+  color:var(--muted);
+  font-size:.66rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.metric .value{
+  overflow-wrap:anywhere;
+  margin-top:2px;
+  color:var(--accent-dark);
+  font-size:.93rem;
+  font-weight:800;
+}
+.metric .sub{margin-top:2px;color:var(--muted);font-size:.67rem;}
+
+.output-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.output-card{
+  min-width:0;
+  padding:13px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  background:#fff;
+}
+.output-card.full{grid-column:1/-1;}
+.output-card h3{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin:0 0 8px;
+  color:var(--accent);
+  font-size:.9rem;
+}
+.output-card h4{margin:10px 0 4px;color:#334155;font-size:.78rem;}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding:2px 7px;
+  border-radius:999px;
+  background:var(--soft);
+  color:var(--accent-dark);
+  font-size:.63rem;
+  font-weight:700;
+  white-space:nowrap;
+}
+.primary-line{
+  margin:6px 0;
+  padding:9px 10px;
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  background:var(--soft);
+}
+.primary-line .big{color:var(--accent-dark);font-size:1rem;font-weight:800;}
+.primary-line .detail{margin-top:2px;color:#475569;font-size:.72rem;}
+.alt{
+  margin-top:6px;
+  padding:7px 8px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:#f8fafc;
+  font-size:.75rem;
+}
+.alt strong{color:#334155;}
+.warning-line,.caution-line,.good-line,.info-line{
+  margin:6px 0;
+  padding:8px 9px;
+  border-left:4px solid;
+  border-radius:8px;
+  font-size:.74rem;
+}
+.warning-line{border-color:var(--danger);background:var(--danger-bg);color:#7f1d1d;font-weight:600;}
+.caution-line{border-color:#f97316;background:var(--warn-bg);color:#7c2d12;}
+.good-line{border-color:var(--success);background:var(--success-bg);color:#14532d;}
+.info-line{border-color:var(--blue);background:var(--soft-blue);color:#1e3a8a;}
+.output-card ul{margin:6px 0 0;padding-left:17px;font-size:.75rem;}
+.output-card li{margin:3px 0;}
+.small{color:var(--muted);font-size:.7rem;}
+
+.note-box{
+  width:100%;
+  min-height:230px;
+  resize:vertical;
+  padding:10px;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  background:#f8fafc;
+  color:#0f172a;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.74rem;
+  line-height:1.45;
+}
+
+.details-section{
+  margin-top:16px;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:#fff;
+  box-shadow:0 6px 20px rgba(15,23,42,.045);
+}
+.details-section h2{margin:0 0 11px;font-size:1.2rem;}
+.details-section h3{margin:16px 0 6px;font-size:.95rem;}
+.details-section p{margin:7px 0;}
+.details-section ul{margin:7px 0;padding-left:20px;}
+.details-section li{margin:4px 0;}
+.formula{
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  margin:11px auto;
+  padding:9px 13px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  background:#f1f5f9;
+  font-weight:800;
+  text-align:center;
+}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.78rem;}
+th,td{padding:8px;border:1px solid var(--border);text-align:left;vertical-align:top;}
+th{background:#f8fafc;color:#334155;}
+.footer{padding:22px 0 5px;color:var(--muted);font-size:.78rem;text-align:center;}
+
+@media(max-width:1000px){
+  .input-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .quick-strip{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .output-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:700px){
+  .container{width:min(100% - 14px,1180px);padding-top:12px;}
+  .article-header,.quick-body,.details-section{padding:14px;}
+  .quick-head{padding:13px 14px;}
+  .input-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .quick-strip{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .output-grid{grid-template-columns:1fr;}
+  .output-card.full{grid-column:auto;}
+  .button-row{grid-template-columns:1fr 1fr;}
+  .button-row .btn-primary{grid-column:1/-1;}
+  .check-grid{grid-template-columns:1fr;}
+}
+@media(max-width:450px){
+  .input-grid,.quick-strip{grid-template-columns:1fr;}
+  .quick-head{display:block;}
+  .button-row{grid-template-columns:1fr;}
+  .button-row .btn-primary{grid-column:auto;}
+}
+@media print{
+  body{background:#fff;}
+  #reading-progress,.home-btn,.back-home,.button-row,.advanced,.footer{display:none!important;}
+  .container{width:100%;padding:0;}
+  .article-header,.quick-shell,.details-section,.output-card{box-shadow:none;break-inside:avoid;}
+}
+</style>
+</head>
+
+<body>
+<div id="reading-progress"></div>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+  <div class="article-breadcrumb">Learn Medicine › Nephrology / Critical Care › Calculator</div>
+  <h1>Acid–Base, Anion Gap and Compensation Calculator</h1>
+  <div class="article-meta">Added July 13, 2026 • Adult bedside interpretation helper</div>
+  <p class="article-summary">
+    Enter the blood-gas and chemistry values once. The calculator identifies the dominant acid–base process, checks expected compensation, calculates the raw and albumin-corrected anion gap, performs delta analysis, evaluates optional osmolar and urine anion gaps, interprets arterial oxygenation, and generates a structured note. Detailed teaching remains below the quick calculator.
+  </p>
+</header>
+
+<div class="notice notice-danger">
+  <strong>Clinical safety:</strong> Educational decision support only. Confirm whether values came from the same time point and whether bicarbonate is from a blood gas or serum chemistry. A venous gas can often support pH and bicarbonate assessment, but venous PCO₂ is not interchangeable with arterial PCO₂, and venous PO₂ must not be used to assess oxygenation.
+</div>
+
+<section class="quick-shell">
+  <div class="quick-head">
+    <div>
+      <h2>Quick Acid–Base Interpretation</h2>
+      <p>Core inputs: sample type, pH, PCO₂, blood-gas HCO₃⁻, sodium, chloride, and preferably serum total CO₂/HCO₃⁻.</p>
+    </div>
+    <span class="tag">All calculations stay on this page</span>
+  </div>
+
+  <div class="quick-body">
+
+    <div class="section-bar" style="margin-top:0;padding-top:0;border-top:0;">
+      <h3>1. Blood gas and basic chemistry</h3>
+      <span>Use values drawn as close together as possible</span>
+    </div>
+
+    <div class="input-grid">
+      <div class="field">
+        <label for="sampleType">Sample type</label>
+        <select id="sampleType">
+          <option value="arterial">Arterial blood gas</option>
+          <option value="venous">Venous blood gas</option>
+          <option value="unknown">Not specified</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="pH">pH</label>
+        <input id="pH" type="number" min="6.6" max="7.8" step="0.001" placeholder="e.g., 7.25">
+      </div>
+
+      <div class="field">
+        <label for="pco2">PCO₂ (mmHg)</label>
+        <input id="pco2" type="number" min="5" max="160" step="0.1" placeholder="e.g., 28">
+      </div>
+
+      <div class="field">
+        <label for="gasHco3">Blood-gas HCO₃⁻ (mEq/L)</label>
+        <input id="gasHco3" type="number" min="2" max="60" step="0.1" placeholder="e.g., 12">
+      </div>
+
+      <div class="field">
+        <label for="na">Na⁺ (mEq/L)</label>
+        <input id="na" type="number" min="90" max="190" step="0.1" placeholder="e.g., 140">
+      </div>
+
+      <div class="field">
+        <label for="cl">Cl⁻ (mEq/L)</label>
+        <input id="cl" type="number" min="50" max="150" step="0.1" placeholder="e.g., 100">
+      </div>
+
+      <div class="field">
+        <label for="bmpHco3">Serum total CO₂/HCO₃⁻ (mEq/L)</label>
+        <input id="bmpHco3" type="number" min="2" max="60" step="0.1" placeholder="preferred for AG">
+        <div class="help">If blank, the blood-gas bicarbonate is used for AG calculations.</div>
+      </div>
+
+      <div class="field">
+        <label for="albumin">Albumin (g/dL)</label>
+        <input id="albumin" type="number" min="0.5" max="6.5" step="0.1" placeholder="e.g., 2.5">
+      </div>
+
+      <div class="field">
+        <label for="normalAg">Lab upper-normal AG</label>
+        <input id="normalAg" type="number" min="4" max="20" step="0.1" value="12">
+        <div class="help">Use your laboratory's reference value without potassium.</div>
+      </div>
+
+      <div class="field">
+        <label for="serumK">K⁺ (mEq/L)</label>
+        <input id="serumK" type="number" min="1" max="10" step="0.1" placeholder="optional">
+      </div>
+
+      <div class="field">
+        <label for="creatinine">Creatinine (mg/dL)</label>
+        <input id="creatinine" type="number" min="0.1" max="30" step="0.1" placeholder="optional">
+      </div>
+
+      <div class="field">
+        <label for="lactate">Lactate (mmol/L)</label>
+        <input id="lactate" type="number" min="0" max="40" step="0.1" placeholder="optional">
+      </div>
+
+      <div class="field">
+        <label for="betaHydroxy">β-Hydroxybutyrate (mmol/L)</label>
+        <input id="betaHydroxy" type="number" min="0" max="20" step="0.1" placeholder="optional">
+      </div>
+    </div>
+
+    <div class="section-bar">
+      <h3>2. Optional targeted calculations</h3>
+      <span>Complete only when clinically relevant</span>
+    </div>
+
+    <div class="input-grid">
+      <div class="field">
+        <label for="glucose">Glucose (mg/dL)</label>
+        <input id="glucose" type="number" min="20" max="2000" step="1" placeholder="for osmolar gap">
+      </div>
+
+      <div class="field">
+        <label for="bun">BUN (mg/dL)</label>
+        <input id="bun" type="number" min="1" max="300" step="1" placeholder="for osmolar gap">
+      </div>
+
+      <div class="field">
+        <label for="measuredOsm">Measured serum osmolality</label>
+        <input id="measuredOsm" type="number" min="200" max="500" step="1" placeholder="mOsm/kg">
+      </div>
+
+      <div class="field">
+        <label for="ethanol">Ethanol (mg/dL)</label>
+        <input id="ethanol" type="number" min="0" max="700" step="1" placeholder="0 if absent">
+      </div>
+
+      <div class="field">
+        <label for="urineNa">Urine Na⁺ (mEq/L)</label>
+        <input id="urineNa" type="number" min="0" max="300" step="0.1" placeholder="for urine AG">
+      </div>
+
+      <div class="field">
+        <label for="urineK">Urine K⁺ (mEq/L)</label>
+        <input id="urineK" type="number" min="0" max="300" step="0.1" placeholder="for urine AG">
+      </div>
+
+      <div class="field">
+        <label for="urineCl">Urine Cl⁻ (mEq/L)</label>
+        <input id="urineCl" type="number" min="0" max="350" step="0.1" placeholder="for urine AG">
+      </div>
+
+      <div class="field">
+        <label for="urinePH">Urine pH</label>
+        <input id="urinePH" type="number" min="4" max="9" step="0.1" placeholder="optional">
+      </div>
+
+      <div class="field">
+        <label for="po2">PaO₂ (mmHg)</label>
+        <input id="po2" type="number" min="20" max="700" step="1" placeholder="arterial only">
+      </div>
+
+      <div class="field">
+        <label for="fio2">FiO₂ (%)</label>
+        <input id="fio2" type="number" min="21" max="100" step="1" placeholder="e.g., 40">
+      </div>
+    </div>
+
+    <details class="advanced">
+      <summary>Optional clinical clues: GOLDMARK and NAGMA checklist</summary>
+      <div class="advanced-body">
+        <div class="section-bar" style="margin-top:0;padding-top:0;border-top:0;">
+          <h3>High anion gap clues</h3>
+          <span>Select suspected or confirmed contributors</span>
+        </div>
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox" id="gGlycols">Glycols: ethylene glycol or propylene glycol exposure</label>
+          <label class="check-item"><input type="checkbox" id="gOxoproline">Oxoproline: chronic acetaminophen, malnutrition, critical illness</label>
+          <label class="check-item"><input type="checkbox" id="gLactate">L-lactate: shock, sepsis, hypoxia, seizure, ischemia</label>
+          <label class="check-item"><input type="checkbox" id="gDLactate">D-lactate: short bowel or intestinal bypass</label>
+          <label class="check-item"><input type="checkbox" id="gMethanol">Methanol exposure or visual symptoms</label>
+          <label class="check-item"><input type="checkbox" id="gSalicylate">Salicylate exposure, tinnitus, nausea, tachypnea</label>
+          <label class="check-item"><input type="checkbox" id="gRenal">Advanced kidney failure or uremia</label>
+          <label class="check-item"><input type="checkbox" id="gKeto">Diabetic, alcoholic, starvation, or SGLT2-associated ketoacidosis</label>
+        </div>
+
+        <div class="section-bar">
+          <h3>Normal anion gap clues</h3>
+          <span>Select suspected or confirmed contributors</span>
+        </div>
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox" id="nDiarrhea">Diarrhea, enteric fistula, or other GI bicarbonate loss</label>
+          <label class="check-item"><input type="checkbox" id="nRta">Renal tubular acidosis or hypoaldosteronism</label>
+          <label class="check-item"><input type="checkbox" id="nChloride">Large chloride load or normal-saline resuscitation</label>
+          <label class="check-item"><input type="checkbox" id="nAcetazolamide">Acetazolamide or other carbonic-anhydrase inhibition</label>
+          <label class="check-item"><input type="checkbox" id="nDiversion">Ureteral diversion, ileal conduit, or neobladder</label>
+          <label class="check-item"><input type="checkbox" id="nDrainage">Pancreatic or biliary drainage</label>
+        </div>
+      </div>
+    </details>
+
+    <div class="button-row">
+      <button class="btn btn-primary" type="button" onclick="calculateAll()">Calculate Complete Interpretation</button>
+      <button class="btn btn-secondary" type="button" onclick="fillExample()">Fill Mixed-Disorder Example</button>
+      <button class="btn btn-secondary" type="button" onclick="resetCalculator()">Reset</button>
+      <button class="btn btn-outline" type="button" onclick="window.print()">Print</button>
+    </div>
+
+    <div id="results">
+      <div class="empty">Enter the blood-gas and chemistry values, then calculate.</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="details-section">
+  <h2>How the Calculator Interprets Acid–Base Disorders</h2>
+
+  <h3>1. Confirm the sample and internal consistency</h3>
+  <p>
+    Venous pH and bicarbonate often approximate arterial values sufficiently for many metabolic assessments, but venous PCO₂ has wider disagreement with arterial PCO₂. Exact respiratory-compensation assessment may therefore require an ABG when the clinical decision depends on the arterial carbon-dioxide level. PaO₂ and the PaO₂/FiO₂ ratio require an arterial sample.
+  </p>
+  <p>
+    The calculator also reconstructs bicarbonate from the Henderson–Hasselbalch relationship. A large difference from the reported blood-gas bicarbonate suggests values from different time points, transcription error, or a measurement/calculation discrepancy.
+  </p>
+
+  <div class="formula">Calculated HCO₃⁻ = 0.03 × PCO₂ × 10<sup>(pH − 6.1)</sup></div>
+
+  <h3>2. Determine the dominant process</h3>
+  <table>
+    <thead>
+      <tr><th>pH direction</th><th>HCO₃⁻ direction</th><th>PCO₂ direction</th><th>Likely process</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Acidemia</td><td>Low</td><td>Not primarily high</td><td>Metabolic acidosis</td></tr>
+      <tr><td>Acidemia</td><td>Not primarily low</td><td>High</td><td>Respiratory acidosis</td></tr>
+      <tr><td>Acidemia</td><td>Low</td><td>High</td><td>Combined metabolic and respiratory acidosis</td></tr>
+      <tr><td>Alkalemia</td><td>High</td><td>Not primarily low</td><td>Metabolic alkalosis</td></tr>
+      <tr><td>Alkalemia</td><td>Not primarily high</td><td>Low</td><td>Respiratory alkalosis</td></tr>
+      <tr><td>Alkalemia</td><td>High</td><td>Low</td><td>Combined metabolic and respiratory alkalosis</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3. Check expected compensation</h3>
+  <table>
+    <thead>
+      <tr><th>Primary disorder</th><th>Expected compensation used</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Metabolic acidosis</td><td>Expected PCO₂ = 1.5 × HCO₃⁻ + 8 ± 2</td></tr>
+      <tr><td>Metabolic alkalosis</td><td>Expected PCO₂ = 40 + 0.7 × (HCO₃⁻ − 24), approximately ±5</td></tr>
+      <tr><td>Acute respiratory acidosis</td><td>HCO₃⁻ rises about 1 mEq/L per 10-mmHg rise in PCO₂</td></tr>
+      <tr><td>Chronic respiratory acidosis</td><td>HCO₃⁻ rises about 3.5–4 mEq/L per 10-mmHg rise in PCO₂</td></tr>
+      <tr><td>Acute respiratory alkalosis</td><td>HCO₃⁻ falls about 2 mEq/L per 10-mmHg fall in PCO₂</td></tr>
+      <tr><td>Chronic respiratory alkalosis</td><td>HCO₃⁻ falls about 4–5 mEq/L per 10-mmHg fall in PCO₂</td></tr>
+    </tbody>
+  </table>
+
+  <h3>4. Calculate and correct the anion gap</h3>
+  <div class="formula">AG = Na⁺ − (Cl⁻ + serum HCO₃⁻)</div>
+  <div class="formula">Albumin-corrected AG = AG + 2.5 × (4 − albumin)</div>
+  <p>
+    The normal anion gap varies by analyzer and laboratory. This calculator therefore asks for the laboratory's upper-normal AG rather than assuming that every value above a fixed universal number is abnormal. Serum chemistry total CO₂ is preferred for the AG because it was measured with sodium and chloride on the same panel.
+  </p>
+
+  <h3>5. Use delta analysis cautiously</h3>
+  <div class="formula">ΔAG = corrected AG − lab normal AG</div>
+  <div class="formula">ΔHCO₃⁻ = 24 − serum HCO₃⁻</div>
+  <div class="formula">Delta ratio = ΔAG ÷ ΔHCO₃⁻</div>
+  <p>
+    A ratio below approximately 0.8 supports an additional normal-gap acidosis; a ratio around 0.8–2 can fit an isolated high-gap acidosis; and a ratio above 2 raises concern for concurrent metabolic alkalosis or chronic respiratory acidosis. These are approximate teaching ranges, not absolute diagnostic boundaries. Baseline AG, timing, renal handling of organic anions, and treatment can materially change the ratio.
+  </p>
+
+  <h3>6. Interpret optional osmolar and urine anion gaps in context</h3>
+  <div class="formula">Calculated osmolality = 2 × Na + glucose/18 + BUN/2.8 + ethanol/4.6</div>
+  <div class="formula">Urine AG = urine Na + urine K − urine Cl</div>
+  <ul>
+    <li>An osmolar gap above approximately 10 mOsm/kg is often considered elevated, but the reference range and formula vary. A normal gap does not exclude a late toxic-alcohol presentation.</li>
+    <li>In NAGMA, a clearly negative urine AG supports appropriate ammonium excretion and often an extrarenal bicarbonate loss such as diarrhea.</li>
+    <li>A positive urine AG may support impaired renal acid excretion, but interpretation is unreliable with low distal sodium delivery, unusual urinary anions, ketoacid excretion, or recent treatment.</li>
+  </ul>
+
+  <h3>References</h3>
+  <ol>
+    <li>Bloom BM, Grundlingh J, Bestwick JP, Harris T. The role of venous blood gas in the emergency department. Eur J Emerg Med. 2014.</li>
+    <li>Byrne AL, Bennett M, Chatterji R, et al. Peripheral venous and arterial blood gas analysis in adults: are they comparable? Respirology. 2014.</li>
+    <li>Chawla LS, Shih S, Davison D, et al. Anion gap, anion gap corrected for albumin, base deficit and unmeasured ions in critically ill patients. BMC Emerg Med. 2008.</li>
+    <li>Kraut JA, Madias NE. Serum anion gap: its uses and limitations in clinical medicine. Clin J Am Soc Nephrol. 2007.</li>
+    <li>Reddy P, Mooradian AD. Clinical utility of anion gap in deciphering acid-base disorders. Int J Clin Pract. 2009.</li>
+    <li>Rastegar A. Use of the delta AG/delta HCO₃ ratio in the diagnosis of mixed acid-base disorders. J Am Soc Nephrol. 2007.</li>
+  </ol>
+</section>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+
+<footer class="footer">Learn Medicine • Acid–Base, Anion Gap and Compensation Calculator</footer>
+
+</div>
+
+<script>
+'use strict';
+
+function n(id){
+  const value = parseFloat(document.getElementById(id).value);
+  return Number.isFinite(value) ? value : null;
+}
+
+function fmt(value,digits=1){
+  if(!Number.isFinite(value)) return '—';
+  return value.toFixed(digits).replace(/\.0$/,'');
+}
+
+function escapeHtml(value){
+  return String(value)
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'",'&#039;');
+}
+
+function getChecked(ids){
+  return ids.filter(id => document.getElementById(id).checked);
+}
+
+function determinePrimary(pH,pco2,hco3){
+  const acidemia = pH < 7.35;
+  const alkalemia = pH > 7.45;
+  const lowHco3 = hco3 < 22;
+  const highHco3 = hco3 > 26;
+  const highCo2 = pco2 > 45;
+  const lowCo2 = pco2 < 35;
+
+  if(acidemia){
+    if(lowHco3 && highCo2){
+      return {name:'Combined metabolic and respiratory acidosis',type:'mixed-acidosis'};
+    }
+    if(lowHco3){
+      return {name:'Metabolic acidosis',type:'metabolic-acidosis'};
+    }
+    if(highCo2){
+      return {name:'Respiratory acidosis',type:'respiratory-acidosis'};
+    }
+    return {name:'Acidemia with an indeterminate or evolving mixed process',type:'indeterminate'};
+  }
+
+  if(alkalemia){
+    if(highHco3 && lowCo2){
+      return {name:'Combined metabolic and respiratory alkalosis',type:'mixed-alkalosis'};
+    }
+    if(highHco3){
+      return {name:'Metabolic alkalosis',type:'metabolic-alkalosis'};
+    }
+    if(lowCo2){
+      return {name:'Respiratory alkalosis',type:'respiratory-alkalosis'};
+    }
+    return {name:'Alkalemia with an indeterminate or evolving mixed process',type:'indeterminate'};
+  }
+
+  if(lowHco3 && highCo2){
+    return {name:'Mixed metabolic and respiratory acidosis with near-normal pH',type:'mixed-acidosis'};
+  }
+  if(highHco3 && lowCo2){
+    return {name:'Mixed metabolic and respiratory alkalosis with near-normal pH',type:'mixed-alkalosis'};
+  }
+
+  if(lowHco3 && lowCo2){
+    const winter = 1.5*hco3 + 8;
+    const respAcute = 24 - 2*((40-pco2)/10);
+    const respChronic = 24 - 4*((40-pco2)/10);
+    const metabolicDistance = Math.abs(pco2-winter);
+    const respiratoryDistance = Math.min(Math.abs(hco3-respAcute),Math.abs(hco3-respChronic));
+    if(pH < 7.40 || metabolicDistance < respiratoryDistance){
+      return {name:'Compensated metabolic acidosis or mixed low-HCO₃⁻/low-PCO₂ process',type:'metabolic-acidosis'};
+    }
+    return {name:'Compensated respiratory alkalosis or mixed low-HCO₃⁻/low-PCO₂ process',type:'respiratory-alkalosis'};
+  }
+
+  if(highHco3 && highCo2){
+    const metaExpected = 40 + 0.7*(hco3-24);
+    const respAcute = 24 + 1*((pco2-40)/10);
+    const respChronic = 24 + 3.5*((pco2-40)/10);
+    const metabolicDistance = Math.abs(pco2-metaExpected);
+    const respiratoryDistance = Math.min(Math.abs(hco3-respAcute),Math.abs(hco3-respChronic));
+    if(pH > 7.40 || metabolicDistance < respiratoryDistance){
+      return {name:'Compensated metabolic alkalosis or mixed high-HCO₃⁻/high-PCO₂ process',type:'metabolic-alkalosis'};
+    }
+    return {name:'Compensated respiratory acidosis or mixed high-HCO₃⁻/high-PCO₂ process',type:'respiratory-acidosis'};
+  }
+
+  return {name:'No major acid–base disorder identified from entered values',type:'normal'};
+}
+
+function compensation(primary,pco2,hco3){
+  const out = {summary:'Compensation not applicable or indeterminate.',details:[],mixed:false};
+
+  if(primary.type === 'metabolic-acidosis'){
+    const expected = 1.5*hco3 + 8;
+    const low = expected - 2;
+    const high = expected + 2;
+    out.details.push(`Winter expected PCO₂ ${fmt(expected,1)} mmHg; expected range ${fmt(low,1)}–${fmt(high,1)}.`);
+    if(pco2 > high){
+      out.summary = 'PCO₂ is above Winter range: additional respiratory acidosis.';
+      out.mixed = true;
+    }else if(pco2 < low){
+      out.summary = 'PCO₂ is below Winter range: additional respiratory alkalosis.';
+      out.mixed = true;
+    }else{
+      out.summary = 'Respiratory compensation is within the Winter range.';
+    }
+  }
+
+  if(primary.type === 'metabolic-alkalosis'){
+    const expected = 40 + 0.7*(hco3-24);
+    const low = expected - 5;
+    const high = expected + 5;
+    out.details.push(`Expected PCO₂ ${fmt(expected,1)} mmHg; approximate range ${fmt(low,1)}–${fmt(high,1)}.`);
+    if(pco2 > high){
+      out.summary = 'PCO₂ is above the expected range: additional respiratory acidosis.';
+      out.mixed = true;
+    }else if(pco2 < low){
+      out.summary = 'PCO₂ is below the expected range: additional respiratory alkalosis.';
+      out.mixed = true;
+    }else{
+      out.summary = 'Respiratory compensation is within the expected range.';
+    }
+  }
+
+  if(primary.type === 'respiratory-acidosis'){
+    const delta = Math.max(0,pco2-40)/10;
+    const acute = 24 + delta;
+    const chronic = 24 + 3.5*delta;
+    const da = Math.abs(hco3-acute);
+    const dc = Math.abs(hco3-chronic);
+    out.details.push(`Expected HCO₃⁻ if acute: ${fmt(acute,1)} mEq/L.`);
+    out.details.push(`Expected HCO₃⁻ if chronic: approximately ${fmt(chronic,1)} mEq/L.`);
+    if(Math.min(da,dc) <= 3){
+      out.summary = da <= dc ? 'Pattern is closer to acute respiratory acidosis.' : 'Pattern is closer to chronic respiratory acidosis.';
+    }else{
+      out.summary = 'HCO₃⁻ is not close to acute or chronic expectations: an additional metabolic process is likely.';
+      out.mixed = true;
+    }
+  }
+
+  if(primary.type === 'respiratory-alkalosis'){
+    const delta = Math.max(0,40-pco2)/10;
+    const acute = 24 - 2*delta;
+    const chronic = 24 - 4*delta;
+    const da = Math.abs(hco3-acute);
+    const dc = Math.abs(hco3-chronic);
+    out.details.push(`Expected HCO₃⁻ if acute: ${fmt(acute,1)} mEq/L.`);
+    out.details.push(`Expected HCO₃⁻ if chronic: approximately ${fmt(chronic,1)} mEq/L.`);
+    if(Math.min(da,dc) <= 3){
+      out.summary = da <= dc ? 'Pattern is closer to acute respiratory alkalosis.' : 'Pattern is closer to chronic respiratory alkalosis.';
+    }else{
+      out.summary = 'HCO₃⁻ is not close to acute or chronic expectations: an additional metabolic process is likely.';
+      out.mixed = true;
+    }
+  }
+
+  if(primary.type === 'mixed-acidosis'){
+    out.summary = 'Both metabolic and respiratory components are acidifying; compensation alone cannot explain the pattern.';
+    out.mixed = true;
+  }
+
+  if(primary.type === 'mixed-alkalosis'){
+    out.summary = 'Both metabolic and respiratory components are alkalinizing; compensation alone cannot explain the pattern.';
+    out.mixed = true;
+  }
+
+  return out;
+}
+
+function severityLabel(pH){
+  if(pH < 7.10) return {label:'Severe acidemia',className:'warning-line'};
+  if(pH < 7.20) return {label:'Marked acidemia',className:'warning-line'};
+  if(pH < 7.35) return {label:'Acidemia',className:'caution-line'};
+  if(pH <= 7.45) return {label:'pH in reference range',className:'good-line'};
+  if(pH <= 7.55) return {label:'Alkalemia',className:'caution-line'};
+  return {label:'Marked alkalemia',className:'warning-line'};
+}
+
+function agInterpretation(agCorrected,normalAg){
+  const difference = agCorrected-normalAg;
+  if(difference > 4) return 'Clearly elevated corrected anion gap';
+  if(difference > 0) return 'Mildly elevated corrected anion gap';
+  if(agCorrected < normalAg-4) return 'Low anion gap';
+  return 'Corrected anion gap within the entered laboratory range';
+}
+
+function deltaInterpretation(deltaAg,deltaHco3,ratio){
+  if(deltaAg <= 0 || deltaHco3 <= 0 || !Number.isFinite(ratio)){
+    return 'Delta ratio is not clinically interpretable because a meaningful high-gap acidosis or bicarbonate deficit is not present.';
+  }
+  if(ratio < 0.4) return 'Very low delta ratio: predominant normal-gap acidosis or substantial additional NAGMA.';
+  if(ratio < 0.8) return 'Delta ratio below 0.8: mixed high-gap and normal-gap metabolic acidosis is likely.';
+  if(ratio <= 2) return 'Delta ratio approximately 0.8–2: compatible with a predominantly high-gap metabolic acidosis.';
+  return 'Delta ratio above 2: consider concurrent metabolic alkalosis or chronic respiratory acidosis.';
+}
+
+function causeLabels(ids){
+  const map = {
+    gGlycols:'Glycols',gOxoproline:'Oxoproline',gLactate:'L-lactate',gDLactate:'D-lactate',
+    gMethanol:'Methanol',gSalicylate:'Salicylates',gRenal:'Renal failure',gKeto:'Ketoacidosis',
+    nDiarrhea:'GI bicarbonate loss',nRta:'Renal tubular acidosis / hypoaldosteronism',
+    nChloride:'Chloride load',nAcetazolamide:'Carbonic-anhydrase inhibition',
+    nDiversion:'Urinary diversion',nDrainage:'Pancreatic or biliary drainage'
+  };
+  return ids.map(id => map[id]);
+}
+
+function calculateAll(){
+  const sampleType = document.getElementById('sampleType').value;
+  const pH = n('pH');
+  const pco2 = n('pco2');
+  const gasHco3 = n('gasHco3');
+  const na = n('na');
+  const cl = n('cl');
+  const bmpHco3Entered = n('bmpHco3');
+  const albumin = n('albumin');
+  const normalAg = n('normalAg');
+  const results = document.getElementById('results');
+
+  if([pH,pco2,gasHco3,na,cl,normalAg].some(v => v === null)){
+    results.innerHTML = `<div class="notice notice-danger"><strong>Missing core data.</strong> Enter pH, PCO₂, blood-gas HCO₃⁻, sodium, chloride, and the laboratory upper-normal anion gap.</div>`;
+    return;
+  }
+
+  const bmpHco3 = bmpHco3Entered ?? gasHco3;
+  const primary = determinePrimary(pH,pco2,gasHco3);
+  const comp = compensation(primary,pco2,gasHco3);
+  const severity = severityLabel(pH);
+
+  const calculatedGasHco3 = 0.03*pco2*Math.pow(10,pH-6.1);
+  const gasDifference = Math.abs(calculatedGasHco3-gasHco3);
+
+  const ag = na-(cl+bmpHco3);
+  const correctedAg = albumin !== null ? ag + 2.5*(4-albumin) : ag;
+  const agLabel = agInterpretation(correctedAg,normalAg);
+  const deltaAg = correctedAg-normalAg;
+  const deltaHco3 = 24-bmpHco3;
+  const deltaRatio = deltaHco3 > 0 ? deltaAg/deltaHco3 : null;
+  const deltaGap = deltaAg-deltaHco3;
+  const deltaText = deltaInterpretation(deltaAg,deltaHco3,deltaRatio);
+
+  const serumK = n('serumK');
+  const creatinine = n('creatinine');
+  const lactate = n('lactate');
+  const betaHydroxy = n('betaHydroxy');
+  const glucose = n('glucose');
+  const bun = n('bun');
+  const measuredOsm = n('measuredOsm');
+  const ethanol = n('ethanol') ?? 0;
+  const urineNa = n('urineNa');
+  const urineK = n('urineK');
+  const urineCl = n('urineCl');
+  const urinePH = n('urinePH');
+  const po2 = n('po2');
+  const fio2 = n('fio2');
+
+  let calculatedOsm = null;
+  let osmGap = null;
+  if(glucose !== null && bun !== null){
+    calculatedOsm = 2*na + glucose/18 + bun/2.8 + ethanol/4.6;
+    if(measuredOsm !== null) osmGap = measuredOsm-calculatedOsm;
+  }
+
+  let urineAg = null;
+  if(urineNa !== null && urineK !== null && urineCl !== null){
+    urineAg = urineNa+urineK-urineCl;
+  }
+
+  let pfRatio = null;
+  if(sampleType === 'arterial' && po2 !== null && fio2 !== null){
+    pfRatio = po2/(fio2/100);
+  }
+
+  const goldIds = getChecked(['gGlycols','gOxoproline','gLactate','gDLactate','gMethanol','gSalicylate','gRenal','gKeto']);
+  const nagmaIds = getChecked(['nDiarrhea','nRta','nChloride','nAcetazolamide','nDiversion','nDrainage']);
+  const goldCauses = causeLabels(goldIds);
+  const nagmaCauses = causeLabels(nagmaIds);
+
+  if(lactate !== null && lactate > 2 && !goldCauses.includes('L-lactate')) goldCauses.push(`L-lactate measured at ${fmt(lactate,1)} mmol/L`);
+  if(betaHydroxy !== null && betaHydroxy > 0.6 && !goldCauses.includes('Ketoacidosis')) goldCauses.push(`Elevated β-hydroxybutyrate ${fmt(betaHydroxy,1)} mmol/L`);
+  if(creatinine !== null && creatinine >= 3 && !goldCauses.includes('Renal failure')) goldCauses.push(`Kidney dysfunction may contribute; creatinine ${fmt(creatinine,1)} mg/dL`);
+  if(osmGap !== null && osmGap > 10) goldCauses.push(`Elevated osmolar gap ${fmt(osmGap,1)} mOsm/kg: evaluate toxic alcohols and other osmoles`);
+
+  const warnings = [];
+  const recommendations = [];
+
+  if(sampleType === 'venous'){
+    warnings.push('VBG selected: pH and bicarbonate are often clinically useful, but exact PCO₂ compensation and oxygenation assessment may require an ABG.');
+  }
+  if(sampleType !== 'arterial' && po2 !== null){
+    warnings.push('Do not interpret a venous or unspecified PO₂ as arterial oxygenation.');
+  }
+  if(gasDifference > 3){
+    warnings.push(`Henderson–Hasselbalch calculated HCO₃⁻ is ${fmt(calculatedGasHco3,1)} mEq/L, differing from the entered gas HCO₃⁻ by ${fmt(gasDifference,1)}. Recheck timing, sample, and transcription.`);
+  }
+  if(bmpHco3Entered !== null && Math.abs(bmpHco3Entered-gasHco3) > 3){
+    warnings.push(`Serum total CO₂/HCO₃⁻ differs from blood-gas HCO₃⁻ by ${fmt(Math.abs(bmpHco3Entered-gasHco3),1)} mEq/L. Verify that values were contemporaneous.`);
+  }
+  if(pH < 7.10 || pH > 7.60){
+    warnings.push('Extreme pH derangement: prioritize airway, breathing, circulation, hemodynamic stabilization, and immediate treatment of the cause.');
+  }
+  if(primary.type === 'metabolic-acidosis' || primary.type === 'mixed-acidosis'){
+    recommendations.push('Treat the underlying metabolic-acidosis driver; obtain or review lactate, ketones, renal function, medication/toxin exposure, and perfusion status.');
+  }
+  if(correctedAg > normalAg){
+    recommendations.push('High-gap pathway: review GOLDMARK causes and calculate an osmolar gap when toxic alcohol exposure is possible.');
+  }else if(bmpHco3 < 22){
+    recommendations.push('Normal-gap pathway: evaluate GI bicarbonate loss, renal tubular acidosis, chloride load, medications, and urinary acidification.');
+  }
+  if(comp.mixed){
+    recommendations.push('A mixed disorder is present or strongly suspected; avoid describing the process as simple compensation.');
+  }
+  if(urineAg !== null){
+    if(urineAg < -20){
+      recommendations.push('A clearly negative urine AG supports preserved ammonium excretion and often an extrarenal bicarbonate loss, provided urine sodium delivery is adequate.');
+    }else if(urineAg > 0){
+      recommendations.push('A positive urine AG may support impaired renal ammonium excretion/RTA, but confirm the clinical context and recognize important limitations.');
+    }else{
+      recommendations.push('Urine AG is indeterminate; integrate urine pH, serum potassium, kidney function, and urine sodium delivery.');
+    }
+  }
+  if(bmpHco3 < 22 && serumK !== null){
+    if(serumK > 5) recommendations.push('Hyperkalemic NAGMA pattern raises concern for type 4 RTA/hypoaldosteronism, kidney dysfunction, or medication effects.');
+    if(serumK < 3.5) recommendations.push('Hypokalemic NAGMA pattern supports GI bicarbonate loss or distal/proximal RTA, depending on urinary findings.');
+  }
+  if(urinePH !== null && bmpHco3 < 22 && urinePH > 5.5){
+    recommendations.push('Urine pH above 5.5 during systemic acidosis may support impaired distal acidification, but exclude UTI and low distal sodium delivery.');
+  }
+
+  const agSource = bmpHco3Entered !== null ? 'serum chemistry HCO₃⁻' : 'blood-gas HCO₃⁻ fallback';
+  const route = correctedAg > normalAg ? 'HAGMA pathway' : (bmpHco3 < 22 ? 'NAGMA pathway' : 'No metabolic-acidosis route');
+
+  const warningHtml = warnings.map(x => `<div class="warning-line">${escapeHtml(x)}</div>`).join('');
+  const recommendationHtml = recommendations.map(x => `<li>${escapeHtml(x)}</li>`).join('');
+  const compDetails = comp.details.map(x => `<li>${escapeHtml(x)}</li>`).join('');
+  const goldHtml = goldCauses.length ? goldCauses.map(x => `<li>${escapeHtml(x)}</li>`).join('') : '<li>No specific GOLDMARK clue selected or auto-detected.</li>';
+  const nagmaHtml = nagmaCauses.length ? nagmaCauses.map(x => `<li>${escapeHtml(x)}</li>`).join('') : '<li>No specific NAGMA clue selected.</li>';
+
+  let osmHtml = '<div class="alt">Enter glucose and BUN to calculate serum osmolality; add measured osmolality to obtain an osmolar gap.</div>';
+  if(calculatedOsm !== null){
+    osmHtml = `<div class="primary-line"><div class="big">Calculated osmolality ${fmt(calculatedOsm,1)} mOsm/kg</div><div class="detail">Includes ethanol contribution of ${fmt(ethanol,0)} mg/dL.</div></div>`;
+    if(osmGap !== null){
+      const ogClass = osmGap > 10 ? 'caution-line' : 'good-line';
+      osmHtml += `<div class="${ogClass}"><strong>Osmolar gap:</strong> ${fmt(osmGap,1)} mOsm/kg. ${osmGap > 10 ? 'Elevated by a commonly used teaching threshold; evaluate exposure and timing.' : 'Not elevated by the common >10 threshold, but this does not exclude late toxic-alcohol poisoning.'}</div>`;
+    }
+  }
+
+  let urineHtml = '<div class="alt">Enter urine sodium, potassium, and chloride to calculate the urine anion gap.</div>';
+  if(urineAg !== null){
+    const uagClass = urineAg < -20 ? 'good-line' : (urineAg > 0 ? 'caution-line' : 'info-line');
+    let uagText = 'Indeterminate range.';
+    if(urineAg < -20) uagText = 'Negative: supports appropriate ammonium excretion and often GI bicarbonate loss.';
+    if(urineAg > 0) uagText = 'Positive: may support impaired renal ammonium excretion/RTA.';
+    urineHtml = `<div class="${uagClass}"><strong>Urine AG:</strong> ${fmt(urineAg,1)} mEq/L. ${uagText}</div>`;
+  }
+
+  let oxygenHtml = '<div class="alt">PaO₂/FiO₂ is calculated only for an arterial sample with both values entered.</div>';
+  if(pfRatio !== null){
+    let category = 'Above 300.';
+    if(pfRatio <= 300 && pfRatio > 200) category = 'Mild ARDS-range oxygenation if other Berlin criteria are met.';
+    if(pfRatio <= 200 && pfRatio >= 100) category = 'Moderate ARDS-range oxygenation if other Berlin criteria are met.';
+    if(pfRatio < 100) category = 'Severe ARDS-range oxygenation if other Berlin criteria are met.';
+    oxygenHtml = `<div class="primary-line"><div class="big">P/F ratio ${fmt(pfRatio,0)}</div><div class="detail">${escapeHtml(category)} P/F alone does not diagnose ARDS.</div></div>`;
+  }
+
+  const note = buildNote({sampleType,pH,pco2,gasHco3,bmpHco3,bmpHco3Entered,na,cl,albumin,normalAg,primary,comp,severity,ag,correctedAg,agLabel,deltaAg,deltaHco3,deltaRatio,deltaGap,deltaText,calculatedGasHco3,gasDifference,lactate,betaHydroxy,creatinine,serumK,calculatedOsm,osmGap,urineAg,urinePH,pfRatio,goldCauses,nagmaCauses,warnings,recommendations,agSource,route});
+
+  results.innerHTML = `
+    <div class="quick-strip">
+      <div class="metric"><div class="label">pH status</div><div class="value">${escapeHtml(severity.label)}</div><div class="sub">pH ${fmt(pH,3)}</div></div>
+      <div class="metric"><div class="label">Primary process</div><div class="value">${escapeHtml(primary.name)}</div><div class="sub">Blood-gas pattern</div></div>
+      <div class="metric"><div class="label">Compensation</div><div class="value">${escapeHtml(comp.mixed ? 'Mixed process' : 'Assessed')}</div><div class="sub">${escapeHtml(comp.summary)}</div></div>
+      <div class="metric"><div class="label">Raw AG</div><div class="value">${fmt(ag,1)}</div><div class="sub">Using ${escapeHtml(agSource)}</div></div>
+      <div class="metric"><div class="label">Corrected AG</div><div class="value">${fmt(correctedAg,1)}</div><div class="sub">${albumin !== null ? `Albumin ${fmt(albumin,1)}` : 'No albumin correction'}</div></div>
+      <div class="metric"><div class="label">Routing</div><div class="value">${escapeHtml(route)}</div><div class="sub">Lab AG upper limit ${fmt(normalAg,1)}</div></div>
+    </div>
+
+    ${warningHtml}
+
+    <div class="output-grid">
+      <div class="output-card">
+        <h3>1. Primary Disorder <span class="tag">Blood gas</span></h3>
+        <div class="primary-line"><div class="big">${escapeHtml(primary.name)}</div><div class="detail">${escapeHtml(severity.label)}.</div></div>
+        <div class="alt"><strong>Compensation:</strong> ${escapeHtml(comp.summary)}</div>
+        ${compDetails ? `<ul>${compDetails}</ul>` : ''}
+        <div class="alt"><strong>Internal consistency:</strong> Henderson–Hasselbalch HCO₃⁻ ${fmt(calculatedGasHco3,1)} mEq/L; entered ${fmt(gasHco3,1)}.</div>
+      </div>
+
+      <div class="output-card">
+        <h3>2. Anion Gap <span class="tag">Chemistry</span></h3>
+        <div class="primary-line"><div class="big">AG ${fmt(ag,1)} → corrected ${fmt(correctedAg,1)}</div><div class="detail">${escapeHtml(agLabel)}.</div></div>
+        <div class="alt"><strong>Formula:</strong> ${fmt(na,1)} − (${fmt(cl,1)} + ${fmt(bmpHco3,1)}) = ${fmt(ag,1)}.</div>
+        <div class="alt"><strong>Source:</strong> ${escapeHtml(agSource)}. Laboratory upper-normal AG entered as ${fmt(normalAg,1)}.</div>
+        ${albumin !== null ? `<div class="alt"><strong>Albumin correction:</strong> +2.5 × (4 − ${fmt(albumin,1)}) = corrected AG ${fmt(correctedAg,1)}.</div>` : '<div class="caution-line">Albumin not entered; a low albumin can conceal a clinically important high anion gap.</div>'}
+      </div>
+
+      <div class="output-card">
+        <h3>3. Delta Analysis <span class="tag">Mixed metabolic process</span></h3>
+        <div class="primary-line"><div class="big">Delta ratio ${deltaRatio !== null ? fmt(deltaRatio,2) : 'not interpretable'}</div><div class="detail">${escapeHtml(deltaText)}</div></div>
+        <ul>
+          <li>ΔAG = ${fmt(correctedAg,1)} − ${fmt(normalAg,1)} = ${fmt(deltaAg,1)}</li>
+          <li>ΔHCO₃⁻ = 24 − ${fmt(bmpHco3,1)} = ${fmt(deltaHco3,1)}</li>
+          <li>Delta gap = ΔAG − ΔHCO₃⁻ = ${fmt(deltaGap,1)}</li>
+        </ul>
+        <div class="caution-line">Delta thresholds are approximate and should not override the clinical context or baseline laboratory values.</div>
+      </div>
+
+      <div class="output-card">
+        <h3>4. HAGMA Workup <span class="tag">GOLDMARK</span></h3>
+        <ul>${goldHtml}</ul>
+        ${lactate !== null ? `<div class="alt"><strong>Lactate:</strong> ${fmt(lactate,1)} mmol/L.</div>` : ''}
+        ${betaHydroxy !== null ? `<div class="alt"><strong>β-Hydroxybutyrate:</strong> ${fmt(betaHydroxy,1)} mmol/L.</div>` : ''}
+        ${osmHtml}
+      </div>
+
+      <div class="output-card">
+        <h3>5. NAGMA Workup <span class="tag">Urinary response</span></h3>
+        <ul>${nagmaHtml}</ul>
+        ${urineHtml}
+        ${urinePH !== null ? `<div class="alt"><strong>Urine pH:</strong> ${fmt(urinePH,1)}.</div>` : ''}
+        ${serumK !== null ? `<div class="alt"><strong>Serum K⁺:</strong> ${fmt(serumK,1)} mEq/L.</div>` : ''}
+      </div>
+
+      <div class="output-card">
+        <h3>6. Oxygenation and Next Steps <span class="tag">Clinical context</span></h3>
+        ${oxygenHtml}
+        <ul>${recommendationHtml || '<li>Interpret the calculated pattern with history, examination, hemodynamics, and serial laboratory values.</li>'}</ul>
+      </div>
+
+      <div class="output-card full">
+        <h3>Copyable Assessment and Plan <span class="tag">Editable</span></h3>
+        <textarea id="noteOutput" class="note-box">${escapeHtml(note)}</textarea>
+        <div class="button-row" style="grid-template-columns:1fr auto;margin-top:8px;">
+          <button class="btn btn-primary" type="button" onclick="copyNote()">Copy Assessment and Plan</button>
+          <button class="btn btn-secondary" type="button" onclick="document.getElementById('noteOutput').select()">Select Text</button>
+        </div>
+        <div id="copyStatus" class="small"></div>
+      </div>
+    </div>
+  `;
+
+  results.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function buildNote(d){
+  const lines = [];
+  lines.push('ACID–BASE ASSESSMENT');
+  lines.push(`- ${d.sampleType === 'arterial' ? 'ABG' : d.sampleType === 'venous' ? 'VBG' : 'Blood gas'}: pH ${fmt(d.pH,3)}, PCO₂ ${fmt(d.pco2,1)} mmHg, HCO₃⁻ ${fmt(d.gasHco3,1)} mEq/L.`);
+  lines.push(`- Primary process: ${d.primary.name}. ${d.severity.label}.`);
+  lines.push(`- Compensation: ${d.comp.summary}`);
+  d.comp.details.forEach(x => lines.push(`  • ${x}`));
+  lines.push(`- Henderson–Hasselbalch calculated HCO₃⁻ ${fmt(d.calculatedGasHco3,1)} mEq/L; difference from entered gas HCO₃⁻ ${fmt(d.gasDifference,1)}.`);
+  lines.push('');
+  lines.push('ANION GAP / MIXED METABOLIC ASSESSMENT');
+  lines.push(`- Na ${fmt(d.na,1)}, Cl ${fmt(d.cl,1)}, ${d.bmpHco3Entered !== null ? 'serum total CO₂/HCO₃⁻' : 'gas HCO₃⁻ used as fallback'} ${fmt(d.bmpHco3,1)} mEq/L.`);
+  lines.push(`- Raw AG ${fmt(d.ag,1)}; corrected AG ${fmt(d.correctedAg,1)}${d.albumin !== null ? ` using albumin ${fmt(d.albumin,1)} g/dL` : ' without albumin correction'}.`);
+  lines.push(`- Interpretation: ${d.agLabel}; laboratory upper-normal AG entered as ${fmt(d.normalAg,1)}.`);
+  lines.push(`- ΔAG ${fmt(d.deltaAg,1)}, ΔHCO₃⁻ ${fmt(d.deltaHco3,1)}, delta ratio ${d.deltaRatio !== null ? fmt(d.deltaRatio,2) : 'not interpretable'}, delta gap ${fmt(d.deltaGap,1)}.`);
+  lines.push(`- Delta interpretation: ${d.deltaText}`);
+
+  if(d.goldCauses.length){
+    lines.push('');
+    lines.push('HAGMA CONTRIBUTORS / WORKUP');
+    d.goldCauses.forEach(x => lines.push(`- ${x}`));
+  }
+  if(d.lactate !== null) lines.push(`- Lactate ${fmt(d.lactate,1)} mmol/L.`);
+  if(d.betaHydroxy !== null) lines.push(`- β-hydroxybutyrate ${fmt(d.betaHydroxy,1)} mmol/L.`);
+  if(d.calculatedOsm !== null) lines.push(`- Calculated osmolality ${fmt(d.calculatedOsm,1)} mOsm/kg${d.osmGap !== null ? `; osmolar gap ${fmt(d.osmGap,1)}` : ''}.`);
+
+  if(d.nagmaCauses.length || d.urineAg !== null){
+    lines.push('');
+    lines.push('NAGMA CONTRIBUTORS / URINARY RESPONSE');
+    d.nagmaCauses.forEach(x => lines.push(`- ${x}`));
+    if(d.urineAg !== null) lines.push(`- Urine AG ${fmt(d.urineAg,1)} mEq/L.`);
+    if(d.urinePH !== null) lines.push(`- Urine pH ${fmt(d.urinePH,1)}.`);
+    if(d.serumK !== null) lines.push(`- Serum K ${fmt(d.serumK,1)} mEq/L.`);
+  }
+
+  if(d.pfRatio !== null){
+    lines.push('');
+    lines.push(`OXYGENATION: PaO₂/FiO₂ ratio approximately ${fmt(d.pfRatio,0)}; interpret with PEEP and the full ARDS criteria.`);
+  }
+
+  if(d.warnings.length){
+    lines.push('');
+    lines.push('CAUTIONS');
+    d.warnings.forEach(x => lines.push(`- ${x}`));
+  }
+
+  lines.push('');
+  lines.push('PLAN / NEXT STEPS');
+  if(d.recommendations.length){
+    d.recommendations.forEach(x => lines.push(`- ${x}`));
+  }else{
+    lines.push('- Correlate with clinical context, repeat values when the condition is evolving, and treat the underlying cause rather than the pH in isolation.');
+  }
+  lines.push('- Confirm calculations against the laboratory reference ranges and review whether blood-gas and chemistry samples were contemporaneous.');
+  lines.push('- Escalate urgently for severe acidemia/alkalemia, shock, ventilatory failure, suspected toxic ingestion, or rapidly changing values.');
+
+  return lines.join('\n');
+}
+
+async function copyNote(){
+  const box = document.getElementById('noteOutput');
+  const status = document.getElementById('copyStatus');
+  if(!box) return;
+  try{
+    await navigator.clipboard.writeText(box.value);
+    status.textContent = 'Assessment and plan copied.';
+    status.style.color = '#166534';
+  }catch(error){
+    box.select();
+    document.execCommand('copy');
+    status.textContent = 'Assessment and plan copied.';
+    status.style.color = '#166534';
+  }
+}
+
+function fillExample(){
+  document.getElementById('sampleType').value = 'arterial';
+  document.getElementById('pH').value = '7.18';
+  document.getElementById('pco2').value = '20';
+  document.getElementById('gasHco3').value = '7.5';
+  document.getElementById('na').value = '138';
+  document.getElementById('cl').value = '108';
+  document.getElementById('bmpHco3').value = '8';
+  document.getElementById('albumin').value = '2.4';
+  document.getElementById('normalAg').value = '12';
+  document.getElementById('serumK').value = '3.1';
+  document.getElementById('creatinine').value = '1.4';
+  document.getElementById('lactate').value = '5.8';
+  document.getElementById('betaHydroxy').value = '0.2';
+  document.getElementById('glucose').value = '180';
+  document.getElementById('bun').value = '32';
+  document.getElementById('measuredOsm').value = '304';
+  document.getElementById('ethanol').value = '0';
+  document.getElementById('urineNa').value = '35';
+  document.getElementById('urineK').value = '22';
+  document.getElementById('urineCl').value = '85';
+  document.getElementById('urinePH').value = '5.0';
+  document.getElementById('po2').value = '82';
+  document.getElementById('fio2').value = '40';
+  document.getElementById('gLactate').checked = true;
+  document.getElementById('nDiarrhea').checked = true;
+  calculateAll();
+}
+
+function resetCalculator(){
+  document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
+  document.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = false);
+  document.getElementById('normalAg').value = '12';
+  document.getElementById('sampleType').value = 'arterial';
+  document.getElementById('results').innerHTML = '<div class="empty">Enter the blood-gas and chemistry values, then calculate.</div>';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+window.addEventListener('scroll',() => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight-window.innerHeight;
+  const percent = docHeight > 0 ? (scrollTop/docHeight)*100 : 0;
+  document.getElementById('reading-progress').style.width = `${Math.min(100,Math.max(0,percent))}%`;
+});
+</script>
+
+</body>
+</html>
