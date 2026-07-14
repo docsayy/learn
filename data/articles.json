@@ -86,6 +86,29 @@
     "file": "posts/2026-07-14-osteo.html"
   },
   {
+    "title": "Tuberculosis: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "tuberculosis",
+      "TB",
+      "latent tuberculosis",
+      "LTBI",
+      "pulmonary tuberculosis",
+      "extrapulmonary tuberculosis",
+      "RIPE",
+      "ripapentine",
+      "moxifloxacin",
+      "drug-resistant tuberculosis",
+      "MDR-TB",
+      "airborne isolation"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to latent and active tuberculosis, airborne isolation, diagnostic testing, drug-susceptible and drug-resistant treatment, extrapulmonary disease, HIV coinfection, adverse-effect monitoring, contact investigation, and public-health management.",
+    "featured": true,
+    "readingTime": 42,
+    "file": "posts/2026-07-14-tb.html"
+  },
+  {
     "title": "HIV Infection: Diagnosis, Initial Evaluation, and Management",
     "date": "2026-07-13",
     "category": "Infectious Disease",
