@@ -104,6 +104,31 @@
     "file": "posts/2026-07-13-pneumonia.html"
   },
   {
+    "title": "Adult Intubation, RSI, ETT, Ventilator, Analgesia and Sedation Calculator",
+    "date": "2026-07-13",
+    "category": "Critical Care",
+    "tags": [
+      "intubation",
+      "RSI",
+      "ETT depth",
+      "tidal volume",
+      "PBW",
+      "ventilator",
+      "sedation",
+      "analgesia",
+      "etomidate",
+      "ketamine",
+      "rocuronium",
+      "succinylcholine",
+      "propofol",
+      "fentanyl"
+    ],
+    "summary": "A bedside-first adult calculator for rapid sequence intubation drugs, ETT size and depth, predicted body weight, tidal volume, initial ventilator settings, post-intubation analgesia, and sedation dosing.",
+    "featured": true,
+    "readingTime": 7,
+    "file": "posts/2026-07-13-rsi.html"
+  },
+  {
     "title": "Skin and Soft-Tissue Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-13",
     "category": "Infectious Disease",
