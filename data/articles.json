@@ -215,6 +215,27 @@
     "file": "posts/2026-07-13-uti.html"
   },
   {
+    "title": "Acid–Base Workflow Wizard",
+    "date": "2026-07-13",
+    "category": "Nephrology",
+    "tags": [
+      "ABG",
+      "VBG",
+      "acid base",
+      "anion gap",
+      "Winter formula",
+      "HAGMA",
+      "NAGMA",
+      "GOLDMARK",
+      "HARDUP",
+      "delta ratio"
+    ],
+    "summary": "A step-by-step acid-base workflow wizard for primary disorder identification, compensation, anion gap correction, HAGMA/NAGMA evaluation, and delta analysis.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-14-abg-calculator.html"
+  },
+  {
     "title": "Blood Gas Interpretation: The Complete ICU Resident Guide",
     "date": "2026-07-05",
     "category": "Critical Care",
