@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="Adult Intubation, RSI, ETT, Ventilator, Analgesia and Sedation Calculator">
+<meta name="date" content="2026-07-13">
+<meta name="category" content="Critical Care">
+<meta name="tags" content="intubation,RSI,ETT depth,tidal volume,PBW,ventilator,sedation,analgesia,etomidate,ketamine,rocuronium,succinylcholine,propofol,fentanyl">
+<meta name="summary" content="A bedside-first adult calculator for rapid sequence intubation drugs, ETT size and depth, predicted body weight, tidal volume, initial ventilator settings, post-intubation analgesia, and sedation dosing.">
+<meta name="featured" content="true">
+
+<title>Adult Intubation, RSI, Ventilator, Analgesia and Sedation Calculator | Learn Medicine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --accent:#0f766e;
+  --accent-dark:#115e59;
+  --border:#e2e8f0;
+  --soft:#f0fdfa;
+  --soft-blue:#eff6ff;
+  --blue:#1d4ed8;
+  --warn-bg:#fff7ed;
+  --warn:#9a3412;
+  --danger-bg:#fef2f2;
+  --danger:#b91c1c;
+  --success-bg:#f0fdf4;
+  --success:#166534;
+  --violet-bg:#f5f3ff;
+  --violet:#6d28d9;
+  --shadow:0 12px 34px rgba(15,23,42,.08);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',Arial,sans-serif;
+  font-size:14px;
+  line-height:1.55;
+}
+button,input,select,textarea{font:inherit;}
+
+#reading-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:9999;
+  height:4px;
+  width:0;
+  background:var(--accent);
+}
+
+.container{
+  width:min(1180px,calc(100% - 24px));
+  margin:0 auto;
+  padding:22px 0 50px;
+}
+
+.home-btn,.back-home{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--accent);
+  font-weight:700;
+  text-decoration:none;
+  margin-bottom:14px;
+}
+.home-btn:hover,.back-home:hover{text-decoration:underline;}
+
+.article-header{
+  background:linear-gradient(135deg,#ffffff 0%,#f0fdfa 100%);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:var(--shadow);
+  margin-bottom:14px;
+}
+.article-breadcrumb{
+  color:var(--accent);
+  font-size:.82rem;
+  font-weight:700;
+  margin-bottom:6px;
+}
+h1{
+  font-size:clamp(1.45rem,2.7vw,2.15rem);
+  line-height:1.16;
+  margin:0 0 8px;
+}
+.article-meta{
+  color:var(--muted);
+  font-size:.84rem;
+  margin-bottom:10px;
+}
+.article-summary{
+  margin:0;
+  max-width:980px;
+  color:#334155;
+}
+
+.notice{
+  border-radius:12px;
+  padding:11px 13px;
+  border:1px solid;
+  margin:12px 0;
+}
+.notice strong{font-weight:800;}
+.notice-danger{background:var(--danger-bg);border-color:#fecaca;color:#7f1d1d;}
+.notice-warning{background:var(--warn-bg);border-color:#fed7aa;color:#7c2d12;}
+.notice-info{background:var(--soft-blue);border-color:#bfdbfe;color:#1e3a8a;}
+.notice-success{background:var(--success-bg);border-color:#bbf7d0;color:#14532d;}
+
+.quick-shell{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.quick-head{
+  padding:15px 18px;
+  background:var(--soft);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+}
+.quick-head h2{margin:0 0 3px;font-size:1.15rem;}
+.quick-head p{margin:0;color:var(--muted);font-size:.82rem;}
+.quick-body{padding:18px;}
+
+.input-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.field{display:flex;flex-direction:column;gap:4px;}
+.field.full{grid-column:1/-1;}
+label{font-size:.76rem;font-weight:700;color:#334155;}
+.help{font-size:.68rem;color:var(--muted);line-height:1.3;}
+input,select{
+  width:100%;
+  min-height:39px;
+  padding:8px 9px;
+  border-radius:9px;
+  border:1px solid #cbd5e1;
+  background:#fff;
+  color:var(--text);
+  outline:none;
+}
+input:focus,select:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(15,118,110,.12);
+}
+.inline-inputs{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+
+.section-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:16px 0 9px;
+  padding-top:13px;
+  border-top:1px solid var(--border);
+}
+.section-bar h3{margin:0;font-size:.92rem;}
+.section-bar span{font-size:.72rem;color:var(--muted);}
+
+.button-row{
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  gap:8px;
+  margin-top:15px;
+}
+.btn{
+  border:0;
+  border-radius:10px;
+  min-height:42px;
+  padding:9px 14px;
+  cursor:pointer;
+  font-weight:700;
+}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-secondary{background:#e2e8f0;color:#334155;}
+.btn-outline{background:#fff;color:var(--accent);border:1px solid var(--accent);}
+
+.advanced{
+  margin-top:13px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  overflow:hidden;
+}
+.advanced summary{
+  cursor:pointer;
+  padding:10px 12px;
+  background:#f8fafc;
+  font-weight:700;
+  color:#334155;
+}
+.advanced-body{padding:12px;}
+.conc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;}
+
+#results{margin-top:16px;scroll-margin-top:10px;}
+.empty{
+  border:1px dashed #94a3b8;
+  background:#f8fafc;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.quick-strip{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:8px;
+  margin-bottom:10px;
+}
+.metric{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:11px;
+  padding:10px;
+}
+.metric .label{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+.metric .value{font-size:1rem;font-weight:800;color:var(--accent-dark);margin-top:2px;}
+.metric .sub{font-size:.68rem;color:var(--muted);margin-top:2px;}
+
+.output-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.output-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:13px;
+  min-width:0;
+}
+.output-card.full{grid-column:1/-1;}
+.output-card h3{
+  margin:0 0 8px;
+  font-size:.9rem;
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.output-card h4{margin:10px 0 4px;font-size:.78rem;color:#334155;}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:2px 7px;
+  font-size:.63rem;
+  font-weight:700;
+  background:var(--soft);
+  color:var(--accent-dark);
+  white-space:nowrap;
+}
+.primary-dose{
+  background:var(--soft);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:9px 10px;
+  margin:6px 0;
+}
+.primary-dose .drug{font-size:.92rem;font-weight:800;color:var(--accent-dark);}
+.primary-dose .dose{font-size:1.08rem;font-weight:800;margin-top:2px;}
+.primary-dose .detail{font-size:.72rem;color:#475569;margin-top:2px;}
+.alt{
+  border:1px solid var(--border);
+  background:#f8fafc;
+  border-radius:8px;
+  padding:7px 8px;
+  margin-top:6px;
+  font-size:.75rem;
+}
+.alt strong{color:#334155;}
+.warning-line{
+  background:var(--danger-bg);
+  border-left:4px solid var(--danger);
+  color:#7f1d1d;
+  border-radius:8px;
+  padding:8px 9px;
+  margin:6px 0;
+  font-size:.74rem;
+  font-weight:600;
+}
+.caution-line{
+  background:var(--warn-bg);
+  border-left:4px solid #f97316;
+  color:#7c2d12;
+  border-radius:8px;
+  padding:8px 9px;
+  margin:6px 0;
+  font-size:.74rem;
+}
+.good-line{
+  background:var(--success-bg);
+  border-left:4px solid var(--success);
+  color:#14532d;
+  border-radius:8px;
+  padding:8px 9px;
+  margin:6px 0;
+  font-size:.74rem;
+}
+.output-card ul{margin:6px 0 0;padding-left:17px;font-size:.75rem;}
+.output-card li{margin:3px 0;}
+.small{font-size:.7rem;color:var(--muted);}
+
+.order-box{
+  width:100%;
+  min-height:180px;
+  resize:vertical;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  padding:10px;
+  background:#f8fafc;
+  color:#0f172a;
+  line-height:1.45;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.74rem;
+}
+
+.details-section{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:20px;
+  margin-top:16px;
+  box-shadow:0 6px 20px rgba(15,23,42,.045);
+}
+.details-section h2{margin:0 0 11px;font-size:1.2rem;}
+.details-section h3{margin:16px 0 6px;font-size:.95rem;}
+.details-section p{margin:7px 0;}
+.details-section ul{margin:7px 0;padding-left:20px;}
+.details-section li{margin:4px 0;}
+.formula{
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  margin:11px auto;
+  padding:9px 13px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  background:#f1f5f9;
+  font-weight:800;
+  text-align:center;
+}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.78rem;}
+th,td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top;}
+th{background:#f8fafc;color:#334155;}
+.footer{text-align:center;color:var(--muted);font-size:.78rem;padding:22px 0 5px;}
+
+@media(max-width:1000px){
+  .input-grid,.conc-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .quick-strip{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .output-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:700px){
+  .container{width:min(100% - 14px,1180px);padding-top:12px;}
+  .article-header,.quick-body,.details-section{padding:14px;}
+  .quick-head{padding:13px 14px;}
+  .input-grid,.conc-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .quick-strip{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .output-grid{grid-template-columns:1fr;}
+  .output-card.full{grid-column:auto;}
+  .button-row{grid-template-columns:1fr 1fr;}
+  .button-row .btn-primary{grid-column:1/-1;}
+}
+@media(max-width:450px){
+  .input-grid,.conc-grid,.quick-strip{grid-template-columns:1fr;}
+  .quick-head{display:block;}
+  .button-row{grid-template-columns:1fr;}
+  .button-row .btn-primary{grid-column:auto;}
+}
+@media print{
+  body{background:#fff;}
+  #reading-progress,.home-btn,.back-home,.button-row,.advanced,.footer{display:none!important;}
+  .container{width:100%;padding:0;}
+  .article-header,.quick-shell,.details-section,.output-card{box-shadow:none;break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div id="reading-progress"></div>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+  <div class="article-breadcrumb">Learn Medicine › Critical Care › Calculator</div>
+  <h1>Adult Intubation, RSI, ETT, Ventilator, Analgesia and Sedation Calculator</h1>
+  <div class="article-meta">Added July 13, 2026 • Adult critical-care bedside helper</div>
+  <p class="article-summary">
+    Enter weight, height, hemodynamics, and clinical context once. The top of the page immediately calculates RSI medication doses and volumes, post-intubation analgesia and sedation options, ETT size and starting depth, predicted body weight, tidal volumes, and scenario-specific initial ventilator reminders. Detailed explanations remain below.
+  </p>
+</header>
+
+<div class="notice notice-danger">
+  <strong>Bedside safety:</strong> Adult educational aid only. Confirm drug choice, contraindications, dosing weight, vial or infusion concentration, allergies, local airway protocol, and actual pump programming before administration. Paralysis provides no analgesia, sedation, or amnesia.
+</div>
+
+<section class="quick-shell">
+  <div class="quick-head">
+    <div>
+      <h2>Quick Pick and Dose</h2>
+      <p>Required: sex, height, and actual weight. Auto-select can recommend a starting option, or choose each medication manually.</p>
+    </div>
+    <span class="tag">All calculations stay on this page</span>
+  </div>
+
+  <div class="quick-body">
+
+    <div class="input-grid">
+      <div class="field">
+        <label for="sex">Sex used for PBW formula</label>
+        <select id="sex">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="age">Age (years)</label>
+        <input id="age" type="number" min="18" max="120" step="1" placeholder="e.g., 65">
+      </div>
+
+      <div class="field">
+        <label for="weight">Actual weight (kg)</label>
+        <input id="weight" type="number" min="20" max="350" step="0.1" placeholder="e.g., 80">
+      </div>
+
+      <div class="field">
+        <label for="heightUnit">Height units</label>
+        <select id="heightUnit" onchange="toggleHeightFields()">
+          <option value="cm">Centimeters</option>
+          <option value="ftin">Feet / inches</option>
+        </select>
+      </div>
+
+      <div class="field" id="heightCmField">
+        <label for="heightCm">Height (cm)</label>
+        <input id="heightCm" type="number" min="120" max="230" step="0.1" placeholder="e.g., 175">
+      </div>
+
+      <div class="field" id="heightFtField" style="display:none;">
+        <label>Height (ft / in)</label>
+        <div class="inline-inputs">
+          <input id="heightFt" type="number" min="4" max="7" step="1" placeholder="ft">
+          <input id="heightIn" type="number" min="0" max="11" step="1" placeholder="in">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="hemo">Hemodynamic status</label>
+        <select id="hemo">
+          <option value="stable">Stable / hypertensive</option>
+          <option value="borderline">Borderline blood pressure</option>
+          <option value="shock">Shock / marked hypotension</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="context">Primary clinical context</label>
+        <select id="context">
+          <option value="general">General RSI</option>
+          <option value="bronchospasm">Severe asthma / bronchospasm</option>
+          <option value="seizure">Status epilepticus / active seizure</option>
+          <option value="neuro">Severe TBI / neuroprotection</option>
+          <option value="ards">ARDS / severe ventilator dyssynchrony</option>
+          <option value="obstructive">COPD / obstructive physiology</option>
+          <option value="acidosis">Severe metabolic acidosis</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="doseWeight">Medication dosing weight</label>
+        <select id="doseWeight">
+          <option value="actual">Actual body weight</option>
+          <option value="ibw">Ideal body weight</option>
+          <option value="adjusted">Adjusted body weight</option>
+        </select>
+        <div class="help">Drug-specific obesity dosing differs. Select deliberately.</div>
+      </div>
+
+      <div class="field">
+        <label for="suxRisk">Succinylcholine contraindication / high K risk?</label>
+        <select id="suxRisk">
+          <option value="no">No known contraindication</option>
+          <option value="yes">Yes or uncertain — avoid</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="rass">Post-intubation sedation target</label>
+        <select id="rass">
+          <option value="light">Light: RASS 0 to −2</option>
+          <option value="deep">Deep: RASS −4 to −5</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="opioidTolerance">Chronic opioid tolerance?</label>
+        <select id="opioidTolerance">
+          <option value="no">No / unknown</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="bradyRisk">Bradycardia / high-grade heart block?</label>
+        <select id="bradyRisk">
+          <option value="no">No</option>
+          <option value="yes">Yes — dexmedetomidine caution</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="propofolRisk">Propofol limitation?</label>
+        <select id="propofolRisk">
+          <option value="no">No major limitation</option>
+          <option value="yes">Avoid/minimize: hypotension, TG or PRIS concern</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="ettSize">Chosen ETT size (optional)</label>
+        <select id="ettSize">
+          <option value="auto">Auto suggestion</option>
+          <option value="6.5">6.5 mm</option>
+          <option value="7.0">7.0 mm</option>
+          <option value="7.5">7.5 mm</option>
+          <option value="8.0">8.0 mm</option>
+          <option value="8.5">8.5 mm</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section-bar">
+      <h3>Medication choices</h3>
+      <span>Auto-select uses the clinical context; manual selection always overrides it.</span>
+    </div>
+
+    <div class="input-grid">
+      <div class="field">
+        <label for="inductionChoice">RSI induction</label>
+        <select id="inductionChoice">
+          <option value="auto">Auto-select</option>
+          <option value="etomidate">Etomidate</option>
+          <option value="ketamine">Ketamine</option>
+          <option value="propofol">Propofol</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="paralyticChoice">RSI paralytic</label>
+        <select id="paralyticChoice">
+          <option value="auto">Auto-select</option>
+          <option value="rocuronium">Rocuronium</option>
+          <option value="succinylcholine">Succinylcholine</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="analgesiaChoice">Post-intubation analgesia</label>
+        <select id="analgesiaChoice">
+          <option value="auto">Auto: fentanyl bolus + infusion</option>
+          <option value="fentanylInfusion">Fentanyl bolus + infusion</option>
+          <option value="fentanylBolus">Fentanyl intermittent bolus</option>
+          <option value="hydromorphone">Hydromorphone intermittent bolus</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="sedationChoice">Post-intubation sedation</label>
+        <select id="sedationChoice">
+          <option value="auto">Auto-select</option>
+          <option value="propofol">Propofol</option>
+          <option value="dexmedetomidine">Dexmedetomidine</option>
+          <option value="ketamine">Ketamine</option>
+          <option value="midazolam">Midazolam</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="ventStrategy">Ventilator strategy</label>
+        <select id="ventStrategy">
+          <option value="auto">Auto from clinical context</option>
+          <option value="ards">ARDS / lung protective</option>
+          <option value="standard">Standard lung protective</option>
+          <option value="obstructive">Obstructive / long expiratory time</option>
+          <option value="acidosis">Severe metabolic acidosis</option>
+          <option value="neuro">Neuro / controlled ventilation</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="selectedVt">Starting VT target</label>
+        <select id="selectedVt">
+          <option value="6">6 mL/kg PBW</option>
+          <option value="7">7 mL/kg PBW</option>
+          <option value="8">8 mL/kg PBW</option>
+          <option value="5">5 mL/kg PBW</option>
+          <option value="4">4 mL/kg PBW</option>
+        </select>
+      </div>
+    </div>
+
+    <details class="advanced">
+      <summary>Advanced: edit vial and infusion concentrations used for mL calculations</summary>
+      <div class="advanced-body">
+        <div class="notice notice-warning">
+          <strong>Verify the actual product.</strong> Hospital concentrations vary. The displayed mL and mL/hr are correct only when these entries match the vial, syringe, or premixed infusion being used.
+        </div>
+        <div class="conc-grid">
+          <div class="field"><label for="etomidateConc">Etomidate (mg/mL)</label><input id="etomidateConc" type="number" value="2" min="0.1" step="0.1"></div>
+          <div class="field"><label for="ketamineBolusConc">Ketamine bolus (mg/mL)</label><input id="ketamineBolusConc" type="number" value="10" min="0.1" step="0.1"></div>
+          <div class="field"><label for="propofolConc">Propofol (mg/mL)</label><input id="propofolConc" type="number" value="10" min="0.1" step="0.1"></div>
+          <div class="field"><label for="rocConc">Rocuronium (mg/mL)</label><input id="rocConc" type="number" value="10" min="0.1" step="0.1"></div>
+          <div class="field"><label for="suxConc">Succinylcholine (mg/mL)</label><input id="suxConc" type="number" value="20" min="0.1" step="0.1"></div>
+          <div class="field"><label for="fentanylBolusConc">Fentanyl bolus (mcg/mL)</label><input id="fentanylBolusConc" type="number" value="50" min="0.1" step="0.1"></div>
+          <div class="field"><label for="fentanylInfConc">Fentanyl infusion (mcg/mL)</label><input id="fentanylInfConc" type="number" value="10" min="0.1" step="0.1"></div>
+          <div class="field"><label for="hydromorphoneConc">Hydromorphone (mg/mL)</label><input id="hydromorphoneConc" type="number" value="1" min="0.1" step="0.1"></div>
+          <div class="field"><label for="ketamineInfConc">Ketamine infusion (mg/mL)</label><input id="ketamineInfConc" type="number" value="2" min="0.1" step="0.1"></div>
+          <div class="field"><label for="dexConc">Dexmedetomidine (mcg/mL)</label><input id="dexConc" type="number" value="4" min="0.1" step="0.1"></div>
+          <div class="field"><label for="midazolamConc">Midazolam (mg/mL)</label><input id="midazolamConc" type="number" value="1" min="0.1" step="0.1"></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="button-row">
+      <button class="btn btn-primary" type="button" onclick="calculateAll()">Calculate Complete Intubation Plan</button>
+      <button class="btn btn-secondary" type="button" onclick="fillExample()">Fill Example</button>
+      <button class="btn btn-outline" type="button" onclick="resetAll()">Reset</button>
+      <button class="btn btn-outline" type="button" onclick="window.print()">Print</button>
+    </div>
+
+    <div id="results">
+      <div class="empty">Enter weight and height, choose the clinical context, then calculate.</div>
+    </div>
+  </div>
+</section>
+
+<section class="details-section">
+  <h2>Immediate Post-Intubation Priorities</h2>
+  <div class="formula">Waveform Capnography → Secure ETT → Analgesia + Sedation → Ventilator Setup → Hemodynamic Reassessment</div>
+  <ul>
+    <li>Confirm tracheal placement with continuous waveform capnography; do not rely on auscultation alone.</li>
+    <li>Start analgesia and an amnestic sedative immediately after intubation, especially after rocuronium.</li>
+    <li>Confirm ETT depth clinically and with chest imaging when indicated; the calculator gives only a starting estimate.</li>
+    <li>Use predicted body weight—not actual body weight—to calculate tidal volume.</li>
+    <li>Reassess blood pressure within minutes; post-intubation hypotension is common and clinically important.</li>
+    <li>Document a RASS goal and use the lightest effective ongoing sedation unless a specific indication requires deep sedation.</li>
+  </ul>
+</section>
+
+<section class="details-section">
+  <h2>RSI Medication Reference</h2>
+  <table>
+    <thead><tr><th>Medication</th><th>Quick adult dose</th><th>When useful</th><th>Important cautions</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Etomidate</strong></td><td>0.2–0.3 mg/kg IV; calculator uses 0.3 mg/kg</td><td>Hemodynamic fragility, general RSI</td><td>No analgesia; myoclonus; transient adrenal suppression</td></tr>
+      <tr><td><strong>Ketamine</strong></td><td>1–2 mg/kg IV; reduced dose may be used in severe shock</td><td>Bronchospasm, agitation, selected hemodynamic fragility</td><td>May still cause hypotension in catecholamine depletion; secretions; tachycardia</td></tr>
+      <tr><td><strong>Propofol</strong></td><td>1–2 mg/kg IV in stable patients; reduce substantially when tenuous</td><td>Stable/hypertensive patient, seizure control</td><td>Hypotension, apnea, myocardial depression</td></tr>
+      <tr><td><strong>Rocuronium</strong></td><td>1.2 mg/kg IV</td><td>Reliable RSI paralysis; avoids succinylcholine contraindications</td><td>Prolonged paralysis; awareness risk without immediate sedation</td></tr>
+      <tr><td><strong>Succinylcholine</strong></td><td>1.5 mg/kg IV</td><td>Rapid onset and shorter blockade</td><td>Hyperkalemia, denervation, burns/crush injury after acute phase, malignant hyperthermia, pseudocholinesterase deficiency</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="details-section">
+  <h2>Post-Intubation Analgesia and Sedation Reference</h2>
+  <table>
+    <thead><tr><th>Medication</th><th>Quick starting range</th><th>Best fit</th><th>Important cautions</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Fentanyl</strong></td><td>Bolus 0.5–1 mcg/kg; infusion commonly starts 25–100 mcg/hr and titrates</td><td>Analgesia-first sedation, ventilator discomfort</td><td>Hypotension, bradycardia, ileus; chest-wall rigidity with large rapid boluses</td></tr>
+      <tr><td><strong>Hydromorphone</strong></td><td>0.2–0.5 mg IV intermittently</td><td>Intermittent longer-acting analgesia</td><td>Accumulation, hypotension, respiratory depression</td></tr>
+      <tr><td><strong>Propofol</strong></td><td>Start 5–10 mcg/kg/min; titrate commonly within 5–50 mcg/kg/min</td><td>Rapid titration, deep sedation, seizure control</td><td>Hypotension, hypertriglyceridemia, pancreatitis, PRIS</td></tr>
+      <tr><td><strong>Dexmedetomidine</strong></td><td>0.2–0.7 mcg/kg/hr without routine loading dose</td><td>Light cooperative sedation, delirium reduction priority</td><td>Bradycardia, hypotension; usually inadequate alone for deep sedation during paralysis</td></tr>
+      <tr><td><strong>Ketamine</strong></td><td>0.5–2 mg/kg/hr</td><td>Bronchospasm, opioid-sparing analgesia, selected unstable patients</td><td>Tachycardia, secretions, emergence reactions; may cause hypotension in depleted shock</td></tr>
+      <tr><td><strong>Midazolam</strong></td><td>0.02–0.1 mg/kg/hr</td><td>Status epilepticus, alcohol withdrawal, deep sedation when alternatives unsuitable</td><td>Delirium, accumulation, hypotension, prolonged ventilation</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="details-section">
+  <h2>ETT and Ventilator Explanation</h2>
+  <h3>Predicted body weight</h3>
+  <p>Tidal volume is based on height and sex because lung size correlates more closely with height than actual body mass.</p>
+  <div class="formula">Male PBW = 50 + 0.91 × (height cm − 152.4)</div>
+  <div class="formula">Female PBW = 45.5 + 0.91 × (height cm − 152.4)</div>
+
+  <h3>Tidal volume</h3>
+  <ul>
+    <li>ARDS: begin near 6 mL/kg PBW and reduce toward 4 mL/kg PBW when needed to limit plateau pressure.</li>
+    <li>Most critically ill adults without ARDS: a lung-protective starting range of approximately 6–8 mL/kg PBW is commonly used.</li>
+    <li>Obstructive physiology: use a lower respiratory rate and longer expiratory time; monitor auto-PEEP rather than increasing rate reflexively.</li>
+    <li>Severe metabolic acidosis: avoid an abrupt fall in minute ventilation; compare with the patient’s pre-intubation respiratory compensation and obtain early blood gas reassessment.</li>
+  </ul>
+
+  <h3>ETT size and depth</h3>
+  <ul>
+    <li>Common adult starting sizes are approximately 7.0–7.5 mm for many women and 7.5–8.0 mm for many men, modified by airway anatomy and procedural needs.</li>
+    <li>The traditional starting-depth reminder is approximately 21 cm at the teeth for an average woman and 23 cm for an average man.</li>
+    <li>Confirm depth using waveform capnography, bilateral examination, tube marking, and chest radiography when appropriate. Head movement can change tip position.</li>
+  </ul>
+</section>
+
+<section class="details-section">
+  <h2>Key Safety Pitfalls</h2>
+  <ul>
+    <li><strong>Never equate paralysis with sedation.</strong> A paralyzed patient may be awake and in pain.</li>
+    <li>Do not use dexmedetomidine alone for immediate deep sedation while a long-acting paralytic remains active.</li>
+    <li>Do not use full-dose propofol induction in a patient at high risk of peri-intubation hypotension.</li>
+    <li>Do not use succinylcholine when important hyperkalemia or malignant-hyperthermia risk exists.</li>
+    <li>Do not calculate tidal volume from actual weight in obesity.</li>
+    <li>Do not accept the 21/23 rule without confirming tube position.</li>
+    <li>In severe asthma/COPD, avoid excessive respiratory rate and monitor for dynamic hyperinflation.</li>
+    <li>In severe metabolic acidosis, inadequate post-intubation minute ventilation can precipitate rapid decompensation.</li>
+  </ul>
+</section>
+
+<section class="details-section">
+  <h2>References</h2>
+  <ol>
+    <li>American College of Emergency Physicians. Clinical Policy: Critical Issues in the Management of Adult Patients Requiring Endotracheal Intubation. https://www.acep.org/patient-care/clinical-policies/endotracheal-intubation</li>
+    <li>Society of Critical Care Medicine. Guidelines for Pain, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult ICU Patients. https://www.sccm.org/clinical-resources/guidelines/guidelines/guidelines-for-the-prevention-and-management-of-pa</li>
+    <li>Society of Critical Care Medicine. Focused Update to the PADIS Guideline. 2025. https://sccm.org/clinical-resources/guidelines/guidelines/focused-update-padis-guideline</li>
+    <li>Acute Respiratory Distress Syndrome Network. Ventilation with Lower Tidal Volumes as Compared with Traditional Tidal Volumes for Acute Lung Injury and ARDS. New England Journal of Medicine. 2000.</li>
+    <li>American College of Emergency Physicians. High-Risk Airway Management in the Emergency Department. https://www.acep.org/siteassets/sites/acep/media/moc/moc-documents/high-risk-airway-management-.pdf</li>
+  </ol>
+</section>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+
+<footer class="footer">Learn Medicine • Adult Intubation, RSI, Ventilator, Analgesia and Sedation Calculator</footer>
+
+</div>
+
+<script>
+'use strict';
+
+function el(id){return document.getElementById(id);}
+function val(id){return el(id).value;}
+function num(id,fallback=NaN){
+  const x=parseFloat(el(id).value);
+  return Number.isFinite(x)?x:fallback;
+}
+function fmt(x,d=1){
+  if(!Number.isFinite(x))return '—';
+  return x.toFixed(d).replace(/\.0$/,'');
+}
+function roundTo(x,step){return Math.round(x/step)*step;}
+function ml(dose,conc,d=1){
+  if(!Number.isFinite(dose)||!Number.isFinite(conc)||conc<=0)return 'verify concentration';
+  return `${fmt(dose/conc,d)} mL`;
+}
+function rateMlHr(weight,rate,conc,unit){
+  if(!Number.isFinite(weight)||!Number.isFinite(rate)||!Number.isFinite(conc)||conc<=0)return NaN;
+  if(unit==='mcgkgmin')return (weight*rate*60/1000)/conc;
+  if(unit==='mcgkghr')return (weight*rate)/conc;
+  if(unit==='mgkghr')return (weight*rate)/conc;
+  return NaN;
+}
+function toggleHeightFields(){
+  const cm=val('heightUnit')==='cm';
+  el('heightCmField').style.display=cm?'':'none';
+  el('heightFtField').style.display=cm?'none':'';
+}
+function getHeightCm(){
+  if(val('heightUnit')==='cm')return num('heightCm');
+  const ft=num('heightFt',0);
+  const inch=num('heightIn',0);
+  if(!ft&&!inch)return NaN;
+  return (ft*12+inch)*2.54;
+}
+function pbw(sex,heightCm){
+  return sex==='male'?50+0.91*(heightCm-152.4):45.5+0.91*(heightCm-152.4);
+}
+function devineIbw(sex,heightCm){
+  const inches=heightCm/2.54;
+  return sex==='male'?50+2.3*(inches-60):45.5+2.3*(inches-60);
+}
+function adjustedBw(actual,ibw){
+  return actual>ibw?ibw+0.4*(actual-ibw):actual;
+}
+function getDoseWeight(actual,ibw,adj){
+  const mode=val('doseWeight');
+  if(mode==='ibw')return {weight:ibw,label:'ideal body weight'};
+  if(mode==='adjusted')return {weight:adj,label:'adjusted body weight'};
+  return {weight:actual,label:'actual body weight'};
+}
+function chooseInduction(){
+  const manual=val('inductionChoice');
+  if(manual!=='auto')return manual;
+  const h=val('hemo');
+  const c=val('context');
+  const pRisk=val('propofolRisk');
+  if(h==='shock'||h==='borderline')return c==='bronchospasm'?'ketamine':'etomidate';
+  if(c==='bronchospasm')return 'ketamine';
+  if(c==='seizure'&&pRisk==='no')return 'propofol';
+  return 'etomidate';
+}
+function chooseParalytic(){
+  const manual=val('paralyticChoice');
+  if(manual!=='auto')return manual;
+  return 'rocuronium';
+}
+function chooseSedation(){
+  const manual=val('sedationChoice');
+  if(manual!=='auto')return manual;
+  const h=val('hemo');
+  const c=val('context');
+  const pRisk=val('propofolRisk');
+  const brady=val('bradyRisk');
+  const deep=val('rass')==='deep';
+  if(c==='bronchospasm')return 'ketamine';
+  if(c==='seizure')return pRisk==='no'&&h==='stable'?'propofol':'midazolam';
+  if(h==='shock')return 'ketamine';
+  if(deep)return pRisk==='no'?'propofol':'midazolam';
+  if(pRisk==='no')return 'propofol';
+  return brady==='no'?'dexmedetomidine':'midazolam';
+}
+function chooseAnalgesia(){
+  const manual=val('analgesiaChoice');
+  return manual==='auto'?'fentanylInfusion':manual;
+}
+function chooseVent(){
+  const manual=val('ventStrategy');
+  if(manual!=='auto')return manual;
+  const c=val('context');
+  if(c==='ards')return 'ards';
+  if(c==='obstructive'||c==='bronchospasm')return 'obstructive';
+  if(c==='acidosis')return 'acidosis';
+  if(c==='neuro')return 'neuro';
+  return 'standard';
+}
+function ettSuggestion(sex,heightCm){
+  if(sex==='female'){
+    if(heightCm<155)return '6.5–7.0 mm';
+    if(heightCm<175)return '7.0–7.5 mm';
+    return '7.5 mm';
+  }
+  if(heightCm<165)return '7.0–7.5 mm';
+  if(heightCm<185)return '7.5–8.0 mm';
+  return '8.0 mm';
+}
+function ettDepth(sex,heightCm){
+  let depth=sex==='female'?21:23;
+  if(sex==='female'){
+    if(heightCm<155)depth=20;
+    else if(heightCm>=175)depth=22;
+  }else{
+    if(heightCm<165)depth=21;
+    else if(heightCm<180)depth=22;
+  }
+  return depth;
+}
+function inductionData(drug,w){
+  const eC=num('etomidateConc',2),kC=num('ketamineBolusConc',10),pC=num('propofolConc',10);
+  if(drug==='etomidate'){
+    const dose=w*0.3;
+    return {drug:'Etomidate',dose:`${fmt(dose,1)} mg IV`,formula:'0.3 mg/kg',volume:ml(dose,eC),reason:'Hemodynamically neutral induction option; no analgesia.'};
+  }
+  if(drug==='ketamine'){
+    const shock=val('hemo')==='shock';
+    const perKg=shock?1:1.5;
+    const dose=w*perKg;
+    return {drug:'Ketamine',dose:`${fmt(dose,0)} mg IV`,formula:`${perKg} mg/kg${shock?' reduced shock starting dose':''}`,volume:ml(dose,kC),reason:'Useful for bronchospasm and selected unstable patients; profound catecholamine depletion can still produce hypotension.'};
+  }
+  const tenuous=val('hemo')!=='stable'||num('age',50)>=70;
+  const perKg=tenuous?0.5:1.5;
+  const dose=w*perKg;
+  return {drug:'Propofol',dose:`${fmt(dose,0)} mg IV`,formula:`${perKg} mg/kg${tenuous?' reduced':''}`,volume:ml(dose,pC),reason:'Rapid induction and antiseizure effect; major hypotension risk in tenuous physiology.'};
+}
+function paralyticData(drug,w){
+  const rC=num('rocConc',10),sC=num('suxConc',20);
+  if(drug==='succinylcholine'){
+    const dose=w*1.5;
+    return {drug:'Succinylcholine',dose:`${fmt(dose,0)} mg IV`,formula:'1.5 mg/kg',volume:ml(dose,sC),reason:'Shorter blockade but important hyperkalemia and malignant-hyperthermia contraindications.'};
+  }
+  const dose=w*1.2;
+  return {drug:'Rocuronium',dose:`${fmt(dose,0)} mg IV`,formula:'1.2 mg/kg',volume:ml(dose,rC),reason:'Reliable RSI paralysis; anticipate prolonged paralysis and start sedation immediately.'};
+}
+function allInductionAlternatives(w,selected){
+  return ['etomidate','ketamine','propofol'].filter(x=>x!==selected).map(x=>inductionData(x,w));
+}
+function allParalyticAlternatives(w,selected){
+  return ['rocuronium','succinylcholine'].filter(x=>x!==selected).map(x=>paralyticData(x,w));
+}
+function analgesiaData(choice,w){
+  const fBC=num('fentanylBolusConc',50),fIC=num('fentanylInfConc',10),hC=num('hydromorphoneConc',1);
+  if(choice==='hydromorphone'){
+    const low=0.2,high=0.5;
+    return {title:'Hydromorphone intermittent bolus',primary:`${low}–${high} mg IV`,detail:`${ml(low,hC)}–${ml(high,hC)} at ${fmt(hC,1)} mg/mL`,extra:'Repeat and titrate cautiously; longer acting than fentanyl.'};
+  }
+  const calcLow=w*0.5,calcHigh=w*1;
+  const practicalLow=Math.max(25,roundTo(calcLow,25));
+  const practicalHigh=Math.min(100,Math.max(practicalLow,roundTo(calcHigh,25)));
+  if(choice==='fentanylBolus'){
+    return {title:'Fentanyl intermittent bolus',primary:`${fmt(practicalLow,0)}–${fmt(practicalHigh,0)} mcg IV`,detail:`Weight reference 0.5–1 mcg/kg = ${fmt(calcLow,0)}–${fmt(calcHigh,0)} mcg; ${ml(practicalLow,fBC)}–${ml(practicalHigh,fBC)} at ${fmt(fBC,0)} mcg/mL`,extra:'Repeat to pain and ventilator tolerance; avoid large rapid boluses in tenuous patients.'};
+  }
+  const startLow=25,startHigh=100;
+  const wtLow=w*0.5,wtHigh=w*2;
+  return {title:'Fentanyl bolus + infusion',primary:`Bolus ${fmt(practicalLow,0)}–${fmt(practicalHigh,0)} mcg IV`,detail:`Infusion start ${startLow}–${startHigh} mcg/hr = ${fmt(startLow/fIC,1)}–${fmt(startHigh/fIC,1)} mL/hr at ${fmt(fIC,0)} mcg/mL`,extra:`Weight-based reference 0.5–2 mcg/kg/hr = ${fmt(wtLow,0)}–${fmt(wtHigh,0)} mcg/hr; titrate to CPOT/pain and hemodynamics.`};
+}
+function sedationData(drug,w){
+  const pC=num('propofolConc',10),dC=num('dexConc',4),kC=num('ketamineInfConc',2),mC=num('midazolamConc',1);
+  if(drug==='dexmedetomidine'){
+    const low=0.2,high=0.7;
+    return {drug:'Dexmedetomidine',dose:`${low}–${high} mcg/kg/hr`,rate:`${fmt(rateMlHr(w,low,dC,'mcgkghr'),1)}–${fmt(rateMlHr(w,high,dC,'mcgkghr'),1)} mL/hr at ${fmt(dC,1)} mcg/mL`,reason:'Best for ongoing light cooperative sedation; avoid routine loading dose.'};
+  }
+  if(drug==='ketamine'){
+    const low=0.5,high=2;
+    return {drug:'Ketamine infusion',dose:`${fmt(w*low,0)}–${fmt(w*high,0)} mg/hr (${low}–${high} mg/kg/hr)`,rate:`${fmt(rateMlHr(w,low,kC,'mgkghr'),1)}–${fmt(rateMlHr(w,high,kC,'mgkghr'),1)} mL/hr at ${fmt(kC,1)} mg/mL`,reason:'Useful for bronchospasm, opioid sparing, and selected hemodynamic fragility.'};
+  }
+  if(drug==='midazolam'){
+    const low=0.02,high=0.1;
+    return {drug:'Midazolam infusion',dose:`${fmt(w*low,1)}–${fmt(w*high,1)} mg/hr (${low}–${high} mg/kg/hr)`,rate:`${fmt(rateMlHr(w,low,mC,'mgkghr'),1)}–${fmt(rateMlHr(w,high,mC,'mgkghr'),1)} mL/hr at ${fmt(mC,1)} mg/mL`,reason:'Useful for seizures, alcohol withdrawal, or deep sedation when alternatives are unsuitable.'};
+  }
+  const startLow=5,startHigh=10,usualHigh=50;
+  return {drug:'Propofol infusion',dose:`Start ${startLow}–${startHigh} mcg/kg/min; titrate commonly 5–50 mcg/kg/min`,rate:`Start ${fmt(rateMlHr(w,startLow,pC,'mcgkgmin'),1)}–${fmt(rateMlHr(w,startHigh,pC,'mcgkgmin'),1)} mL/hr; 50 mcg/kg/min = ${fmt(rateMlHr(w,usualHigh,pC,'mcgkgmin'),1)} mL/hr at ${fmt(pC,1)} mg/mL`,reason:'Rapidly titratable; useful for deep sedation and seizures when blood pressure permits.'};
+}
+function ventData(strategy,pbwKg,vtMl){
+  const common=`VT ${fmt(vtMl,0)} mL (${val('selectedVt')} mL/kg PBW)`;
+  if(strategy==='ards')return {name:'ARDS / lung protective',settings:`AC/VC or equivalent • ${common} • RR about 20–24/min • PEEP/FiO₂ per ARDS protocol`,notes:'Target plateau pressure ≤30 cm H₂O; reduce VT toward 4 mL/kg PBW if needed.'};
+  if(strategy==='obstructive')return {name:'Obstructive physiology',settings:`AC/VC or pressure mode • ${common} • RR about 8–12/min • high inspiratory flow • long expiratory time`,notes:'Monitor auto-PEEP and expiratory flow; accept permissive hypercapnia when appropriate.'};
+  if(strategy==='acidosis')return {name:'Severe metabolic acidosis',settings:`Use lung-protective VT ${fmt(vtMl,0)} mL • set RR high enough to approximate pre-intubation minute ventilation`,notes:'High-risk transition: obtain early gas and avoid abrupt loss of respiratory compensation.'};
+  if(strategy==='neuro')return {name:'Neuro / controlled ventilation',settings:`AC/VC or equivalent • ${common} • RR initially about 16–20/min`,notes:'Avoid hypoxemia and hypotension; target PaCO₂ based on neuro indication rather than routine hyperventilation.'};
+  return {name:'Standard lung protective',settings:`AC/VC or equivalent • ${common} • RR about 16–20/min • PEEP 5 cm H₂O • initial FiO₂ 100%, then rapidly titrate`,notes:'Reassess gas exchange, plateau pressure, driving pressure, and synchrony.'};
+}
+function buildOrderText(data){
+  return [
+    'ADULT INTUBATION QUICK PLAN',
+    `Actual weight: ${fmt(data.actual,1)} kg | Height: ${fmt(data.height,1)} cm | BMI: ${fmt(data.bmi,1)}`,
+    `PBW: ${fmt(data.pbw,1)} kg | IBW: ${fmt(data.ibw,1)} kg | Medication dosing weight: ${fmt(data.dw,1)} kg (${data.dwLabel})`,
+    '',
+    `RSI induction: ${data.ind.drug} ${data.ind.dose} (${data.ind.formula}; ${data.ind.volume})`,
+    `RSI paralytic: ${data.par.drug} ${data.par.dose} (${data.par.formula}; ${data.par.volume})`,
+    '',
+    `Analgesia: ${data.analgesia.title} — ${data.analgesia.primary}. ${data.analgesia.detail}`,
+    `Sedation: ${data.sed.drug} — ${data.sed.dose}. ${data.sed.rate}`,
+    `RASS target: ${val('rass')==='deep'?'−4 to −5':'0 to −2'}`,
+    '',
+    `ETT: ${data.ettSize}; initial depth ${data.depth} cm at teeth. Confirm with waveform capnography, exam, and CXR when indicated.`,
+    `Vent: ${data.vent.name} — ${data.vent.settings}. ${data.vent.notes}`,
+    `VT references: 4=${fmt(data.pbw*4,0)} mL | 6=${fmt(data.pbw*6,0)} mL | 7=${fmt(data.pbw*7,0)} mL | 8=${fmt(data.pbw*8,0)} mL.`,
+    '',
+    'Immediate: waveform capnography, secure tube, analgesia + amnestic sedation immediately, check BP, then reassess ventilator and gas.'
+  ].join('\n');
+}
+function copyOrder(){
+  const box=el('orderText');
+  if(!box)return;
+  const text=box.value;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(()=>alert('Quick plan copied.')).catch(()=>fallbackCopy(text));
+  }else fallbackCopy(text);
+}
+function fallbackCopy(text){
+  const t=document.createElement('textarea');
+  t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();
+  try{document.execCommand('copy');alert('Quick plan copied.');}catch(e){alert('Please copy the text manually.');}
+  document.body.removeChild(t);
+}
+function calculateAll(){
+  const sex=val('sex');
+  const age=num('age',50);
+  const actual=num('weight');
+  const height=getHeightCm();
+  const out=el('results');
+  if(!Number.isFinite(actual)||actual<20||actual>350||!Number.isFinite(height)||height<120||height>230){
+    out.innerHTML='<div class="notice notice-danger"><strong>Enter valid adult weight and height.</strong> Weight must be 20–350 kg and height 120–230 cm.</div>';
+    return;
+  }
+  const pbwKg=pbw(sex,height);
+  const ibwKg=Math.max(20,devineIbw(sex,height));
+  const adj=adjustedBw(actual,ibwKg);
+  const dwObj=getDoseWeight(actual,ibwKg,adj);
+  const dw=dwObj.weight;
+  const bmi=actual/Math.pow(height/100,2);
+  const induction=chooseInduction();
+  const paralytic=chooseParalytic();
+  const sedation=chooseSedation();
+  const analgesia=chooseAnalgesia();
+  const ventChoice=chooseVent();
+  const ind=inductionData(induction,dw);
+  const par=paralyticData(paralytic,dw);
+  const sed=sedationData(sedation,dw);
+  const anal=analgesiaData(analgesia,dw);
+  const depth=ettDepth(sex,height);
+  const autoSize=ettSuggestion(sex,height);
+  const chosenEtt=val('ettSize')==='auto'?autoSize:`${val('ettSize')} mm (selected; auto suggestion ${autoSize})`;
+  const vtPerKg=parseFloat(val('selectedVt'));
+  const vt=pbwKg*vtPerKg;
+  const vent=ventData(ventChoice,pbwKg,vt);
+  const indAlts=allInductionAlternatives(dw,induction);
+  const parAlts=allParalyticAlternatives(dw,paralytic);
+  const warnings=[];
+  const cautions=[];
+  warnings.push('Paralysis does not provide pain control, sedation, or amnesia. Start analgesia and an amnestic sedative immediately after tube placement.');
+  if(paralytic==='succinylcholine'&&val('suxRisk')==='yes')warnings.push('Succinylcholine was manually selected despite a stated contraindication or high hyperkalemia risk. Choose rocuronium unless an airway expert resolves the concern.');
+  if(sedation==='dexmedetomidine'&&paralytic==='rocuronium')warnings.push('Dexmedetomidine alone may be inadequate for immediate deep amnesia while rocuronium paralysis persists. Use an appropriate initial amnestic sedative.');
+  if(induction==='propofol'&&val('hemo')!=='stable')warnings.push('Propofol induction in borderline blood pressure or shock may precipitate cardiovascular collapse. Reconsider etomidate or ketamine and prepare hemodynamic support.');
+  if(val('hemo')==='shock')warnings.push('High risk for peri-intubation hypotension or arrest: optimize physiology, prepare vasopressor support, and reassess blood pressure immediately after induction.');
+  if(bmi>=40)cautions.push('BMI is ≥40 kg/m². Drug-specific obesity dosing varies; verify whether actual, ideal, or adjusted weight is appropriate for each medication.');
+  if(val('rass')==='deep')cautions.push('Deep sedation should have a documented indication and daily reassessment.');
+  if(sedation==='dexmedetomidine'&&val('bradyRisk')==='yes')cautions.push('Dexmedetomidine may worsen bradycardia or high-grade conduction disease.');
+  if(sedation==='propofol'&&val('propofolRisk')==='yes')cautions.push('Propofol was selected despite a stated limitation. Consider an alternative and verify hemodynamic and triglyceride/PRIS concerns.');
+  if(age>=70)cautions.push('Older adults often require reduced induction and maintenance dosing. Titrate to effect and blood pressure.');
+  if(val('opioidTolerance')==='yes')cautions.push('Chronic opioid tolerance may require higher analgesic exposure and multimodal analgesia; titrate carefully.');
+  if(ventChoice==='acidosis')warnings.push('Severe metabolic acidosis: inadequate minute ventilation immediately after intubation can cause abrupt acidemia and cardiovascular collapse.');
+  if(ventChoice==='obstructive')cautions.push('Obstructive physiology: monitor expiratory flow and auto-PEEP before increasing respiratory rate.');
+
+  const data={actual,height,bmi,pbw:pbwKg,ibw:ibwKg,adj,dw,dwLabel:dwObj.label,ind,par,sed,analgesia:anal,depth,ettSize:chosenEtt,vent};
+  const order=buildOrderText(data);
+  out.innerHTML=`
+    <div class="quick-strip">
+      <div class="metric"><div class="label">Actual weight</div><div class="value">${fmt(actual,1)} kg</div><div class="sub">BMI ${fmt(bmi,1)}</div></div>
+      <div class="metric"><div class="label">Height</div><div class="value">${fmt(height,1)} cm</div><div class="sub">${fmt(height/2.54,1)} inches</div></div>
+      <div class="metric"><div class="label">PBW for VT</div><div class="value">${fmt(pbwKg,1)} kg</div><div class="sub">ARDSNet formula</div></div>
+      <div class="metric"><div class="label">IBW</div><div class="value">${fmt(ibwKg,1)} kg</div><div class="sub">Devine</div></div>
+      <div class="metric"><div class="label">Adjusted BW</div><div class="value">${fmt(adj,1)} kg</div><div class="sub">IBW + 0.4 excess</div></div>
+      <div class="metric"><div class="label">Medication weight</div><div class="value">${fmt(dw,1)} kg</div><div class="sub">${dwObj.label}</div></div>
+    </div>
+
+    ${warnings.map(x=>`<div class="warning-line">${x}</div>`).join('')}
+    ${cautions.map(x=>`<div class="caution-line">${x}</div>`).join('')}
+
+    <div class="output-grid">
+      <article class="output-card">
+        <h3>1. RSI Induction <span class="tag">Quick pick</span></h3>
+        <div class="primary-dose"><div class="drug">${ind.drug}</div><div class="dose">${ind.dose}</div><div class="detail">${ind.formula} • ${ind.volume}</div></div>
+        <div class="small">${ind.reason}</div>
+        <h4>Other calculated options</h4>
+        ${indAlts.map(a=>`<div class="alt"><strong>${a.drug}:</strong> ${a.dose} • ${a.formula} • ${a.volume}</div>`).join('')}
+      </article>
+
+      <article class="output-card">
+        <h3>2. RSI Paralytic <span class="tag">Quick pick</span></h3>
+        <div class="primary-dose"><div class="drug">${par.drug}</div><div class="dose">${par.dose}</div><div class="detail">${par.formula} • ${par.volume}</div></div>
+        <div class="small">${par.reason}</div>
+        <h4>Alternative</h4>
+        ${parAlts.map(a=>`<div class="alt"><strong>${a.drug}:</strong> ${a.dose} • ${a.formula} • ${a.volume}</div>`).join('')}
+      </article>
+
+      <article class="output-card">
+        <h3>3. Analgesia <span class="tag">Start immediately</span></h3>
+        <div class="primary-dose"><div class="drug">${anal.title}</div><div class="dose">${anal.primary}</div><div class="detail">${anal.detail}</div></div>
+        <div class="small">${anal.extra}</div>
+      </article>
+
+      <article class="output-card">
+        <h3>4. Sedation <span class="tag">RASS ${val('rass')==='deep'?'−4 to −5':'0 to −2'}</span></h3>
+        <div class="primary-dose"><div class="drug">${sed.drug}</div><div class="dose">${sed.dose}</div><div class="detail">${sed.rate}</div></div>
+        <div class="small">${sed.reason}</div>
+        ${sedation==='dexmedetomidine'?'<div class="caution-line">For immediate post-RSI care, ensure adequate amnesia while paralysis persists; dexmedetomidine is usually an ongoing light-sedation agent.</div>':''}
+      </article>
+
+      <article class="output-card">
+        <h3>5. ETT Numbers <span class="tag">Starting estimate</span></h3>
+        <div class="primary-dose"><div class="drug">ETT ${chosenEtt}</div><div class="dose">Depth ${depth} cm at teeth</div><div class="detail">Traditional 21/23 rule adjusted approximately for height</div></div>
+        <ul>
+          <li>Confirm continuous waveform capnography.</li>
+          <li>Check bilateral breath sounds and tube marking.</li>
+          <li>Confirm depth with chest radiography when indicated.</li>
+          <li>Secure the tube and document size/depth.</li>
+        </ul>
+      </article>
+
+      <article class="output-card">
+        <h3>6. Tidal Volume and Vent <span class="tag">PBW ${fmt(pbwKg,1)} kg</span></h3>
+        <div class="primary-dose"><div class="drug">Starting VT ${fmt(vt,0)} mL</div><div class="dose">${vent.name}</div><div class="detail">${vent.settings}</div></div>
+        <div class="alt"><strong>4 mL/kg:</strong> ${fmt(pbwKg*4,0)} mL • <strong>6:</strong> ${fmt(pbwKg*6,0)} mL • <strong>7:</strong> ${fmt(pbwKg*7,0)} mL • <strong>8:</strong> ${fmt(pbwKg*8,0)} mL</div>
+        <div class="small">${vent.notes}</div>
+      </article>
+
+      <article class="output-card full">
+        <h3>Copyable Quick Plan <button class="btn btn-outline" type="button" onclick="copyOrder()">Copy</button></h3>
+        <textarea id="orderText" class="order-box">${order}</textarea>
+      </article>
+    </div>
+  `;
+  out.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function fillExample(){
+  el('sex').value='male';el('age').value='60';el('weight').value='80';el('heightUnit').value='cm';toggleHeightFields();el('heightCm').value='175';
+  el('hemo').value='stable';el('context').value='general';el('doseWeight').value='actual';el('suxRisk').value='no';el('rass').value='light';
+  el('inductionChoice').value='auto';el('paralyticChoice').value='auto';el('analgesiaChoice').value='auto';el('sedationChoice').value='auto';el('ventStrategy').value='auto';el('selectedVt').value='6';calculateAll();
+}
+function resetAll(){
+  document.querySelectorAll('input').forEach(i=>{if(!['etomidateConc','ketamineBolusConc','propofolConc','rocConc','suxConc','fentanylBolusConc','fentanylInfConc','hydromorphoneConc','ketamineInfConc','dexConc','midazolamConc'].includes(i.id))i.value='';});
+  el('sex').value='male';el('heightUnit').value='cm';toggleHeightFields();el('hemo').value='stable';el('context').value='general';el('doseWeight').value='actual';
+  el('suxRisk').value='no';el('rass').value='light';el('opioidTolerance').value='no';el('bradyRisk').value='no';el('propofolRisk').value='no';el('ettSize').value='auto';
+  el('inductionChoice').value='auto';el('paralyticChoice').value='auto';el('analgesiaChoice').value='auto';el('sedationChoice').value='auto';el('ventStrategy').value='auto';el('selectedVt').value='6';
+  el('results').innerHTML='<div class="empty">Enter weight and height, choose the clinical context, then calculate.</div>';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+window.addEventListener('scroll',()=>{
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  const pct=max>0?(window.scrollY/max)*100:0;
+  el('reading-progress').style.width=`${pct}%`;
+});
+</script>
+</body>
+</html>
