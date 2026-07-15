@@ -1,5 +1,31 @@
 [
   {
+    "title": "Sexually Transmitted Infections: The Complete Advanced Resident Guide",
+    "date": "2026-07-15",
+    "category": "Infectious Disease",
+    "tags": [
+      "sexually transmitted infections",
+      "STI",
+      "gonorrhea",
+      "chlamydia",
+      "syphilis",
+      "genital herpes",
+      "trichomoniasis",
+      "pelvic inflammatory disease",
+      "urethritis",
+      "cervicitis",
+      "epididymitis",
+      "proctitis",
+      "HIV PrEP",
+      "HIV PEP",
+      "doxy PEP"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to sexually transmitted infections, including sexual history, site-specific testing, gonorrhea, chlamydia, syphilis, genital herpes, trichomoniasis, Mycoplasma genitalium, PID, epididymitis, proctitis, HPV, partner treatment, expedited partner therapy, HIV PrEP and PEP, doxycycline PEP, pregnancy, and sexual assault care.",
+    "featured": true,
+    "readingTime": 45,
+    "file": "posts/2026-07-15-sti.html"
+  },
+  {
     "title": "Clostridioides difficile Infection: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
