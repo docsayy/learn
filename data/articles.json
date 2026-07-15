@@ -91,6 +91,27 @@
     "file": "posts/2026-07-14-hiv-aids.html"
   },
   {
+    "title": "Fever in the Hospitalized Patient: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "hospital fever",
+      "inpatient fever",
+      "ICU fever",
+      "postoperative fever",
+      "drug fever",
+      "central fever",
+      "persistent fever",
+      "blood cultures",
+      "sepsis",
+      "fever despite antibiotics"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to evaluating fever in hospitalized adults, including temperature measurement, sepsis assessment, culture stewardship, device review, postoperative fever, fever despite antibiotics, drug fever, thrombosis, central fever, occult infection, and a structured approach after 72 hours.",
+    "featured": true,
+    "readingTime": 36,
+    "file": "posts/2026-07-14-hospital-fever.html"
+  },
+  {
     "title": "Gastrointestinal and Intra-Abdominal Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
