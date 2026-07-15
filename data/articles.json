@@ -43,6 +43,27 @@
     "file": "posts/2026-07-14-cns-infections.html"
   },
   {
+    "title": "Fever of Unknown Origin: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "fever of unknown origin",
+      "FUO",
+      "prolonged fever",
+      "FDG PET CT",
+      "inflammation of unknown origin",
+      "occult infection",
+      "vasculitis",
+      "lymphoma",
+      "drug fever",
+      "factitious fever"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to classic, nosocomial, neutropenic, and HIV-associated fever of unknown origin, including modern definitions, minimum diagnostic evaluation, potential diagnostic clues, PET/CT, targeted biopsy, infectious, inflammatory, malignant, and miscellaneous causes, empiric therapy, and management of undiagnosed cases.",
+    "featured": true,
+    "readingTime": 42,
+    "file": "posts/2026-07-14-fuo.html"
+  },
+  {
     "title": "Healthcare-Associated and Device-Related Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
