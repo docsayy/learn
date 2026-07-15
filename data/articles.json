@@ -218,6 +218,28 @@
     "file": "posts/2026-07-14-tb.html"
   },
   {
+    "title": "Travel Medicine: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "travel medicine",
+      "pretravel consultation",
+      "travel vaccines",
+      "malaria prophylaxis",
+      "travelers diarrhea",
+      "yellow fever",
+      "rabies",
+      "typhoid",
+      "Japanese encephalitis",
+      "altitude illness",
+      "returned traveler fever"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to pretravel risk assessment, routine and travel vaccines, malaria chemoprophylaxis, travelers diarrhea, vector avoidance, rabies, altitude illness, air travel, special populations, and evaluation of illness after international travel.",
+    "featured": true,
+    "readingTime": 50,
+    "file": "posts/2026-07-15-travel-medicine.html"
+  },
+  {
     "title": "HIV Infection: Diagnosis, Initial Evaluation, and Management",
     "date": "2026-07-13",
     "category": "Infectious Disease",
