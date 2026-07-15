@@ -39,6 +39,23 @@
     "file": "posts/2026-07-15-approach-to-acute-respiratory-failure.html"
   },
   {
+    "title": "Asthma and Status Asthmaticus",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "asthma",
+      "status asthmaticus",
+      "GINA",
+      "bronchodilator",
+      "ICS-formoterol",
+      "acute asthma"
+    ],
+    "summary": "A resident-level guide to confirming asthma, selecting anti-inflammatory controller therapy, assessing severe exacerbations, bronchodilator delivery, systemic corticosteroids, magnesium, NIV, intubation, and avoiding dynamic hyperinflation and respiratory arrest.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-asthma-and-status-asthmaticus.html"
+  },
+  {
     "title": "Bioterrorism and High-Consequence Biological Threats: The Complete Advanced Resident Guide",
     "date": "2026-07-15",
     "category": "Infectious Disease",
@@ -60,6 +77,23 @@
     "featured": true,
     "readingTime": 45,
     "file": "posts/2026-07-15-bioterrorism.html"
+  },
+  {
+    "title": "COPD and Acute Exacerbation",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "COPD",
+      "GOLD",
+      "acute exacerbation",
+      "NIV",
+      "bronchodilator",
+      "oxygen therapy"
+    ],
+    "summary": "A practical guide to COPD diagnosis, spirometric confirmation, symptom and exacerbation assessment, inhaler selection, oxygen and NIV in acute exacerbation, corticosteroids, antibiotics, chronic hypercapnia, pulmonary rehabilitation, and prevention.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-copd-and-acute-exacerbation.html"
   },
   {
     "title": "CRRT and Renal Replacement Therapy in Critical Illness",
@@ -97,6 +131,22 @@
     "file": "posts/2026-07-15-goals-of-care-and-post-icu-syndrome.html"
   },
   {
+    "title": "Hemoptysis: Stabilization, Localization, and Definitive Control",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "hemoptysis",
+      "massive hemoptysis",
+      "bronchial artery embolization",
+      "bronchoscopy",
+      "CT angiography"
+    ],
+    "summary": "A clinical guide to distinguishing hemoptysis from hematemesis, defining life-threatening bleeding by physiology, airway positioning, bronchoscopy, CT angiography, bronchial artery embolization, anticoagulant reversal, and management of infection, malignancy, and diffuse alveolar hemorrhage.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-hemoptysis.html"
+  },
+  {
     "title": "ICU Delirium, Sedation, and Analgesia",
     "date": "2026-07-15",
     "category": "Pulmonary and Critical Care",
@@ -113,6 +163,23 @@
     "featured": true,
     "readingTime": 3,
     "file": "posts/2026-07-15-icu-delirium-sedation-and-analgesia.html"
+  },
+  {
+    "title": "Interstitial Lung Disease: Diagnostic Framework and Acute Deterioration",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "interstitial lung disease",
+      "ILD",
+      "IPF",
+      "pulmonary fibrosis",
+      "HRCT",
+      "progressive pulmonary fibrosis"
+    ],
+    "summary": "A structured approach to ILD patterns, exposure and autoimmune history, HRCT interpretation, PFTs, serology, multidisciplinary diagnosis, IPF and progressive pulmonary fibrosis, antifibrotic therapy, immunosuppression, oxygen, transplant referral, and acute exacerbation.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-interstitial-lung-disease.html"
   },
   {
     "title": "Massive Transfusion, Hemorrhagic Shock, and Disseminated Intravascular Coagulation",
@@ -200,6 +267,58 @@
     "featured": true,
     "readingTime": 3,
     "file": "posts/2026-07-15-post-cardiac-arrest-care.html"
+  },
+  {
+    "title": "Pulmonary Embolism: Diagnosis, Risk Stratification, and Acute Management",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "pulmonary embolism",
+      "PE",
+      "D-dimer",
+      "thrombolysis",
+      "anticoagulation",
+      "right ventricular strain",
+      "CTEPH"
+    ],
+    "summary": "A complete approach to pretest probability, D-dimer, CT angiography, V/Q scanning, RV assessment, anticoagulation, high-risk and intermediate-risk PE, thrombolysis, catheter-based therapy, thrombectomy, duration, and chronic thromboembolic disease.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-pulmonary-embolism.html"
+  },
+  {
+    "title": "Pulmonary Hypertension and Right-Ventricular Failure",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "pulmonary hypertension",
+      "right ventricular failure",
+      "right heart catheterization",
+      "PAH",
+      "CTEPH",
+      "cor pulmonale"
+    ],
+    "summary": "A structured guide to pulmonary hypertension classification, echocardiographic suspicion, right-heart catheterization, acute RV failure, preload and afterload management, vasopressors, inotropes, pulmonary vasodilators, and avoiding harmful empiric PAH therapy.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-pulmonary-hypertension-and-right-ventricular-failure.html"
+  },
+  {
+    "title": "Pulmonary Nodules and Lung Cancer",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "pulmonary nodule",
+      "lung cancer",
+      "Fleischner",
+      "lung cancer screening",
+      "PET CT",
+      "biopsy"
+    ],
+    "summary": "A structured guide to incidental solid and subsolid nodules, malignancy probability, CT surveillance, PET-CT, biopsy selection, lung-cancer screening, staging principles, tissue acquisition, molecular testing, and avoiding both overtesting and missed cancer.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-pulmonary-nodules-and-lung-cancer.html"
   },
   {
     "title": "Sexually Transmitted Infections: The Complete Advanced Resident Guide",
