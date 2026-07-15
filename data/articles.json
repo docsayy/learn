@@ -67,6 +67,28 @@
     "file": "posts/2026-07-14-hiv-aids.html"
   },
   {
+    "title": "Gastrointestinal and Intra-Abdominal Infections: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "intra-abdominal infection",
+      "infectious diarrhea",
+      "appendicitis",
+      "diverticulitis",
+      "cholangitis",
+      "cholecystitis",
+      "spontaneous bacterial peritonitis",
+      "secondary peritonitis",
+      "liver abscess",
+      "infected pancreatic necrosis",
+      "source control"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to infectious diarrhea, appendicitis, diverticulitis, biliary infection, spontaneous and secondary peritonitis, intra-abdominal abscesses, infected pancreatic necrosis, source control, antimicrobial selection, and treatment duration.",
+    "featured": true,
+    "readingTime": 38,
+    "file": "posts/2026-07-14-intra-abdominal-infection.html"
+  },
+  {
     "title": "Bone, Joint, and Spinal Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
