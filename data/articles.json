@@ -43,6 +43,30 @@
     "file": "posts/2026-07-14-cns-infections.html"
   },
   {
+    "title": "Healthcare-Associated and Device-Related Infections: The Complete Advanced Resident Guide",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "healthcare-associated infection",
+      "HAI",
+      "CLABSI",
+      "CRBSI",
+      "CAUTI",
+      "HAP",
+      "VAP",
+      "surgical site infection",
+      "central line infection",
+      "device infection",
+      "ventriculitis",
+      "Candida auris",
+      "infection prevention"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to healthcare-associated and device-related infections, including CLABSI, CRBSI, CAUTI, HAP, VAP, surgical-site infection, dialysis catheter infection, CSF-device infection, implanted cardiac and vascular devices, diagnostic stewardship, source control, treatment duration, isolation, and prevention bundles.",
+    "featured": true,
+    "readingTime": 43,
+    "file": "posts/2026-07-14-healthcare-associated-infection.html"
+  },
+  {
     "title": "HIV and Opportunistic Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
