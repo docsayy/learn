@@ -1,5 +1,28 @@
 [
   {
+    "title": "Bioterrorism and High-Consequence Biological Threats: The Complete Advanced Resident Guide",
+    "date": "2026-07-15",
+    "category": "Infectious Disease",
+    "tags": [
+      "bioterrorism",
+      "biological threats",
+      "anthrax",
+      "botulism",
+      "plague",
+      "smallpox",
+      "tularemia",
+      "viral hemorrhagic fever",
+      "ricin",
+      "public health emergency",
+      "infection control",
+      "postexposure prophylaxis"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to recognition and clinical management of bioterrorism and high-consequence biological threats, including immediate response, infection control, public-health notification, laboratory safety, decontamination, anthrax, botulism, plague, smallpox, tularemia, viral hemorrhagic fevers, toxins, post-exposure prophylaxis, and mass-casualty principles.",
+    "featured": true,
+    "readingTime": 45,
+    "file": "posts/2026-07-15-bioterrorism.html"
+  },
+  {
     "title": "Sexually Transmitted Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-15",
     "category": "Infectious Disease",
