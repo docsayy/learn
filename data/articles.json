@@ -1,5 +1,44 @@
 [
   {
+    "title": "Acute Liver Failure and Cirrhosis in the ICU",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "acute liver failure",
+      "cirrhosis",
+      "ACLF",
+      "hepatic encephalopathy",
+      "hepatorenal syndrome",
+      "variceal bleeding"
+    ],
+    "summary": "A bedside guide to acute liver failure, encephalopathy, cerebral edema, acetaminophen toxicity, transplant referral, acute-on-chronic liver failure, variceal bleeding, spontaneous bacterial peritonitis, hepatorenal syndrome, ventilation, coagulopathy, and prognostic communication.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-acute-liver-failure-and-cirrhosis-in-the-icu.html"
+  },
+  {
+    "title": "Approach to Acute Respiratory Failure: The Complete Advanced Resident Guide",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "acute respiratory failure",
+      "hypoxemic respiratory failure",
+      "hypercapnic respiratory failure",
+      "oxygen therapy",
+      "high-flow nasal cannula",
+      "noninvasive ventilation",
+      "intubation",
+      "ABG",
+      "A-a gradient",
+      "P/F ratio",
+      "critical care"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and pulmonary-critical care guide to recognizing, classifying, diagnosing, and stabilizing acute respiratory failure, including oxygenation and ventilation physiology, arterial blood gas interpretation, bedside differential diagnosis, oxygen devices, high-flow nasal cannula, noninvasive ventilation, intubation thresholds, and cause-directed management.",
+    "featured": true,
+    "readingTime": 33,
+    "file": "posts/2026-07-15-approach-to-acute-respiratory-failure.html"
+  },
+  {
     "title": "Bioterrorism and High-Consequence Biological Threats: The Complete Advanced Resident Guide",
     "date": "2026-07-15",
     "category": "Infectious Disease",
@@ -21,6 +60,146 @@
     "featured": true,
     "readingTime": 45,
     "file": "posts/2026-07-15-bioterrorism.html"
+  },
+  {
+    "title": "CRRT and Renal Replacement Therapy in Critical Illness",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "CRRT",
+      "renal replacement therapy",
+      "AKI",
+      "dialysis",
+      "continuous kidney replacement therapy",
+      "citrate anticoagulation"
+    ],
+    "summary": "A practical guide to indications for kidney replacement therapy, modality selection, CRRT prescription, dose, filtration fraction, anticoagulation, electrolyte and phosphate management, drug dosing, troubleshooting alarms, and stopping therapy.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-crrt-and-renal-replacement-therapy.html"
+  },
+  {
+    "title": "Goals of Care, Time-Limited Trials, and Post-ICU Syndrome",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "goals of care",
+      "code status",
+      "time limited trial",
+      "palliative care",
+      "post ICU syndrome",
+      "PICS",
+      "ICU survivorship"
+    ],
+    "summary": "A practical framework for serious-illness communication, code status, prognosis, surrogate decision-making, time-limited trials, conflict, palliative care, symptom management, ICU survivorship, post-intensive-care syndrome, family burden, rehabilitation, and follow-up.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-goals-of-care-and-post-icu-syndrome.html"
+  },
+  {
+    "title": "ICU Delirium, Sedation, and Analgesia",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "ICU delirium",
+      "sedation",
+      "analgesia",
+      "PADIS",
+      "dexmedetomidine",
+      "propofol",
+      "ICU liberation"
+    ],
+    "summary": "A bedside guide to analgesia-first care, sedation targets, propofol and dexmedetomidine, benzodiazepine limitations, delirium screening, nonpharmacologic prevention, agitation, sleep, early mobility, withdrawal, and safe management of the ventilated patient.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-icu-delirium-sedation-and-analgesia.html"
+  },
+  {
+    "title": "Massive Transfusion, Hemorrhagic Shock, and Disseminated Intravascular Coagulation",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "massive transfusion",
+      "hemorrhagic shock",
+      "DIC",
+      "fibrinogen",
+      "viscoelastic testing",
+      "anticoagulant reversal"
+    ],
+    "summary": "A critical-care guide to activating massive transfusion, balanced blood-component resuscitation, fibrinogen and calcium replacement, warming, viscoelastic testing, anticoagulant reversal, hemorrhage control, DIC recognition, and avoiding dilutional or thrombotic complications.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-massive-transfusion-and-dic.html"
+  },
+  {
+    "title": "Noninvasive Ventilation: CPAP, BiPAP, and Bedside Failure Recognition",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "noninvasive ventilation",
+      "NIV",
+      "CPAP",
+      "BiPAP",
+      "COPD",
+      "cardiogenic pulmonary edema",
+      "acute respiratory failure"
+    ],
+    "summary": "A practical guide to selecting CPAP or bilevel noninvasive ventilation, choosing initial settings, treating COPD exacerbation and cardiogenic pulmonary edema, avoiding inappropriate NIV, troubleshooting mask and synchrony problems, and recognizing failure before emergent intubation.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-noninvasive-ventilation.html"
+  },
+  {
+    "title": "Nutrition, Mobility, and ICU Supportive Care",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "ICU nutrition",
+      "enteral nutrition",
+      "early mobility",
+      "DVT prophylaxis",
+      "stress ulcer",
+      "pressure injury",
+      "ICU bundle"
+    ],
+    "summary": "A practical ICU bundle covering enteral nutrition, protein and calorie delivery, refeeding risk, glycemic control, DVT and stress-ulcer prophylaxis, bowel care, pressure-injury prevention, sleep, early mobility, device removal, and daily de-escalation.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-nutrition-mobility-and-icu-supportive-care.html"
+  },
+  {
+    "title": "Oxygen-Delivery Devices and High-Flow Nasal Cannula",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "oxygen therapy",
+      "high-flow nasal cannula",
+      "HFNC",
+      "FiO2",
+      "ROX index",
+      "hypoxemia",
+      "respiratory failure"
+    ],
+    "summary": "A bedside guide to selecting oxygen devices, setting oxygen targets, understanding delivered FiO₂, starting and monitoring high-flow nasal cannula, using the ROX index appropriately, and escalating support before respiratory fatigue or peri-intubation collapse occurs.",
+    "featured": true,
+    "readingTime": 5,
+    "file": "posts/2026-07-15-oxygen-delivery-devices-and-high-flow-nasal-cannula.html"
+  },
+  {
+    "title": "Post–Cardiac Arrest Care",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "post cardiac arrest",
+      "ROSC",
+      "targeted temperature management",
+      "neuroprognostication",
+      "coronary angiography"
+    ],
+    "summary": "A practical guide to the first hours after return of spontaneous circulation, oxygen and ventilation targets, hemodynamics, coronary angiography, temperature control, seizure detection, cause evaluation, organ support, multimodal neurologic prognostication, and family communication.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-post-cardiac-arrest-care.html"
   },
   {
     "title": "Sexually Transmitted Infections: The Complete Advanced Resident Guide",
@@ -47,6 +226,25 @@
     "featured": true,
     "readingTime": 45,
     "file": "posts/2026-07-15-sti.html"
+  },
+  {
+    "title": "Toxicology Emergencies for the Intensivist",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "toxicology",
+      "poisoning",
+      "toxidromes",
+      "acetaminophen",
+      "salicylate",
+      "toxic alcohol",
+      "overdose",
+      "antidote"
+    ],
+    "summary": "A syndrome-based approach to the poisoned patient, toxidromes, airway and hemodynamic stabilization, decontamination, ECG interpretation, antidotes, sodium bicarbonate, lipid emulsion, extracorporeal removal, acetaminophen, salicylates, toxic alcohols, opioids, and cardiotoxic overdoses.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-toxicology-emergencies.html"
   },
   {
     "title": "Clostridioides difficile Infection: The Complete Advanced Resident Guide",
