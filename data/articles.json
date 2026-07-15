@@ -174,6 +174,27 @@
     "file": "posts/2026-07-14-osteo.html"
   },
   {
+    "title": "Sepsis and Septic Shock: The Complete Infectious Diseases Approach",
+    "date": "2026-07-14",
+    "category": "Infectious Disease",
+    "tags": [
+      "sepsis",
+      "septic shock",
+      "bacteremia",
+      "blood cultures",
+      "empiric antibiotics",
+      "source control",
+      "antimicrobial de-escalation",
+      "multidrug resistance",
+      "lactate",
+      "vasopressors"
+    ],
+    "summary": "A comprehensive PGY-3 internal medicine and infectious disease guide to sepsis and septic shock, emphasizing recognition, culture collection, empiric antimicrobial selection, resistant-organism risk, rapid diagnostics, source control, antimicrobial pharmacology, de-escalation, treatment duration, persistent bacteremia, culture-negative sepsis, and common infectious and noninfectious mimics.",
+    "featured": true,
+    "readingTime": 45,
+    "file": "posts/2026-07-14-sepsis.html"
+  },
+  {
     "title": "Tuberculosis: The Complete Advanced Resident Guide",
     "date": "2026-07-14",
     "category": "Infectious Disease",
