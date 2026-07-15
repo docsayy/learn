@@ -17,6 +17,24 @@
     "file": "posts/2026-07-15-acute-liver-failure-and-cirrhosis-in-the-icu.html"
   },
   {
+    "title": "Acute Respiratory Distress Syndrome: Diagnosis and Lung-Protective Management",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "ARDS",
+      "acute respiratory distress syndrome",
+      "lung protective ventilation",
+      "prone positioning",
+      "PEEP",
+      "driving pressure",
+      "ECMO"
+    ],
+    "summary": "A comprehensive resident guide to the global ARDS definition, differential diagnosis, lung-protective ventilation, PEEP, prone positioning, neuromuscular blockade, conservative fluid management, rescue therapies, ECMO referral, and prevention of ventilator-induced lung injury.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-acute-respiratory-distress-syndrome.html"
+  },
+  {
     "title": "Approach to Acute Respiratory Failure: The Complete Advanced Resident Guide",
     "date": "2026-07-15",
     "category": "Pulmonary and Critical Care",
@@ -54,6 +72,24 @@
     "featured": true,
     "readingTime": 4,
     "file": "posts/2026-07-15-asthma-and-status-asthmaticus.html"
+  },
+  {
+    "title": "Auto-PEEP and Mechanical Ventilation in Severe Asthma and COPD",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "auto-PEEP",
+      "intrinsic PEEP",
+      "dynamic hyperinflation",
+      "mechanical ventilation",
+      "asthma",
+      "COPD",
+      "status asthmaticus"
+    ],
+    "summary": "A practical guide to dynamic hyperinflation, intrinsic PEEP measurement, ventilator settings for obstructive physiology, permissive hypercapnia, hypotension after intubation, external PEEP, bronchodilator delivery, and emergency management of severe air trapping.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-auto-peep-and-ventilating-asthma-copd.html"
   },
   {
     "title": "Bioterrorism and High-Consequence Biological Threats: The Complete Advanced Resident Guide",
@@ -111,6 +147,23 @@
     "featured": true,
     "readingTime": 4,
     "file": "posts/2026-07-15-crrt-and-renal-replacement-therapy.html"
+  },
+  {
+    "title": "Fluid Responsiveness and Resuscitation Without Fluid Overload",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "fluid responsiveness",
+      "passive leg raise",
+      "fluid challenge",
+      "stroke volume",
+      "venous congestion",
+      "sepsis"
+    ],
+    "summary": "A guide to deciding when fluid will increase cardiac output, using passive leg raise, mini-fluid challenge, stroke-volume change, pulse-pressure variation, venous congestion assessment, and stopping rules that prevent pulmonary edema and organ congestion.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-fluid-responsiveness.html"
   },
   {
     "title": "Goals of Care, Time-Limited Trials, and Post-ICU Syndrome",
@@ -253,6 +306,73 @@
     "file": "posts/2026-07-15-oxygen-delivery-devices-and-high-flow-nasal-cannula.html"
   },
   {
+    "title": "Patient–Ventilator Dyssynchrony: Waveforms, Causes, and Bedside Correction",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "patient ventilator dyssynchrony",
+      "ventilator waveforms",
+      "double triggering",
+      "reverse triggering",
+      "ineffective efforts",
+      "flow starvation"
+    ],
+    "summary": "A waveform-based approach to trigger, flow, cycling, and mode-related dyssynchrony, including double triggering, reverse triggering, ineffective efforts, auto-triggering, flow starvation, premature and delayed cycling, excessive respiratory drive, and safer correction before escalating sedation or paralysis.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-patient-ventilator-dyssynchrony.html"
+  },
+  {
+    "title": "Pleural Effusion and Thoracentesis",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "pleural effusion",
+      "thoracentesis",
+      "Light criteria",
+      "empyema",
+      "malignant pleural effusion",
+      "trapped lung"
+    ],
+    "summary": "A complete approach to unilateral and bilateral pleural effusions, Light criteria, pseudoexudates, pleural infection, malignancy, chylothorax, trapped lung, ultrasound-guided thoracentesis, fluid interpretation, complications, and next diagnostic steps.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-pleural-effusion-and-thoracentesis.html"
+  },
+  {
+    "title": "Pneumothorax and Chest Tubes",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "pneumothorax",
+      "chest tube",
+      "tension pneumothorax",
+      "persistent air leak",
+      "pleural procedures"
+    ],
+    "summary": "A practical guide to tension, primary and secondary spontaneous, traumatic, and iatrogenic pneumothorax, conservative and ambulatory management, needle or finger decompression, chest-tube selection, suction, persistent air leak, and troubleshooting.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-pneumothorax-and-chest-tubes.html"
+  },
+  {
+    "title": "Point-of-Care Ultrasound in Shock and Respiratory Failure",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "POCUS",
+      "critical care ultrasound",
+      "shock",
+      "lung ultrasound",
+      "echocardiography",
+      "respiratory failure"
+    ],
+    "summary": "A focused critical-care ultrasound framework integrating cardiac, lung, pleural, vascular, and abdominal findings while avoiding overinterpretation of isolated images or IVC measurements.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-point-of-care-ultrasound-in-shock-and-respiratory-failure.html"
+  },
+  {
     "title": "Post–Cardiac Arrest Care",
     "date": "2026-07-15",
     "category": "Pulmonary and Critical Care",
@@ -321,6 +441,40 @@
     "file": "posts/2026-07-15-pulmonary-nodules-and-lung-cancer.html"
   },
   {
+    "title": "Rapid Sequence Intubation and the Physiologically Difficult Airway",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "rapid sequence intubation",
+      "RSI",
+      "physiologically difficult airway",
+      "preoxygenation",
+      "peri-intubation hypotension",
+      "critical care airway"
+    ],
+    "summary": "A critical-care approach to airway decision-making, preparation, preoxygenation, hemodynamic optimization, medication selection, first-pass success, rescue planning, and immediate post-intubation management in patients at risk of peri-intubation hypoxemia, hypotension, acidosis, or right-ventricular collapse.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-rapid-sequence-intubation-and-physiologically-difficult-airway.html"
+  },
+  {
+    "title": "Shock and Hemodynamic Assessment",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "shock",
+      "hemodynamics",
+      "septic shock",
+      "cardiogenic shock",
+      "obstructive shock",
+      "vasopressors"
+    ],
+    "summary": "A practical framework for recognizing shock, separating distributive, cardiogenic, hypovolemic, obstructive, and mixed physiology, integrating bedside examination, lactate, capillary refill, urine output, echocardiography, vasopressors, and source-specific therapy.",
+    "featured": true,
+    "readingTime": 3,
+    "file": "posts/2026-07-15-shock-and-hemodynamic-assessment.html"
+  },
+  {
     "title": "Sexually Transmitted Infections: The Complete Advanced Resident Guide",
     "date": "2026-07-15",
     "category": "Infectious Disease",
@@ -364,6 +518,24 @@
     "featured": true,
     "readingTime": 3,
     "file": "posts/2026-07-15-toxicology-emergencies.html"
+  },
+  {
+    "title": "Ventilator Liberation and Extubation",
+    "date": "2026-07-15",
+    "category": "Pulmonary and Critical Care",
+    "tags": [
+      "ventilator liberation",
+      "weaning",
+      "spontaneous breathing trial",
+      "extubation",
+      "cuff leak",
+      "HFNC",
+      "NIV"
+    ],
+    "summary": "A bedside guide to readiness screening, spontaneous-breathing trials, respiratory-muscle assessment, airway protection, cuff-leak testing, extubation to HFNC or NIV, secretion management, post-extubation stridor, and distinguishing weaning failure from extubation failure.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-15-ventilator-liberation-and-extubation.html"
   },
   {
     "title": "Clostridioides difficile Infection: The Complete Advanced Resident Guide",
