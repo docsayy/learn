@@ -1,20 +1,26 @@
 [
   {
-    "title": "Acute Liver Failure and Cirrhosis in the ICU",
-    "date": "2026-07-15",
+    "title": "Liver Failure Spectrum, Metabolic Disease, and Renal Complications in the ICU",
+    "date": "2026-07-18",
     "category": "Pulmonary and Critical Care",
     "tags": [
       "acute liver failure",
+      "acute liver injury",
+      "transaminitis",
       "cirrhosis",
       "ACLF",
       "hepatic encephalopathy",
+      "MASLD",
+      "NAFLD",
       "hepatorenal syndrome",
+      "HRS-AKI",
+      "SBP",
       "variceal bleeding"
     ],
-    "summary": "A bedside guide to acute liver failure, encephalopathy, cerebral edema, acetaminophen toxicity, transplant referral, acute-on-chronic liver failure, variceal bleeding, spontaneous bacterial peritonitis, hepatorenal syndrome, ventilation, coagulopathy, and prognostic communication.",
+    "summary": "An ICU-focused guide to the liver failure spectrum, acute liver failure, metabolic liver disease, hepatic encephalopathy, acute-on-chronic liver failure, acute kidney injury, hepatorenal syndrome, spontaneous bacterial peritonitis, variceal hemorrhage, coagulopathy, and transplant referral.",
     "featured": true,
-    "readingTime": 3,
-    "file": "posts/2026-07-15-acute-liver-failure-and-cirrhosis-in-the-icu.html"
+    "readingTime": 24,
+    "file": "posts/2026-07-18-acute-liver-failure-and-cirrhosis-in-the-icu.html"
   },
   {
     "title": "Acute Respiratory Distress Syndrome: Diagnosis and Lung-Protective Management",
