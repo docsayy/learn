@@ -23,6 +23,28 @@
     "file": "posts/2026-07-18-acute-liver-failure-and-cirrhosis-in-the-icu.html"
   },
   {
+    "title": "2026 ACC/AHA Dyslipidemia Guideline: A Practical Clinical Summary",
+    "date": "2026-07-18",
+    "category": "Cardiology",
+    "tags": [
+      "dyslipidemia",
+      "cholesterol",
+      "LDL-C",
+      "statins",
+      "PREVENT",
+      "ASCVD",
+      "lipoprotein(a)",
+      "ApoB",
+      "coronary calcium",
+      "ACC",
+      "AHA"
+    ],
+    "summary": "A concise clinical summary of the 2026 ACC/AHA dyslipidemia guideline, including PREVENT risk assessment, LDL-C goals, biomarkers, coronary calcium, risk-enhancing conditions, and nonstatin therapy.",
+    "featured": true,
+    "readingTime": 9,
+    "file": "posts/2026-07-18-dyslipidemia.html"
+  },
+  {
     "title": "Acute Respiratory Distress Syndrome: Diagnosis and Lung-Protective Management",
     "date": "2026-07-15",
     "category": "Pulmonary and Critical Care",
