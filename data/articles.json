@@ -1,5 +1,22 @@
 [
   {
+    "title": "2026 ACC/AHA Lipid Guidelines: High-Yield Clinical Summary",
+    "date": "2026-07-19",
+    "category": "Cardiology",
+    "tags": [
+      "lipids",
+      "statins",
+      "ASCVD",
+      "PREVENT",
+      "cholesterol",
+      "CAC score"
+    ],
+    "summary": "High-yield summary of the 2026 ACC/AHA Lipid Guidelines, covering PREVENT risk assessment, LDL-C goals, biomarkers, CAC scoring, and non-statin therapy.",
+    "featured": true,
+    "readingTime": 4,
+    "file": "posts/2026-07-18-dyslipidemia.html"
+  },
+  {
     "title": "Liver Failure Spectrum, Metabolic Disease, and Renal Complications in the ICU",
     "date": "2026-07-18",
     "category": "Pulmonary and Critical Care",
@@ -21,28 +38,6 @@
     "featured": true,
     "readingTime": 24,
     "file": "posts/2026-07-18-acute-liver-failure-and-cirrhosis-in-the-icu.html"
-  },
-  {
-    "title": "2026 ACC/AHA Dyslipidemia Guideline: A Practical Clinical Summary",
-    "date": "2026-07-18",
-    "category": "Cardiology",
-    "tags": [
-      "dyslipidemia",
-      "cholesterol",
-      "LDL-C",
-      "statins",
-      "PREVENT",
-      "ASCVD",
-      "lipoprotein(a)",
-      "ApoB",
-      "coronary calcium",
-      "ACC",
-      "AHA"
-    ],
-    "summary": "A concise clinical summary of the 2026 ACC/AHA dyslipidemia guideline, including PREVENT risk assessment, LDL-C goals, biomarkers, coronary calcium, risk-enhancing conditions, and nonstatin therapy.",
-    "featured": true,
-    "readingTime": 9,
-    "file": "posts/2026-07-18-dyslipidemia.html"
   },
   {
     "title": "Acute Respiratory Distress Syndrome: Diagnosis and Lung-Protective Management",
