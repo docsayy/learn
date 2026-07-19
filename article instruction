@@ -1,0 +1,470 @@
+## Learn Medicine Article HTML Structure — Required Format
+
+For every future Learn Medicine article, preserve the existing article structure, class names, section arrangement, and ID pattern exactly. Do not introduce alternative wrappers or new class names unless specifically requested.
+
+### 1. Page Head
+
+Every article must include:
+
+* UTF-8 charset
+* Responsive viewport
+* Metadata for:
+
+  * title
+  * date
+  * category
+  * tags
+  * summary
+  * featured status
+* Article page title ending with `| Learn Medicine`
+* Existing stylesheet:
+
+```html
+<link rel="stylesheet" href="../assets/css/article.css">
+```
+
+* Inter font:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+```
+
+### 2. Main Outer Container
+
+All visible page content must be wrapped inside one main container:
+
+```html
+<body>
+
+<div class="container">
+```
+
+Do not place the article header outside this container.
+
+### 3. Top Home Button
+
+The first visible element inside `.container` must be:
+
+```html
+<a href="../index.html" class="home-btn">← Home</a>
+```
+
+Do not use longer wording such as “Back to Learn Medicine” unless specifically requested.
+
+### 4. Article Header
+
+Use this exact arrangement:
+
+```html
+<header class="article-header">
+
+<div class="article-breadcrumb">
+Learn Medicine › Category Name
+</div>
+
+<h1>Article Title</h1>
+
+<div class="article-meta">
+Added Month Day, Year • Category Name • ~Reading Time
+</div>
+
+<p class="article-summary">
+Short summary of the article.
+</p>
+
+</header>
+```
+
+The order must always be:
+
+1. Breadcrumb
+2. Article title
+3. Article metadata
+4. Article summary
+
+Do not add `.article-category`, `.article-subtitle`, extra header containers, or separate breadcrumb links unless specifically requested.
+
+### 5. Article Layout
+
+Immediately after the header, use:
+
+```html
+<div class="layout">
+```
+
+Inside `.layout`, include exactly:
+
+```html
+<nav class="toc">
+```
+
+followed by:
+
+```html
+<main class="content">
+```
+
+The required structure is:
+
+```html
+<div class="layout">
+
+<nav class="toc">
+...
+</nav>
+
+<main class="content">
+...
+</main>
+
+</div>
+```
+
+Do not replace these with:
+
+* `.article-layout`
+* `.table-of-contents`
+* `.toc-card`
+* `.article-content`
+* `.main-content`
+
+The existing CSS expects `.layout`, `.toc`, and `.content`.
+
+### 6. Table of Contents
+
+The table of contents must begin with:
+
+```html
+<nav class="toc">
+<h3>Table of Contents</h3>
+```
+
+Each link must point to an existing section ID:
+
+```html
+<a href="#overview">Clinical Overview</a>
+<a href="#risk-assessment">Risk Assessment</a>
+<a href="#treatment">Treatment</a>
+<a href="#bottom-line">Bottom Line</a>
+<a href="#references">References</a>
+```
+
+The order of TOC links must match the order of article sections.
+
+Never include a TOC link unless its corresponding section exists.
+
+### 7. Section IDs
+
+Every major article section must be a direct child of `<main class="content">`:
+
+```html
+<section id="overview">
+<h2>Clinical Overview</h2>
+...
+</section>
+```
+
+Use short, descriptive, lowercase, kebab-case IDs.
+
+Good examples:
+
+```html
+<section id="overview">
+<section id="risk-assessment">
+<section id="lipid-goals">
+<section id="risk-enhancers">
+<section id="advanced-testing">
+<section id="cac">
+<section id="therapy">
+<section id="monitoring">
+<section id="pearls">
+<section id="pitfalls">
+<section id="bottom-line">
+<section id="references">
+```
+
+Avoid unnecessarily long IDs unless they are required to distinguish closely related sections.
+
+The ID must match the TOC link exactly:
+
+```html
+<a href="#lipid-goals">Lipid Goals</a>
+
+<section id="lipid-goals">
+```
+
+### 8. Section Arrangement
+
+Arrange articles in a logical clinical sequence.
+
+For guideline and management articles, use this general order:
+
+1. Clinical Overview
+2. Definitions or Major Changes
+3. Risk Assessment or Diagnosis
+4. Treatment Thresholds
+5. Treatment Goals
+6. Risk Enhancers or Special Populations
+7. Diagnostic Tests, Biomarkers, or Imaging
+8. Treatment Options
+9. Monitoring and Follow-Up
+10. Clinical Pearls
+11. Common Pitfalls
+12. Bottom Line
+13. References
+
+Do not add every possible detail. Keep the article organized, concise, clinically useful, and appropriate for an internal medicine resident.
+
+### 9. Existing Content Classes
+
+Use the existing article classes whenever appropriate:
+
+```html
+<div class="key-point">
+```
+
+For central concepts and high-yield summaries.
+
+```html
+<div class="clinical-pearl">
+```
+
+For bedside pearls and useful clinical nuance.
+
+```html
+<div class="warning">
+```
+
+For cautions, contraindications, and common mistakes.
+
+```html
+<div class="table-wrapper">
+<table>
+...
+</table>
+</div>
+```
+
+For responsive tables.
+
+```html
+<div class="flow-diagram">
+```
+
+For stepwise pathways or disease progression.
+
+Do not invent replacement classes such as:
+
+* `.highlight-box`
+* `.warning-box`
+* `.bottom-line`
+* `.formula-box`
+* `.medication-grid`
+* `.medication-card`
+* `.key-points`
+
+unless those classes already exist in `article.css` or the user specifically requests them.
+
+### 10. Bottom of Article
+
+After the last section, but still inside `<main class="content">`, include:
+
+```html
+<a href="../index.html" class="back-home">← Back Home</a>
+```
+
+Then close the main content and layout:
+
+```html
+</main>
+</div>
+```
+
+### 11. Footer
+
+Use the existing footer class:
+
+```html
+<footer class="footer">
+Learn Medicine • Article Title • Advanced Resident Review
+</footer>
+```
+
+Do not use `.article-footer`.
+
+The footer must remain inside the outer `.container`, followed by:
+
+```html
+</div>
+```
+
+### 12. JavaScript Order
+
+For future articles, include narration first and reading progress second:
+
+```html
+<script src="../assets/js/article-narration.js"></script>
+<script src="../assets/js/article-progress.js"></script>
+```
+
+Place both scripts immediately before:
+
+```html
+</body>
+</html>
+```
+
+### 13. Required Full Skeleton
+
+Every future Learn Medicine article should follow this exact structural skeleton:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="title" content="Article Title">
+<meta name="date" content="YYYY-MM-DD">
+<meta name="category" content="Category">
+<meta name="tags" content="tag one,tag two,tag three">
+<meta name="summary" content="Short article summary.">
+<meta name="featured" content="true">
+
+<title>Article Title | Learn Medicine</title>
+
+<link rel="stylesheet" href="../assets/css/article.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html" class="home-btn">← Home</a>
+
+<header class="article-header">
+
+<div class="article-breadcrumb">
+Learn Medicine › Category
+</div>
+
+<h1>Article Title</h1>
+
+<div class="article-meta">
+Added Month Day, Year • Category • ~10 min read
+</div>
+
+<p class="article-summary">
+Short clinical summary of the article.
+</p>
+
+</header>
+
+<div class="layout">
+
+<nav class="toc">
+<h3>Table of Contents</h3>
+
+<a href="#overview">Clinical Overview</a>
+<a href="#main-section">Main Section</a>
+<a href="#pearls">Clinical Pearls</a>
+<a href="#pitfalls">Common Pitfalls</a>
+<a href="#bottom-line">Bottom Line</a>
+<a href="#references">References</a>
+
+</nav>
+
+<main class="content">
+
+<section id="overview">
+<h2>Clinical Overview</h2>
+
+<p>
+Article content.
+</p>
+
+<div class="key-point">
+<strong>Core principle:</strong> High-yield statement.
+</div>
+</section>
+
+<section id="main-section">
+<h2>Main Section</h2>
+
+<p>
+Article content.
+</p>
+</section>
+
+<section id="pearls">
+<h2>Clinical Pearls</h2>
+
+<div class="clinical-pearl">
+<strong>Clinical pearl:</strong> Practical bedside point.
+</div>
+</section>
+
+<section id="pitfalls">
+<h2>Common Pitfalls</h2>
+
+<ul>
+<li>Important mistake to avoid.</li>
+</ul>
+</section>
+
+<section id="bottom-line">
+<h2>Bottom Line</h2>
+
+<div class="key-point">
+<p>
+Concise final summary.
+</p>
+</div>
+</section>
+
+<section id="references">
+<h2>References</h2>
+
+<ol>
+<li>Reference information.</li>
+</ol>
+</section>
+
+<a href="../index.html" class="back-home">← Back Home</a>
+
+</main>
+</div>
+
+<footer class="footer">
+Learn Medicine • Article Title • Advanced Resident Review
+</footer>
+
+</div>
+
+<script src="../assets/js/article-narration.js"></script>
+<script src="../assets/js/article-progress.js"></script>
+
+</body>
+</html>
+```
+
+### 14. Final Rule
+
+The provided reference article is the authoritative structure for future Learn Medicine pages.
+
+Preserve:
+
+* Exact class names
+* Exact container hierarchy
+* Header arrangement
+* TOC placement
+* Main content placement
+* Section ID matching
+* Back-home placement
+* Footer class
+* Script order
+
+Only the article title, metadata, TOC entries, section IDs, clinical content, reading time, and references should change from article to article.
